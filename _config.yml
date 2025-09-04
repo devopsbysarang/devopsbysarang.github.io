@@ -1,7 +1,7 @@
 title: "DevOps by Sarang"
 name: "Sarang Deshmukh"
 description: "A blog about DevOps, Cloud, and Engineering"
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
