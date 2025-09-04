@@ -45,18 +45,18 @@ a.btn,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-color: #39FF14 !important;
-  color: #ffffff !important;
+  background-color: #000000 !important;
+  color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
   border-radius: 6px !important;
   padding: 0.45rem 1rem !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; /* subtle drop shadow */
   transition: transform 0.12s ease, box-shadow 0.12s ease !important;
 }
 
-/* ---------- Button hover: scale up slightly ---------- */
+/* ---------- Button hover: scale up slightly, maintain color ---------- */
 button:hover,
 .button:hover,
 .btn:hover,
@@ -68,13 +68,13 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
   transform: scale(1.03) !important;
-  box-shadow: 0 8px 10px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 8px 10px rgba(0,0,0,0.15) !important; /* a bit larger shadow on hover */
   background-color: #39FF14 !important;
   color: #ffffff !important;
   text-decoration: none !important;
 }
 
-/* ---------- Explore More (splash) button: outlined neon ---------- */
+/* ---------- Explore More (splash) button: outlined neon, black background ---------- */
 .page__splash .btn--primary,
 .page__splash .hero__actions .btn--primary,
 .page__splash .actions .btn--primary {
