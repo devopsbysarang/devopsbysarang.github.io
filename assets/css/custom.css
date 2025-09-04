@@ -1,81 +1,113 @@
-/* ========================
-   Global Text and Background
-======================== */
-body, p, li, span, div {
-  color: #ffffff !important;            /* white text */
-  background-color: #000000 !important; /* black background */
+/* ===========================
+   FINAL OVERRIDES — place at very end of custom.css
+   (ensures this file loads after main.css)
+   =========================== */
+
+/* 1) Global background & text (safe defaults) */
+html, body {
+  background-color: #000 !important;
+  color: #fff !important;
 }
 
-/* ========================
-   Headings (neon green, glowing)
-======================== */
+/* 2) Headings (neon by default) */
 h1, h2, h3, h4, h5, h6 {
-  color: #39FF14 !important;  /* neon green */
-  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
-}
-
-/* ========================
-   Splash Page Title & Subtitle (plain white, no glow)
-======================== */
-.page__splash .splash__title,
-.page__splash .splash__title * {
-  color: #ffffff !important;          /* white text */
-  text-shadow: none !important;       /* remove glow */
-}
-
-.page__splash .splash__subhead,
-.page__splash .splash__subhead * {
-  color: #ffffff !important;          /* white text */
-  text-shadow: none !important;       /* remove glow */
-}
-
-/* ========================
-   Links (neon)
-======================== */
-a {
   color: #39FF14 !important;
-}
-a:hover {
-  text-decoration: underline;
+  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14 !important;
 }
 
-/* ========================
-   Explore More Button (neon border)
-======================== */
-.page__splash .btn--primary {
-  color: #ffffff !important;              /* white text */
-  background-color: transparent !important; /* transparent background */
-  border: 2px solid #39FF14 !important;   /* neon border */
-  text-shadow: none !important;           /* remove glow */
-  box-shadow: none !important;            /* remove glow */
-  transition: all 0.3s ease-in-out !important;
+/* 3) Force splash title & all its descendants to plain white and remove any glow */
+.page__splash .splash__title,
+.page__splash .splash__title *,
+.page__splash .splash__title::before,
+.page__splash .splash__title::after {
+  color: #ffffff !important;            /* white text */
+  text-shadow: none !important;         /* remove text glow */
+  box-shadow: none !important;          /* remove box glow if applied */
+  filter: none !important;              /* remove CSS filter glow (drop-shadow) */
+  -webkit-filter: none !important;
+  -webkit-text-stroke: 0 !important;
+  animation: none !important;           /* stop any animation */
 }
 
-.page__splash .btn--primary:hover {
-  background-color: #39FF14 !important;   /* neon fill on hover */
-  color: #000 !important;                 /* black text on hover */
-  transform: scale(1.05) !important;
+/* 4) Also target other possible wrapper selectors that could add glow */
+header .splash__title,
+.hero .splash__title,
+.splash__title,
+#hero .splash__title {
+  color: #ffffff !important;
   text-shadow: none !important;
   box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  animation: none !important;
 }
 
-/* ========================
-   Other Buttons (green background → white text, no glow)
-======================== */
+/* 5) Ensure splash subtitle is plain white, no glow */
+.page__splash .splash__subhead,
+.page__splash .splash__subhead * {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* 6) Explore More button — neon border, white text, NO glow */
+.page__splash .hero__actions .btn--primary,
+.page__splash .actions .btn--primary,
+.page__splash .btn--primary {
+  color: #ffffff !important;               /* white label */
+  background-color: transparent !important;
+  border: 2px solid #39FF14 !important;    /* neon border */
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transition: all 0.18s ease !important;
+}
+
+/* hover: fill with neon (text becomes black for contrast) */
+.page__splash .hero__actions .btn--primary:hover,
+.page__splash .actions .btn--primary:hover,
+.page__splash .btn--primary:hover {
+  background-color: #39FF14 !important;
+  color: #000 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transform: scale(1.03) !important;
+}
+
+/* 7) All other buttons with green backgrounds -> force white text, no glow */
 button,
 .button,
 .btn,
 .btn-primary,
-.btn--primary {
-  color: #ffffff !important;      /* white text */
-  text-shadow: none !important;   /* remove glow */
-  box-shadow: none !important;    /* remove glow */
+.btn--primary,
+a.button,
+a.btn {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
 }
 
+/* hover state for other buttons (if they invert on hover) */
 button:hover,
 .button:hover,
 .btn:hover,
 .btn-primary:hover,
 .btn--primary:hover {
-  color: #000 !important;         /* black text on hover if background is green */
+  color: #000 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* 8) Defensive: remove inline-like glows on any element in the splash area */
+.page__splash * {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  animation: none !important;
 }
