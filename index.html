@@ -1,14 +1,16 @@
 ---
 layout: splash
 permalink: /
+title: "Practical DevOps Insights"
 header:
   overlay_color: "#000000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/neon-circuit-bg.jpg
   actions:
-    - label: "Read My Blogs"
+    - label: "Explore More"
       url: "/blog/"
-excerpt: "Welcome to **Practical DevOps Insights** — Cloud, Kubernetes, and Automation tips 🚀"
+  separator: true     
+excerpt: "Simplifying **Kubernetes, cloud architecture, and automation** for real-world projects 🚀"
 feature_row:
   - image_path: /assets/images/container.png
     alt: "Container Orchestration & DevOps"
@@ -33,6 +35,11 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
+{% if page.header.separator %}
+  <div class="header__separator"></div>
+{% endif %}
+
+<!-- Custom styles for neon buttons and feature-row text -->
 <style>
 /* Neon splash button */
 .page__splash .btn--primary {
