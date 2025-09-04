@@ -1,16 +1,14 @@
 ---
 layout: splash
 permalink: /
-title: "Practical DevOps Insights"
 header:
   overlay_color: "#000000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/neon-circuit-bg.jpg
   actions:
-    - label: "Explore More"
+    - label: "Read My Blogs"
       url: "/blog/"
-  separator: true     
-excerpt: "Simplifying **Kubernetes, cloud architecture, and automation** for real-world projects 🚀"
+excerpt: "Welcome to **Practical DevOps Insights** — Cloud, Kubernetes, and Automation tips 🚀"
 feature_row:
   - image_path: /assets/images/container.png
     alt: "Container Orchestration & DevOps"
@@ -34,9 +32,33 @@ feature_row:
     btn_label: "Start"
     btn_class: "btn--primary"
 ---
-{% if page.header.separator %}
-  <div class="header__separator"></div>
-{% endif %}
+
+<style>
+/* Neon splash button */
+.page__splash .btn--primary {
+  color: #39FF14 !important;
+  border: 2px solid #39FF14 !important;
+  background: transparent !important;
+  text-shadow: 0 0 5px #39FF14 !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 0 10px #39FF14 !important;
+}
+
+.page__splash .btn--primary:hover {
+  background: #39FF14 !important;
+  color: #000 !important;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
+  text-shadow: 0 0 10px #39FF14 !important;
+  transform: scale(1.05) !important;
+}
+
+/* Feature row titles and excerpts */
+.feature-row .feature__title,
+.feature-row .feature__title a,
+.feature-row .feature__excerpt {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14 !important;
+}
+</style>
 
 {% include feature_row %}
-
