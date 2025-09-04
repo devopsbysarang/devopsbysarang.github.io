@@ -1,71 +1,44 @@
-/* ============================
-  FULL SITE: REMOVE ALL GLOW + NO UNDERLINE IN BUTTONS
-  Paste this at the VERY END of assets/css/custom.css
-  ============================ */
+/* ===========================
+   Final button + link + headings rules
+   Paste at the VERY END of assets/css/custom.css
+   =========================== */
 
-/* ---------- Defensive global reset for glow sources ---------- */
-/* Targets text-shadow, box-shadow, filters, animations, background-clip techniques */
-*,
-*::before,
-*::after {
+/* ---------- Links: neon color, NO underline on hover (or focus) ---------- */
+a, a:link, a:visited {
+  color: #39FF14 !important;
+  text-decoration: none !important;     /* no underline by default */
   text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  -webkit-filter: none !important;
-  -webkit-text-stroke: 0 !important;
-  -webkit-text-fill-color: inherit !important; /* avoid clipped gradient fills */
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-  background-image: none !important;
-  background: none !important;
-  mix-blend-mode: normal !important;
-  animation: none !important;
-  transition: none !important;
+}
+a:hover, a:focus, a:active {
+  color: #39FF14 !important;
+  text-decoration: none !important;     /* explicitly remove underline on hover */
+  outline: none !important;
 }
 
-/* ---------- Base colors & readability ---------- */
-html, body {
-  background-color: #000 !important; /* ensure black background */
-  color: #fff !important;           /* ensure white default text */
-}
+/* If you prefer normal links to underline on hover but not buttons, remove the above and use:
+a:hover { text-decoration: underline; }
+*/
 
-/* Keep headings neon color but remove glow entirely */
+/* ---------- Headings: keep neon color but remove glow globally ---------- */
 h1, h2, h3, h4, h5, h6 {
-  color: #39FF14 !important;        /* neon color preserved */
-  text-shadow: none !important;     /* remove glow */
+  color: #39FF14 !important;             /* neon color preserved */
+  text-shadow: none !important;          /* remove glow */
   -webkit-text-fill-color: #39FF14 !important;
   background-image: none !important;
-}
-
-/* ---------- Splash title & subtitle: plain white, no glow ---------- */
-.page__splash .splash__title,
-.page__splash .splash__title *,
-.page__splash .splash__title::before,
-.page__splash .splash__title::after {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  background: none !important;
-  background-image: none !important;
   -webkit-background-clip: initial !important;
-  animation: none !important;
 }
 
-/* subtitle */
-.page__splash .splash__subhead,
-.page__splash .splash__subhead * {
+/* Make sure splash title remains plain white (defensive) */
+.page__splash .splash__title,
+.page__splash .splash__title * {
   color: #ffffff !important;
   text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  background: none !important;
-  animation: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-image: none !important;
 }
 
-/* ---------- Buttons: no underline on button text, no glow ---------- */
-/* Apply to common button selectors used by Jekyll themes */
+/* ---------- Buttons: make them neon (green) with white text by default ---------- */
+/* This targets common button selectors used in Jekyll themes */
 button,
 .button,
 .btn,
@@ -76,101 +49,100 @@ a.btn,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  color: #ffffff !important;         /* white text on buttons */
-  text-decoration: none !important;  /* NO underline on buttons */
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
+  /* restore/force a neon background */
+  background-color: #39FF14 !important;
   background-image: none !important;
-  background: transparent !important;
-  -webkit-text-fill-color: inherit !important;
+  color: #ffffff !important;             /* white text by default */
+  border: 2px solid #39FF14 !important;  /* neon border */
+  padding: 0.45rem 1rem !important;
+  cursor: pointer !important;
+  text-decoration: none !important;      /* remove underline if a link styled as button */
+  text-shadow: none !important;          /* remove any text glow */
+  box-shadow: 0 0 8px rgba(57,255,20,0.25) !important; /* subtle neon halo for buttons */
+  filter: none !important;
+  -webkit-filter: none !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
-/* If buttons have anchors inside, ensure anchors are also not underlined */
-button a,
-.button a,
-.btn a,
-a.btn,
-a.button {
-  text-decoration: none !important;
-  color: inherit !important;
-}
+/* If a theme set buttons to be transparent via background: none earlier, this forces them back */
 
-/* Hover states: keep clear and readable (optional: invert) */
+/* ---------- Hover / active for buttons: slightly darker background & readable text ---------- */
 button:hover,
 .button:hover,
 .btn:hover,
 .btn-primary:hover,
 .btn--primary:hover,
 a.button:hover,
-a.btn:hover {
+a.btn:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #2ED10F !important;  /* slightly darker neon on hover */
+  color: #000000 !important;              /* black text on hover for contrast */
+  box-shadow: 0 0 20px rgba(57,255,20,0.45) !important;
+  transform: scale(1.03) !important;
   text-decoration: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  color: #000 !important;            /* if button background is neon green on hover */
 }
 
-/* ---------- Links (non-button) keep neon color but no glow ---------- */
-a {
-  color: #39FF14 !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-}
-a:hover {
-  text-decoration: underline; /* keep normal link underline on hover if desired */
-}
-
-/* ---------- Defensive: remove pseudo-element based glows ---------- */
-*::before,
-*::after {
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  background-image: none !important;
-  content: none !important;
-}
-
-/* ---------- Very specific Explore More button (if still present) ---------- */
+/* ---------- Explore More button (splash) : keep border style or use neon fill if default button class used ---------- */
+.page__splash .btn--primary,
 .page__splash .hero__actions .btn--primary,
-.page__splash .actions .btn--primary,
-.page__splash .btn--primary {
+.page__splash .actions .btn--primary {
+  /* if you want this to be border-only: uncomment the two lines below and comment the background-color line */
+  /* background-color: transparent !important; */
+  /* color: #ffffff !important; border: 2px solid #39FF14 !important; box-shadow: none !important; */
+  /* default: make it neon filled like other buttons for visibility */
+  background-color: #39FF14 !important;
   color: #ffffff !important;
-  background-color: transparent !important;
   border: 2px solid #39FF14 !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
+  box-shadow: 0 0 8px rgba(57,255,20,0.25) !important;
 }
 
-/* Hover behaviour for Explore More */
-.page__splash .hero__actions .btn--primary:hover,
-.page__splash .actions .btn--primary:hover,
+/* If you specifically want only Explore More to be border-only (transparent with neon border),
+   switch the rules above to these:
+.page__splash .btn--primary {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #39FF14 !important;
+  box-shadow: none !important;
+}
 .page__splash .btn--primary:hover {
   background-color: #39FF14 !important;
   color: #000 !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
 }
+*/
 
-/* ---------- Keep a minimal exception: keep form inputs readable ---------- */
-input, textarea, select {
+/* ---------- Buttons that are links: ensure anchors inside buttons inherit the button color and no underline ---------- */
+a.btn, a.button, .btn a, .button a {
   color: inherit !important;
-  background: transparent !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
+  text-decoration: none !important;
 }
 
-/* ---------- Extra defensive rule to kill CSS gradient clipping on headings ---------- */
-h1[class*="gradient"], h1[class*="neon"], .gradient-text, .text-gradient {
-  background: none !important;
-  background-image: none !important;
-  -webkit-background-clip: initial !important;
-  background-clip: initial !important;
-  -webkit-text-fill-color: inherit !important;
+/* ---------- Defensive: kill any residual 'background:none' removal for buttons specifically ---------- */
+button[style*="background: none"],
+.btn[style*="background: none"],
+.button[style*="background: none"],
+a[style*="background: none"] {
+  background: #39FF14 !important;
+  color: #ffffff !important;
+  border: 2px solid #39FF14 !important;
+}
+
+/* ---------- Accessibility: ensure focus shows an outline for keyboard users (but not underline) ---------- */
+button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
+  outline: 3px solid rgba(57,255,20,0.18) !important;
+  outline-offset: 2px !important;
+  text-decoration: none !important;
+}
+
+/* ---------- Keep other site-wide no-glow rules (defensive but not killing button visuals) ---------- */
+*,
+*::before,
+*::after {
+  /* allow background on buttons via more specific rules above; keep most glow sources off */
   text-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  animation: none !important;
 }
