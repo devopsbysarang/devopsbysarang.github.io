@@ -40,30 +40,29 @@
 }
 
 
-/* Neon splash button */
+/* Neon splash button with black background */
 .page__splash .btn--primary {
-  color: #39FF14 !important;
-  border: 2px solid #39FF14 !important;
-  background: transparent !important;
+  color: #39FF14 !important;               /* Neon text */
+  border: 2px solid #39FF14 !important;    /* Neon border */
+  background: #000 !important;             /* Black background */
   text-shadow: 0 0 5px #39FF14 !important;
   transition: all 0.3s ease-in-out !important;
   box-shadow: 0 0 10px #39FF14 !important;
 }
 
 .page__splash .btn--primary:hover {
-  background: #39FF14 !important;
-  color: #000 !important;
+  background: #000 !important;             /* Keep black background on hover */
+  color: #39FF14 !important;               /* Neon text on hover */
   box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
   text-shadow: 0 0 10px #39FF14 !important;
   transform: scale(1.05) !important;
 }
 
-/* Feature row titles and excerpts */
+/* Feature headings (like Guides and tips for mastering microservices) */
 .feature-row .feature__title,
-.feature-row .feature__title a,
-.feature-row .feature__excerpt {
-  color: #39FF14 !important;
-  text-shadow: 0 0 5px #39FF14 !important;
+.feature-row .feature__title a {
+  color: #ffffff !important;               /* White text */
+  text-shadow: none !important;            /* Remove neon effect for heading */
 }
 
 
