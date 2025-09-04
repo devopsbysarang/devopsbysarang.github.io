@@ -18,18 +18,20 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: initial !important;
 }
 
-/* ---------- Default text: white on dark background ---------- */
-body, p, span, div {
-  color: #ffffff !important;
-}
-
-/* ---------- Splash title remains plain white ---------- */
+/* ---------- Site Title / Logo: Neon Green ---------- */
+.site-title, 
+.site-title a,
 .page__splash .splash__title,
 .page__splash .splash__title * {
-  color: #39FF14 !important;
+  color: #39FF14 !important;       /* neon green */
   text-shadow: none !important;
   -webkit-text-fill-color: #39FF14 !important;
   background-image: none !important;
+}
+
+/* ---------- Default text: white on dark background ---------- */
+body, p, span, div {
+  color: #ffffff !important;
 }
 
 /* ---------- Buttons: neon background, white text, rounded corners, subtle shadow ---------- */
@@ -43,18 +45,18 @@ a.btn,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-color: #000000 !important;
-  color: #39FF14 !important;
+  background-color: #39FF14 !important;
+  color: #ffffff !important;
   border: 2px solid #39FF14 !important;
   border-radius: 6px !important;
   padding: 0.45rem 1rem !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; /* subtle drop shadow */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; 
   transition: transform 0.12s ease, box-shadow 0.12s ease !important;
 }
 
-/* ---------- Button hover: scale up slightly, maintain color ---------- */
+/* ---------- Button hover: scale up slightly ---------- */
 button:hover,
 .button:hover,
 .btn:hover,
@@ -66,13 +68,13 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
   transform: scale(1.03) !important;
-  box-shadow: 0 8px 10px rgba(0,0,0,0.15) !important; /* a bit larger shadow on hover */
+  box-shadow: 0 8px 10px rgba(0,0,0,0.15) !important;
   background-color: #39FF14 !important;
   color: #ffffff !important;
   text-decoration: none !important;
 }
 
-/* ---------- Explore More (splash) button: outlined neon, black background ---------- */
+/* ---------- Explore More (splash) button: outlined neon ---------- */
 .page__splash .btn--primary,
 .page__splash .hero__actions .btn--primary,
 .page__splash .actions .btn--primary {
