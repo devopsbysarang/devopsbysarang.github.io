@@ -330,6 +330,3 @@ defaults:
       comments: # true
       share: true
       related: true
-
-extra_css:
-  - /assets/css/custom.css
