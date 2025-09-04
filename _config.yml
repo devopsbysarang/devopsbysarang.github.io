@@ -15,7 +15,8 @@ header_pages:
   - about.md
   - blog.md
   - contact.md
-
+sass:
+  style: compressed
 toc: false
 # Site Settings
 locale                   : "en-US"
