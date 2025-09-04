@@ -1,16 +1,77 @@
+/* ========================
+   Global Text and Background
+======================== */
 body, p, li, span, div {
-  color: #ffffff !important;
-  background-color: #000000 !important;
+  color: #ffffff !important;           /* white text */
+  background-color: #000000 !important; /* black background */
 }
 
+/* ========================
+   Headings (neon green, glowing)
+======================== */
 h1, h2, h3, h4, h5, h6 {
-  color: #39FF14 !important;
+  color: #39FF14 !important;  /* neon green */
   text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
 }
 
+/* ========================
+   Splash Page Title & Subtitle (plain white)
+======================== */
+.page__splash .splash__title {
+  color: #ffffff !important;   /* white text */
+  text-shadow: none !important; /* remove glow */
+}
+
+.page__splash .splash__subhead {
+  color: #ffffff !important;   /* white text */
+  text-shadow: none !important; /* remove glow */
+}
+
+/* ========================
+   Links (neon)
+======================== */
 a {
   color: #39FF14 !important;
 }
 a:hover {
   text-decoration: underline;
+}
+
+/* ========================
+   Explore More Button (neon border)
+======================== */
+.page__splash .btn--primary {
+  color: #ffffff !important;              /* button text white */
+  background-color: transparent !important; /* transparent background */
+  border: 2px solid #39FF14 !important;   /* neon border */
+  text-shadow: none !important;           /* remove glow */
+  box-shadow: none !important;            /* remove glow */
+  transition: all 0.3s ease-in-out !important;
+}
+
+.page__splash .btn--primary:hover {
+  background-color: #39FF14 !important;   /* neon fill on hover */
+  color: #000 !important;                 /* black text on hover */
+  transform: scale(1.05) !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* ========================
+   Other Buttons (green background → white text)
+======================== */
+button,
+.button,
+.btn,
+.btn-primary,
+.btn--primary {
+  color: #ffffff !important;      /* white text on all green buttons */
+}
+
+button:hover,
+.button:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn--primary:hover {
+  color: #000 !important;         /* black text on hover if background is green */
 }
