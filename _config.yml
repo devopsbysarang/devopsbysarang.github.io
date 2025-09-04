@@ -1,8 +1,20 @@
-title: "DevOps by Sarang"
-name: "Sarang Deshmukh"
-description: "A blog about DevOps, Cloud, and Engineering"
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+title: "DevOps by Sarang 🚀"
+name: "Sarang"
+description: "A blog about DevOps, Cloud, Kubernetes, and Automation"
+
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+# Minimal Mistakes skin (color style)
+minimal_mistakes_skin: "fresh"
+
+paginate: 5
+paginate_path: "/page:num/"
+
+# Navigation bar
+header_pages:
+  - about.md
+  - blog.md
+  - contact.md
 
 # Site Settings
 locale                   : "en-US"
