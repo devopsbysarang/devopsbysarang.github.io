@@ -1,0 +1,21 @@
+/* _sass/custom/_overrides.scss */
+
+/* Reduce space between splash and feature row */
+.page__splash + .page__content {
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+}
+
+/* Feature row excerpts white */
+.page__content .feature-row .feature__excerpt,
+.page__content .feature-row .feature__excerpt p {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+/* Feature row titles neon green */
+.page__content .feature-row .feature__title,
+.page__content .feature-row .feature__title a {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14 !important;
+}
