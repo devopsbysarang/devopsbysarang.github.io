@@ -26,9 +26,9 @@ body, p, span, div {
 /* ---------- Splash title remains plain white ---------- */
 .page__splash .splash__title,
 .page__splash .splash__title * {
-  color: #ffffff !important;
+  color: #39FF14 !important;
   text-shadow: none !important;
-  -webkit-text-fill-color: #ffffff !important;
+  -webkit-text-fill-color: #39FF14 !important;
   background-image: none !important;
 }
 
