@@ -1,63 +1,47 @@
----
----
-
-/* ==============================
-   Root variables for neon theme
-   ============================== */
+/* Override theme colors */
 :root {
-  --color-bg: #000000;     /* black background */
-  --color-text: #39FF14;   /* neon green text */
-  --color-link: #39FF14;   /* neon links */
+  --color-bg: #000000;
+  --color-text: #39FF14;
+  --color-link: #39FF14;
 }
 
-/* ==============================
-   Import theme
-   ============================== */
-@import "{{ site.theme }}"; /* Import theme after root variables */
+---
+---
 
-/* ==============================
-   Body background and text
-   ============================== */
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-}
-
-/* ==============================
-   Neon-style homepage title
-   ============================== */
+/* Neon-style homepage title */
 .page__splash .splash__title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #39FF14;
-  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
+  font-size: 3rem;               // large, impactful
+  font-weight: 700;               // bold
+  color: #39FF14;                 // neon green
+  text-shadow: 
+    0 0 5px #39FF14, 
+    0 0 10px #39FF14, 
+    0 0 20px #39FF14, 
+    0 0 40px #39FF14;            // glowing effect
   text-align: center;
   margin-bottom: 10px;
   font-family: 'Fira Code', monospace;
   animation: neonPulse 2s infinite alternate;
 }
 
+/* Neon-style subtitle / excerpt */
 .page__splash .splash__subhead {
   font-size: 1.25rem;
-  color: #ffffff;
+  color: #ffff;
   text-align: center;
   margin-top: -5px;
-  text-shadow: 0 0 5px #ffffff;
+  text-shadow: 0 0 5px #ffff;
 }
 
-/* ==============================
-   Pulse animation
-   ============================== */
+/* Pulse animation */
 @keyframes neonPulse {
   0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
   50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
 }
 
-/* ==============================
-   Splash buttons
-   ============================== */
-.page__splash .btn--primary,
-.btn--primary {
+
+/* Neon splash button */
+.page__splash .btn--primary {
   color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
   background: transparent !important;
@@ -66,18 +50,15 @@ body {
   box-shadow: 0 0 10px #39FF14 !important;
 }
 
-.page__splash .btn--primary:hover,
-.btn--primary:hover {
+.page__splash .btn--primary:hover {
   background: #39FF14 !important;
-  color: #000000 !important;
+  color: #000 !important;
   box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
   text-shadow: 0 0 10px #39FF14 !important;
   transform: scale(1.05) !important;
 }
 
-/* ==============================
-   Feature row titles and excerpts
-   ============================== */
+/* Feature row titles and excerpts */
 .feature-row .feature__title,
 .feature-row .feature__title a,
 .feature-row .feature__excerpt {
@@ -85,74 +66,4 @@ body {
   text-shadow: 0 0 5px #39FF14 !important;
 }
 
-/* ==============================
-   General buttons
-   ============================== */
-.btn, .button {
-  color: #000000 !important;
-  border-color: #39FF14 !important;
-  background-color: #39FF14 !important;
-}
 
-.btn:hover, .button:hover {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  transform: scale(1.05);
-}
-
-/* ==============================
-   Links and menu items
-   ============================== */
-a, a:visited, .nav__link {
-  color: #39FF14 !important;
-  text-shadow: 0 0 5px #39FF14;
-  transition: all 0.3s ease-in-out;
-}
-
-a:hover, .nav__link:hover {
-  color: #ffffff !important;
-  text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
-}
-
-/* ==============================
-   Footer text
-   ============================== */
-.page__footer, .page__footer a {
-  color: #39FF14 !important;
-  text-shadow: 0 0 5px #39FF14;
-}
-
-/* ==============================
-   Header background and site title
-   ============================== */
-.site-header {
-  background-color: #000000 !important; /* black header */
-}
-
-/* Site title text (no glow) */
-.site-header .site-title,
-.site-header .site-title a {
-  color: #39FF14 !important;
-  text-shadow: none !important;
-}
-
-/* Header navigation buttons */
-.site-header .btn,
-.site-header .button,
-.site-header .btn--primary {
-  color: #39FF14 !important;
-  background-color: #000000 !important;
-  border: 2px solid #39FF14 !important;
-  text-shadow: none !important;
-  transition: all 0.3s ease-in-out !important;
-}
-
-.site-header .btn:hover,
-.site-header .button:hover,
-.site-header .btn--primary:hover {
-  background-color: #39FF14 !important;
-  color: #000000 !important;
-  border-color: #39FF14 !important;
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14 !important;
-  transform: scale(1.05);
-}
