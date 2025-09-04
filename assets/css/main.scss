@@ -51,7 +51,7 @@
 
 /* Reduce space between splash button and feature row */
 .page__splash + .page__content {
-  margin-top: 20px;  /* default is usually 60-80px, reduce to 20px */
+  margin-top: 0px;  /* default is usually 60-80px, reduce to 20px */
   padding-top: 0;    /* remove extra padding if any */
 }
 
@@ -60,5 +60,22 @@
 
 /* Import your custom overrides */
 @import "custom/overrides";
+
+
+/* Neon button for splash */
+.page__splash .btn--primary {
+  color: #39FF14 !important;
+  border: 2px solid #39FF14 !important;
+  background: transparent !important;
+  text-shadow: 0 0 5px #39FF14;
+  transition: 0.3s all ease-in-out;
+}
+
+.page__splash .btn--primary:hover {
+  background: #39FF14 !important;
+  color: #000 !important;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
+  text-shadow: 0 0 10px #39FF14;
+}
 
 
