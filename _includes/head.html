@@ -26,39 +26,3 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
-
-<!-- ===== Neon Button CSS ===== -->
-<style>
-/* Neon splash button */
-.page__splash .btn--primary {
-  color: #39FF14 !important;
-  border: 2px solid #39FF14 !important;
-  background: transparent !important;
-  text-shadow: 0 0 5px #39FF14;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px #39FF14;
-}
-
-.page__splash .btn--primary:hover {
-  background: #39FF14 !important;
-  color: #000 !important;
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
-  text-shadow: 0 0 10px #39FF14;
-  transform: scale(1.05);
-}
-
-@keyframes neonFlicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
-  }
-  20%, 24%, 55% {
-    opacity: 0.8;
-    text-shadow: none;
-  }
-}
-
-.page__splash .btn--primary {
-  animation: neonFlicker 1.5s infinite alternate;
-}
-</style>
