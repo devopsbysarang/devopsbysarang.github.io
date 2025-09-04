@@ -1,4 +1,36 @@
 ---
-layout: home
-author_profile: true
+layout: splash
+permalink: /
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.4"
+  overlay_image: /assets/images/devops-bg.jpg
+  actions:
+    - label: "Read My Blogs"
+      url: "/blog/"
+excerpt: "Welcome to **DevOps by Sarang** — Cloud, Kubernetes, and Automation tips 🚀"
+feature_row:
+  - image_path: /assets/images/devops-bg.jpg
+    alt: "DevOps"
+    title: "Kubernetes"
+    excerpt: "Guides and tips for mastering Kubernetes"
+    url: "/blog/"
+    btn_label: "Read"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/devops-bg.jpg
+    alt: "AWS"
+    title: "AWS & Cloud"
+    excerpt: "Cloud architecture and automation strategies"
+    url: "/blog/"
+    btn_label: "Explore"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/devops-bg.jpg
+    alt: "CI/CD"
+    title: "CI/CD & Automation"
+    excerpt: "Jenkins, Terraform, Ansible and real-world projects"
+    url: "/blog/"
+    btn_label: "Start"
+    btn_class: "btn--primary"
 ---
+
+{% include feature_row %}
