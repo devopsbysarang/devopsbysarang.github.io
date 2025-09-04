@@ -13,7 +13,15 @@
 /* ==============================
    Import theme
    ============================== */
-@import "{{ site.theme }}"; /* Keep your theme imports after root variables */
+@import "{{ site.theme }}"; /* Import theme after root variables */
+
+/* ==============================
+   Body background and text
+   ============================== */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
 
 /* ==============================
    Neon-style homepage title
@@ -37,7 +45,9 @@
   text-shadow: 0 0 5px #ffffff;
 }
 
-/* Pulse animation */
+/* ==============================
+   Pulse animation
+   ============================== */
 @keyframes neonPulse {
   0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
   50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
@@ -46,7 +56,8 @@
 /* ==============================
    Neon splash buttons
    ============================== */
-.page__splash .btn--primary {
+.page__splash .btn--primary,
+.btn--primary {
   color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
   background: transparent !important;
@@ -55,7 +66,8 @@
   box-shadow: 0 0 10px #39FF14 !important;
 }
 
-.page__splash .btn--primary:hover {
+.page__splash .btn--primary:hover,
+.btn--primary:hover {
   background: #39FF14 !important;
   color: #000000 !important;
   box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
@@ -74,7 +86,7 @@
 }
 
 /* ==============================
-   General button styles
+   General buttons
    ============================== */
 .btn, .button {
   color: #000000 !important;
@@ -86,4 +98,26 @@
   background-color: #ffffff !important;
   color: #000000 !important;
   transform: scale(1.05);
+}
+
+/* ==============================
+   Links and menu items
+   ============================== */
+a, a:visited, .nav__link {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover, .nav__link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
+}
+
+/* ==============================
+   Footer text
+   ============================== */
+.page__footer, .page__footer a {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14;
 }
