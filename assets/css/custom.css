@@ -2,7 +2,7 @@
    Global Text and Background
 ======================== */
 body, p, li, span, div {
-  color: #ffffff !important;           /* white text */
+  color: #ffffff !important;            /* white text */
   background-color: #000000 !important; /* black background */
 }
 
@@ -15,16 +15,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================
-   Splash Page Title & Subtitle (plain white)
+   Splash Page Title & Subtitle (plain white, no glow)
 ======================== */
-.page__splash .splash__title {
-  color: #ffffff !important;   /* white text */
-  text-shadow: none !important; /* remove glow */
+.page__splash .splash__title,
+.page__splash .splash__title * {
+  color: #ffffff !important;          /* white text */
+  text-shadow: none !important;       /* remove glow */
 }
 
-.page__splash .splash__subhead {
-  color: #ffffff !important;   /* white text */
-  text-shadow: none !important; /* remove glow */
+.page__splash .splash__subhead,
+.page__splash .splash__subhead * {
+  color: #ffffff !important;          /* white text */
+  text-shadow: none !important;       /* remove glow */
 }
 
 /* ========================
@@ -41,7 +43,7 @@ a:hover {
    Explore More Button (neon border)
 ======================== */
 .page__splash .btn--primary {
-  color: #ffffff !important;              /* button text white */
+  color: #ffffff !important;              /* white text */
   background-color: transparent !important; /* transparent background */
   border: 2px solid #39FF14 !important;   /* neon border */
   text-shadow: none !important;           /* remove glow */
@@ -58,14 +60,16 @@ a:hover {
 }
 
 /* ========================
-   Other Buttons (green background → white text)
+   Other Buttons (green background → white text, no glow)
 ======================== */
 button,
 .button,
 .btn,
 .btn-primary,
 .btn--primary {
-  color: #ffffff !important;      /* white text on all green buttons */
+  color: #ffffff !important;      /* white text */
+  text-shadow: none !important;   /* remove glow */
+  box-shadow: none !important;    /* remove glow */
 }
 
 button:hover,
