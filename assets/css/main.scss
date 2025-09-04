@@ -45,3 +45,41 @@
   color: #ffffff;           /* white text */
   text-shadow: none;        /* remove any neon glow if present */
 }
+
+/* Neon button */
+.page__splash .splash__actions .btn--primary {
+  background-color: #000000;
+  color: #39FF14;
+  border: 2px solid #39FF14;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Neon button hover */
+.page__splash .splash__actions .btn--primary:hover {
+  background-color: #39FF14;
+  color: #000000;
+  box-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #0ff;
+}
+
+/* =========================
+   Animated Separator Line
+   ========================= */
+@keyframes pulseLine {
+  0%, 100% { box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
+  50% { box-shadow: 0 0 20px #39FF14, 0 0 40px #0ff; }
+}
+
+.header__separator {
+  width: 80px;
+  height: 3px;
+  margin: 40px auto 60px;
+  background-color: #39FF14;
+  border-radius: 2px;
+  animation: pulseLine 2s infinite alternate;
+}
+
