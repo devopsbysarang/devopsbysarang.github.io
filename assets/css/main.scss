@@ -1,10 +1,13 @@
 /* Override theme colors */
 :root {
-  --color-bg: #000000;
-  --color-text: #39FF14;
-  --color-link: #39FF14;
+  --ifm-background-color: #000000;        /* Site background */
+  --ifm-color-primary: #39FF14;           /* Primary color (buttons, links) */
+  --ifm-color-primary-dark: #39FF14;      /* For hover states */
+  --ifm-color-primary-darker: #39FF14;    /* Additional hover shades if used */
+  --ifm-color-secondary: #ffffff;         /* For headings/subtitles you want white */
+  --ifm-font-color-base: #ffffff;         /* Default text color */
+  --ifm-link-color: #39FF14;              /* Links */
 }
-
 ---
 ---
 
