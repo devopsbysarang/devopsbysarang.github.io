@@ -50,9 +50,9 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"] {
   /* restore/force a neon background */
-  background-color: #39FF14 !important;
+  background-color: #000000 !important;
   background-image: none !important;
-  color: #ffffff !important;             /* white text by default */
+  color: #39FF14 !important;             /* white text by default */
   border: 2px solid #39FF14 !important;  /* neon border */
   padding: 0.45rem 1rem !important;
   cursor: pointer !important;
@@ -90,11 +90,11 @@ input[type="reset"]:hover {
 .page__splash .hero__actions .btn--primary,
 .page__splash .actions .btn--primary {
   /* if you want this to be border-only: uncomment the two lines below and comment the background-color line */
-  /* background-color: transparent !important; */
+  /* background-color: #000000 !important; */
   /* color: #ffffff !important; border: 2px solid #39FF14 !important; box-shadow: none !important; */
   /* default: make it neon filled like other buttons for visibility */
-  background-color: #39FF14 !important;
-  color: #ffffff !important;
+  background-color: #000000 !important;
+  color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
   box-shadow: 0 0 8px rgba(57,255,20,0.25) !important;
 }
