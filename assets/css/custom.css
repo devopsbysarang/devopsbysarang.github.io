@@ -1,113 +1,176 @@
-/* ===========================
-   FINAL OVERRIDES — place at very end of custom.css
-   (ensures this file loads after main.css)
-   =========================== */
+/* ============================
+  FULL SITE: REMOVE ALL GLOW + NO UNDERLINE IN BUTTONS
+  Paste this at the VERY END of assets/css/custom.css
+  ============================ */
 
-/* 1) Global background & text (safe defaults) */
-html, body {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-/* 2) Headings (neon by default) */
-h1, h2, h3, h4, h5, h6 {
-  color: #39FF14 !important;
-  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14 !important;
-}
-
-/* 3) Force splash title & all its descendants to plain white and remove any glow */
-.page__splash .splash__title,
-.page__splash .splash__title *,
-.page__splash .splash__title::before,
-.page__splash .splash__title::after {
-  color: #ffffff !important;            /* white text */
-  text-shadow: none !important;         /* remove text glow */
-  box-shadow: none !important;          /* remove box glow if applied */
-  filter: none !important;              /* remove CSS filter glow (drop-shadow) */
-  -webkit-filter: none !important;
-  -webkit-text-stroke: 0 !important;
-  animation: none !important;           /* stop any animation */
-}
-
-/* 4) Also target other possible wrapper selectors that could add glow */
-header .splash__title,
-.hero .splash__title,
-.splash__title,
-#hero .splash__title {
-  color: #ffffff !important;
+/* ---------- Defensive global reset for glow sources ---------- */
+/* Targets text-shadow, box-shadow, filters, animations, background-clip techniques */
+*,
+*::before,
+*::after {
   text-shadow: none !important;
   box-shadow: none !important;
   filter: none !important;
   -webkit-filter: none !important;
+  -webkit-text-stroke: 0 !important;
+  -webkit-text-fill-color: inherit !important; /* avoid clipped gradient fills */
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  background-image: none !important;
+  background: none !important;
+  mix-blend-mode: normal !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ---------- Base colors & readability ---------- */
+html, body {
+  background-color: #000 !important; /* ensure black background */
+  color: #fff !important;           /* ensure white default text */
+}
+
+/* Keep headings neon color but remove glow entirely */
+h1, h2, h3, h4, h5, h6 {
+  color: #39FF14 !important;        /* neon color preserved */
+  text-shadow: none !important;     /* remove glow */
+  -webkit-text-fill-color: #39FF14 !important;
+  background-image: none !important;
+}
+
+/* ---------- Splash title & subtitle: plain white, no glow ---------- */
+.page__splash .splash__title,
+.page__splash .splash__title *,
+.page__splash .splash__title::before,
+.page__splash .splash__title::after {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
   animation: none !important;
 }
 
-/* 5) Ensure splash subtitle is plain white, no glow */
+/* subtitle */
 .page__splash .splash__subhead,
 .page__splash .splash__subhead * {
   color: #ffffff !important;
   text-shadow: none !important;
   box-shadow: none !important;
   filter: none !important;
+  background: none !important;
   animation: none !important;
 }
 
-/* 6) Explore More button — neon border, white text, NO glow */
-.page__splash .hero__actions .btn--primary,
-.page__splash .actions .btn--primary,
-.page__splash .btn--primary {
-  color: #ffffff !important;               /* white label */
-  background-color: transparent !important;
-  border: 2px solid #39FF14 !important;    /* neon border */
-  text-shadow: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  -webkit-filter: none !important;
-  transition: all 0.18s ease !important;
-}
-
-/* hover: fill with neon (text becomes black for contrast) */
-.page__splash .hero__actions .btn--primary:hover,
-.page__splash .actions .btn--primary:hover,
-.page__splash .btn--primary:hover {
-  background-color: #39FF14 !important;
-  color: #000 !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  transform: scale(1.03) !important;
-}
-
-/* 7) All other buttons with green backgrounds -> force white text, no glow */
+/* ---------- Buttons: no underline on button text, no glow ---------- */
+/* Apply to common button selectors used by Jekyll themes */
 button,
 .button,
 .btn,
 .btn-primary,
 .btn--primary,
 a.button,
-a.btn {
-  color: #ffffff !important;
+a.btn,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  color: #ffffff !important;         /* white text on buttons */
+  text-decoration: none !important;  /* NO underline on buttons */
   text-shadow: none !important;
   box-shadow: none !important;
   filter: none !important;
-  -webkit-filter: none !important;
+  background-image: none !important;
+  background: transparent !important;
+  -webkit-text-fill-color: inherit !important;
 }
 
-/* hover state for other buttons (if they invert on hover) */
+/* If buttons have anchors inside, ensure anchors are also not underlined */
+button a,
+.button a,
+.btn a,
+a.btn,
+a.button {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Hover states: keep clear and readable (optional: invert) */
 button:hover,
 .button:hover,
 .btn:hover,
 .btn-primary:hover,
-.btn--primary:hover {
+.btn--primary:hover,
+a.button:hover,
+a.btn:hover {
+  text-decoration: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  color: #000 !important;            /* if button background is neon green on hover */
+}
+
+/* ---------- Links (non-button) keep neon color but no glow ---------- */
+a {
+  color: #39FF14 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+a:hover {
+  text-decoration: underline; /* keep normal link underline on hover if desired */
+}
+
+/* ---------- Defensive: remove pseudo-element based glows ---------- */
+*::before,
+*::after {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  background-image: none !important;
+  content: none !important;
+}
+
+/* ---------- Very specific Explore More button (if still present) ---------- */
+.page__splash .hero__actions .btn--primary,
+.page__splash .actions .btn--primary,
+.page__splash .btn--primary {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border: 2px solid #39FF14 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Hover behaviour for Explore More */
+.page__splash .hero__actions .btn--primary:hover,
+.page__splash .actions .btn--primary:hover,
+.page__splash .btn--primary:hover {
+  background-color: #39FF14 !important;
   color: #000 !important;
+  text-decoration: none !important;
   text-shadow: none !important;
   box-shadow: none !important;
 }
 
-/* 8) Defensive: remove inline-like glows on any element in the splash area */
-.page__splash * {
+/* ---------- Keep a minimal exception: keep form inputs readable ---------- */
+input, textarea, select {
+  color: inherit !important;
+  background: transparent !important;
   text-shadow: none !important;
   box-shadow: none !important;
   filter: none !important;
-  -webkit-filter: none !important;
-  animation: none !important;
+}
+
+/* ---------- Extra defensive rule to kill CSS gradient clipping on headings ---------- */
+h1[class*="gradient"], h1[class*="neon"], .gradient-text, .text-gradient {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: inherit !important;
+  text-shadow: none !important;
 }
