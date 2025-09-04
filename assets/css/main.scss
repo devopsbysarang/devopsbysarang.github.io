@@ -4,3 +4,37 @@
   --color-text: #39FF14;
   --color-link: #39FF14;
 }
+
+---
+---
+
+/* Neon-style homepage title */
+.page__splash .splash__title {
+  font-size: 3rem;               // large, impactful
+  font-weight: 700;               // bold
+  color: #39FF14;                 // neon green
+  text-shadow: 
+    0 0 5px #39FF14, 
+    0 0 10px #39FF14, 
+    0 0 20px #39FF14, 
+    0 0 40px #39FF14;            // glowing effect
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Fira Code', monospace;
+  animation: neonPulse 2s infinite alternate;
+}
+
+/* Neon-style subtitle / excerpt */
+.page__splash .splash__subhead {
+  font-size: 1.25rem;
+  color: #39FF14;
+  text-align: center;
+  margin-top: -5px;
+  text-shadow: 0 0 5px #39FF14;
+}
+
+/* Pulse animation */
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
+  50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
+}
