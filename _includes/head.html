@@ -1,26 +1,52 @@
-<style>
-/* ================= Neon Splash Button ================= */
+<meta charset="utf-8">
 
-/* Base style for the splash button */
+{% include seo.html %}
+
+{% unless site.atom_feed.hide %}
+  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+{% endunless %}
+
+{%- comment %} https://docs.google.com/presentation/d/1rmxwWa9P6_xHqonmh5ONXRS-jPc5XKbnv99Rjkhe04s/present {% endcomment -%}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  {% if site.enable_copy_code_button -%}
+    window.enable_copy_code_button = true;
+  {%- endif %}
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+{% if site.head_scripts %}
+  {% for script in site.head_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+<!-- ===== Neon Button CSS ===== -->
+<style>
+/* Neon splash button */
 .page__splash .btn--primary {
-  color: #39FF14 !important;               /* neon text */
-  border: 2px solid #39FF14 !important;    /* neon border */
-  background: transparent !important;      /* transparent background */
-  text-shadow: 0 0 5px #39FF14;           /* subtle glow */
+  color: #39FF14 !important;
+  border: 2px solid #39FF14 !important;
+  background: transparent !important;
+  text-shadow: 0 0 5px #39FF14;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 10px #39FF14;
 }
 
-/* Hover effect */
 .page__splash .btn--primary:hover {
-  background: #39FF14 !important;          /* neon background */
-  color: #000 !important;                  /* black text for contrast */
+  background: #39FF14 !important;
+  color: #000 !important;
   box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
   text-shadow: 0 0 10px #39FF14;
-  transform: scale(1.05);                  /* subtle pop effect */
+  transform: scale(1.05);
 }
 
-/* Optional: animated neon flicker */
 @keyframes neonFlicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
