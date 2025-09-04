@@ -3,15 +3,23 @@
   color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
   background: transparent !important;
-  text-shadow: 0 0 5px #39FF14;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px #39FF14;
+  text-shadow: 0 0 5px #39FF14 !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 0 10px #39FF14 !important;
 }
 
 .page__splash .btn--primary:hover {
   background: #39FF14 !important;
   color: #000 !important;
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
-  text-shadow: 0 0 10px #39FF14;
-  transform: scale(1.05);
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
+  text-shadow: 0 0 10px #39FF14 !important;
+  transform: scale(1.05) !important;
+}
+
+/* Feature row titles and excerpts */
+.feature-row .feature__title,
+.feature-row .feature__title a,
+.feature-row .feature__excerpt {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14 !important;
 }
