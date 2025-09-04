@@ -38,3 +38,10 @@
   0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
   50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
 }
+
+
+/* Feature row excerpts - make text white */
+.feature-row .feature__excerpt {
+  color: #ffffff;           /* white text */
+  text-shadow: none;        /* remove any neon glow if present */
+}
