@@ -1,7 +1,7 @@
-<footer id="footer" class="page__footer">
-  <div class="page__footer-follow">
+<footer id="footer" class="page__footer" style="background:#1e3a8a; padding:10px 0;">
+  <div class="page__footer-follow" style="text-align:center; margin-bottom:5px;">
     {% if site.footer.links %}
-    <ul class="social-icons">
+    <ul class="social-icons" style="margin:0; padding:0; display:inline-flex; gap:15px; list-style:none;">
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
           <li>
@@ -16,7 +16,8 @@
     {% endif %}
   </div>
 
-  <div class="page__footer-copyright" style="text-align:center; margin-top:10px;">
-    © 2025 DevOps by Sarang 🚀 | All Rights Reserved
+  <div class="page__footer-copyright" style="text-align:center; font-size:14px; color:#fff;">
+    © 2025 DevOps by Sarang 🚀 | All Rights Reserved <br>
+    Developed with ❤️ by Sarang
   </div>
 </footer>
