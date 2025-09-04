@@ -27,10 +27,10 @@
 /* Neon-style subtitle / excerpt */
 .page__splash .splash__subhead {
   font-size: 1.25rem;
-  color: #39FF14;
+  color: #ffff;
   text-align: center;
   margin-top: -5px;
-  text-shadow: 0 0 5px #39FF14;
+  text-shadow: 0 0 5px #ffff;
 }
 
 /* Pulse animation */
@@ -40,42 +40,30 @@
 }
 
 
-/* Make feature row excerpts white */
-.feature-row .feature__excerpt,
-.feature-row .feature__excerpt p {
-  color: #ffffff !important;   /* force white text */
-  text-shadow: none !important;
-}
-
-
-
-/* Reduce space between splash button and feature row */
-.page__splash + .page__content {
-  margin-top: 0px;  /* default is usually 60-80px, reduce to 20px */
-  padding-top: 0;    /* remove extra padding if any */
-}
-
-/* Import the Minimal Mistakes theme */
-@import "minimal-mistakes/styles";
-
-/* Import your custom overrides */
-@import "custom/overrides";
-
-
-/* Neon button for splash */
+/* Neon splash button */
 .page__splash .btn--primary {
   color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
   background: transparent !important;
-  text-shadow: 0 0 5px #39FF14;
-  transition: 0.3s all ease-in-out;
+  text-shadow: 0 0 5px #39FF14 !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 0 10px #39FF14 !important;
 }
 
 .page__splash .btn--primary:hover {
   background: #39FF14 !important;
   color: #000 !important;
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
-  text-shadow: 0 0 10px #39FF14;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
+  text-shadow: 0 0 10px #39FF14 !important;
+  transform: scale(1.05) !important;
+}
+
+/* Feature row titles and excerpts */
+.feature-row .feature__title,
+.feature-row .feature__title a,
+.feature-row .feature__excerpt {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14 !important;
 }
 
 
