@@ -1,22 +1,5 @@
-<footer id="footer" class="page__footer" style="background:#1e3a8a; padding:10px 0;">
-  <div class="page__footer-follow" style="text-align:center; margin-bottom:5px;">
-    {% if site.footer.links %}
-    <ul class="social-icons" style="margin:0; padding:0; display:inline-flex; gap:15px; list-style:none;">
-      {% for link in site.footer.links %}
-        {% if link.label and link.url %}
-          <li>
-            <a href="{{ link.url }}" rel="nofollow noopener noreferrer" target="_blank">
-              <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>
-              {{ link.label | escape_once | strip }}
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </div>
-
-  <div class="page__footer-copyright" style="text-align:center; font-size:14px; color:#fff;">
+<footer id="footer" class="page__footer" style="background:none; padding:5px 0; border-top:none;">
+  <div style="text-align:center; font-size:14px; color:#444;">
     © 2025 DevOps by Sarang 🚀 | All Rights Reserved <br>
     Developed with ❤️ by Sarang
   </div>
