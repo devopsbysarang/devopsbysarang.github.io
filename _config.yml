@@ -5,7 +5,7 @@ description: "A blog about DevOps, Cloud, Kubernetes, and Automation"
 remote_theme: "mmistakes/minimal-mistakes"
 
 # Minimal Mistakes skin (color style)
-minimal_mistakes_skin: "fresh"
+minimal_mistakes_skin: "air"
 
 paginate: 5
 paginate_path: "/page:num/"
