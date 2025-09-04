@@ -1,36 +1,40 @@
-/* Override theme colors */
+---
+---
+
+/* ==============================
+   Root variables for neon theme
+   ============================== */
 :root {
   --color-bg: #000000;
   --color-text: #39FF14;
   --color-link: #39FF14;
 }
 
----
----
+/* ==============================
+   Import theme
+   ============================== */
+@import "{{ site.theme }}"; /* Keep your theme imports after root variables */
 
-/* Neon-style homepage title */
+/* ==============================
+   Neon-style homepage title
+   ============================== */
 .page__splash .splash__title {
-  font-size: 3rem;               // large, impactful
-  font-weight: 700;               // bold
-  color: #39FF14;                 // neon green
-  text-shadow: 
-    0 0 5px #39FF14, 
-    0 0 10px #39FF14, 
-    0 0 20px #39FF14, 
-    0 0 40px #39FF14;            // glowing effect
+  font-size: 3rem;
+  font-weight: 700;
+  color: #39FF14;
+  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
   text-align: center;
   margin-bottom: 10px;
   font-family: 'Fira Code', monospace;
   animation: neonPulse 2s infinite alternate;
 }
 
-/* Neon-style subtitle / excerpt */
 .page__splash .splash__subhead {
   font-size: 1.25rem;
-  color: #ffff;
+  color: #ffffff;
   text-align: center;
   margin-top: -5px;
-  text-shadow: 0 0 5px #ffff;
+  text-shadow: 0 0 5px #ffffff;
 }
 
 /* Pulse animation */
@@ -39,8 +43,9 @@
   50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
 }
 
-
-/* Neon splash button */
+/* ==============================
+   Neon splash buttons
+   ============================== */
 .page__splash .btn--primary {
   color: #39FF14 !important;
   border: 2px solid #39FF14 !important;
@@ -52,13 +57,15 @@
 
 .page__splash .btn--primary:hover {
   background: #39FF14 !important;
-  color: #000 !important;
+  color: #000000 !important;
   box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
   text-shadow: 0 0 10px #39FF14 !important;
   transform: scale(1.05) !important;
 }
 
-/* Feature row titles and excerpts */
+/* ==============================
+   Feature row titles and excerpts
+   ============================== */
 .feature-row .feature__title,
 .feature-row .feature__title a,
 .feature-row .feature__excerpt {
@@ -66,4 +73,17 @@
   text-shadow: 0 0 5px #39FF14 !important;
 }
 
+/* ==============================
+   General button styles
+   ============================== */
+.btn, .button {
+  color: #000000 !important;
+  border-color: #39FF14 !important;
+  background-color: #39FF14 !important;
+}
 
+.btn:hover, .button:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  transform: scale(1.05);
+}
