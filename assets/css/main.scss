@@ -1,77 +1,92 @@
-/* Override theme colors */
-:root {
-  --ifm-background-color: #000000;        /* Site background */
-  --ifm-color-primary: #39FF14;           /* Primary color (buttons, links) */
-  --ifm-color-primary-dark: #39FF14;      /* For hover states */
-  --ifm-color-primary-darker: #39FF14;    /* Additional hover shades if used */
-  --ifm-color-secondary: #ffffff;         /* For headings/subtitles you want white */
-  --ifm-font-color-base: #ffffff;         /* Default text color */
-  --ifm-link-color: #39FF14;              /* Links */
+/* === Site Background & Default Text === */
+body {
+    background-color: #000000 !important;  /* black background */
+    color: #ffffff !important;            /* default text white */
+    font-family: 'Fira Code', monospace;
 }
----
----
 
-/* Neon-style homepage title */
+/* Keep links neon green */
+a {
+    color: #39FF14 !important;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Headings Neon Effect === */
+h1, h2, h3, h4, h5, h6 {
+    color: #39FF14 !important;
+    text-shadow: 
+        0 0 5px #39FF14, 
+        0 0 10px #39FF14, 
+        0 0 20px #39FF14, 
+        0 0 40px #39FF14;
+}
+
+/* === Splash Page Neon Title === */
 .page__splash .splash__title {
-  font-size: 3rem;               // large, impactful
-  font-weight: 700;               // bold
-  color: #39FF14;                 // neon green
-  text-shadow: 
-    0 0 5px #39FF14, 
-    0 0 10px #39FF14, 
-    0 0 20px #39FF14, 
-    0 0 40px #39FF14;            // glowing effect
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: 'Fira Code', monospace;
-  animation: neonPulse 2s infinite alternate;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #39FF14;
+    text-shadow: 
+        0 0 5px #39FF14,
+        0 0 10px #39FF14,
+        0 0 20px #39FF14,
+        0 0 40px #39FF14;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Fira Code', monospace;
+    animation: neonPulse 2s infinite alternate;
 }
 
-/* Neon-style subtitle / excerpt */
 .page__splash .splash__subhead {
-  font-size: 1.25rem;
-  color: #ffff;
-  text-align: center;
-  margin-top: -5px;
-  text-shadow: 0 0 5px #ffff;
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: -5px;
+    text-shadow: 0 0 5px #ffffff;
 }
 
-/* Pulse animation */
+/* === Neon Pulse Animation === */
 @keyframes neonPulse {
-  0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
-  50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
+    0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
+    50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
 }
 
-
-/* Make Explore More button neon on black */
-:global(.page__splash .hero__actions .btn--primary),
-:global(.page__splash .actions .btn--primary) {
-  color: #39FF14 !important;
-  border: 2px solid #39FF14 !important;
-  background-color: #000 !important;
-  text-shadow: 0 0 5px #39FF14 !important;
-  box-shadow: 0 0 10px #39FF14 !important;
-  transition: all 0.3s ease-in-out !important;
+/* === Buttons === */
+.page__splash .hero__actions .btn--primary,
+.page__splash .actions .btn--primary {
+    color: #39FF14 !important;
+    border: 2px solid #39FF14 !important;
+    background-color: #000 !important;
+    text-shadow: 0 0 5px #39FF14 !important;
+    box-shadow: 0 0 10px #39FF14 !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
-:global(.page__splash .hero__actions .btn--primary:hover),
-:global(.page__splash .actions .btn--primary:hover) {
-  background-color: #000 !important;
-  color: #39FF14 !important;
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
-  text-shadow: 0 0 10px #39FF14 !important;
-  transform: scale(1.05) !important;
+.page__splash .hero__actions .btn--primary:hover,
+.page__splash .actions .btn--primary:hover {
+    background-color: #000 !important;
+    color: #39FF14 !important;
+    box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
+    text-shadow: 0 0 10px #39FF14 !important;
+    transform: scale(1.05) !important;
 }
 
-/* Feature headings like "Guides and tips for mastering microservices" */
-:global(.feature-row .feature__title),
-:global(.feature-row .feature__title a) {
-  color: #ffffff !important;
-  text-shadow: none !important;
+/* === Features Section === */
+.feature-row .feature__title,
+.feature-row .feature__title a {
+    color: #39FF14 !important;   /* neon headings */
+    text-shadow: 0 0 5px #39FF14;
 }
 
-/* Feature excerpts */
-:global(.feature-row .feature__excerpt) {
-  color: #ffffff !important;
-  text-shadow: none !important;
+.feature-row .feature__excerpt {
+    color: #ffffff !important;   /* white text */
+    text-shadow: none !important;
+}
+
+/* === Paragraphs & Lists === */
+p, li, span, div {
+    color: #ffffff !important;   /* white for all normal text */
 }
