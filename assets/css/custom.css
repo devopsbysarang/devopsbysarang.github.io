@@ -1,0 +1,16 @@
+body, p, li, span, div {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #39FF14 !important;
+  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #39FF14;
+}
+
+a {
+  color: #39FF14 !important;
+}
+a:hover {
+  text-decoration: underline;
+}
