@@ -1,92 +1,101 @@
-/* === Site Background & Default Text === */
+/* =========================
+   Base Theme Imports
+   (keep your existing imports here)
+========================= */
+@import "theme";  // keep any existing theme imports
+
+/* =========================
+   SITE-WIDE OVERRIDES
+========================= */
+
+/* --- Body and default text --- */
 body {
-    background-color: #000000 !important;  /* black background */
-    color: #ffffff !important;            /* default text white */
-    font-family: 'Fira Code', monospace;
+  background-color: #000 !important;   // black background
+  color: #ffffff !important;           // white text
+  font-family: 'Fira Code', monospace;
 }
 
-/* Keep links neon green */
+/* --- Headings Neon --- */
+h1, h2, h3, h4, h5, h6 {
+  color: #39FF14 !important;
+  text-shadow: 
+    0 0 5px #39FF14,
+    0 0 10px #39FF14,
+    0 0 20px #39FF14;
+}
+
+/* --- Paragraphs and normal text --- */
+p, li, span, div {
+  color: #ffffff !important;
+}
+
+/* --- Links Neon --- */
 a {
-    color: #39FF14 !important;
-    text-decoration: none;
+  color: #39FF14 !important;
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* === Headings Neon Effect === */
-h1, h2, h3, h4, h5, h6 {
-    color: #39FF14 !important;
-    text-shadow: 
-        0 0 5px #39FF14, 
-        0 0 10px #39FF14, 
-        0 0 20px #39FF14, 
-        0 0 40px #39FF14;
-}
-
-/* === Splash Page Neon Title === */
+/* --- Splash Page Title --- */
 .page__splash .splash__title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #39FF14;
-    text-shadow: 
-        0 0 5px #39FF14,
-        0 0 10px #39FF14,
-        0 0 20px #39FF14,
-        0 0 40px #39FF14;
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: 'Fira Code', monospace;
-    animation: neonPulse 2s infinite alternate;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #39FF14 !important;
+  text-shadow: 
+    0 0 5px #39FF14,
+    0 0 10px #39FF14,
+    0 0 20px #39FF14,
+    0 0 40px #39FF14;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Fira Code', monospace;
+  animation: neonPulse 2s infinite alternate;
 }
 
 .page__splash .splash__subhead {
-    font-size: 1.25rem;
-    color: #ffffff;
-    text-align: center;
-    margin-top: -5px;
-    text-shadow: 0 0 5px #ffffff;
+  font-size: 1.25rem;
+  color: #ffffff !important;
+  text-align: center;
+  margin-top: -5px;
+  text-shadow: 0 0 5px #ffffff;
 }
 
-/* === Neon Pulse Animation === */
-@keyframes neonPulse {
-    0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
-    50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
-}
-
-/* === Buttons === */
+/* --- Buttons --- */
 .page__splash .hero__actions .btn--primary,
 .page__splash .actions .btn--primary {
-    color: #39FF14 !important;
-    border: 2px solid #39FF14 !important;
-    background-color: #000 !important;
-    text-shadow: 0 0 5px #39FF14 !important;
-    box-shadow: 0 0 10px #39FF14 !important;
-    transition: all 0.3s ease-in-out !important;
+  color: #39FF14 !important;
+  border: 2px solid #39FF14 !important;
+  background-color: #000 !important;
+  text-shadow: 0 0 5px #39FF14 !important;
+  box-shadow: 0 0 10px #39FF14 !important;
+  transition: all 0.3s ease-in-out !important;
 }
 
 .page__splash .hero__actions .btn--primary:hover,
 .page__splash .actions .btn--primary:hover {
-    background-color: #000 !important;
-    color: #39FF14 !important;
-    box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
-    text-shadow: 0 0 10px #39FF14 !important;
-    transform: scale(1.05) !important;
+  background-color: #000 !important;
+  color: #39FF14 !important;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14 !important;
+  text-shadow: 0 0 10px #39FF14 !important;
+  transform: scale(1.05) !important;
 }
 
-/* === Features Section === */
+/* --- Features Section --- */
 .feature-row .feature__title,
 .feature-row .feature__title a {
-    color: #39FF14 !important;   /* neon headings */
-    text-shadow: 0 0 5px #39FF14;
+  color: #39FF14 !important;   // neon headings
+  text-shadow: 0 0 5px #39FF14;
 }
 
 .feature-row .feature__excerpt {
-    color: #ffffff !important;   /* white text */
-    text-shadow: none !important;
+  color: #ffffff !important;   // white text
+  text-shadow: none !important;
 }
 
-/* === Paragraphs & Lists === */
-p, li, span, div {
-    color: #ffffff !important;   /* white for all normal text */
+/* --- Neon Pulse Animation --- */
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
+  50% { text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; }
 }
