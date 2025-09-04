@@ -5,9 +5,9 @@
    Root variables for neon theme
    ============================== */
 :root {
-  --color-bg: #000000;
-  --color-text: #39FF14;
-  --color-link: #39FF14;
+  --color-bg: #000000;     /* black background */
+  --color-text: #39FF14;   /* neon green text */
+  --color-link: #39FF14;   /* neon links */
 }
 
 /* ==============================
@@ -54,7 +54,7 @@ body {
 }
 
 /* ==============================
-   Neon splash buttons
+   Splash buttons
    ============================== */
 .page__splash .btn--primary,
 .btn--primary {
@@ -120,4 +120,39 @@ a:hover, .nav__link:hover {
 .page__footer, .page__footer a {
   color: #39FF14 !important;
   text-shadow: 0 0 5px #39FF14;
+}
+
+/* ==============================
+   Header background and site title
+   ============================== */
+.site-header {
+  background-color: #000000 !important; /* black header */
+}
+
+/* Site title text (no glow) */
+.site-header .site-title,
+.site-header .site-title a {
+  color: #39FF14 !important;
+  text-shadow: none !important;
+}
+
+/* Header navigation buttons */
+.site-header .btn,
+.site-header .button,
+.site-header .btn--primary {
+  color: #39FF14 !important;
+  background-color: #000000 !important;
+  border: 2px solid #39FF14 !important;
+  text-shadow: none !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.site-header .btn:hover,
+.site-header .button:hover,
+.site-header .btn--primary:hover {
+  background-color: #39FF14 !important;
+  color: #000000 !important;
+  border-color: #39FF14 !important;
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14 !important;
+  transform: scale(1.05);
 }
