@@ -199,27 +199,6 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 
-/* Reduce space below the Explore More button */
-.page__splash .splash__actions,
-.page__splash .hero__actions,
-.page__splash .actions {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-/* Reduce top margin of the feature row (blog topics) */
-.feature-row,
-.feature-row > div {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* If header separator is adding extra space */
-.header__separator {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
 
 
 
