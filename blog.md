@@ -5,7 +5,6 @@ permalink: /blog/
 author_profile: true
 ---
 
-<h1 style="color:#39FF14; text-align:center; margin-bottom:2rem;">Welcome to my Blog ✍️</h1>
 <p style="color:#fff; text-align:center; margin-bottom:3rem;">
   Here you’ll find all my posts on <strong>DevOps, Kubernetes, AWS, and Automation</strong>.
 </p>
