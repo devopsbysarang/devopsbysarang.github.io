@@ -13,7 +13,7 @@ permalink: /about/
 
   <!-- Bio -->
   <div class="about-bio" style="flex:2 1 500px;">
-    <h2 style="color:#39FF14;">Sarang Deshmukh</h2>
+  <h2 class="about__title" style="color:#39FF14;">Sarang Deshmukh</h2>
     <p>
       I am a DevOps Engineer with over 5 years of experience designing, deploying, and optimizing infrastructure and CI/CD pipelines for enterprise-grade applications. My work spans multiple continents, collaborating with global teams to deliver high-availability, scalable solutions that drive efficiency and reliability.
     </p>
