@@ -1,8 +1,101 @@
 ---
-layout: home
+layout: defualt
 title: "Blog"
 permalink: /blog/
 author_profile: true
 ---
 
-Welcome to my blog! ✍️ Here you’ll find all my posts on **DevOps, Kubernetes, AWS, and Automation**.
+<h1 style="color:#39FF14; text-align:center; margin-bottom:2rem;">Welcome to my Blog ✍️</h1>
+<p style="color:#fff; text-align:center; margin-bottom:3rem;">
+  Here you’ll find all my posts on <strong>DevOps, Kubernetes, AWS, and Automation</strong>.
+</p>
+
+<div class="blog-grid">
+  {% for post in site.posts %}
+    <div class="blog-card">
+      <!-- Optional: Featured image or placeholder -->
+      <div class="blog-image"></div>
+
+      <div class="blog-content">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="blog-meta">
+          <time datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time> • {{ post.author }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+body {
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.blog-card {
+  background-color: #111;
+  border: 2px solid #39FF14;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #39FF14;
+}
+
+.blog-image {
+  height: 150px;
+  background: #222;
+}
+
+.blog-content {
+  padding: 1rem;
+}
+
+.blog-card h3 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: #39FF14;
+  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
+}
+
+.blog-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+@media (max-width: 700px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1.1rem;
+  }
+}
+</style>
