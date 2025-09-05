@@ -14,7 +14,6 @@ permalink: /about/
   <!-- Bio -->
   <div class="about-bio">
     <h2>Sarang Deshmukh</h2>
-    <h3>DevOps Engineer & Cloud Enthusiast</h3>
     <p>
       I am a passionate DevOps engineer with over 5 years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I thrive on designing automated and intelligent workflows, optimizing deployment pipelines, and creating systems that are robust and future-proof.
     </p>
@@ -115,7 +114,7 @@ permalink: /about/
   }
 
   .about-photo {
-    flex: 0 0 150px;
+    flex: 0 0 120px;
     margin-bottom: 1.5rem;
   }
 
