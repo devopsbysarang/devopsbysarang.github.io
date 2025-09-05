@@ -20,7 +20,12 @@
     {% include_cached masthead.html %}
 
     <div class="initial-content">
-      {{ content }}
+      {%- comment -%}
+        Render page content only if hide_content is NOT true in front matter
+      {%- endcomment -%}
+      {% unless page.hide_content %}
+        {{ content }}
+      {% endunless %}
       {% include after-content.html %}
     </div>
 
