@@ -3,7 +3,7 @@ name: "Sarang"
 description: "A blog about DevOps, Cloud, Kubernetes, and Automation"
 
 remote_theme: "mmistakes/minimal-mistakes"
-
+logo: /assets/images/logo.svg
 # Minimal Mistakes skin (color style)
 minimal_mistakes_skin: "sarang"
 
