@@ -130,3 +130,8 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 .page__footer {
     margin-top: -5px;           /* adjust number to your liking */
 }
+
+
+.author {
+    display: none !important;
+}
