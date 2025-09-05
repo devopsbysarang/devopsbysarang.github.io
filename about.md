@@ -17,4 +17,37 @@ permalink: /about/
     <h2 class="about__title" style="color:#39FF14; margin-top:0;">Sarang Deshmukh</h2>
     
     <p>
-      I am a DevOps engineer with over 5 years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I focus on designing automated and intelligent workflows, optimizing deployment pipelines, and creating systems that are rob
+      I am a DevOps engineer with over 5 years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I focus on designing automated and intelligent workflows, optimizing deployment pipelines, and creating systems that are robust and future-proof.
+    </p>
+  
+    <p>
+      Beyond day-to-day infrastructure, I enjoy taking on challenges that allow me to explore new technologies and innovate. I thrive on solving complex problems, improving operational efficiency, and mentoring teams to adopt best practices in DevOps.
+    </p>
+  
+    <p>
+      This website was created as a platform to showcase my projects, share insights, and challenge myself with new technologies. It serves as a space where I can consistently learn, experiment, and document my journey across different cloud, DevOps, and automation tools. By sharing my work here, I aim to inspire others while also keeping myself accountable to continuous growth.
+    </p>
+  
+    <p>
+      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" style="color:#39FF14; text-decoration:none; font-weight:bold;">Connect with me on LinkedIn</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- Responsive fix -->
+<style>
+@media (max-width: 700px) {
+  .about-page {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-bio {
+    flex: 1 1 100%;
+  }
+  .about-photo {
+    flex: 1 1 100%;
+    max-width: 300px;
+  }
+}
+</style>
