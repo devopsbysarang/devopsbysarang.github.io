@@ -200,20 +200,20 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 
 @media (max-width: 700px) {
   .about-page {
-    flex-direction: row; /* keep row on mobile */
-    align-items: flex-start; /* top align items */
+    flex-direction: row;       /* keep image and text side by side */
+    align-items: flex-start;   /* top align */
     justify-content: flex-start; /* left align everything */
-    gap: 1rem; /* spacing between image and text */
-    flex-wrap: wrap; /* allow wrapping if screen is too small */
+    gap: 1rem;                 /* space between photo and text */
+    flex-wrap: wrap;           /* allow wrapping if needed */
   }
 
   .about-photo {
-    flex: 0 0 120px; /* fixed width for photo */
+    flex: 0 0 120px;           /* fixed photo width */
     max-width: 120px;
   }
 
   .about-bio {
-    flex: 1 1 auto; /* text takes remaining width */
+    flex: 1 1 auto;            /* text fills remaining width */
     text-align: left;
   }
 
@@ -221,10 +221,11 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
     display: block;
     width: 100%;
     height: auto;
-    box-shadow: 0 0 15px #39FF14; /* glow */
-    margin: 0; /* remove any default margin */
+    box-shadow: 0 0 15px #39FF14;
+    margin: 0;                 /* remove any margin */
   }
 }
+
 
 
 
