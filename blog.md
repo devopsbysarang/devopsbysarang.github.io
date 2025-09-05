@@ -2,6 +2,7 @@
 layout: home
 permalink: /blog/
 hide_recent_posts: true
+hide_content: true
 author_profile: true
 ---
 
