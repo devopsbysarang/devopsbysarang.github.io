@@ -1,6 +1,5 @@
 ---
 layout: home
-title: "DevOps in Action: Case Studies"
 permalink: /devops-case-studies/
 author_profile: true
 category: case-studies
