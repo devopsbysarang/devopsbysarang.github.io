@@ -21,14 +21,6 @@ permalink: /about/
     </p>
 
     <p>
-      Beyond day-to-day infrastructure, I enjoy taking on challenges that allow me to explore new technologies and innovate. I thrive on solving complex problems, improving operational efficiency, and mentoring teams to adopt best practices in DevOps.
-    </p>
-
-    <p>
-      My work goes beyond just infrastructure — I actively contribute to innovation by exploring AI and automation solutions to streamline processes. I have led initiatives to integrate monitoring and observability across complex systems, automate critical workflows, and optimize deployment pipelines. I enjoy tackling challenging problems, improving operational efficiency, and mentoring teams to embrace mature DevOps practices.
-    </p>
-
-    <p>
       This website was created as a platform to showcase my projects, share insights, and challenge myself with new technologies. It serves as a space where I can consistently learn, experiment, and document my journey across different cloud, DevOps, and automation tools. By sharing my work here, I aim to inspire others while also keeping myself accountable to continuous growth.
     </p>
 
