@@ -208,6 +208,9 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 
 
 
+.recent-posts, .entries-list, .entries-grid {
+  display: none !important;
+}
 
 
 
