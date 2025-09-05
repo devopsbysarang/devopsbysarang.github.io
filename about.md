@@ -1,27 +1,27 @@
 ---
-layout: page
+layout: default
 title: "About Me"
 permalink: /about/
 ---
 
-<div class="about-page" style="display:flex; flex-wrap:wrap; align-items:center; gap:2rem; padding:2rem 0;">
+<div class="page__splash" style="background-color:#000; color:#39FF14; padding:2rem; display:flex; flex-wrap:wrap; align-items:center; gap:2rem;">
 
   <!-- Photo -->
   <div class="about-photo" style="flex:1 1 200px; max-width:250px;">
-    <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+    <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh" style="width:100%; border-radius:12px; box-shadow:0 0 12px #39FF14;">
   </div>
 
   <!-- Bio -->
   <div class="about-bio" style="flex:2 1 500px;">
-    <h1>Sarang Deshmukh</h1>
-    <h3>DevOps Engineer</h3>
+    <h1 style="color:#39FF14;">Sarang Deshmukh</h1>
+    <h3 style="color:#39FF14;">DevOps Engineer</h3>
 
     <p>
-      I am a DevOps Engineer with over 4.5 years of experience designing, deploying, and optimizing infrastructure and CI/CD pipelines for enterprise-grade applications. My work spans multiple continents, collaborating with global teams to deliver high-availability, scalable solutions that drive efficiency and reliability.
+      I am a DevOps Engineer with over 5 years of experience designing, deploying, and optimizing infrastructure and CI/CD pipelines for enterprise-grade applications. My work spans multiple continents, collaborating with global teams to deliver high-availability, scalable solutions that drive efficiency and reliability.
     </p>
 
     <p>
-      I have successfully implemented multi-regional, active-active deployments for critical projects, providing seamless user experiences across geographies. From configuring Kubernetes clusters with Rancher and AWS EKS to automating deployment pipelines with Jenkins, Docker, and Ansible, I focus on delivering robust and maintainable systems. I am passionate about security and reliability, enforcing IAM best practices, integrating ELB with auto-scaling, and establishing hybrid cloud connectivity to ensure business continuity.
+      I have successfully implemented multi-regional, active-active deployments for critical projects, providing seamless user experiences across geographies. From orchestrating containerized environments to automating deployment pipelines and streamlining operations, I focus on delivering robust, maintainable, and scalable systems. I ensure reliability and security by implementing best practices, monitoring, and operational automation.
     </p>
 
     <p>
@@ -29,7 +29,7 @@ permalink: /about/
     </p>
 
     <p>
-      I enjoy taking on challenging projects that require both technical expertise and strategic thinking. I aim to create systems that are not only functional but elegant, scalable, and future-proof. My goal is to continue building resilient, efficient, and automated infrastructure while staying at the forefront of cloud and DevOps technologies.
+      I enjoy taking on challenging projects that require both technical expertise and strategic thinking. My goal is to create systems that are not only functional but elegant, scalable, and future-proof.
     </p>
 
     <p>
