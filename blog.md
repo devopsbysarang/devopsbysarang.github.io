@@ -1,5 +1,5 @@
 ---
-layout: defualt
+layout: home
 title: "Blog"
 permalink: /blog/
 author_profile: true
@@ -29,14 +29,6 @@ author_profile: true
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
 
-body {
-  background-color: #000;
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -46,7 +38,7 @@ body {
 
 .blog-card {
   background-color: #111;
-  border: 2px solid #39FF14;
+  border: 2px solid #39FF14; /* subtle accent */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -54,7 +46,7 @@ body {
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px #39FF14;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5); /* subtle hover glow */
 }
 
 .blog-image {
@@ -71,7 +63,7 @@ body {
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
   color: #39FF14;
-  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
+  text-shadow: none; /* removed glow */
 }
 
 .blog-card h3 a {
