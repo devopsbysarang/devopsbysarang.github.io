@@ -11,8 +11,14 @@ author_profile: true
 <div class="blog-grid">
   {% for post in site.posts %}
     <div class="blog-card">
-      <!-- Optional: Featured image or placeholder -->
-      <div class="blog-image"></div>
+      <!-- Featured image or default -->
+      <div class="blog-image" style="
+        background-image: url('{{ post.featured-image | default: '/assets/images/default-blog.jpg' }}');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 180px;
+      "></div>
 
       <div class="blog-content">
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -36,7 +42,7 @@ author_profile: true
 
 .blog-card {
   background-color: #111;
-  border: 2px solid #39FF14; /* subtle accent */
+  border: 2px solid #39FF14; /* subtle neon accent */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -44,12 +50,15 @@ author_profile: true
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5); /* subtle hover glow */
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3); /* subtle hover effect */
 }
 
 .blog-image {
-  height: 150px;
-  background: #222;
+  width: 100%;
+  height: 180px;
+  background-color: #222; /* fallback color */
+  background-size: cover;
+  background-position: center;
 }
 
 .blog-content {
@@ -61,7 +70,7 @@ author_profile: true
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
   color: #39FF14;
-  text-shadow: none; /* removed glow */
+  text-shadow: none;
 }
 
 .blog-card h3 a {
@@ -86,6 +95,10 @@ author_profile: true
 
   .blog-card h3 {
     font-size: 1.1rem;
+  }
+
+  .blog-image {
+    height: 140px;
   }
 }
 </style>
