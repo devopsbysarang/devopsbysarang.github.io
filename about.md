@@ -6,11 +6,22 @@ permalink: /about/
 
 <div class="page__splash about-page" style="background-color:#000; color:#fff; padding:2rem; display:flex; flex-wrap:wrap; align-items:center; gap:2rem; justify-content:center;">
 
-  <!-- Photo with neon glow -->
-  <div class="about-photo" style="flex:1 1 200px; max-width:250px;">
-    <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh" 
-         style="width:100%; border-radius:12px; box-shadow: 0 0 20px #39FF14;">
-  </div>
+<!-- Photo with neon glow and pulse -->
+<div class="about-photo" style="max-width:250px; width:100%; margin:0 auto;">
+  <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh" 
+       style="width:100%; border-radius:12px; box-shadow: 0 0 20px #39FF14; animation: neon-pulse 2s infinite alternate;">
+</div>
+
+<style>
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 15px #39FF14, 0 0 30px #39FF14, 0 0 45px #39FF14;
+  }
+  100% {
+    box-shadow: 0 0 25px #39FF14, 0 0 50px #39FF14, 0 0 75px #39FF14;
+  }
+}
+</style>
 
   <!-- Heading + Bio -->
   <div class="about-bio" style="flex:2 1 500px; max-width:600px;">
