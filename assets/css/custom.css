@@ -109,3 +109,24 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
   -webkit-filter: none !important;
   animation: none !important;
 }
+
+/* Footer spacing fix */
+.page__footer,
+.page__footer > div,
+.page__footer nav,
+.page__footer div {
+    margin: 0 !important;       /* remove all margins */
+    padding: 0 !important;      /* remove all padding */
+}
+
+/* Remove bottom space from the content above footer */
+.page__content,
+.page__content:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Optional: move footer slightly up if needed */
+.page__footer {
+    margin-top: -5px;           /* adjust number to your liking */
+}
