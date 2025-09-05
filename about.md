@@ -37,15 +37,17 @@ permalink: /about/
 @media (max-width: 700px) {
   .about-page {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* left align everything */
   }
   .about-photo, .about-bio {
     flex: 1 1 100%;
     max-width: 300px;
-    text-align: center;
+    text-align: left; /* text left-aligned */
   }
   .about-photo img {
     box-shadow: 0 0 15px #39FF14; /* Slightly smaller glow on mobile */
+    margin-left: 0; /* ensure image aligns left */
   }
 }
 </style>
+
