@@ -199,7 +199,9 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 
-
+.header__separator {
+    margin-bottom: 0px; /* reduce space, or set to 0 */
+}
 
 
 
