@@ -92,7 +92,9 @@ permalink: /about/
   }
 
   .about-photo {
-    flex: 0 0 150px;
+    flex: 0 0 auto;  /* remove fixed size */
+    width: 100%;     /* full width */
+    max-width: 300px; /* optional max width */
     margin-bottom: 1.5rem;
   }
 
