@@ -199,9 +199,21 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 
-.header__separator {
-    margin-bottom: 0px; /* reduce space, or set to 0 */
+/* Reduce space below Explore More button */
+.page__splash .actions {
+    margin-bottom: 20px !important; /* default is likely 60-80px, adjust as needed */
 }
+
+/* Reduce top margin of feature row / blog topics */
+.feature-row {
+    margin-top: 20px !important; /* default is likely 50-80px, adjust as needed */
+}
+
+/* If header separator adds extra space, reduce it */
+.header__separator {
+    margin-bottom: 10px !important; /* or set to 0 */
+}
+
 
 
 
