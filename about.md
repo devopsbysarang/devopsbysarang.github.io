@@ -110,7 +110,6 @@ permalink: /about/
   .about-page {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .about-photo {
@@ -120,6 +119,8 @@ permalink: /about/
 
   .about-bio {
     flex: 1 1 auto;
+    text-align: left;  /* <-- optional to enforce left */
+
   }
 }
 </style>
