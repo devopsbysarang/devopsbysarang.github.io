@@ -5,8 +5,8 @@ permalink: /blog/
 author_profile: true
 ---
 
-<p style="color:#fff; text-align:center; margin-bottom:3rem;">
-  Here you’ll find all my posts on <strong>DevOps, Kubernetes, AWS, and Automation</strong>.
+<p style="color:#fff; text-align:center; margin-bottom:1rem;">
+  Here you’ll find all my posts on <strong>DevOps, Kubernetes, Cloud, and Automation</strong>.
 </p>
 
 <div class="blog-grid">
