@@ -135,3 +135,7 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 .author {
     display: none !important;
 }
+
+.about__title {
+    margin-top: 0;
+}
