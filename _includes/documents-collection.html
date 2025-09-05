@@ -1,11 +1,13 @@
 {%- comment -%}
-  Simplified documents-collection.html
-  - Loops through all entries passed from the page
-  - No conditions, no "Coming Soon" placeholders
+  Clean documents-collection.html
+  - Only renders entries if hide_recent_posts is not true
+  - Loops through entries passed from the page
+  - No placeholders, no "Coming Soon"
 {%- endcomment -%}
 
-{% assign entries = include.entries %}
-
-{%- for post in entries -%}
-  {% include archive-single.html type=include.type %}
-{%- endfor -%}
+{% unless include.hide_recent_posts %}
+  {% assign entries = include.entries %}
+  {% for post in entries %}
+    {% include archive-single.html type=include.type %}
+  {% endfor %}
+{% endunless %}
