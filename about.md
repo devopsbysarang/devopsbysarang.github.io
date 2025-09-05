@@ -14,21 +14,24 @@ permalink: /about/
   <!-- Bio -->
   <div class="about-bio" style="flex:2 1 500px;">
   <h2 class="about__title" style="color:#39FF14;">Sarang Deshmukh</h2>
+  <div class="page__content" style="max-width:800px; margin:auto; padding:2rem; color:#39FF14; background:#000; border-radius:12px; box-shadow:0 0 20px #39FF14;">
+    
+  <h2 style="color:#39FF14; margin-top:0;">Sarang Deshmukh</h2>
+    
     <p>
-      I am a DevOps Engineer with over 5 years of experience designing, deploying, and optimizing infrastructure and CI/CD pipelines for enterprise-grade applications. My work spans multiple continents, collaborating with global teams to deliver high-availability, scalable solutions that drive efficiency and reliability.
+      I am a DevOps engineer with over 5 years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I focus on designing automated and intelligent workflows, optimizing deployment pipelines, and creating systems that are robust and future-proof.
     </p>
+  
+    <p>
+      Beyond day-to-day infrastructure, I enjoy taking on challenges that allow me to explore new technologies and innovate. I thrive on solving complex problems, improving operational efficiency, and mentoring teams to adopt best practices in DevOps.
+    </p>
+  
+    <p>
+      This website was created as a platform to showcase my projects, share insights, and challenge myself with new technologies. It serves as a space where I can consistently learn, experiment, and document my journey across different cloud, DevOps, and automation tools. By sharing my work here, I aim to inspire others while also keeping myself accountable to continuous growth.
+    </p>
+  
+  </div>
 
-    <p>
-      I have successfully implemented multi-regional, active-active deployments for critical projects, providing seamless user experiences across geographies. From orchestrating containerized environments to automating deployment pipelines and streamlining operations, I focus on delivering robust, maintainable, and scalable systems. I ensure reliability and security by implementing best practices, monitoring, and operational automation.
-    </p>
-
-    <p>
-      Beyond infrastructure, I drive innovation by implementing advanced automation and intelligent workflows to streamline operations. I have designed and managed monitoring and observability across complex systems, automated critical processes, and optimized deployment pipelines. I thrive on tackling challenging problems, enhancing operational efficiency, and mentoring teams to adopt mature DevOps practices.
-    </p>
-
-    <p>
-      I enjoy taking on challenging projects that require both technical expertise and strategic thinking. My goal is to create systems that are not only functional but elegant, scalable, and future-proof.
-    </p>
 
     <p>
       <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" style="color:#39FF14; text-decoration:none; font-weight:bold;">Connect with me on LinkedIn</a>
