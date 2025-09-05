@@ -4,7 +4,8 @@ title: "About Me"
 permalink: /about/
 ---
 
-<div class="page__splash about-page" style="background-color:#000; color:#fff; padding:2rem; display:flex; flex-wrap:wrap; align-items:center;">
+<div class="page__splash about-page" style="background-color:#000; color:#fff; padding:2rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:center;">
+
 
   <!-- Photo with neon glow -->
   <div class="about-photo" style="max-width:250px; width:100%;">
@@ -47,17 +48,29 @@ permalink: /about/
 <style>
 @media (max-width: 700px) {
   .about-page {
-    flex-direction: column;
-    align-items: flex-start; /* left align everything */
+    flex-direction: row !important;       /* keep row on mobile */
+    align-items: flex-start !important;   /* top align */
+    justify-content: flex-start !important; /* left align items */
+    gap: 1rem !important;                 /* spacing between image and text */
+    flex-wrap: nowrap !important;         /* prevent stacking under image */
   }
-  .about-photo, .about-bio {
-    flex: 1 1 100%;
-    max-width: 300px;
-    text-align: left; /* text left-aligned */
+
+  .about-photo {
+    flex: 0 0 100px !important;           /* fixed width photo on mobile */
+    max-width: 100px !important;
   }
+
+  .about-bio {
+    flex: 1 1 auto !important;            /* text fills remaining space */
+    text-align: left !important;
+  }
+
   .about-photo img {
-    box-shadow: 0 0 15px #39FF14; /* Slightly smaller glow on mobile */
-    margin-left: 0; /* ensure image aligns left */
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: 0 0 15px #39FF14 !important;
+    margin: 0 !important;
   }
 }
 </style>
