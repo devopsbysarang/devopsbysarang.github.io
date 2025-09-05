@@ -4,7 +4,7 @@ title: "About Me"
 permalink: /about/
 ---
 
-<div class="page__splash about-page" style="background-color:#000; color:#fff; padding:2rem; display:flex; flex-wrap:wrap; align-items:center; gap:2rem; justify-content:center;">
+<div class="page__splash about-page" style="background-color:#000; color:#fff; padding:2rem; display:flex; flex-wrap:wrap; align-items:center;">
 
   <!-- Photo with neon glow -->
   <div class="about-photo" style="max-width:250px; width:100%;">
