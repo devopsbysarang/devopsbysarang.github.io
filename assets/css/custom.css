@@ -139,3 +139,62 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 .about__title {
     margin-top: 0;
 }
+
+/* Contact Page Box */
+.contact-box {
+    background-color: #000;
+    color: #39FF14;
+    padding: 2rem;
+    max-width: 90%;
+    margin: 3rem auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #39FF14;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.contact-buttons a {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #39FF14;
+    border-radius: 8px;
+    color: #39FF14;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-buttons a:hover {
+    box-shadow: 0 0 10px #39FF14;
+}
+
+/* Neon Line */
+.neon-line {
+    height: 3px;
+    background: #39FF14;
+    margin: 2rem auto;
+    width: 80%;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #39FF14;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    .contact-box {
+        padding: 1.5rem;
+    }
+
+    .contact-buttons a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
