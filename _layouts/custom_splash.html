@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% assign header = page.header %}
+{% assign title = page.title | default: site.title %}
+
+{% if header.overlay_color or header.overlay_image or header.overlay_video %}
+  <header class="page__header{% if header.overlay_image or header.overlay_color or header.overlay_video %} overlay{% endif %}"
+    {% if header.overlay_color %}style="background-color: {{ header.overlay_color }}"{% endif %}
+  >
+
+    <div class="wrapper">
+      <!-- 👇👇 Custom greeting added here -->
+      <p style="color:#64ffda; font-family:monospace; font-size:1.25rem; margin-bottom:0;">
+        Hello, my name is
+      </p>
+
+      {% if page.title %}
+        <h1 class="page__title">{{ page.title }}</h1>
+      {% endif %}
+
+      {% if page.excerpt %}
+        <p class="page__lead">{{ page.excerpt | markdownify }}</p>
+      {% endif %}
+
+      {% if header.actions %}
+        <p>
+          {% for action in header.actions %}
+            <a href="{{ action.url }}" class="btn{% if action.btn_class %} {{ action.btn_class }}{% endif %}">
+              {{ action.label }}
+            </a>
+          {% endfor %}
+        </p>
+      {% endif %}
+    </div>
+  </header>
+{% endif %}
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="wrapper">
+    {{ content }}
+  </div>
+</main>
