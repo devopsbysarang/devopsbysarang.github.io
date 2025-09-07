@@ -282,3 +282,13 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 
+
+.page__header p {
+  margin-top: 0;
+}
+
+.page__header p:first-of-type {
+  color: #64ffda;
+  font-family: monospace;
+  font-size: 1.25rem;
+}
