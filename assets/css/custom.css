@@ -259,3 +259,46 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 .recent-posts, .entries-list, .entries-grid {
   display: none !important;
 }
+
+/* ----- Consistent Header + Footer Styling ----- */
+
+/* Header background */
+.site-header,
+.masthead,
+.nav,
+.navbar,
+.page__footer {
+  background-color: #0a192f !important;   /* navy */
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Header links */
+.site-header a,
+.masthead a,
+.nav a,
+.navbar a {
+  color: #64ffda !important;   /* teal */
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+.site-header a:hover,
+.masthead a:hover,
+.nav a:hover,
+.navbar a:hover {
+  color: #ffffff !important;   /* white on hover */
+}
+
+/* Footer text */
+.page__footer,
+.page__footer p,
+.page__footer a {
+  color: #ccd6f6 !important;   /* light gray text */
+  background-color: #0a192f !important;
+  text-align: center !important;
+}
+
+.page__footer a:hover {
+  color: #64ffda !important;   /* teal hover */
+}
