@@ -64,6 +64,7 @@ author_profile: true
 
 .blog-content {
   padding: 1rem;
+  background-color: #0A192F;
 }
 
 .blog-card h3 {
