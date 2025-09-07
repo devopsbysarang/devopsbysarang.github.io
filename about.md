@@ -38,7 +38,7 @@ permalink: /about/
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: #64FFDA; /* solid cyan background */
+  background: #0A192F; /* updated background color */
   color: #000; /* changed text color to black for readability */
   /* Setting base font */
   font-family: 'Roboto', sans-serif;
