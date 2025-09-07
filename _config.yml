@@ -12,7 +12,6 @@ paginate_path: "/page:num/"
 
 # Navigation bar
 header_pages:
-  - about.md
   - blog.md
   - contact.md
 sass:
