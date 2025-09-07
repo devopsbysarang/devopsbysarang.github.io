@@ -281,3 +281,17 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
     display: none !important;
 }
 
+/* Reduce bottom spacing of hero/splash */
+.page__hero,
+.page__splash {
+  margin-bottom: 2rem !important;   /* Reduce from default (usually ~5rem) */
+  padding-bottom: 1rem !important;
+}
+
+/* Optional: reduce top margin of next block */
+.feature__wrapper,
+.entries,
+.archive {
+  margin-top: 1rem !important;
+  padding-top: 0 !important;
+}
