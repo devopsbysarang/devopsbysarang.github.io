@@ -1,5 +1,7 @@
 /* _sass/custom/_overrides.scss */
 
+/* ===== Splash and Feature Row Tweaks ===== */
+
 /* Reduce space between splash and feature row */
 .page__splash + .page__content {
   margin-top: 10px !important;
@@ -13,9 +15,30 @@
   text-shadow: none !important;
 }
 
-/* Feature row titles neon green */
+/* Feature row titles match theme accent (light teal/greenish) */
 .page__content .feature-row .feature__title,
 .page__content .feature-row .feature__title a {
-  color: #39FF14 !important;
-  text-shadow: 0 0 5px #39FF14 !important;
+  color: #64ffda !important;
+  text-shadow: none !important;
+}
+
+/* ===== Masthead (site header / nav) ===== */
+.masthead,
+.site-header {
+  background-color: #0A192F !important;
+  border-bottom: none !important;
+}
+
+.masthead__menu-item a,
+.site-nav a {
+  color: #ffffff !important;       /* white text */
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.masthead__menu-item a:hover,
+.site-nav a:hover {
+  color: #64ffda !important;       /* accent on hover */
+  text-decoration: none !important;
+  border-bottom: none !important;  /* remove underline */
 }
