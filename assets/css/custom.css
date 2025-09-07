@@ -288,13 +288,22 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 
-button.greedy-nav__toggle.close:hover,
-button.greedy-nav__toggle.close:focus {
+
+button.greedy-nav__toggle {
   box-shadow: none !important;
+  filter: none !important;
   outline: none !important;
-  background: none !important;
 }
 
-button.greedy-nav__toggle.close .navicon span {
-  background-color: #64ffda !important;
+button.greedy-nav__toggle:hover,
+button.greedy-nav__toggle:focus {
+  box-shadow: none !important;
+  filter: none !important;
+  outline: none !important;
+}
+
+button.greedy-nav__toggle .navicon,
+button.greedy-nav__toggle .navicon::before,
+button.greedy-nav__toggle .navicon::after {
+  background-color: #33fff0 !important; /* Your cyan color */
 }
