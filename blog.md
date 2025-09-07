@@ -57,7 +57,7 @@ author_profile: true
 .blog-image {
   width: 100%;
   height: 180px;
-  background-color: #222; /* fallback color */
+  background-color: #0A192F; /* fallback color */
   background-size: cover;
   background-position: center;
 }
