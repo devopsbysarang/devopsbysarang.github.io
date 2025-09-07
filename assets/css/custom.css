@@ -302,8 +302,32 @@ button.greedy-nav__toggle:focus {
   outline: none !important;
 }
 
-button.greedy-nav__toggle .navicon,
+
+button.greedy-nav__toggle .navicon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent !important;
+  /* Hide original lines */
+  background-color: transparent !important;
+}
+
 button.greedy-nav__toggle .navicon::before,
 button.greedy-nav__toggle .navicon::after {
-  background-color: #33fff0 !important; /* Your cyan color */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 3px;  /* thickness of the cross lines */
+  background-color: #33fff0 !important;  /* cyan color */
+  transform-origin: center;
+}
+
+button.greedy-nav__toggle .navicon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+button.greedy-nav__toggle .navicon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
