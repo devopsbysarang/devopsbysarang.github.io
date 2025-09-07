@@ -214,3 +214,7 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 
 
 
+/* Site background override */
+body {
+  background-color: #0A192F !important;
+}
