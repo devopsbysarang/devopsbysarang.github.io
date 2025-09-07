@@ -1,3 +1,29 @@
+/* ---------- Site Background ---------- */
+body {
+  background-color: #0a192f !important;  /* Dark navy background */
+  color: #ffffff !important;             /* Default text color */
+}
+
+/* ---------- Header / Navbar ---------- */
+header, .navbar, .site-header, .page__header, .site-nav {
+  background-color: #0a192f !important;  /* Match body background */
+  color: #ccd6f6 !important;            /* Light text */
+}
+
+/* Navbar links */
+.navbar a, header a, .site-header a, .site-nav a {
+  color: #64ffda !important;             /* Green accent */
+  text-decoration: none !important;
+}
+
+.navbar a:hover, header a:hover, .site-header a:hover, .site-nav a:hover {
+  color: #e6f1ff !important;            /* White on hover */
+  text-decoration: none !important;
+}
+
+/* -------------------- */
+
+
 /* ---------- Links: white text, neon highlight on hover ---------- */
 a, a:link, a:visited {
   color: #ffffff !important;
@@ -234,4 +260,8 @@ body,
 .page__footer,
 .site-footer {
   color: #ffffff !important;
+}
+
+header, .navbar, .site-header, .page__header, .site-nav {
+  background-color: #0a192f !important;
 }
