@@ -43,7 +43,7 @@ author_profile: true
 
 .blog-card {
   background-color: #111;
-  border: 2px solid #39FF14; /* subtle neon accent */
+  border: 2px solid #64FFDA; /* subtle neon accent */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -70,7 +70,7 @@ author_profile: true
   font-family: 'Rubik', sans-serif;
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
-  color: #39FF14;
+  color: #64FFDA;
   text-shadow: none;
 }
 
