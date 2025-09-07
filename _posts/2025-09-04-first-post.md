@@ -10,8 +10,7 @@ featured-image: "/assets/images/blog1.png"
 
 Welcome to **DevOps by Sarang** 🚀  
 
-Blogs will be coming soon. I’ll be writing about: Take a moment to look over the configuration file included with the theme. Comments have been added to provide examples and default values for most settings. Detailed explanations of each can be found below.
-
+Blogs will be coming soon. I’ll be writing about: 
 - Kubernetes
 - Cloud Platforms
 - Terraform
