@@ -284,3 +284,11 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 
 
 
+/* ---------- Cyan Title for Blog Cards ---------- */
+.feature__item h2,
+.feature__item .archive__item-title,
+.grid__item h2,
+.grid__item .archive__item-title,
+.page__content .archive__item-title {
+  color: #64ffda !important;
+}
