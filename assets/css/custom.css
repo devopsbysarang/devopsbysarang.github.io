@@ -1,89 +1,41 @@
-/* Background + font */
-body {
-  background-color: #0a192f; /* Dark navy */
-  color: #ccd6f6; /* Light grey text */
-  font-family: 'Inter', 'Roboto', sans-serif;
-  line-height: 1.6;
-}
-
-/* Headings */
-h1, h2, h3, h4 {
-  color: #ffffff;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-/* Hero section */
-.hero {
-  padding: 100px 20px;
-  text-align: left;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #8892b0; /* greyish blue */
-}
-
-/* Accent text (like your green) */
-.accent {
-  color: #64ffda; /* Neon teal */
-  font-weight: bold;
-}
-
-/* Links */
-a {
-  color: #64ffda;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ffffff;
-}
-
-
-/* ---------- Links: white text, neon highlight on hover ---------- */
+/* ---------- Links: white text, teal highlight on hover ---------- */
 a, a:link, a:visited {
   color: #ffffff !important;
   text-decoration: none !important;
 }
 a:hover, a:focus, a:active {
-  color: #39FF14 !important;
+  color: #64ffda !important;   /* teal accent */
   text-decoration: none !important;
   outline: none !important;
 }
 
-/* ---------- Headings: neon green color ---------- */
+/* ---------- Headings: white with soft gray fallback ---------- */
 h1, h2, h3, h4, h5, h6 {
-  color: #39FF14 !important;
+  color: #ffffff !important;
   text-shadow: none !important;
-  -webkit-text-fill-color: #39FF14 !important;
+  -webkit-text-fill-color: #ffffff !important;
   background-image: none !important;
   -webkit-background-clip: initial !important;
 }
 
-/* ---------- Site Title / Logo: Neon Green ---------- */
+/* ---------- Site Title / Logo: Teal Accent ---------- */
 .site-title, 
 .site-title a,
 .page__splash .splash__title,
 .page__splash .splash__title * {
-  color: #39FF14 !important;       /* neon green */
+  color: #64ffda !important;     /* teal accent */
   text-shadow: none !important;
-  -webkit-text-fill-color: #39FF14 !important;
+  -webkit-text-fill-color: #64ffda !important;
   background-image: none !important;
 }
 
-/* ---------- Default text: white on dark background ---------- */
+/* ---------- Default text: light gray on dark blue background ---------- */
 body, p, span, div {
-  color: #ffffff !important;
+  background-color: #0a192f !important; /* dark navy background */
+  color: #ccd6f6 !important;           /* light gray text */
 }
 
-/* ---------- Buttons: neon background, white text, rounded corners, subtle shadow ---------- */
+/* ---------- Buttons: dark background, teal border ---------- */
 button,
 .button,
 .btn,
@@ -94,18 +46,18 @@ a.btn,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-color: #000000 !important;
-  color: #39FF14 !important;
-  border: 2px solid #39FF14 !important;
+  background-color: #0a192f !important;
+  color: #64ffda !important;
+  border: 2px solid #64ffda !important;
   border-radius: 6px !important;
   padding: 0.45rem 1rem !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; /* subtle drop shadow */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
   transition: transform 0.12s ease, box-shadow 0.12s ease !important;
 }
 
-/* ---------- Button hover: scale up slightly, maintain color ---------- */
+/* ---------- Button hover: teal background, white text ---------- */
 button:hover,
 .button:hover,
 .btn:hover,
@@ -117,39 +69,39 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
   transform: scale(1.03) !important;
-  box-shadow: 0 8px 10px rgba(0,0,0,0.15) !important; /* a bit larger shadow on hover */
-  background-color: #39FF14 !important;
-  color: #ffffff !important;
+  box-shadow: 0 8px 10px rgba(0,0,0,0.25) !important;
+  background-color: #64ffda !important;
+  color: #0a192f !important; /* invert for readability */
   text-decoration: none !important;
 }
 
-/* ---------- Explore More (splash) button: outlined neon, black background ---------- */
+/* ---------- Explore More (splash) button ---------- */
 .page__splash .btn--primary,
 .page__splash .hero__actions .btn--primary,
 .page__splash .actions .btn--primary {
-  background-color: #000000 !important;
-  color: #39FF14 !important;
-  border: 2px solid #39FF14 !important;
+  background-color: #0a192f !important;
+  color: #64ffda !important;
+  border: 2px solid #64ffda !important;
   border-radius: 6px !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2) !important;
 }
 .page__splash .btn--primary:hover,
 .page__splash .hero__actions .btn--primary:hover,
 .page__splash .actions .btn--primary:hover {
   transform: scale(1.03) !important;
-  box-shadow: 0 8px 10px rgba(0,0,0,0.15) !important;
-  background-color: #000000 !important;
-  color: #39FF14 !important;
+  box-shadow: 0 8px 10px rgba(0,0,0,0.25) !important;
+  background-color: #64ffda !important;
+  color: #0a192f !important;
 }
 
 /* ---------- Focus outline for accessibility ---------- */
 button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
-  outline: 3px solid rgba(57,255,20,0.18) !important;
+  outline: 3px solid rgba(100,255,218,0.3) !important;
   outline-offset: 2px !important;
   text-decoration: none !important;
 }
 
-/* ---------- Keep glow/off rules for all elements ---------- */
+/* ---------- Keep glow/off rules ---------- */
 *,
 *::before,
 *::after {
@@ -164,22 +116,19 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 .page__footer > div,
 .page__footer nav,
 .page__footer div {
-    margin: 0 !important;       /* remove all margins */
-    padding: 0 !important;      /* remove all padding */
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Remove bottom space from the content above footer */
 .page__content,
 .page__content:last-child {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
 
-/* Optional: move footer slightly up if needed */
 .page__footer {
-    margin-top: -5px;           /* adjust number to your liking */
+    margin-top: -5px;
 }
-
 
 .author {
     display: none !important;
@@ -191,18 +140,18 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 
 /* Contact Page Box */
 .contact-box {
-    background-color: #000;
-    color: #39FF14;
+    background-color: #0a192f;
+    color: #64ffda;
     padding: 2rem;
     max-width: 90%;
     margin: 3rem auto;
     border-radius: 12px;
-    box-shadow: 0 0 20px #39FF14;
+    box-shadow: 0 0 20px rgba(100,255,218,0.3);
     text-align: center;
     box-sizing: border-box;
 }
 
-/* Buttons */
+/* Buttons inside contact */
 .contact-buttons {
     display: flex;
     justify-content: center;
@@ -213,33 +162,37 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 
 .contact-buttons a {
     padding: 0.75rem 1.5rem;
-    border: 2px solid #39FF14;
+    border: 2px solid #64ffda;
     border-radius: 8px;
-    color: #39FF14;
+    color: #64ffda;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .contact-buttons a:hover {
-    box-shadow: 0 0 10px #39FF14;
+    box-shadow: 0 0 10px #64ffda;
+    background-color: #64ffda;
+    color: #0a192f;
 }
 
-/* Neon Line */
+/* Accent line */
 .neon-line {
     height: 3px;
-    background: #39FF14;
+    background: #64ffda;
     margin: 2rem auto;
     width: 80%;
     border-radius: 2px;
-    box-shadow: 0 0 10px #39FF14;
+    box-shadow: 0 0 10px rgba(100,255,218,0.3);
 }
 
 .neon-line-home {
   width: 100%;
   height: 2px;
-  background: #39FF14; /* Neon green */
-  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 40px #39FF14;
+  background: #64ffda;
+  box-shadow: 0 0 10px rgba(100,255,218,0.3),
+              0 0 20px rgba(100,255,218,0.3),
+              0 0 40px rgba(100,255,218,0.3);
   border-radius: 2px;
 }
 
@@ -255,11 +208,7 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
     }
 }
 
-
-
+/* Hide placeholder posts */
 .recent-posts, .entries-list, .entries-grid {
   display: none !important;
 }
-
-
-
