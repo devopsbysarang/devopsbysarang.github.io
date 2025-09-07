@@ -280,3 +280,61 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 .author {
     display: none !important;
 }
+
+
+/* ---------- Splash Header Text ---------- */
+.splash-subtitle {
+  font-size: 1.2rem;
+  color: #8892b0;     /* Gray like Yashita */
+  margin-bottom: 0.5rem;
+}
+
+.splash-title {
+  font-size: 3rem;    /* Large name */
+  font-weight: 700;
+  color: #64ffda;     /* Green accent */
+  margin-bottom: 1rem;
+}
+
+.splash-text {
+  font-size: 1.05rem;
+  color: #ccd6f6;     /* Light slate text */
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Splash "Read More" Button ---------- */
+.splash-readmore {
+  display: inline-block;
+  background-color: #0A192F;    /* Match your background */
+  color: #64ffda;               /* Green accent */
+  border: 2px solid #64ffda;
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 1.5rem;
+}
+
+.splash-readmore:hover {
+  background-color: #10293B;    /* Hover color */
+  color: #ffffff;
+  transform: scale(1.03);
+  box-shadow: 0 8px 10px rgba(0,0,0,0.15);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .splash-title {
+    font-size: 2.2rem;
+  }
+  .splash-text {
+    font-size: 0.95rem;
+  }
+  .splash-readmore {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
