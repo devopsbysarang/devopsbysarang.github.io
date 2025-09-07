@@ -1,44 +1,15 @@
-/* _sass/custom/_overrides.scss */
-
-/* ===== Splash and Feature Row Tweaks ===== */
-
-/* Reduce space between splash and feature row */
-.page__splash + .page__content {
-  margin-top: 10px !important;
-  padding-top: 0 !important;
+/* Navbar / Header */
+.navbar, header, .site-header {
+  background-color: #0a192f !important;  /* Dark navy instead of black */
+  color: #ccd6f6 !important;            /* Light text for contrast */
 }
 
-/* Feature row excerpts white */
-.page__content .feature-row .feature__excerpt,
-.page__content .feature-row .feature__excerpt p {
-  color: #ffffff !important;
-  text-shadow: none !important;
-}
-
-/* Feature row titles match theme accent (light teal/greenish) */
-.page__content .feature-row .feature__title,
-.page__content .feature-row .feature__title a {
-  color: #64ffda !important;
-  text-shadow: none !important;
-}
-
-/* ===== Masthead (site header / nav) ===== */
-.masthead,
-.site-header {
-  background-color: #0A192F !important;
-  border-bottom: none !important;
-}
-
-.masthead__menu-item a,
-.site-nav a {
-  color: #ffffff !important;       /* white text */
+/* Navbar links */
+.navbar a, header a, .site-header a {
+  color: #64ffda !important;             /* Green accent for links */
   text-decoration: none !important;
-  border-bottom: none !important;
 }
 
-.masthead__menu-item a:hover,
-.site-nav a:hover {
-  color: #64ffda !important;       /* accent on hover */
-  text-decoration: none !important;
-  border-bottom: none !important;  /* remove underline */
+.navbar a:hover, header a:hover, .site-header a:hover {
+  color: #e6f1ff !important;            /* White text on hover */
 }
