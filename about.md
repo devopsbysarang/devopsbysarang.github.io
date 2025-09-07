@@ -38,7 +38,7 @@ permalink: /about/
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: radial-gradient(circle, #090909, #000);
+  background: #64FFDA; /* changed from radial-gradient to solid color */
   color: #fff;
   /* Setting base font */
   font-family: 'Roboto', sans-serif;
@@ -53,13 +53,8 @@ permalink: /about/
   width: 100%;
   border-radius: 12px;
   /* Subtle neon glow */
-  box-shadow: 0 0 15px #39FF14;
+  box-shadow: 0 0 15px #64FFDA;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-photo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #39FF14, 0 0 50px #39FF14;
 }
 
 /* Bio */
@@ -75,7 +70,7 @@ permalink: /about/
   margin: 0;
   margin-bottom: 0.5rem;
   /* Neon text glow effect */
-  text-shadow: 0 0 6px #39FF14;
+  text-shadow: 0 0 6px #64FFDA;
   letter-spacing: 1px;
 }
 
@@ -94,7 +89,7 @@ permalink: /about/
 }
 
 .about-bio a {
-  color: #39FF14;
+  color: #64FFDA;
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid transparent;
@@ -102,7 +97,7 @@ permalink: /about/
 }
 
 .about-bio a:hover {
-  border-bottom: 1px solid #39FF14;
+  border-bottom: 1px solid #64FFDA;
 }
 
 /* Mobile responsive */
