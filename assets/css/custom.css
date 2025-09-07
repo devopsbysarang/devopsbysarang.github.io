@@ -218,3 +218,26 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 body {
   background-color: #0A192F !important;
 }
+/* Global background color override */
+body,
+.masthead,
+.page__hero,
+.page__footer,
+.page__content,
+.sidebar,
+.site-header,
+.site-footer {
+  background-color: #0A192F !important;
+}
+
+/* Fix text readability */
+.page__footer,
+.site-footer {
+  color: #ffffff !important;
+}
+.archive__item,
+.card {
+  background-color: #112240 !important; /* slightly lighter navy */
+  border-radius: 8px;
+  padding: 1rem;
+}
