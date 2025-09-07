@@ -5,12 +5,49 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+          <a class="site-logo" href="{{ '/' | relative_url }}" style="display:flex; align-items:center; gap:8px;">
+            <!-- Custom Hex Logo -->
+            <div class="hex-logo-wrapper" style="width: 40px; height: 45px; position: relative;">
+              <div class="hex-border" style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 45px;
+                clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+                background: #00ffe7;">
+              </div>
+              <div class="hex-logo" style="
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                width: 32px;
+                height: 37px;
+                background: #0b1625;
+                color: #00ffe7;
+                font-family: 'Share Tech Mono', monospace;
+                font-size: 1.5rem;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+                ">
+                <span>S</span>
+              </div>
+            </div>
+            <!-- Site Title Text -->
+            <span style="color:#00ffe7; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 1.2rem;">
+              DevOpsbySarang
+            </span>
+          </a>
         {% endunless %}
+        
         <a class="site-title" href="{{ '/' | relative_url }}">
           {{ site.masthead_title | default: site.title | escape_once | strip }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
         </a>
+
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
@@ -22,12 +59,14 @@
             </li>
           {%- endfor -%}
         </ul>
+
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
+
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
