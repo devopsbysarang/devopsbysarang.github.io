@@ -21,7 +21,7 @@ permalink: /about/
       I created this website as a platform to showcase my projects, share insights, and challenge myself with new technologies. It serves as a space where I consistently learn, experiment, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work here, I aim to inspire others and hold myself accountable to continuous improvement.
     </p>
     <p>
-      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener">Connect with me on LinkedIn</a>
+      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">Connect with me on LinkedIn</a>
     </p>
   </div>
 
@@ -38,8 +38,8 @@ permalink: /about/
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: #64FFDA; /* changed from radial-gradient to solid color */
-  color: #fff;
+  background: #64FFDA; /* solid cyan background */
+  color: #000; /* changed text color to black for readability */
   /* Setting base font */
   font-family: 'Roboto', sans-serif;
 }
@@ -52,9 +52,9 @@ permalink: /about/
 .about-photo img {
   width: 100%;
   border-radius: 12px;
-  /* Subtle neon glow */
   box-shadow: 0 0 15px #64FFDA;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid #64FFDA; /* cyan border added */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 /* Bio */
@@ -66,38 +66,34 @@ permalink: /about/
 .about-bio h2 {
   font-family: 'Rubik', sans-serif;
   font-size: 2rem;
-  color: #39FF14;
+  color: #006633; /* changed to darker green for better contrast */
   margin: 0;
   margin-bottom: 0.5rem;
-  /* Neon text glow effect */
-  text-shadow: 0 0 6px #64FFDA;
+  text-shadow: none; /* removed neon glow for better readability */
   letter-spacing: 1px;
-}
-
-.about-bio h3 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #ccc;
-  margin: 0 0 1rem;
-  font-style: italic;
 }
 
 .about-bio p {
   line-height: 1.6;
   margin-bottom: 1.2rem;
+  color: #000; /* black text */
 }
 
 .about-bio a {
-  color: #64FFDA;
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.2s;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #0A66C2; /* LinkedIn blue */
+  padding: 0.6rem 1.2rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .about-bio a:hover {
-  border-bottom: 1px solid #64FFDA;
+  background-color: #004182;
+  border-bottom: none;
 }
 
 /* Mobile responsive */
@@ -114,8 +110,7 @@ permalink: /about/
 
   .about-bio {
     flex: 1 1 auto;
-    text-align: left;  /* <-- optional to enforce left */
-
+    text-align: left;
   }
 }
 </style>
