@@ -286,3 +286,15 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
   padding-bottom: 24px !important;
   margin-bottom: 8px !important;  /* Was 32px */
 }
+
+
+button.greedy-nav__toggle.close:hover,
+button.greedy-nav__toggle.close:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  background: none !important;
+}
+
+button.greedy-nav__toggle.close .navicon span {
+  background-color: #64ffda !important;
+}
