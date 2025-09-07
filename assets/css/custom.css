@@ -1,3 +1,50 @@
+/* ----- Global Consistent Theme ----- */
+
+/* Background: everywhere navy */
+body, html, .page, .page__content, .page__splash, .contact-box, .site-header, .site-footer {
+  background-color: #0a192f !important;
+}
+
+/* Default text */
+body, p, span, div, li {
+  color: #ccd6f6 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+/* Links */
+a, a:link, a:visited {
+  color: #64ffda !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #ffffff !important;
+}
+
+/* Buttons */
+button,
+.button,
+.btn,
+.btn-primary,
+a.button,
+a.btn {
+  background-color: #0a192f !important;
+  color: #64ffda !important;
+  border: 2px solid #64ffda !important;
+}
+
+button:hover,
+.button:hover,
+.btn:hover,
+a.button:hover,
+a.btn:hover {
+  background-color: #64ffda !important;
+  color: #0a192f !important;
+}
+
 /* ---------- Links: white text, teal highlight on hover ---------- */
 a, a:link, a:visited {
   color: #ffffff !important;
