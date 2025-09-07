@@ -84,7 +84,7 @@ permalink: /about/
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
-  background-color: #0A192F; /* LinkedIn blue */
+  background-color: #0077B5; /* LinkedIn blue */
   padding: 0.6rem 1.2rem;
   display: inline-block;
   transition: background-color 0.3s ease;
