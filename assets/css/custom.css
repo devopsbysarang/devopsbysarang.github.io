@@ -1,3 +1,52 @@
+/* Background + font */
+body {
+  background-color: #0a192f; /* Dark navy */
+  color: #ccd6f6; /* Light grey text */
+  font-family: 'Inter', 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Hero section */
+.hero {
+  padding: 100px 20px;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #8892b0; /* greyish blue */
+}
+
+/* Accent text (like your green) */
+.accent {
+  color: #64ffda; /* Neon teal */
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  color: #64ffda;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+
 /* ---------- Links: white text, neon highlight on hover ---------- */
 a, a:link, a:visited {
   color: #ffffff !important;
