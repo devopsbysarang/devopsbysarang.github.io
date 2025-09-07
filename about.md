@@ -52,8 +52,8 @@ permalink: /about/
 .about-photo img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 0 15px #64FFDA;
-  border: 4px solid #64FFDA; /* cyan border added */
+  box-shadow: 0 0 1px #64FFDA;
+  border: 3px solid #64FFDA; /* cyan border added */
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
