@@ -2,50 +2,40 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-  /* Footer Styling */
-  #footer {
-    background: none;
-    padding: 20px 0;
-    text-align: center;
-    font-family: "Fira Code", monospace;
-  }
-
-  /* Social Icons */
-  #footer .social-icons {
-    margin-bottom: 10px;
-  }
-
+  /* Force all footer social icons to #64FFDA */
   #footer .social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 22px;
-    color: #64FFDA;   /* icons in cyan */
-    transition: transform 0.3s ease, color 0.3s ease;
-    text-decoration: none;
+    color: #64FFDA !important;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s ease;
   }
-
   #footer .social-icons a:hover {
-    color: #ffffff;   /* icons turn white on hover */
-    transform: translateY(-4px) scale(1.1);
-  }
-
-  /* Text color */
-  #footer .copyright {
-    font-size: 14px;
-    color: #ffffff;   /* text always white */
-    opacity: 0.9;
+    color: #ffffff; /* white on hover (you can change if needed) */
   }
 </style>
 
-<footer id="footer">
-  <div class="social-icons">
-    <a href="https://github.com/devopsbysarang/" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://instagram.com/saranghimself" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:sarangdeshmukh550@gmail.com"><i class="fas fa-envelope"></i></a>
-  </div>
+<footer id="footer" class="page__footer" style="background:none; padding:10px 0; border-top:none;">
+  <div style="text-align:center; color:#fff; line-height:1.6;">
 
-  <div class="copyright">
-    © 2025 All Rights Reserved • Developed with ❤️ by Sarang
+    <!-- Social Media Icons -->
+    <div class="social-icons" style="margin-bottom:6px;">
+      <a href="https://github.com/devopsbysarang/" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://instagram.com/saranghimself" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="mailto:sarangdeshmukh550@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div style="font-size:14px;">
+      © 2025 All Rights Reserved • Developed with ❤️ by Sarang
+    </div>
   </div>
 </footer>
