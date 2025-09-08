@@ -43,7 +43,7 @@ category: case-studies
 }
 
 .blog-card {
-  background-color: #111;
+  background-color: #0A192F;
   border: 2px solid #64FFDA; /* subtle neon accent */
   border-radius: 12px;
   overflow: hidden;
@@ -58,7 +58,7 @@ category: case-studies
 .blog-image {
   width: 100%;
   height: 180px;
-  background-color: #222; /* fallback color */
+  background-color: #0A192F; /* fallback color */
   background-size: cover;
   background-position: center;
 }
