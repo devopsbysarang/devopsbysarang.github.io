@@ -1,29 +1,51 @@
 <!-- Add this in your <head> if not already included -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<footer id="footer" class="page__footer" style="background:none; padding:10px 0; border-top:none;">
-  <div style="text-align:center; color:#fff; line-height:1.6;">
+<style>
+  /* Footer Styling */
+  #footer {
+    background: none;
+    padding: 20px 0;
+    border-top: 1px solid rgba(100, 255, 218, 0.3);
+    text-align: center;
+    color: #ccd6f6;
+    font-family: "Fira Code", monospace;
+  }
 
-    <!-- Social Media Icons -->
-    <div style="margin-bottom:6px;">
-      <a href="https://github.com/devopsbysarang/" target="_blank" style="margin:0 8px; color:#64FFDA; font-size:20px;">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" style="margin:0 8px; color:#64FFDA; font-size:20px;">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://instagram.com/saranghimself" target="_blank" style="margin:0 8px; color:#64FFDA; font-size:20px;">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="sarangdeshmukh550@gmail.com" style="margin:0 8px; color:#64FFDA; font-size:20px;">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
+  /* Social Icons */
+  #footer .social-icons {
+    margin-bottom: 10px;
+  }
 
-    
-    <!-- Copyright -->
-    <div style="font-size:14px;">
-      © 2025 All Rights Reserved • Developed with ❤️ by Sarang
-    </div>
+  #footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 22px;
+    color: #64FFDA;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  #footer .social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.1);
+  }
+
+  /* Copyright */
+  #footer .copyright {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+</style>
+
+<footer id="footer">
+  <div class="social-icons">
+    <a href="https://github.com/devopsbysarang/" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://instagram.com/saranghimself" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:sarangdeshmukh550@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <div class="copyright">
+    © 2025 All Rights Reserved • Developed with ❤️ by Sarang
   </div>
 </footer>
