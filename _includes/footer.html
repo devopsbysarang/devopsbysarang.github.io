@@ -1,64 +1,66 @@
-<!-- Font Awesome -->
+<!-- Font Awesome (keep) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-  /* Footer container */
+  /* Reset any top spacing coming from theme */
   #footer.page__footer {
     background: none;
-    padding: 8px 0 18px 0 !important; /* ensures space under footer */
+    padding: 0 !important;       /* remove footer padding */
+    margin: 0 !important;        /* remove footer margin */
+    border-top: 1px solid transparent !important; /* prevents margin-collapsing */
+    overflow: hidden !important; /* prevents previous element margins collapsing into footer */
     text-align: center;
-    border-top: none;
   }
 
-  /* Inner wrapper to avoid margin-collapsing issues */
-  #footer .footer-inner {
-    display: block;
-    padding-top: 0;
+  /* Kill pseudo-elements that some themes use as separators */
+  #footer.page__footer::before,
+  #footer.page__footer::after,
+  #footer .footer-inner::before,
+  #footer .footer-inner::after {
+    display: none !important;
+    content: none !important;
   }
 
-  /* Social icons layout (flex + gap is very reliable) */
+  /* Inner wrapper reset */
+  #footer .footer-inner,
+  #footer .social-icons,
+  #footer .footer-text {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Social icons layout and spacing BELOW icons only */
   #footer .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;                /* horizontal space between icons */
-    padding-bottom: 18px;     /* <-- uses padding instead of margin to avoid collapsing */
-    margin: 0 auto;
-    /* fallback in case padding is overridden */
-    padding-bottom: 18px !important;
+    gap: 18px;                      /* horizontal space between icons */
+    padding-bottom: 14px !important;/* reliable space below icons (no top space) */
   }
 
-  #footer .social-icons a {
-    text-decoration: none;
-    line-height: 1;
-  }
-
+  /* Icon visuals */
   #footer .social-icons a i {
-    color: #64FFDA !important;   /* cyan */
+    color: #64FFDA !important;
     font-size: 25px;
     transition: color 0.3s ease, transform 0.2s ease;
-    vertical-align: middle;
     display: inline-block;
+    vertical-align: middle;
   }
+  #footer .social-icons a:hover i { color: #fff !important; transform: scale(1.1); }
 
-  #footer .social-icons a:hover i {
-    color: #ffffff !important;
-    transform: scale(1.1);
-  }
-
-  /* Footer text separated reliably */
+  /* Footer text */
   #footer .footer-text {
     font-size: 16px;
     color: #fff;
-    margin: 0;                  /* reset */
-    padding-top: 6px;          /* small extra space */
+    padding-top: 6px;  /* small gap below icons only */
+    margin: 0;
   }
 
-  /* small screen adjustments */
+  /* Small screen tweaks */
   @media (max-width: 480px) {
-    #footer .social-icons { gap: 12px; padding-bottom: 14px !important; }
+    #footer .social-icons { gap: 12px; padding-bottom: 12px !important; }
     #footer .social-icons a i { font-size: 22px; }
-    #footer .footer-text { font-size: 14px; }
+    #footer .footer-text { font-size: 14px; padding-top: 4px; }
   }
 </style>
 
@@ -70,9 +72,6 @@
       <a href="https://instagram.com/saranghimself" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       <a href="mailto:sarangdeshmukh550@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </div>
-
-    <div class="footer-text">
-      © 2025 All Rights Reserved • Developed with ❤️ by Sarang
-    </div>
+    <div class="footer-text">© 2025 All Rights Reserved • Developed with ❤️ by Sarang</div>
   </div>
 </footer>
