@@ -1,27 +1,49 @@
 <!-- Add this in your <head> if not already included -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<footer id="footer" class="page__footer" style="background:none; padding:10px 0; border-top:none;">
+<style>
+  .social-icons a i {
+    color: #64FFDA !important;   /* cyan by default */
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  .social-icons a:hover i {
+    color: #ffffff !important;   /* white on hover */
+    transform: scale(1.1);
+  }
+  .social-icons a {
+    margin: 0 12px;
+    text-decoration: none;
+  }
+  #footer {
+    background: none;
+    padding-top: 0 !important;   /* remove top space */
+    padding-bottom: 8px;         /* keep a little space below */
+    border-top: none;
+  }
+</style>
+
+<footer id="footer" class="page__footer">
   <div style="text-align:center; color:#fff; line-height:1.6;">
 
     <!-- Social Media Icons -->
-    <div class="social-icons" style="margin-bottom:6px; font-size:22px;">
-      <a href="https://github.com/devopsbysarang/" target="_blank" style="margin:0 12px; color:#64FFDA !important; text-decoration:none;">
+    <div class="social-icons" style="margin-bottom:6px;">
+      <a href="https://github.com/devopsbysarang/" target="_blank">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" style="margin:0 12px; color:#64FFDA !important; text-decoration:none;">
+      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://instagram.com/saranghimself" target="_blank" style="margin:0 12px; color:#64FFDA !important; text-decoration:none;">
+      <a href="https://instagram.com/saranghimself" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="mailto:sarangdeshmukh550@gmail.com" style="margin:0 12px; color:#64FFDA !important; text-decoration:none;">
+      <a href="mailto:sarangdeshmukh550@gmail.com">
         <i class="fas fa-envelope"></i>
       </a>
     </div>
 
     <!-- Footer Text -->
-    <div style="font-size:14px; color:#fff;">
+    <div style="font-size:16px; color:#fff;">
       © 2025 All Rights Reserved • Developed with ❤️ by Sarang
     </div>
   </div>
