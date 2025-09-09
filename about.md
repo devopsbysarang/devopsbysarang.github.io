@@ -184,18 +184,18 @@ permalink: /about/
   margin-top: 0;   /* remove extra top space */
 }
 
-/* Responsive */
 @media (max-width: 700px) {
   .about-page {
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start; /* instead of left */
   }
   .about-photo {
     flex: 0 0 150px;
     margin-bottom: 1.5rem;
   }
   .about-bio {
-    text-align: center;
+    text-align: left;   /* 👈 change from center to left */
   }
 }
+
 </style>
