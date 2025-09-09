@@ -302,41 +302,34 @@ button.greedy-nav__toggle:focus {
   outline: none !important;
 }
 
-
 /* ---------- Hero header buttons (splash layout) ---------- */
-/* Target the wrapper used in your screenshot (layout--splash -> initial-content -> wrapper -> p) */
+
+/* Wrap just the anchors in a flex group without disturbing the text above */
 .layout--splash .initial-content .wrapper > p {
-  display: flex;
-  gap: 0.6rem;            /* space between buttons */
-  flex-wrap: nowrap;      /* keep them on same line */
-  align-items: center;
-  justify-content: flex-start;
   margin: 0.6rem 0;
 }
 
-/* Base button tweaks so they look balanced */
-.layout--splash .initial-content .wrapper > p > .btn {
-  margin: 0;
+/* Make only the direct <a> siblings flex together */
+.layout--splash .initial-content .wrapper > p > a {
+  display: inline-block;
+  margin-right: 0.6rem;   /* space between buttons */
   min-width: 120px;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   text-align: center;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 600;
+  white-space: nowrap;
 }
 
-/* ABOUT (solid cyan) — target by relative href */
+/* ABOUT (solid cyan) */
 .layout--splash .initial-content .wrapper > p > a[href="/about/"] {
-  background-color: #64FFDA !important;    /* solid cyan */
-  color: #0A192F !important;               /* dark text for contrast */
+  background-color: #64FFDA !important;
+  color: #0A192F !important;
   border: 2px solid transparent !important;
   box-shadow: 0 4px 12px rgba(100,255,218,0.12) !important;
 }
 
-/* LINKEDIN (outlined cyan) — target external LinkedIn href */
+/* LINKEDIN (outlined cyan) */
 .layout--splash .initial-content .wrapper > p > a[href^="https://www.linkedin.com"] {
   background: transparent !important;
   color: #64FFDA !important;
@@ -344,21 +337,21 @@ button.greedy-nav__toggle:focus {
   box-shadow: none !important;
 }
 
-/* small hover lift for both */
-.layout--splash .initial-content .wrapper > p > .btn:hover {
+/* Hover animation */
+.layout--splash .initial-content .wrapper > p > a:hover {
   transform: translateY(-3px);
   transition: transform 160ms ease;
 }
 
-/* Mobile tweaks: keep same row, slightly tighter */
+/* Mobile: keep them side by side, allow scroll if super narrow */
 @media (max-width: 420px) {
   .layout--splash .initial-content .wrapper > p {
-    gap: 0.4rem;
-    overflow-x: auto;           /* if extremely narrow, allow side-scroll instead of wrapping */
+    white-space: nowrap;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .layout--splash .initial-content .wrapper > p > .btn {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.96rem;
+  .layout--splash .initial-content .wrapper > p > a {
+    margin-right: 0.5rem;
+    font-size: 0.95rem;
   }
 }
