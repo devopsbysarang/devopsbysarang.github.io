@@ -303,3 +303,17 @@ button.greedy-nav__toggle:focus {
 }
 
 
+/* Custom button tweaks */
+.btn-custom {
+  margin: 0 0.5rem; /* adds space between buttons */
+  min-width: 120px; /* ensures both look balanced */
+  text-align: center;
+}
+
+/* Keep buttons side by side on mobile */
+.page__hero .actions {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.8rem; /* extra spacing between buttons */
+}
