@@ -74,6 +74,13 @@ permalink: /about/
   </div>
 </div>
 
+<!-- LinkedIn Button at the End -->
+<div class="linkedin-section">
+  <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">
+    Connect with me on LinkedIn
+  </a>
+</div>
+
 <style>
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
@@ -150,6 +157,7 @@ permalink: /about/
   color: #64FFDA;
   font-family: 'Rubik', sans-serif;
   margin-bottom: 2rem;
+  margin-top: 0; /* remove extra top space */
   font-size: 1.8rem;
 }
 .skills-grid {
@@ -180,22 +188,38 @@ permalink: /about/
   line-height: 1.4;
 }
 
-.skills-section h2 {
-  margin-top: 0;   /* remove extra top space */
+/* LinkedIn Section at Bottom */
+.linkedin-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+.linkedin-section .linkedin-btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #0077B5;
+  padding: 0.7rem 1.5rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.linkedin-section .linkedin-btn:hover {
+  background-color: #004182;
 }
 
+/* Responsive */
 @media (max-width: 700px) {
   .about-page {
     flex-direction: column;
-    align-items: flex-start; /* instead of left */
+    align-items: flex-start;
   }
   .about-photo {
     flex: 0 0 150px;
     margin-bottom: 1.5rem;
   }
   .about-bio {
-    text-align: left;   /* 👈 change from center to left */
+    text-align: left;
   }
 }
-
 </style>
