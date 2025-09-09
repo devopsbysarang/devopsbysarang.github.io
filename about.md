@@ -43,7 +43,7 @@ permalink: /about/
 
     <div class="skill-card">
       <h3>Cloud</h3>
-      <p>AWS (IAM, EC2, ELB, RDS, EKS, VPC, CloudFront), Azure (Fundamentals)</p>
+      <p>AWS & GCP (Solution Architect) , Azure (Fundamentals)</p>
     </div>
 
     <div class="skill-card">
