@@ -180,6 +180,10 @@ permalink: /about/
   line-height: 1.4;
 }
 
+.skills-section h2 {
+  margin-top: 0;   /* remove extra top space */
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .about-page {
