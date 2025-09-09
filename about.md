@@ -20,9 +20,6 @@ permalink: /about/
     <p>
       This website is my space to showcase projects, share insights, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work, I aim to inspire others and continuously grow as a technologist.
     </p>
-    <p>
-      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">Connect with me on LinkedIn</a>
-    </p>
   </div>
 </div>
 
