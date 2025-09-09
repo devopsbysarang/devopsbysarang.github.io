@@ -7,7 +7,7 @@ author: Sarang Deshmukh
 featured-image: /assets/images/blog1.png
 ---
 
-This repository demonstrates the deployment of a scalable, secure, and highly available 3-tier web application architecture on **Amazon Web Services (AWS)** using **Terraform**.
+This article demonstrates the deployment of a scalable, secure, and highly available 3-tier web application architecture on **Amazon Web Services (AWS)** using **Terraform**.
 
 **I developed this project solely for learning Terraform and gaining hands-on experience with AWS infrastructure. All components are provisioned using Infrastructure as Code (IaC) principles, demonstrating how to manage cloud infrastructure efficiently and reproducibly using Terraform.**
 
@@ -21,11 +21,11 @@ The architecture is divided into three primary layers:
 
 This setup ensures modularity, scalability, and fault tolerance.
 
-## Architecture Diagrams
-
 ## Overview Diagram
 
-<img width="1203" height="634" alt="image" src="https://github.com/user-attachments/assets/fd941c2f-53ec-4f13-a930-b1702856a425" />
+<img src="https://github.com/user-attachments/assets/fd941c2f-53ec-4f13-a930-b1702856a425" 
+     alt="3-tier architecture" 
+     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
 
 
 ## Enviroment Diagram
