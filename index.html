@@ -37,3 +37,47 @@ feature_row:
 {% endif %}
 
 {% include feature_row %}
+
+
+<!-- LinkedIn Button at the End -->
+<div class="linkedin-section">
+  <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">
+    Connect with me on LinkedIn
+  </a>
+</div>
+
+* LinkedIn Section at Bottom */
+.linkedin-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+.linkedin-section .linkedin-btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #0077B5;
+  padding: 0.7rem 1.5rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.linkedin-section .linkedin-btn:hover {
+  background-color: #004182;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .about-page {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-photo {
+    flex: 0 0 150px;
+    margin-bottom: 1.5rem;
+  }
+  .about-bio {
+    text-align: left;
+  }
+}
+</style>
