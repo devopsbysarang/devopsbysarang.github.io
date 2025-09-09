@@ -11,10 +11,10 @@ This article demonstrates the deployment of a scalable, secure, and highly avail
 
 **I developed this project solely for learning Terraform and gaining hands-on experience with AWS infrastructure. All components are provisioned using Infrastructure as Code (IaC) principles, demonstrating how to manage cloud infrastructure efficiently and reproducibly using Terraform.**
 
-<a href="https://github.com/SarangDeshmukh7/3-tier-website-hosted-on-aws" target="_blank" style="
+<a href="https://github.com/devopsbysarang/3-tier-website-hosted-on-aws" target="_blank" style="
   display: inline-block;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #64FFDA;
   border: 2px solid #64FFDA;
