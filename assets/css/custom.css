@@ -307,7 +307,7 @@ button.greedy-nav__toggle:focus {
 /* Reduce spacing above the tagline on mobile */
 .layout--splash .page__lead {
   margin-top: 0.8rem !important;   /* smaller gap below title */
-  margin-bottom: 2rem !important; /* closer to buttons */
+  margin-bottom: 1.5rem !important; /* closer to buttons */
   font-size: 1.05rem;  /* keep readable */
   line-height: 1.5;
 }
@@ -355,8 +355,8 @@ button.greedy-nav__toggle:focus {
 /* Mobile adjustments */
 @media (max-width: 480px) {
   .layout--splash .page__lead {
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.6rem !important;
+    margin-top: 0.6rem !important;
+    margin-bottom: 1.5rem !important;
     font-size: 1rem;
   }
   .layout--splash .page__lead + p {
