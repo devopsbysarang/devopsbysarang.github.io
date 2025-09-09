@@ -28,7 +28,7 @@ permalink: /about/
 
 <!-- Skills Section -->
 <div class="skills-section">
-  <h2>Technical Skills</h2>
+  <h2>I am skilled in: </h2>
   <div class="skills-grid">
 
     <div class="skill-card">
