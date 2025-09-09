@@ -38,7 +38,7 @@ permalink: /about/
 
     <div class="skill-card">
       <h3>DevOps Technologies</h3>
-      <p>GIT, Bitbucket, Gerrit, Jenkins, Kubernetes, Docker, Ansible, Nexus, Consul</p>
+      <p>GIT, Jenkins, Kubernetes, Docker, Ansible, Nexus, Consul</p>
     </div>
 
     <div class="skill-card">
@@ -142,8 +142,8 @@ permalink: /about/
 .skills-section {
   background: #112240;
   padding: 3rem 2rem;
-  margin-top: 2rem;
-  border-radius: 12px;
+  margin-top: 0rem;
+  border-radius: 0px;
 }
 .skills-section h2 {
   text-align: center;
@@ -184,7 +184,7 @@ permalink: /about/
 @media (max-width: 700px) {
   .about-page {
     flex-direction: column;
-    align-items: center;
+    align-items: left;
   }
   .about-photo {
     flex: 0 0 150px;
