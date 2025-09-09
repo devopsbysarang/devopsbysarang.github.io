@@ -30,7 +30,8 @@ This setup ensures modularity, scalability, and fault tolerance.
 
 ## Enviroment Diagram
 
-<img width="866" height="782" alt="image" src="https://github.com/user-attachments/assets/b6321568-5202-4b59-82ca-1cd263b23881" />
+<img width="866" height="782" alt="image" src="https://github.com/user-attachments/assets/90a332d6-2793-4b20-9462-e6aa2ff83aff" />
+
 
 
 ## Final product on web browser 
