@@ -11,6 +11,21 @@ This article demonstrates the deployment of a scalable, secure, and highly avail
 
 **I developed this project solely for learning Terraform and gaining hands-on experience with AWS infrastructure. All components are provisioned using Infrastructure as Code (IaC) principles, demonstrating how to manage cloud infrastructure efficiently and reproducibly using Terraform.**
 
+<a href="https://github.com/SarangDeshmukh7/3-tier-website-hosted-on-aws" target="_blank" style="
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #64FFDA;
+  border: 2px solid #64FFDA;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;">
+  View Code
+</a>
+
+
 ## Project Overview
 
 The architecture is divided into three primary layers:
@@ -100,18 +115,5 @@ This project sets up an automated infrastructure provisioning pipeline using **T
 - Infrastructure Testing: Add automated checks (linting, policy as code, and security scans) before applying Terraform changes.
 - Monitoring & Alerts: Incorporate monitoring (CloudWatch, Prometheus) and notifications to improve operational visibility.
 
-<a href="https://github.com/SarangDeshmukh7/3-tier-website-hosted-on-aws" target="_blank" style="
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0a192f;
-  background-color: #64FFDA;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;">
-  🔗 View Code
-</a>
+
 
