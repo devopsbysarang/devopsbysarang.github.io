@@ -30,14 +30,18 @@ This setup ensures modularity, scalability, and fault tolerance.
 
 ## Enviroment Diagram
 
-<img width="866" height="782" alt="image" src="https://github.com/user-attachments/assets/90a332d6-2793-4b20-9462-e6aa2ff83aff" />
-
+<img src="https://github.com/user-attachments/assets/90a332d6-2793-4b20-9462-e6aa2ff83aff" 
+     alt="3-tier architecture" 
+     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
 
 
 ## Final product on web browser 
 ### (Due to AWS cost considerations, the website is currently not live.)
 
-<img width="1830" height="940" alt="image" src="https://github.com/user-attachments/assets/c0fe548b-aced-452d-ae2e-6489a26b010d" />
+<img src="https://github.com/user-attachments/assets/c0fe548b-aced-452d-ae2e-6489a26b010d" 
+     alt="3-tier architecture" 
+     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
+
 
 ## CI/CD Pipeline Architecture
 
@@ -89,4 +93,25 @@ This project sets up an automated infrastructure provisioning pipeline using **T
 - Built-in governance with **email-based manual approval**
 - High confidence deployments via consistent staging-to-production flow
 
+### Future Scope 
+
+- Automated Deployment with CI/CD: Integrate a multi-stage pipeline to automate Terraform execution and application deployment.
+- Multi-Stage Environments: Configure separate pipelines for Dev → Staging → Production with approval gates to ensure controlled rollouts.
+- Infrastructure Testing: Add automated checks (linting, policy as code, and security scans) before applying Terraform changes.
+- Monitoring & Alerts: Incorporate monitoring (CloudWatch, Prometheus) and notifications to improve operational visibility.
+
+<a href="https://github.com/SarangDeshmukh7/3-tier-website-hosted-on-aws" target="_blank" style="
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a192f;
+  background-color: #64FFDA;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;">
+  🔗 View Code
+</a>
 
