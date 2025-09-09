@@ -302,56 +302,69 @@ button.greedy-nav__toggle:focus {
   outline: none !important;
 }
 
-/* ---------- Hero header buttons (splash layout) ---------- */
+/* ---------------- Hero Section Fixes ---------------- */
 
-/* Wrap just the anchors in a flex group without disturbing the text above */
-.layout--splash .initial-content .wrapper > p {
-  margin: 0.6rem 0;
+/* Reduce spacing above the tagline on mobile */
+.layout--splash .page__lead {
+  margin-top: 1rem !important;   /* smaller gap below title */
+  margin-bottom: 2rem !important; /* closer to buttons */
+  font-size: 1.05rem;  /* keep readable */
+  line-height: 1.5;
 }
 
-/* Make only the direct <a> siblings flex together */
-.layout--splash .initial-content .wrapper > p > a {
-  display: inline-block;
-  margin-right: 0.6rem;   /* space between buttons */
+/* Button group wrapper */
+.layout--splash .page__lead + p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;  /* nice space between buttons */
+  margin-top: 0.4rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Buttons */
+.layout--splash .page__lead + p > a {
+  flex: 0 0 auto;   /* don’t stretch weirdly */
   min-width: 120px;
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1rem;
   border-radius: 8px;
-  text-align: center;
   font-weight: 600;
-  white-space: nowrap;
+  text-align: center;
+  font-size: 1rem;
 }
 
-/* ABOUT (solid cyan) */
-.layout--splash .initial-content .wrapper > p > a[href="/about/"] {
+/* About (solid cyan) */
+.layout--splash .page__lead + p > a[href="/about/"] {
   background-color: #64FFDA !important;
   color: #0A192F !important;
   border: 2px solid transparent !important;
-  box-shadow: 0 4px 12px rgba(100,255,218,0.12) !important;
 }
 
-/* LINKEDIN (outlined cyan) */
-.layout--splash .initial-content .wrapper > p > a[href^="https://www.linkedin.com"] {
+/* LinkedIn (outlined cyan) */
+.layout--splash .page__lead + p > a[href^="https://www.linkedin.com"] {
   background: transparent !important;
   color: #64FFDA !important;
   border: 2px solid #64FFDA !important;
-  box-shadow: none !important;
 }
 
-/* Hover animation */
-.layout--splash .initial-content .wrapper > p > a:hover {
-  transform: translateY(-3px);
+/* Hover effect */
+.layout--splash .page__lead + p > a:hover {
+  transform: translateY(-2px);
   transition: transform 160ms ease;
 }
 
-/* Mobile: keep them side by side, allow scroll if super narrow */
-@media (max-width: 420px) {
-  .layout--splash .initial-content .wrapper > p {
-    white-space: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .layout--splash .page__lead {
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.6rem !important;
+    font-size: 1rem;
   }
-  .layout--splash .initial-content .wrapper > p > a {
-    margin-right: 0.5rem;
-    font-size: 0.95rem;
+  .layout--splash .page__lead + p {
+    justify-content: center;   /* center buttons under text */
+    gap: 0.5rem;
+  }
+  .layout--splash .page__lead + p > a {
+    flex: 1;   /* buttons expand evenly */
+    min-width: auto;
   }
 }
