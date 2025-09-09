@@ -4,7 +4,7 @@ title: "IaC on AWS using Terraform"
 date: 2025-09-04 20:00:00 +0530
 category: automation
 author: Sarang Deshmukh
-featured-image: <img width="4000" height="2400" alt="image" src="https://github.com/user-attachments/assets/6625254c-84c8-446a-95ff-af87767c0868" />
+featured-image: /assets/images/terafformaws.png
 
 ---
 
