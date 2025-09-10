@@ -451,8 +451,14 @@ button.greedy-nav__toggle:focus {
   margin: 0em 0; /* same spacing */
 }
 
-/* Remove old Minimal Mistakes hero separator (::after) */
-.page__hero::after {
+/* Kill the default separator line under hero section */
+.page__hero::after,
+.page__hero--overlay::after,
+.page__hero .wrapper::after {
   content: none !important;
   display: none !important;
+  border: none !important;
+  background: none !important;
+  height: 0 !important;
 }
+
