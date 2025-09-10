@@ -402,30 +402,33 @@ button.greedy-nav__toggle:focus {
   overflow-x: auto;
   white-space: nowrap;
   gap: 40px;
-  padding: 0 0 20px 0; /* top right bottom left */
-  scrollbar-width: none; /* Firefox */
+  padding-top: 0 !important;       /* remove top padding */
+  padding-bottom: 20px !important; /* bottom padding only */
+  margin-top: 0 !important;        /* remove any top margin */
+  scrollbar-width: none !important; /* Firefox */
 }
 
 .skills-scroll::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none !important; /* Chrome/Safari */
 }
 
 .skills-scroll img {
-  height: 60px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+  height: 60px !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.3s ease !important;
 }
 
 .skills-scroll img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .skills-scroll {
-    gap: 24px;
+    gap: 24px !important;
+    padding-bottom: 16px !important; /* adjust bottom padding for mobile */
   }
   .skills-scroll img {
-    height: 48px;
+    height: 48px !important;
   }
 }
