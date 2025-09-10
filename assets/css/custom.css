@@ -379,3 +379,23 @@ button.greedy-nav__toggle:focus {
   margin: 1rem auto;               /* spacing and center */
   border-radius: 1px;
 }
+
+
+/* Remove border/break line after feature section */
+.page__content > .feature__wrapper {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove any <hr> right after features */
+.page__content hr {
+  display: none !important;
+  height: 0 !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.feature__wrapper {
+  outline: 2px dashed red !important;
+}
