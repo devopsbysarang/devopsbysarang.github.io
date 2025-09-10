@@ -37,37 +37,11 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
+
+
+{% include feature_row %}
+{% include testimonials.html %}
+
 {% if page.header.separator %}
   <div class="header__separator"></div>
 {% endif %}
-
-{% include feature_row %}
-
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="testimonials">
-  <h2>Testimonials</h2>
-  <div class="testimonial-container">
-    
-    <!-- Testimonial 1 -->
-    <div class="testimonial-card">
-      <p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
-      <h4>– Hariom Kashyap</h4>
-      <span>Software Architect, Amdocs</span>
-    </div>
-    
-    <!-- Testimonial 2 -->
-    <div class="testimonial-card">
-      <p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them.  
-      He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
-      <h4>– Ankur Singh</h4>
-      <span>AI Engineer | GenAI Infra, LLM</span>
-    </div>
-    
-  </div>
-</section>
-
-
-
-
-
