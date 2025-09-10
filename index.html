@@ -37,6 +37,13 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
+{% if page.header.separator %}
+  <div class="header__separator"></div>
+{% endif %}
+
+{% include feature_row %}
+
+
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials">
   <h2>Testimonials</h2>
@@ -60,100 +67,7 @@ feature_row:
   </div>
 </section>
 
-<!-- Tech Stack Section -->
-<section id="tech-stack" class="tech-stack">
-  <h2>Technologies I Work With</h2>
-  
-  <div class="tech-grid">
-
-    <!-- Category: Operating Systems -->
-    <div class="tech-category">
-      <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
-      <div class="tech-items">
-        <span class="tech-badge">Unix/Linux</span>
-        <span class="tech-badge">Windows</span>
-      </div>
-    </div>
-
-    <!-- Category: DevOps Tools -->
-    <div class="tech-category">
-      <h3><i class="fas fa-cogs"></i> DevOps Tools</h3>
-      <div class="tech-items">
-        <span class="tech-badge">Git</span>
-        <span class="tech-badge">Jenkins</span>
-        <span class="tech-badge">Kubernetes</span>
-        <span class="tech-badge">Docker</span>
-        <span class="tech-badge">Ansible</span>
-        <span class="tech-badge">Nexus</span>
-        <span class="tech-badge">Consul</span>
-      </div>
-    </div>
-
-    <!-- Category: Cloud -->
-    <div class="tech-category">
-      <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
-      <div class="tech-items">
-        <span class="tech-badge">AWS (Solutions Architect)</span>
-        <span class="tech-badge">GCP</span>
-        <span class="tech-badge">Azure (Fundamentals)</span>
-      </div>
-    </div>
-
-    <!-- Category: IaC -->
-    <div class="tech-category">
-      <h3><i class="fas fa-code"></i> Infrastructure as Code</h3>
-      <div class="tech-items">
-        <span class="tech-badge">Terraform</span>
-        <span class="tech-badge">Ansible</span>
-      </div>
-    </div>
-
-    <!-- Category: Monitoring -->
-    <div class="tech-category">
-      <h3><i class="fas fa-chart-line"></i> Monitoring & Orchestration</h3>
-      <div class="tech-items">
-        <span class="tech-badge">Prometheus</span>
-        <span class="tech-badge">Grafana</span>
-        <span class="tech-badge">Apache Airflow</span>
-      </div>
-    </div>
-
-    <!-- Category: Programming -->
-    <div class="tech-category">
-      <h3><i class="fas fa-code-branch"></i> Languages</h3>
-      <div class="tech-items">
-        <span class="tech-badge">Python</span>
-        <span class="tech-badge">Shell Script</span>
-      </div>
-    </div>
-
-    <!-- Category: Databases -->
-    <div class="tech-category">
-      <h3><i class="fas fa-database"></i> Databases</h3>
-      <div class="tech-items">
-        <span class="tech-badge">PostgreSQL</span>
-        <span class="tech-badge">Oracle</span>
-      </div>
-    </div>
-
-    <!-- Category: Other -->
-    <div class="tech-category">
-      <h3><i class="fas fa-robot"></i> Other Technologies</h3>
-      <div class="tech-items">
-        <span class="tech-badge">Machine Learning</span>
-        <span class="tech-badge">Deep Learning</span>
-        <span class="tech-badge">Generative AI</span>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
-{% if page.header.separator %}
-  <div class="header__separator"></div>
-{% endif %}
-
-{% include feature_row %}
 
 
