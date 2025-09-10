@@ -63,7 +63,7 @@ feature_row:
 <div style="text-align: center; margin: 20px 0 40px 0;">
   <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" 
      class="linkedin-button">
-    Connect on LinkedIn
+    Connect on LinkedIn!
   </a>
 </div>
 
@@ -79,6 +79,9 @@ feature_row:
   border-radius: 8px;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
+
+  /* Force dark text even if inherited styles exist */
+  -webkit-text-fill-color: #0A192F !important;
 }
 
 .linkedin-button:hover {
@@ -86,6 +89,7 @@ feature_row:
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 </style>
+
 
 
 <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
