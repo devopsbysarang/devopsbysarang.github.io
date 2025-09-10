@@ -404,3 +404,38 @@ button.greedy-nav__toggle:focus {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+
+/* --- Fix "What people say" section layout and spacing --- */
+.testimonials-section h2,
+.testimonials-section .section-title,
+.testimonials-section .custom-title {
+  white-space: nowrap !important;
+  text-align: center !important;
+  font-size: 2rem !important;
+  line-height: 1.2 !important;
+  margin-top: 0 !important;
+}
+
+.feature__wrapper::after,
+.page__splash .feature__wrapper + hr,
+.testimonials-section::before,
+.testimonials-section::after,
+hr {
+  display: none !important;
+  border: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  content: none !important;
+}
+
+.feature__wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.testimonials-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
