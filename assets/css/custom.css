@@ -387,3 +387,12 @@ button.greedy-nav__toggle:focus {
   margin: 1rem auto;               /* spacing and center */
   border-radius: 1px;
 }
+
+
+/* Remove only the separator line after feature row */
+.feature__wrapper::after {
+  content: none;       /* removes the visible line */
+  display: block;      /* keep block to maintain layout spacing */
+  height: 0 !important; /* ensure no height */
+  clear: both;         /* keep clearing floats if any */
+}
