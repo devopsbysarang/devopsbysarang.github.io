@@ -378,10 +378,9 @@ button.greedy-nav__toggle:focus {
 /* Custom separator above testimonials */
 .custom-separator {
   display: block;
-  width: 80%;                      /* width of the line */
-  height: 2px;
-  background: #64FFDA;             /* cyan line */
-  margin: 2rem auto;               /* spacing and center */
+  width: 100%;                      /* width of the line */
+  height: 1px;
+  background: #fff;             /* cyan line */
+  margin: 1rem auto;               /* spacing and center */
   border-radius: 1px;
-  box-shadow: 0 0 8px #64FFDA;    /* subtle glow */
 }
