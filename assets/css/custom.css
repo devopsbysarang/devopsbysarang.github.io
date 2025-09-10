@@ -373,7 +373,7 @@ button.greedy-nav__toggle:focus {
    Homepage Feature & Testimonials Fix
    =============================== */
 
-/* Remove default separator after feature row */
+/* Remove default pseudo-element separator after feature row */
 .feature__wrapper::after {
   content: none !important;
   display: none !important;
@@ -388,38 +388,38 @@ button.greedy-nav__toggle:focus {
   margin: 2rem 0; /* spacing above/below */
 }
 
-/* Testimonials section adjustments */
+/* ===============================
+   Testimonials Section
+   =============================== */
+
+/* Force full width and center ignoring parent padding/flex */
 .testimonials {
-  width: 100%;              /* full width */
-  max-width: 1200px;        /* keeps content centered */
-  margin: 0 auto;           /* center section */
-  padding-top: 20px;        /* reduced top space */
-  padding-bottom: 40px;     /* bottom spacing */
-  background-color: #0A192F;
-  color: #fff;
-  text-align: center;
-  display: block;           /* ensures proper layout */
-  box-sizing: border-box;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: 20px 20px !important;   /* top/bottom padding */
+  margin: 0 !important;            /* remove auto-margin shifts */
+  text-align: center !important;
+  box-sizing: border-box !important;
 }
 
 /* Heading inside testimonials */
 .testimonials h2 {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-bottom: none !important;
-  text-decoration: none !important;
-  color: #64FFDA;  /* cyan heading */
-  margin-bottom: 40px;
-  font-size: 2rem;
-  text-align: center;
+  margin: 0 0 40px 0 !important;   /* remove top space, keep bottom */
+  padding: 0 !important;
+  text-align: center !important;
+  color: #64FFDA !important;       /* cyan heading */
+  font-size: 2rem !important;
+  font-weight: 600;
 }
 
-/* Testimonial cards container */
+/* Container for cards */
 .testimonial-container {
-  display: flex;
-  justify-content: center;  /* center cards */
-  flex-wrap: wrap;
-  gap: 30px;
+  display: flex !important;
+  justify-content: center !important;  /* center cards */
+  flex-wrap: wrap !important;
+  gap: 30px !important;
+  margin: 0 auto !important;           /* center container */
 }
 
 /* Individual testimonial card */
