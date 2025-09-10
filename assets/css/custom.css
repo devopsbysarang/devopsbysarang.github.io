@@ -369,3 +369,19 @@ button.greedy-nav__toggle:focus {
   }
 }
 
+/* Remove default pseudo-element separator after feature row */
+.feature__wrapper::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Custom separator above testimonials */
+.custom-separator {
+  display: block;
+  width: 80%;                      /* width of the line */
+  height: 2px;
+  background: #64FFDA;             /* cyan line */
+  margin: 2rem auto;               /* spacing and center */
+  border-radius: 1px;
+  box-shadow: 0 0 8px #64FFDA;    /* subtle glow */
+}
