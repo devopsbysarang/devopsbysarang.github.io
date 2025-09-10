@@ -369,9 +369,6 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-.page__splash .feature__wrapper + hr {
-  display: none !important;
-}
 
 /* Custom separator above testimonials */
 .custom-separator {
@@ -381,61 +378,4 @@ button.greedy-nav__toggle:focus {
   background: #fff;             /* cyan line */
   margin: 1rem auto;               /* spacing and center */
   border-radius: 1px;
-}
-
-/* Remove white line caused by ::after */
-.feature__wrapper::after {
-  display: none !important;
-  content: none !important;
-  height: 0 !important;
-  border: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remove bottom margin/padding of the wrapper */
-.feature__wrapper {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Remove top margin/padding of the testimonial section */
-.testimonials-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-
-/* --- Fix "What people say" section layout and spacing --- */
-.testimonials-section h2,
-.testimonials-section .section-title,
-.testimonials-section .custom-title {
-  white-space: nowrap !important;
-  text-align: center !important;
-  font-size: 2rem !important;
-  line-height: 1.2 !important;
-  margin-top: 0 !important;
-}
-
-.feature__wrapper::after,
-.page__splash .feature__wrapper + hr,
-.testimonials-section::before,
-.testimonials-section::after,
-hr {
-  display: none !important;
-  border: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  content: none !important;
-}
-
-.feature__wrapper {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.testimonials-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
 }
