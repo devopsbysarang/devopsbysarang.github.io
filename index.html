@@ -42,4 +42,70 @@ feature_row:
 {% include feature_row %}
 {% include testimonials.html %}
 
+
+<!-- 🔹 Skills Section -->
+<section class="skills-section" style="background-color:#0A192F; padding:50px 0;">
+  <div class="container" style="max-width:1100px; margin:auto; text-align:center;">
+    <h2 style="color:#64FFDA; font-size:2rem; margin-bottom:40px;">Tech Stack & Skills</h2>
+
+    <div class="skills-marquee">
+      <div class="skills-track">
+        <div class="skill"><img src="/assets/images/kubernetes.png" alt="Kubernetes"></div>
+        <div class="skill"><img src="/assets/images/aws.png" alt="AWS"></div>
+        <div class="skill"><img src="/assets/images/docker.png" alt="Docker"></div>
+        <div class="skill"><img src="/assets/images/terraform.png" alt="Terraform"></div>
+        <div class="skill"><img src="/assets/images/jenkins.png" alt="Jenkins"></div>
+        <div class="skill"><img src="/assets/images/ansible.png" alt="Ansible"></div>
+        <div class="skill"><img src="/assets/images/git.png" alt="Git"></div>
+        <div class="skill"><img src="/assets/images/linux.png" alt="Linux"></div>
+
+        <!-- duplicate logos for seamless infinite scroll -->
+        <div class="skill"><img src="/assets/images/kubernetes.png" alt="Kubernetes"></div>
+        <div class="skill"><img src="/assets/images/aws.png" alt="AWS"></div>
+        <div class="skill"><img src="/assets/images/docker.png" alt="Docker"></div>
+        <div class="skill"><img src="/assets/images/terraform.png" alt="Terraform"></div>
+        <div class="skill"><img src="/assets/images/jenkins.png" alt="Jenkins"></div>
+        <div class="skill"><img src="/assets/images/ansible.png" alt="Ansible"></div>
+        <div class="skill"><img src="/assets/images/git.png" alt="Git"></div>
+        <div class="skill"><img src="/assets/images/linux.png" alt="Linux"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.skills-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.skills-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollLeft 25s linear infinite;
+}
+
+.skill img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #113F4E; /* fresh dark cyan */
+  padding: 12px;
+  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.skill img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+
 <div class="custom-separator"></div>
