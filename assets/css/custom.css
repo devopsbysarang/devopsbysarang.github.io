@@ -379,13 +379,15 @@ button.greedy-nav__toggle:focus {
   display: none !important;
 }
 
-/* Custom separators above & below testimonials */
+/* Custom separator above testimonials */
 .custom-separator {
   display: block;
-  width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,0.15); /* subtle line */
-  margin: 2rem 0; /* spacing above/below */
+  width: 80%;                      /* width of the line */
+  height: 2px;
+  background: #64FFDA;             /* cyan line */
+  margin: 2rem auto;               /* spacing and center */
+  border-radius: 1px;
+  box-shadow: 0 0 8px #64FFDA;    /* subtle glow */
 }
 
 /* ===============================
@@ -397,8 +399,9 @@ button.greedy-nav__toggle:focus {
   display: block !important;
   width: 100% !important;
   max-width: none !important;
-  padding: 20px 20px !important;   /* top/bottom padding */
-  margin: 0 !important;            /* remove auto-margin shifts */
+  padding-top: 20px !important;   /* top spacing */
+  padding-bottom: 40px !important; /* bottom spacing */
+  margin: 0 auto !important;       /* center section */
   text-align: center !important;
   box-sizing: border-box !important;
 }
@@ -413,7 +416,7 @@ button.greedy-nav__toggle:focus {
   font-weight: 600;
 }
 
-/* Container for cards */
+/* Container for testimonial cards */
 .testimonial-container {
   display: flex !important;
   justify-content: center !important;  /* center cards */
