@@ -5,7 +5,7 @@
     <div class="testimonials-wrapper" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
       <!-- Testimonial 1 -->
       <div class="testimonial" style="
-        background-color: #112B44; /* lighter fresh blue */
+        background-color: #112B44;
         padding: 25px 30px;
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -14,14 +14,14 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       ">
         <p style="font-size: 1.1rem; line-height: 1.6;">"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
-        <p style="margin-top: 10px; font-weight: bold; color: #64FFDA;">– Hariom Kashyap<br>
+        <p class="testimonial-name">– Hariom Kashyap<br>
           <span style="font-weight: normal; color: #ffffff;">Software Architect, Amdocs</span>
         </p>
       </div>
 
       <!-- Testimonial 2 -->
       <div class="testimonial" style="
-        background-color: #112B44; /* lighter fresh blue */
+        background-color: #112B44;
         padding: 25px 30px;
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -30,7 +30,7 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       ">
         <p style="font-size: 1.1rem; line-height: 1.6;">"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
-        <p style="margin-top: 10px; font-weight: bold; color: #64FFDA;">– Ankur Singh<br>
+        <p class="testimonial-name">– Ankur Singh<br>
           <span style="font-weight: normal; color: #ffffff;">AI Engineer | GenAI Infra, LLM</span>
         </p>
       </div>
@@ -42,6 +42,12 @@
 .testimonial:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Name in cyan */
+.testimonial-name {
+  font-weight: bold;
+  color: #64FFDA !important;
 }
 
 /* Responsive adjustments for mobile */
