@@ -397,52 +397,35 @@ button.greedy-nav__toggle:focus {
 }
 
 
-/* Skills marquee styles (no animation here; JS will add it) */
-.skills-section {
-  background: #0A192F;
-  padding: 40px 0;
-}
-
-.skills-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 16px;
-}
-
-.skills-title {
-  color: #64FFDA;
-  font-size: 28px;
-  margin-bottom: 24px;
-}
-
-.skills-marquee {
-  overflow: hidden;
-  width: 100%;
-}
-
-.skills-track {
+.skills-scroll {
   display: flex;
-  gap: 40px;
-  align-items: center;
+  overflow-x: auto;
   white-space: nowrap;
-  will-change: transform;
-  /* NO animation here — JS will inject the correct keyframes and animation */
+  gap: 40px;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
 }
 
-.skills-track img {
-  height: 56px;
-  width: auto;
-  display: block;
+.skills-scroll::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
-/* pause on hover */
-.skills-marquee:hover .skills-track {
-  animation-play-state: paused !important;
+.skills-scroll img {
+  height: 60px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* responsive */
+.skills-scroll img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .skills-track { gap: 24px; }
-  .skills-track img { height: 48px; }
+  .skills-scroll {
+    gap: 24px;
+  }
+  .skills-scroll img {
+    height: 48px;
+  }
 }
