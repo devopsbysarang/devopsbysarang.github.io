@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sarang Custom CSS - Navy + Green (Yashita-style)
+   Sarang Custom CSS - Navy + Green 
    ========================================================================== */
 
 /* ---------- Site Background ---------- */
@@ -367,4 +367,62 @@ button.greedy-nav__toggle:focus {
     flex: 1;   /* buttons expand evenly */
     min-width: auto;
   }
+}
+
+
+/* =======================
+   Testimonials Section
+   ======================= */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #0A192F; /* match site background */
+  color: #fff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  color: #64FFDA; /* cyan heading */
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: #112240; /* dark navy card */
+  border: 1px solid #233554;
+  border-radius: 12px;
+  padding: 25px 30px;
+  max-width: 400px;
+  text-align: left;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #ccd6f6;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.testimonial-card h4 {
+  color: #64FFDA; /* cyan names */
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: #8892b0;
 }
