@@ -1,22 +1,22 @@
-<section class="testimonials-section" style="background-color: #0A192F; padding: 0px 0; color: #ffffff;">
+<section class="testimonials-section" style="background-color: #0A192F; padding: 40px 0; color: #ffffff;">
   <div class="container" style="max-width: 1000px; margin: auto;">
-    <h2 style="margin-bottom: 40px; font-size: 2rem; color: #64FFDA; text-align: center;">What people say</h2>
+    <h2 class="testimonials-heading" style="margin-bottom: 50px; font-size: 2rem; text-align: center;">What people say</h2>
 
-    <div class="testimonials-wrapper" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px;">
+    <div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; margin-bottom: 60px;">
       <!-- Testimonial 1 -->
       <div class="testimonial" style="
         background-color: #112B44;
-        padding: 20px 20px;
+        padding: 30px 25px;
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         flex: 1 1 300px;
         max-width: 450px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       ">
-        <p style="font-size: 1rem; line-height: 1.35; margin: 0;">
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px;">
           "I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
         </p>
-        <p class="testimonial-name" style="margin: 4px 0 0 0; line-height: 1.2;">– Hariom Kashyap
+        <p class="testimonial-name">– Hariom Kashyap
           <span class="testimonial-role">Software Architect, Amdocs</span>
         </p>
       </div>
@@ -24,17 +24,17 @@
       <!-- Testimonial 2 -->
       <div class="testimonial" style="
         background-color: #112B44;
-        padding: 20px 20px;
+        padding: 30px 25px;
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         flex: 1 1 300px;
         max-width: 450px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       ">
-        <p style="font-size: 1rem; line-height: 1.35; margin: 0;">
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px;">
           "Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
         </p>
-        <p class="testimonial-name" style="margin: 4px 0 0 0; line-height: 1.2;">– Ankur Singh
+        <p class="testimonial-name">– Ankur Singh
           <span class="testimonial-role">AI Engineer | GenAI Infra, LLM</span>
         </p>
       </div>
@@ -43,6 +43,11 @@
 </section>
 
 <style>
+/* Heading in cyan */
+.testimonials-heading {
+  color: #64FFDA;
+}
+
 /* Hover animation */
 .testimonial:hover {
   transform: translateY(-5px);
@@ -53,8 +58,8 @@
 .testimonial-name {
   font-weight: bold;
   color: #64FFDA !important;
-  margin: 4px 0 0 0;
-  line-height: 1.2;
+  margin: 10px 0 0 0;
+  line-height: 1.4;
 }
 
 /* Role / designation */
@@ -62,36 +67,36 @@
   display: block;         /* next line */
   font-weight: normal;
   color: #ffffff;
-  margin: 1px 0 0 0;
-  line-height: 1.2;
+  margin: 3px 0 0 0;
+  line-height: 1.3;
 }
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
   .testimonials-wrapper {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .testimonial {
     max-width: 90%;
-    padding: 15px 15px; /* smaller padding */
+    padding: 20px 20px; /* comfortable padding on mobile */
   }
 
   .testimonial p {
-    font-size: 0.9rem; /* smaller text */
-    line-height: 1.3; /* tighter spacing */
-    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
 
   .testimonial-name {
-    margin-top: 3px;
-    line-height: 1.2;
+    margin-top: 8px;
+    line-height: 1.3;
   }
 
   .testimonial-role {
-    margin-top: 1px;
-    line-height: 1.15;
+    margin-top: 2px;
+    line-height: 1.25;
   }
 }
 </style>
