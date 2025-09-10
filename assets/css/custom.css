@@ -396,3 +396,45 @@ button.greedy-nav__toggle:focus {
   margin: 0 !important;
 }
 
+
+
+.skills-section {
+  padding: 40px 0;
+  background-color: #0A192F; /* same dark background */
+  text-align: center;
+}
+
+.skills-title {
+  color: #64FFDA; /* cyan heading */
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.skills-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.skills-track {
+  display: flex;
+  gap: 50px; /* space between logos */
+  animation: scroll-left 20s linear infinite;
+  width: max-content;
+}
+
+.skills-track img {
+  height: 60px;   /* adjust logo size */
+  width: auto;
+  filter: brightness(0) invert(1); /* makes logos white if SVG/PNG is dark */
+  transition: transform 0.3s ease;
+}
+
+.skills-track img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
