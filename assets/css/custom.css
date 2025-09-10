@@ -369,13 +369,8 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-/* Instead of removing ::after, make it invisible but keep spacing */
-.feature__wrapper::after {
-  content: "";
-  display: block;   /* keep block for layout */
-  height: 0;        /* remove visual height */
-  clear: both;      /* keep float clearing if any */
-  visibility: hidden; /* hide any visual lines */
+.page__splash .feature__wrapper + hr {
+  display: none !important;
 }
 
 /* Custom separator above testimonials */
@@ -388,11 +383,3 @@ button.greedy-nav__toggle:focus {
   border-radius: 1px;
 }
 
-
-/* Remove only the separator line after feature row */
-.feature__wrapper::after {
-  content: none;       /* removes the visible line */
-  display: block;      /* keep block to maintain layout spacing */
-  height: 0 !important; /* ensure no height */
-  clear: both;         /* keep clearing floats if any */
-}
