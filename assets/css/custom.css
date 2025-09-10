@@ -369,10 +369,13 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-/* Remove default pseudo-element separator after feature row */
+/* Instead of removing ::after, make it invisible but keep spacing */
 .feature__wrapper::after {
-  content: none !important;
-  display: none !important;
+  content: "";
+  display: block;   /* keep block for layout */
+  height: 0;        /* remove visual height */
+  clear: both;      /* keep float clearing if any */
+  visibility: hidden; /* hide any visual lines */
 }
 
 /* Custom separator above testimonials */
