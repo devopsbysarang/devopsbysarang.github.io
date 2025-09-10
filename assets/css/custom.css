@@ -396,6 +396,3 @@ button.greedy-nav__toggle:focus {
   margin: 0 !important;
 }
 
-.feature__wrapper {
-  outline: 2px dashed red !important;
-}
