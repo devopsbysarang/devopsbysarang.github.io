@@ -383,3 +383,24 @@ button.greedy-nav__toggle:focus {
   border-radius: 1px;
 }
 
+/* Remove white line caused by ::after */
+.feature__wrapper::after {
+  display: none !important;
+  content: none !important;
+  height: 0 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove bottom margin/padding of the wrapper */
+.feature__wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove top margin/padding of the testimonial section */
+.testimonials-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
