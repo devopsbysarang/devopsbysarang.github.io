@@ -369,30 +369,60 @@ button.greedy-nav__toggle:focus {
   }
 }
 
+/* ===============================
+   Homepage Feature & Testimonials Fix
+   =============================== */
 
-/* =======================
-   Testimonials Section
-   ======================= */
+/* Remove default separator after feature row */
+.feature__wrapper::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Custom separators above & below testimonials */
+.custom-separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.15); /* subtle line */
+  margin: 2rem 0; /* spacing above/below */
+}
+
+/* Testimonials section adjustments */
 .testimonials {
-  padding: 60px 20px;
-  background-color: #0A192F; /* match site background */
+  width: 100%;              /* full width */
+  max-width: 1200px;        /* keeps content centered */
+  margin: 0 auto;           /* center section */
+  padding-top: 20px;        /* reduced top space */
+  padding-bottom: 40px;     /* bottom spacing */
+  background-color: #0A192F;
   color: #fff;
+  text-align: center;
+  display: block;           /* ensures proper layout */
+  box-sizing: border-box;
+}
+
+/* Heading inside testimonials */
+.testimonials h2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  color: #64FFDA;  /* cyan heading */
+  margin-bottom: 40px;
+  font-size: 2rem;
   text-align: center;
 }
 
-.testimonials h2 {
-  color: #64FFDA; /* cyan heading */
-  margin-bottom: 40px;
-  font-size: 2rem;
-}
-
+/* Testimonial cards container */
 .testimonial-container {
   display: flex;
-  justify-content: center;
+  justify-content: center;  /* center cards */
   flex-wrap: wrap;
   gap: 30px;
 }
 
+/* Individual testimonial card */
 .testimonial-card {
   background: #112240; /* dark navy card */
   border: 1px solid #233554;
@@ -416,45 +446,15 @@ button.greedy-nav__toggle:focus {
   line-height: 1.6;
 }
 
+/* Author name in cyan */
 .testimonial-card h4 {
-  color: #64FFDA; /* cyan names */
-  margin-bottom: 5px;
-  font-size: 1.1rem;
-}
-
-.testimonial-card span {
-  font-size: 0.9rem;
-  color: #8892b0;
-}
-
-#testimonials h2 {
-  margin-top: 0 !important;    /* remove extra top space */
-  padding-top: 0 !important;
-  border-bottom: none !important; /* remove underline */
-  text-decoration: none !important;
-}
-
-/* Force cyan color for testimonial names */
-#testimonials .testimonial-card h4 {
   color: #64FFDA !important;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-/* Custom separator, matches header line */
-.custom-separator {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #fff; /* same subtle line */
-  margin: 0em 0; /* same spacing */
+/* Author role / company */
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: #8892b0;
 }
-
-/* Remove default separator after feature row */
-.feature__wrapper::after {
-  content: none !important;
-  display: none !important;
-}
-
-
