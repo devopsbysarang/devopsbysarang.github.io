@@ -1,99 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@500&display=swap');
-
-.logo-wrapper {
+.skills-scroll {
   display: flex;
-  align-items: center;
-  gap: 1rem; /* use rem for spacing */
-  flex-wrap: wrap; /* wrap if needed on small screens */
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 40px;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
 }
 
-.hex-logo-wrapper {
-  position: relative;
-  width: 4rem;  /* 64px approx */
-  height: 4.5rem; /* 72px approx */
-  flex-shrink: 0; /* prevent shrinking too small */
+.skills-scroll::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
-/* Border Hexagon behind */
-.hex-border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(
-    50% 0%,
-    93% 25%,
-    93% 75%,
-    50% 100%,
-    7% 75%,
-    7% 25%
-  );
-  background: #00ffe7; /* neon cyan for border */
+.skills-scroll img {
+  height: 60px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Inner Hexagon */
-.hex-logo {
-  position: absolute;
-  top: 0.25rem;  /* border thickness */
-  left: 0.25rem;
-  width: calc(100% - 0.5rem);
-  height: calc(100% - 0.5rem);
-  background: #0b1625; /* dark background */
-  color: #00ffe7;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1.2rem; /* smaller, scalable */
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  clip-path: polygon(
-    50% 0%,
-    93% 25%,
-    93% 75%,
-    50% 100%,
-    7% 75%,
-    7% 25%
-  );
-  transition: transform 0.3s;
+.skills-scroll img:hover {
+  transform: scale(1.1);
 }
 
-.hex-logo-wrapper:hover .hex-logo {
-  transform: scale(1.05);
-}
-
-.logo-text {
-  font-family: 'Inter', sans-serif;
-  color: #00ffe7;
-  font-size: 1rem;
-  font-weight: 500;
-  white-space: nowrap; /* keep text on one line */
-}
-
-/* Media Queries for smaller screens */
-@media (max-width: 480px) {
-  .logo-wrapper {
-    justify-content: center;
-    gap: 0.5rem;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-scroll {
+    gap: 24px;
   }
-  .hex-logo-wrapper {
-    width: 3rem;
-    height: 3.5rem;
-  }
-  .hex-logo {
-    font-size: 1rem;
-  }
-  .logo-text {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .logo-wrapper {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .logo-text {
-    font-size: 0.8rem;
+  .skills-scroll img {
+    height: 48px;
   }
 }
