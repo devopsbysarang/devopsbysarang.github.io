@@ -28,7 +28,7 @@ permalink: /about/
   <h2>I am skilled in: </h2>
 
 <section class="skills-section" aria-label="Tech Stack & Skills">
-  <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
+  <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 0px 16px;">
     <div class="skills-scroll">
       <img src="/assets/images/aws.png" alt="AWS">
       <img src="/assets/images/kubernetes.png" alt="Kubernetes">
