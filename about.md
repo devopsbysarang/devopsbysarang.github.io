@@ -130,7 +130,7 @@ permalink: /about/
 .about-bio a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 6px;
   background-color: #0077B5;
   padding: 0.6rem 1.2rem;
