@@ -196,6 +196,7 @@ permalink: /about/
   font-weight: 600;
   border-radius: 6px;
   background-color: #0077B5;
+  color: #0A192F !important;
   padding: 0.7rem 1.5rem;
   display: inline-block;
   transition: background-color 0.3s ease;
