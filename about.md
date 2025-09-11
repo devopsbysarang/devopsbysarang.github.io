@@ -26,6 +26,24 @@ permalink: /about/
 <!-- Skills Section -->
 <div class="skills-section">
   <h2>I am skilled in: </h2>
+
+<section class="skills-section" aria-label="Tech Stack & Skills">
+  <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
+    <div class="skills-scroll">
+      <img src="/assets/images/aws.png" alt="AWS">
+      <img src="/assets/images/kubernetes.png" alt="Kubernetes">
+      <img src="/assets/images/dockerpng.png" alt="Docker">
+      <img src="/assets/images/gcp.png" alt="GCP">
+      <img src="/assets/images/terraform.png" alt="Terraform">
+      <img src="/assets/images/Jenkins.png" alt="Jenkins">
+      <img src="/assets/images/gitlab.svg" alt="Git">
+      <img src="/assets/images/database.png" alt="Linux">
+      <img src="/assets/images/ansible.png" alt="Ansible">
+
+    </div>
+  </div>
+</section>
+  
   <div class="skills-grid">
 
     <div class="skill-card">
