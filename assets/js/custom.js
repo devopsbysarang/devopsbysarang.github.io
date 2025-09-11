@@ -3,19 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!scroller) return;
 
   let scrollAmount = 0;
-  const scrollStep = 1;      // pixels per frame
-  const fps = 60;             // frames per second
+  const scrollStep = 1; // pixels per frame
+  const fps = 60;
 
   function autoScroll() {
     scrollAmount += scrollStep;
+    scroller.scrollLeft = scrollAmount;
 
-    // reset scroll when reaching end
+    // when first half has gone fully left, reset
     if (scrollAmount >= scroller.scrollWidth / 2) {
       scrollAmount = 0;
     }
-
-    scroller.scrollLeft = scrollAmount;
   }
 
-  setInterval(autoScroll, 1000 / fps); // ~60fps for smooth movement
+  setInterval(autoScroll, 1000 / fps);
 });
