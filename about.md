@@ -195,7 +195,7 @@ permalink: /about/
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
-  background-color: #0077B5;
+  background-color: #64FFDA;
   color: #0A192F !important;
   padding: 0.7rem 1.5rem;
   display: inline-block;
@@ -203,7 +203,7 @@ permalink: /about/
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 .linkedin-section .linkedin-btn:hover {
-  background-color: #004182;
+  background-color: #27cfa7;
 }
 
 /* Responsive */
