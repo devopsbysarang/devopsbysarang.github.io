@@ -423,9 +423,6 @@ button.greedy-nav__toggle:focus {
   transition: transform 0.3s ease !important;
 }
 
-.skills-scroll img:hover {
-  transform: scale(1.1) !important;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
