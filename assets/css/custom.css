@@ -399,26 +399,22 @@ button.greedy-nav__toggle:focus {
 
 .skills-container {
   display: flex;
-  justify-content: center; /* centers the scrollable container itself */
+  justify-content: center;   /* centers the scrollable container itself */
 }
 
 .skills-scroll {
   display: flex;
-  overflow: hidden;   /* hide scrollbars, we'll animate instead of manual scroll */
+  overflow-x: auto;
   white-space: nowrap;
   gap: 40px;
-  margin-top: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 20px !important;
+  margin-top: 0 !important;
+  scrollbar-width: none !important; /* Firefox */
 }
 
 .skills-scroll::-webkit-scrollbar {
   display: none !important; /* Chrome/Safari */
-}
-
-.scroll-content {
-  display: flex;
-  gap: 40px;
 }
 
 .skills-scroll img {
@@ -427,14 +423,12 @@ button.greedy-nav__toggle:focus {
   transition: transform 0.3s ease !important;
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .skills-scroll {
     gap: 24px !important;
     padding-bottom: 16px !important;
-  }
-  .scroll-content {
-    gap: 24px !important;
   }
   .skills-scroll img {
     height: 48px !important;
