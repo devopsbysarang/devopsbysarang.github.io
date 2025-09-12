@@ -96,7 +96,7 @@ code, pre {
 .page__splash .splash__title * {
   color: #64ffda !important;       
   text-shadow: none !important;
-  -webkit-text-fill-color: #64ffda !important;
+  -webkit-text-fill-color: #fff !important;
   background-image: none !important;
 }
 
