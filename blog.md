@@ -9,28 +9,6 @@ author_profile: true
   Here you’ll find all my posts on <strong>DevOps, Kubernetes, Cloud, and Automation</strong>.
 </p>
 
-<div class="blog-grid">
-  {% for post in site.posts %}
-    <div class="blog-card">
-      <!-- Featured image or default -->
-      <div class="blog-image" style="
-        background-image: url('{{ post.featured-image | default: '/assets/images/default-blog.jpg' }}');
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 180px;
-      "></div>
-
-      <div class="blog-content">
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p class="blog-meta">
-          <time datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time> • {{ post.author }}
-        </p>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
 
