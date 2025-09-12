@@ -434,3 +434,38 @@ button.greedy-nav__toggle:focus {
     height: 48px !important;
   }
 }
+
+
+/* Inline search styling */
+.search-item {
+  position: relative;
+}
+
+.search-toggle {
+  background: none;
+  border: none;
+  color: #64FFDA; /* cyan accent */
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.search-input {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  background: #0A192F;
+  border: 1px solid #64FFDA;
+  border-radius: 5px;
+  padding: 6px 10px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  width: 180px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #00e6b8;
+}
