@@ -444,12 +444,12 @@ button.greedy-nav__toggle:focus {
 /* CTA Button (About Me) */
 .layout--splash .page__lead + p > a[href="/about/"] {
   background-color: var(--accent-orange) !important;
-  color: #0A192F !important;
+  color: #fff !important;
   border: 2px solid transparent !important;
 }
 
 .layout--splash .page__lead + p > a[href="/about/"]:hover {
-  background-color: #e68900 !important;  /* darker orange */
+  background-color: #ff1340 !important;  /* darker orange */
   color: #fff !important;
   transform: translateY(-2px);
   transition: transform 160ms ease;
@@ -477,7 +477,7 @@ h3.section-title::after {
 /* Badge / Highlight */
 .badge-orange {
   background-color: var(--accent-orange);
-  color: #0A192F;
+  color: #ff1340;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 2px 8px;
