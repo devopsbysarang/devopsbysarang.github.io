@@ -438,13 +438,13 @@ button.greedy-nav__toggle:focus {
 
 /* ---------- Accent Orange ---------- */
 :root {
-  --accent-orange: #FF9800;
+  --accent-orange: #FF2D55;
 }
 
 /* CTA Button (About Me) */
 .layout--splash .page__lead + p > a[href="/about/"] {
   background-color: var(--accent-orange) !important;
-  color: #FF2D55 !important;
+  color: #0A192F !important;
   border: 2px solid transparent !important;
 }
 
@@ -477,7 +477,7 @@ h3.section-title::after {
 /* Badge / Highlight */
 .badge-orange {
   background-color: var(--accent-orange);
-  color: #FF2D55;
+  color: #0A192F;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 2px 8px;
