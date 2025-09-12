@@ -436,20 +436,20 @@ button.greedy-nav__toggle:focus {
 }
 
 
-/* ---------- Accent Orange ---------- */
+/* ---------- Accent Indigo ---------- */
 :root {
-  --accent-orange: #FF2D55;
+  --accent-indigo: #6366F1;
 }
 
 /* CTA Button (About Me) */
 .layout--splash .page__lead + p > a[href="/about/"] {
-  background-color: var(--accent-orange) !important;
+  background-color: var(--accent-indigo) !important;
   color: #fff !important;
   border: 2px solid transparent !important;
 }
 
 .layout--splash .page__lead + p > a[href="/about/"]:hover {
-  background-color: #ff1340 !important;  /* darker orange */
+  background-color: #4F46E5 !important;  /* slightly darker indigo for hover */
   color: #fff !important;
   transform: translateY(-2px);
   transition: transform 160ms ease;
@@ -469,15 +469,15 @@ h3.section-title::after {
   display: block;
   width: 40px;
   height: 3px;
-  background-color: var(--accent-orange);
+  background-color: var(--accent-indigo);
   margin-top: 6px;
   border-radius: 2px;
 }
 
 /* Badge / Highlight */
-.badge-orange {
-  background-color: var(--accent-orange);
-  color: #ff1340;
+.badge-indigo {
+  background-color: var(--accent-indigo);
+  color: #fff;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 2px 8px;
