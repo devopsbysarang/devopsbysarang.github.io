@@ -163,7 +163,7 @@ permalink: /about/
   gap: 1.5rem;
 }
 .skill-card {
-  background: ##104E61;
+  background: #104F62;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 0 6px rgba(100, 255, 218, 0.2);
