@@ -144,7 +144,7 @@ permalink: /about/
 
 /* Skills Section */
 .skills-section {
-  background: #104F61;
+  background: #161D6F;
   padding: 3rem 2rem;
   margin-top: 0rem;
   border-radius: 0px;
@@ -163,7 +163,7 @@ permalink: /about/
   gap: 1.5rem;
 }
 .skill-card {
-  background: #0A192F;
+  background: #279EFF;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 0 6px rgba(100, 255, 218, 0.2);
