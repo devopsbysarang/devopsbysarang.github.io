@@ -166,7 +166,7 @@ permalink: /about/
   background: #104F62;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 0 6px rgba(100, 255, 218, 0.2);
+  box-shadow: #175E6B;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .skill-card:hover {
