@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!scroller) return;
 
   let scrollAmount = 0;
-  const scrollStep = 0.5; // pixels per frame
+  const scrollStep = 0.8; // pixels per frame
   const fps = 60;
 
   function autoScroll() {
