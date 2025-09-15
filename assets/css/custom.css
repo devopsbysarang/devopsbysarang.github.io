@@ -435,3 +435,9 @@ button.greedy-nav__toggle:focus {
   }
 }
 
+.skills-scroll {
+  display: flex;
+  overflow-x: hidden !important; /* prevent manual scroll glitch */
+  white-space: nowrap;
+  gap: 40px;
+}
