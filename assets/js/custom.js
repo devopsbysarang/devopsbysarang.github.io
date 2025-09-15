@@ -2,18 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const scroller = document.querySelector(".skills-scroll");
   if (!scroller) return;
 
-  // Duplicate the content for seamless scroll
-  scroller.innerHTML += scroller.innerHTML;
-
-  const scrollStep = 0.3; // Slower scroll speed (pixels per frame)
+  let scrollAmount = 0;
+  const scrollStep = 0.5; // pixels per frame
   const fps = 60;
 
   function autoScroll() {
-    scroller.scrollLeft += scrollStep;
+    scrollAmount += scrollStep;
+    scroller.scrollLeft = scrollAmount;
 
-    // Reset when we've scrolled through half (i.e., original content length)
-    if (scroller.scrollLeft >= scroller.scrollWidth / 2) {
-      scroller.scrollLeft = 0;
+    // when first half has gone fully left, reset
+    if (scrollAmount >= scroller.scrollWidth / 2) {
+      scrollAmount = 0;
     }
   }
 
