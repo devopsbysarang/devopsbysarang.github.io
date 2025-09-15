@@ -441,3 +441,30 @@ button.greedy-nav__toggle:focus {
   white-space: nowrap;
   gap: 40px;
 }
+
+
+.skills-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-container::before,
+.skills-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.skills-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0A192F, transparent);
+}
+
+.skills-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0A192F, transparent);
+}
