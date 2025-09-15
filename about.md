@@ -144,7 +144,7 @@ permalink: /about/
 
 /* Skills Section */
 .skills-section {
-  background: #0A192F;
+  background: #112240;
   padding: 3rem 2rem;
   margin-top: 0rem;
   border-radius: 0px;
