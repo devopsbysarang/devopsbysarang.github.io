@@ -171,7 +171,6 @@ permalink: /about/
 }
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
 }
 .skill-card h3 {
   margin: 0 0 0.8rem;
