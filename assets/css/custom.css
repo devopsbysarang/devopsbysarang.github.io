@@ -442,61 +442,30 @@ button.greedy-nav__toggle:focus {
   gap: 40px;
 }
 
-
-.skills-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.skills-container::before,
-.skills-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.skills-container::before {
-  left: 0;
-  background: linear-gradient(to right, #0A192F, transparent);
-}
-
-.skills-container::after {
-  right: 0;
-  background: linear-gradient(to left, #0A192F, transparent);
-}
-
-
 .skills-container {
   display: flex;
   justify-content: center;
-  position: relative;   /* ✅ needed for fade effect */
-  overflow: hidden;     /* ✅ prevents logos poking out */
+  position: relative;
+  overflow: hidden;   /* ✅ clips logos outside the box */
 }
 
-/* existing .skills-scroll and img styles stay as they are */
-
-/* ✅ fade effect overrides (place AFTER old styles) */
-.skills-container::before,
-.skills-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 120px;  /* wider fade zone */
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
+.skills-scroll {
+  display: flex;
+  white-space: nowrap;
+  gap: 40px;
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+  margin-top: 0 !important;
+  scrollbar-width: none !important; /* Firefox */
 }
 
-.skills-container::before {
-  left: 0;
-  background: linear-gradient(to right, #0A192F 80%, transparent 100%);
+.skills-scroll::-webkit-scrollbar {
+  display: none !important; /* Chrome/Safari */
 }
 
-.skills-container::after {
-  right: 0;
-  background: linear-gradient(to left, #0A192F 80%, transparent 100%);
+.skills-scroll img {
+  height: 60px !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.3s ease !important;
 }
+
