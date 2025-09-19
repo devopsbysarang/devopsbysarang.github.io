@@ -15,4 +15,4 @@
 </div>
 
 
-{% include testimonials.html %}
+{% include newsletter.html %}
