@@ -144,7 +144,15 @@
 
 /* Responsive mobile: image on top */
 @media (max-width: 880px) {
-  .dn-inner { flex-direction: column !important; align-items: center !important; padding: 0.5rem 1rem 1rem 1rem !important; gap: 1rem !important; border: none !important; box-shadow: none !important; }
+  .dn-inner { 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    padding: 0.2rem 1rem 1.4rem 1rem !important;  /* less top, more bottom */
+    gap: 1rem !important; 
+    border: none !important; 
+    box-shadow: none !important; 
+  }
+
   .dn-image { order: -1 !important; width: 100% !important; }
   .dn-image img { max-width: 320px !important; margin: 0 auto !important; }
   .dn-left { width: 100% !important; }
