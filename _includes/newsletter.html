@@ -1,6 +1,9 @@
 <!-- Newsletter Subscribe Section -->
 <section class="newsletter-box">
   <div class="newsletter-content">
+    <div class="newsletter-image">
+      <img src="/assets/images/newsletter.png" alt="Newsletter illustration">
+    </div>
     <div class="newsletter-text">
       <h2>Subscribe to my Newsletter!</h2>
       <p>Get practical DevOps, Kubernetes, and Cloud tips. No spam, unsubscribe anytime.</p>
@@ -9,20 +12,17 @@
         <button type="submit">Subscribe</button>
       </form>
     </div>
-    <div class="newsletter-image">
-      <img src="/assets/images/python.png" alt="Newsletter illustration">
-    </div>
   </div>
 </section>
 
 <style>
 .newsletter-box {
-  max-width: 850px;
+  max-width: 950px; /* wider box */
   margin: 3rem auto;
-  padding: 2rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  background: transparent; /* No white background */
+  padding: 2.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  background: #0a192f; /* dark background, matches site */
 }
 
 .newsletter-content {
@@ -37,25 +37,26 @@
 }
 
 .newsletter-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
   color: #ffffff;
 }
 
 .newsletter-text p {
   font-size: 1rem;
-  color: #cbd5e1; /* light gray text */
-  margin-bottom: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 1.4rem;
 }
 
 .newsletter-form {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  width: 100%;
 }
 
 .newsletter-form input {
-  padding: 0.7rem 1rem;
-  font-size: 0.95rem;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
   border: 1px solid #334155;
   border-radius: 8px;
   background: #0f172a; /* dark input */
@@ -69,21 +70,22 @@
 
 .newsletter-form button {
   background: linear-gradient(90deg, #6366F1, #FF2D55);
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.7rem 1.2rem;
+  padding: 0.9rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .newsletter-form button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 .newsletter-image img {
-  max-width: 150px;
+  max-width: 200px;
   height: auto;
 }
 
@@ -92,8 +94,16 @@
     flex-direction: column;
     text-align: center;
   }
-  .newsletter-image img {
-    margin-top: 1rem;
+  .newsletter-image {
+    order: -1; /* move image on top */
+    margin-bottom: 1rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
   }
 }
 </style>
