@@ -1,14 +1,26 @@
 <!-- Font Awesome (keep) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<footer id="footer" class="page__footer">
+  <div class="footer-inner">
+    <div class="social-icons">
+      <a href="https://github.com/devopsbysarang/" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://instagram.com/saranghimself" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="mailto:sarangdeshmukh550@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+    </div>
+    <div class="footer-text">© 2025 All Rights Reserved • Developed with ❤️ by Sarang</div>
+  </div>
+</footer>
+
 <style>
   /* Reset any top spacing coming from theme */
   #footer.page__footer {
     background: none;
-    padding: 0 !important;       /* remove footer padding */
-    margin: 0 !important;        /* remove footer margin */
-    border-top: 1px solid transparent !important; /* prevents margin-collapsing */
-    overflow: hidden !important; /* prevents previous element margins collapsing into footer */
+    padding: 0 !important;       
+    margin: 0 !important;        
+    border-top: 1px solid transparent !important; 
+    overflow: hidden !important; 
     text-align: center;
   }
 
@@ -34,25 +46,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;                      /* horizontal space between icons */
-    padding-bottom: 14px !important;/* reliable space below icons (no top space) */
+    gap: 18px;                      
+    padding-bottom: 14px !important;
   }
 
-  /* Icon visuals */
-  #footer .social-icons a i {
-    color: #64FFDA !important;
-    font-size: 25px;
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    vertical-align: middle;
+  /* Icon visuals - different bright colors for each */
+  #footer .social-icons a:nth-child(1) i { color: #ffffff !important; }     /* GitHub - white */
+  #footer .social-icons a:nth-child(2) i { color: #0A66C2 !important; }    /* LinkedIn - bright blue */
+  #footer .social-icons a:nth-child(3) i { color: #E4405F !important; }    /* Instagram - pink/red */
+  #footer .social-icons a:nth-child(4) i { color: #FFAA00 !important; }    /* Email - yellow/orange */
+
+  /* Hover effect for all icons */
+  #footer .social-icons a:hover i {
+    transform: scale(1.2);
+    filter: brightness(1.4);
   }
-  #footer .social-icons a:hover i { color: #fff !important; transform: scale(1.1); }
 
   /* Footer text */
   #footer .footer-text {
     font-size: 16px;
     color: #fff;
-    padding-top: 6px;  /* small gap below icons only */
+    padding-top: 6px;  
     margin: 0;
   }
 
@@ -62,36 +76,4 @@
     #footer .social-icons a i { font-size: 22px; }
     #footer .footer-text { font-size: 14px; padding-top: 4px; }
   }
-</style>
-
-<footer id="footer" class="page__footer">
-  <div class="footer-inner">
-    <div class="social-icons">
-      <a href="https://github.com/devopsbysarang/" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
-      <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-      <a href="https://instagram.com/saranghimself" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-      <a href="mailto:sarangdeshmukh550@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-    </div>
-    <div class="footer-text">© 2025 All Rights Reserved • Developed with ❤️ by Sarang</div>
-  </div>
-</footer>
-
-<style>
-.social-icons a {
-  font-size: 1.8rem;
-  margin-right: 1rem;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-/* Different bright colors for each icon */
-.social-icons a:nth-child(1) i { color: #ffffff; }          /* GitHub - white */
-.social-icons a:nth-child(2) i { color: #0A66C2; }         /* LinkedIn - bright blue */
-.social-icons a:nth-child(3) i { color: #E4405F; }         /* Instagram - pink/red */
-.social-icons a:nth-child(4) i { color: #FFAA00; }         /* Email - bright yellow/orange */
-
-/* Hover effect */
-.social-icons a:hover i {
-  transform: scale(1.2);
-  filter: brightness(1.3);
-}
 </style>
