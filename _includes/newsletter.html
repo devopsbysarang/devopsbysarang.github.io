@@ -4,10 +4,6 @@
     <div class="dn-left">
       <h2 class="dn-title">Subscribe to my Newsletter!</h2>
       <p class="dn-desc">Get the latest updates on DevOps, Cloud, and Automation straight to your inbox.</p>
-
-      <div class="dn-image" aria-hidden="false">
-      <img src="/assets/images/newsletter.png" alt="newsletter illustration" />
-      </div>
       
       <!-- white inner box with form -->
       <div class="dn-form-box" role="region" aria-label="subscribe form">
@@ -17,8 +13,9 @@
         </form>
       </div>
     </div>
-
-
+    <div class="dn-image" aria-hidden="false">
+    <img src="/assets/images/newsletter.png" alt="newsletter illustration" />
+    </div>
   </div>
 </section>
 
@@ -146,23 +143,23 @@
   object-fit: contain !important;
 }
 
+/* Responsive mobile: image on top */
 @media (max-width: 880px) {
   .dn-inner { 
     flex-direction: column !important; 
     align-items: center !important; 
-    padding: 0rem 1rem 1.4rem 1rem !important; 
+    padding: 0rem 1rem 1.4rem 1rem !important;  /* default mobile padding */
     gap: 1rem !important; 
     border: none !important; 
     box-shadow: none !important; 
   }
 
+  /* extra bottom padding mobile only */
   .dn-inner.mobile-padding-bottom {
     padding-bottom: 3rem !important;
   }
 
-  /* 👇 keep image below text in mobile */
-  .dn-image { order: 1 !important; width: 100% !important; }
-
+  .dn-image { order: -1 !important; width: 100% !important; }
   .dn-image img { max-width: 320px !important; margin: 0 auto !important; }
   .dn-left { width: 100% !important; }
   .dn-form { flex-direction: column !important; gap: 0.6rem !important; }
@@ -170,7 +167,6 @@
   .dn-title { font-size: 1.6rem !important; text-align: center !important; }
   .dn-desc  { text-align: center !important; }
 }
-
 
 /* Safety */
 .dn-newsletter, .dn-newsletter * { box-sizing: border-box !important; }
