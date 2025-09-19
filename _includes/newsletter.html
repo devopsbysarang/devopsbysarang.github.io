@@ -1,64 +1,99 @@
 <!-- Newsletter Subscribe Section -->
 <section class="newsletter-box">
   <div class="newsletter-content">
-    <h2>Subscribe to our Newsletter!</h2>
-    <p>Get practical DevOps, Kubernetes, and Cloud tips. No spam, unsubscribe anytime.</p>
-    <form action="https://YOUR-SUBSCRIBE-ENDPOINT" method="post" class="newsletter-form">
-      <input type="email" name="email" placeholder="Your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
+    <div class="newsletter-text">
+      <h2>Subscribe to my Newsletter!</h2>
+      <p>Get practical DevOps, Kubernetes, and Cloud tips. No spam, unsubscribe anytime.</p>
+      <form action="https://YOUR-SUBSCRIBE-ENDPOINT" method="post" class="newsletter-form">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="newsletter-image">
+      <img src="/assets/images/python.png" alt="Newsletter illustration">
+    </div>
   </div>
 </section>
 
 <style>
 .newsletter-box {
-  max-width: 480px;
+  max-width: 850px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  text-align: center;
+  background: transparent; /* No white background */
 }
 
-.newsletter-box h2 {
+.newsletter-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.newsletter-text {
+  flex: 1;
+}
+
+.newsletter-text h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #1f2937; /* dark text */
+  color: #ffffff;
 }
 
-.newsletter-box p {
-  font-size: 0.95rem;
-  color: #4b5563;
+.newsletter-text p {
+  font-size: 1rem;
+  color: #cbd5e1; /* light gray text */
   margin-bottom: 1.2rem;
 }
 
 .newsletter-form {
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
 }
 
 .newsletter-form input {
   padding: 0.7rem 1rem;
   font-size: 0.95rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid #334155;
   border-radius: 8px;
+  background: #0f172a; /* dark input */
+  color: #e2e8f0;
   flex: 1;
 }
 
+.newsletter-form input::placeholder {
+  color: #64748b;
+}
+
 .newsletter-form button {
-  background: linear-gradient(90deg, #6366F1, #FF2D55); /* matches your theme */
+  background: linear-gradient(90deg, #6366F1, #FF2D55);
   color: white;
   border: none;
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: opacity 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .newsletter-form button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.newsletter-image img {
+  max-width: 150px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .newsletter-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .newsletter-image img {
+    margin-top: 1rem;
+  }
 }
 </style>
