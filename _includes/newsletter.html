@@ -1,6 +1,6 @@
 <!-- DevOps by Sarang — Newsletter Block -->
 <section class="dn-newsletter" aria-label="newsletter">
-  <div class="dn-inner">
+  <div class="dn-inner mobile-padding-bottom">
     <div class="dn-left">
       <h2 class="dn-title">Subscribe to my Newsletter!</h2>
       <p class="dn-desc">Get the latest updates on DevOps, Cloud, and Automation straight to your inbox.</p>
@@ -118,16 +118,12 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-
-  /* 👇 hover look applied by default */
   box-shadow: 0 12px 30px rgba(99,102,241,0.14) !important;  
   transform: translateY(-3px) !important;
-
   transition: transform .14s ease, box-shadow .14s ease !important;
 }
 
 .dn-btn:hover {
-  /* keep same look, only animate shadow depth */
   box-shadow: 0 16px 36px rgba(99,102,241,0.2) !important;
   transform: translateY(-4px) !important;
 }
@@ -147,10 +143,15 @@
   .dn-inner { 
     flex-direction: column !important; 
     align-items: center !important; 
-    padding: 0.2rem 1rem 1.4rem 1rem !important;  /* less top, more bottom */
+    padding: 0.2rem 1rem 1.4rem 1rem !important;  /* default mobile padding */
     gap: 1rem !important; 
     border: none !important; 
     box-shadow: none !important; 
+  }
+
+  /* extra bottom padding mobile only */
+  .dn-inner.mobile-padding-bottom {
+    padding-bottom: 2.5rem !important;
   }
 
   .dn-image { order: -1 !important; width: 100% !important; }
