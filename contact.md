@@ -65,13 +65,7 @@
   border-radius: 14px !important;
 }
 
-/* add border only for desktop */
-@media (min-width: 881px) {
-  .dn-inner {
-    border: 1px solid rgba(255,255,255,0.15) !important;  /* subtle outer line */
-    box-shadow: 0 6px 22px rgba(0,0,0,0.08) !important;   /* optional soft shadow */
-  }
-}
+
 
 /* left column */
 .dn-left { flex: 1 1 55% !important; min-width: 280px !important; }
