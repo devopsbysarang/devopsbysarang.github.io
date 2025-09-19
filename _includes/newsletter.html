@@ -20,13 +20,13 @@
   </div>
 </section>
 
-<!-- Styles: keep them close so easy to paste -->
+<!-- Styles -->
 <style>
-/* Unique, high-specificity newsletter styles — use !important to avoid theme overrides */
+/* Newsletter container */
 .dn-newsletter { 
   width: 100% !important;
-  background: transparent !important;            /* no outer white band */
-  padding: 0.5rem 0 !important;                  /* small top/bottom spacing */
+  background: transparent !important;
+  padding: 0.5rem 0 !important;
   margin: 0 auto !important;
   box-sizing: border-box !important;
 }
@@ -39,14 +39,23 @@
   gap: 2rem !important;
   max-width: 1100px !important;
   margin: 0 auto !important;
-  padding: 1rem 1rem 2rem 1rem !important;       /* small inner padding to separate from page */
+  padding: 1rem 1rem 2rem 1rem !important;
   box-sizing: border-box !important;
+  border-radius: 14px !important;
+}
+
+/* add border only for desktop */
+@media (min-width: 881px) {
+  .dn-inner {
+    border: 1px solid rgba(255,255,255,0.15) !important;  /* subtle outer line */
+    box-shadow: 0 6px 22px rgba(0,0,0,0.08) !important;   /* optional soft shadow */
+  }
 }
 
 /* left column */
 .dn-left { flex: 1 1 55% !important; min-width: 280px !important; }
 
-/* heading & description (reduce top spacing) */
+/* heading & description */
 .dn-title {
   margin: 0 0 0.5rem 0 !important; 
   padding: 0 0 1rem 0 !important;
@@ -63,7 +72,7 @@
   line-height: 1.45 !important;
 }
 
-/* white inner form box (only this is white) */
+/* white inner form box */
 .dn-form-box {
   background: #f7f7f7 !important;
   padding: 14px 14px 0px 14px !important;
@@ -74,7 +83,7 @@
   box-sizing: border-box !important;
 }
 
-/* form layout (input + button same height) */
+/* form layout */
 .dn-form {
   display: flex !important;
   gap: 0.25rem !important;
@@ -89,7 +98,7 @@
   border-radius: 10px !important;
   border: 0 !important;
   outline: 0 !important;
-  background: #0d1425 !important;    /* dark input inside white box */
+  background: #0d1425 !important;
   color: #e6eef8 !important;
   box-shadow: inset 0 2px 6px rgba(2,6,23,0.3) !important;
   box-sizing: border-box !important;
@@ -97,7 +106,7 @@
 
 .dn-input::placeholder { color: #6b7688 !important; }
 
-/* gradient button, matches theme; same height as input */
+/* gradient button */
 .dn-btn {
   padding: 12px 28px !important;
   font-size: 1.05rem !important;
@@ -106,31 +115,32 @@
   cursor: pointer !important;
   font-weight: 700 !important;
   background: linear-gradient(135deg, #6366F1 0%, #3B82F6 50%, #FF2D55 100%) !important;
-  color: #0A192F !important;          /* eye-catching cyan text */
+  color: #0A192F !important;
   box-shadow: 0 6px 18px rgba(99,102,241,0.12) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: auto !important;
   transition: transform .14s ease !important;
 }
 
-/* hover */
-.dn-btn:hover { transform: translateY(-3px) !important; box-shadow: 0 12px 30px rgba(99,102,241,0.14) !important; }
+.dn-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(99,102,241,0.14) !important;
+}
 
 /* right image column */
 .dn-image { flex: 0 0 38% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
 .dn-image img {
   display:block !important;
-  max-width: 420px !important;       /* larger image on desktop */
+  max-width: 420px !important;
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
 }
 
-/* Responsive: mobile screens — image on top, then text/form; input & button stack full width */
+/* Responsive mobile: image on top */
 @media (max-width: 880px) {
-  .dn-inner { flex-direction: column !important; align-items: center !important; padding: 0.5rem 1rem 1rem 1rem !important; gap: 1rem !important; }
+  .dn-inner { flex-direction: column !important; align-items: center !important; padding: 0.5rem 1rem 1rem 1rem !important; gap: 1rem !important; border: none !important; box-shadow: none !important; }
   .dn-image { order: -1 !important; width: 100% !important; }
   .dn-image img { max-width: 320px !important; margin: 0 auto !important; }
   .dn-left { width: 100% !important; }
@@ -140,6 +150,6 @@
   .dn-desc  { text-align: center !important; }
 }
 
-/* Extra safety: avoid inherited margins from parent wrappers affecting this block */
+/* Safety */
 .dn-newsletter, .dn-newsletter * { box-sizing: border-box !important; }
 </style>
