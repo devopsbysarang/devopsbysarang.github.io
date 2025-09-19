@@ -106,7 +106,6 @@
 
 .dn-input::placeholder { color: #6b7688 !important; }
 
-/* gradient button */
 .dn-btn {
   padding: 12px 28px !important;
   font-size: 1.05rem !important;
@@ -116,16 +115,21 @@
   font-weight: 700 !important;
   background: linear-gradient(135deg, #6366F1 0%, #3B82F6 50%, #FF2D55 100%) !important;
   color: #0A192F !important;
-  box-shadow: 0 6px 18px rgba(99,102,241,0.12) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: transform .14s ease !important;
+
+  /* 👇 hover look applied by default */
+  box-shadow: 0 12px 30px rgba(99,102,241,0.14) !important;  
+  transform: translateY(-3px) !important;
+
+  transition: transform .14s ease, box-shadow .14s ease !important;
 }
 
 .dn-btn:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 12px 30px rgba(99,102,241,0.14) !important;
+  /* keep same look, only animate shadow depth */
+  box-shadow: 0 16px 36px rgba(99,102,241,0.2) !important;
+  transform: translateY(-4px) !important;
 }
 
 /* right image column */
