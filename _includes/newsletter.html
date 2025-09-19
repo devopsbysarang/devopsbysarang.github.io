@@ -1,109 +1,40 @@
-<!-- Newsletter Subscribe Section -->
-<section class="newsletter-box">
-  <div class="newsletter-content">
-    <div class="newsletter-image">
-      <img src="/assets/images/newsletter.png" alt="Newsletter illustration">
-    </div>
-    <div class="newsletter-text">
-      <h2>Subscribe to my Newsletter!</h2>
-      <p>Get practical DevOps, Kubernetes, and Cloud tips. No spam, unsubscribe anytime.</p>
-      <form action="https://YOUR-SUBSCRIBE-ENDPOINT" method="post" class="newsletter-form">
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
+<!-- Newsletter Section -->
+<section class="newsletter" style="display:flex !important; align-items:center !important; justify-content:center !important; gap:2rem !important; padding:3rem 1rem !important; background:transparent !important;">
+  <div class="newsletter-content" style="max-width:500px !important;">
+    <h2 style="font-size:2rem !important; margin-bottom:0.5rem !important; color:#fff !important;">
+      Subscribe to my Newsletter!
+    </h2>
+    <p style="margin-bottom:1rem !important; color:#ddd !important;">
+      Get the latest updates on DevOps, Cloud, and Automation straight to your inbox.
+    </p>
+    <form class="newsletter-form" style="display:flex !important; gap:0.8rem !important; width:100% !important;">
+      <input type="email" placeholder="Your email" required
+        style="flex:1 !important; padding:1rem !important; border:none !important; border-radius:10px !important; background:#0d1425 !important; color:#fff !important; font-size:1rem !important;">
+      <button type="submit"
+        style="padding:1rem 2rem !important; border:none !important; border-radius:10px !important; background:linear-gradient(90deg,#6366F1,#FF2D55) !important; color:#00ffd0 !important; font-size:1.1rem !important; font-weight:bold !important; cursor:pointer !important; transition:transform 0.2s ease !important;">
+        Subscribe
+      </button>
+    </form>
+  </div>
+  <div class="newsletter-image">
+    <img src="assets/images/newsletter.png" alt="Newsletter"
+      style="max-width:400px !important; width:100% !important;">
   </div>
 </section>
 
+<!-- Responsive Fix -->
 <style>
-.newsletter-box {
-  max-width: 950px; /* wider box */
-  margin: 3rem auto;
-  padding: 2.5rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  background: #0a192f; /* dark background, matches site */
-}
-
-.newsletter-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.newsletter-text {
-  flex: 1;
-}
-
-.newsletter-text h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.newsletter-text p {
-  font-size: 1rem;
-  color: #94a3b8;
-  margin-bottom: 1.4rem;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 0.6rem;
-  width: 100%;
-}
-
-.newsletter-form input {
-  padding: 0.9rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #334155;
-  border-radius: 8px;
-  background: #0f172a; /* dark input */
-  color: #e2e8f0;
-  flex: 1;
-}
-
-.newsletter-form input::placeholder {
-  color: #64748b;
-}
-
-.newsletter-form button {
-  background: linear-gradient(90deg, #6366F1, #FF2D55);
-  color: #fff;
-  border: none;
-  padding: 0.9rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.newsletter-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-}
-
-.newsletter-image img {
-  max-width: 200px;
-  height: auto;
-}
-
 @media (max-width: 768px) {
-  .newsletter-content {
-    flex-direction: column;
-    text-align: center;
+  .newsletter {
+    flex-direction: column !important;
+    text-align: center !important;
   }
-  .newsletter-image {
-    order: -1; /* move image on top */
-    margin-bottom: 1rem;
+  .newsletter-image img {
+    max-width: 300px !important;
+    margin-top: 1rem !important;
   }
-  .newsletter-form {
-    flex-direction: column;
-  }
-  .newsletter-form input,
-  .newsletter-form button {
-    width: 100%;
-  }
+}
+.newsletter-form button:hover {
+  transform: scale(1.05) !important;
 }
 </style>
