@@ -14,5 +14,3 @@
   <p>Looking forward to connecting with you and exploring how we can collaborate to build impactful solutions!</p>
 </div>
 
-
-{% include newsletter.html %}
