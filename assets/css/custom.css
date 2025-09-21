@@ -470,10 +470,3 @@ button.greedy-nav__toggle:focus {
   transition: transform 0.3s ease !important;
 }
 
-.masthead__menu-item a[href="/contact/"] {
-    color: #FF0000 !important;
-}
-
-.masthead__menu-item a[href="/contact/"]::before {
-    color: #FF0000 !important;
-}
