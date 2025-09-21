@@ -100,7 +100,7 @@ code, pre {
   background-image: none !important;
 }
 
-/* ---------- Buttons: Yashita Style ---------- */
+/* ---------- Buttons: Style ---------- */
 button,
 .button,
 .btn,
@@ -334,8 +334,8 @@ button.greedy-nav__toggle:focus {
 
 /* About (solid cyan) */
 .layout--splash .page__lead + p > a[href="/about/"] {
-  background-color: #64FFDA !important;
-  color: #0A192F !important;
+  background-color: linear-gradient(135deg, #6366F1 0%, #3B82F6 50%, #FF2D55 100%) !important;
+  color: #fff !important;
   border: 2px solid transparent !important;
 }
 
