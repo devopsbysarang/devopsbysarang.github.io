@@ -48,6 +48,7 @@ Internet
    │
    └─ Kafka (sg_kafka)
          └─ sg_kafka (Ingress: 0.0.0.0/0:9092)
+```
 
 ### After
 
@@ -79,3 +80,4 @@ VPC (10.0.0.0/16)
            ├─ ElastiCache (sg_cache) Ingress: sg_app (6379) only
            └─ Kafka (sg_kafka)      Ingress: sg_app (9092) only
 
+```
