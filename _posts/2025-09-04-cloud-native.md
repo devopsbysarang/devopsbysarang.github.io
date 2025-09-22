@@ -7,8 +7,6 @@ author: Sarang Deshmukh
 featured-image: /assets/images/blackfriday.png
 
 ---
-### Index
-
 <!--
   Paste this box where you want the index.
   IMPORTANT: Add these id attributes to your headings so the links work:
