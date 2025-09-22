@@ -79,7 +79,8 @@ The most technical, high-impact components that separate advanced designs from b
 ```
 ---
 ## 3 — Security Overview of Small-Scale Platform: ShopNow
-#### **ShopNow** is a mid-stage e-commerce startup.  
+
+#### For example **ShopNow** is a mid-stage e-commerce startup.  
 
 **Audit findings**:  
 - Shared node IAM roles  
@@ -449,8 +450,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-## 11. Final Thoughts & Recommended Next Steps
-
+### 11. Final Thoughts & Recommended Next Steps
 This merged, advanced guide shifts the focus from *“add services”* to *how you use them correctly*:  
 
 - **mTLS** establishes service identity and prevents internal impersonation. Operationalize it with a mesh.  
