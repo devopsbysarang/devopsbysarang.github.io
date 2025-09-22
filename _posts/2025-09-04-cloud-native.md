@@ -4,7 +4,7 @@ title: "Black Friday Resilient E-Commerce Architecture on AWS"
 date: 2025-09-04 20:00:00 +0530
 category: cloud
 author: Sarang Deshmukh
-featured-image: /assets/images/blackfriday.png
+featured-image: /assets/images/terafformaws.png
 
 ---
 <!--
