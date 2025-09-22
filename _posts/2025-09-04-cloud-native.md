@@ -9,7 +9,7 @@ featured-image: /assets/images/sd.png
 ---
 
 <!-- Option A: HTML boxed index (inline styles) -->
-<div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#f9f9f9;">
+<div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#0A192F;">
 
 <h3>📌 Index</h3>
 
