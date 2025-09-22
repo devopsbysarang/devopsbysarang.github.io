@@ -229,7 +229,8 @@ The most technical, high-impact components that separate advanced designs from b
 ```
 ---
 
-## Let's apply all this detail on real time application now: 
+
+### Let's apply all this detail on real time application now: 
 
 ## 3 — Security Overview of Small-Scale Platform: ShopNow
 
