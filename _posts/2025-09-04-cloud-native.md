@@ -8,101 +8,114 @@ featured-image: /assets/images/sd.png
 
 ---
 
-<!-- Option A: HTML boxed index (inline styles) -->
-<div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#0A192F;">
+## Index
 
-<h3>📌 Index</h3>
+<!-- Boxed index with heading in pure white and subheadings in #CCD6F6 (uses !important to override theme CSS) -->
+<div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#0A192F; color:#CCD6F6 !important;">
 
-<ol>
-  <li><strong>Quick Summary</strong>
-    <ul>
-      <li>Defence-in-depth overview</li>
-      <li>Key technical components</li>
-    </ul>
-  </li>
+  <ol style="margin-left:1rem;">
+    <li>
+      <strong style="color:#ffffff !important;">Quick Summary</strong>
+      <ul>
+        <li>Defence-in-depth overview</li>
+        <li>Key technical components</li>
+      </ul>
+    </li>
 
-  <li><strong>Before and After Security Layer</strong>
-    <ul>
-      <li>Legacy architecture</li>
-      <li>Hardened architecture with SG chaining, mTLS, IRSA</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Before and After Security Layer</strong>
+      <ul>
+        <li>Legacy architecture</li>
+        <li>Hardened architecture with SG chaining, mTLS, IRSA</li>
+      </ul>
+    </li>
 
-  <li><strong>Security Overview of Small-Scale Platform: ShopNow</strong>
-    <ul>
-      <li>Audit findings</li>
-      <li>Phased security program</li>
-      <li>Outcomes</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Security Overview of Small-Scale Platform: ShopNow</strong>
+      <ul>
+        <li>Audit findings</li>
+        <li>Phased security program</li>
+        <li>Outcomes</li>
+      </ul>
+    </li>
 
-  <li><strong>Deep Dives (Hard, Interview-Relevant Parts)</strong>
-    <ul>
-      <li>4.1 TLS vs mTLS — Why and How (Advanced)</li>
-      <li>4.2 IRSA — Deep Technical Notes</li>
-      <li>4.3 Security Groups — Advanced Patterns & Egress Control</li>
-      <li>4.4 WAF (CloudFront Edge) — Advanced Tuning</li>
-      <li>4.5 Shield Advanced — Justification & Playbook</li>
-      <li>4.6 Use SSM over SSH for Bastion Host</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Deep Dives (Hard, Interview-Relevant Parts)</strong>
+      <ul>
+        <li>4.1 TLS vs mTLS — Why and How (Advanced)</li>
+        <li>4.2 IRSA — Deep Technical Notes</li>
+        <li>4.3 Security Groups — Advanced Patterns &amp; Egress Control</li>
+        <li>4.4 WAF (CloudFront Edge) — Advanced Tuning</li>
+        <li>4.5 Shield Advanced — Justification &amp; Playbook</li>
+        <li>4.6 Use SSM over SSH for Bastion Host</li>
+      </ul>
+    </li>
 
-  <li><strong>Supply Chain, CI/CD & Runtime Controls</strong>
-    <ul>
-      <li>CI/CD identity hardening (OIDC)</li>
-      <li>Image scanning & signing</li>
-      <li>SAST/SCA in CI gates</li>
-      <li>Admission controllers</li>
-      <li>Runtime detection & immutable infra</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Supply Chain, CI/CD &amp; Runtime Controls</strong>
+      <ul>
+        <li>CI/CD identity hardening (OIDC)</li>
+        <li>Image scanning &amp; signing</li>
+        <li>SAST/SCA in CI gates</li>
+        <li>Admission controllers</li>
+        <li>Runtime detection &amp; immutable infra</li>
+      </ul>
+    </li>
 
-  <li><strong>Data Protection and PII / Payments</strong>
-    <ul>
-      <li>Encryption at rest & in transit</li>
-      <li>S3 hardening</li>
-      <li>Payment and PII handling</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Data Protection and PII / Payments</strong>
+      <ul>
+        <li>Encryption at rest &amp; in transit</li>
+        <li>S3 hardening</li>
+        <li>Payment and PII handling</li>
+      </ul>
+    </li>
 
-  <li><strong>Threat Model (Top Threats + Mitigations)</strong>
-    <ul>
-      <li>Account takeover / credential theft</li>
-      <li>Lateral movement from compromised pod</li>
-      <li>Data exfiltration</li>
-      <li>Supply chain compromise</li>
-      <li>DDoS / Flash sale disruption</li>
-      <li>Ransomware / snapshot deletion</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Threat Model (Top Threats + Mitigations)</strong>
+      <ul>
+        <li>Account takeover / credential theft</li>
+        <li>Lateral movement from compromised pod</li>
+        <li>Data exfiltration</li>
+        <li>Supply chain compromise</li>
+        <li>DDoS / Flash sale disruption</li>
+        <li>Ransomware / snapshot deletion</li>
+      </ul>
+    </li>
 
-  <li><strong>Compliance Checklist (PCI / GDPR / HIPAA Highlights)</strong></li>
+    <li>
+      <strong style="color:#ffffff !important;">Compliance Checklist (PCI / GDPR / HIPAA Highlights)</strong>
+    </li>
 
-  <li><strong>Prioritized Rollout Plan (Practical, with Tasks)</strong>
-    <ul>
-      <li>Quick wins (days → 2 weeks)</li>
-      <li>Mid-term (2–8 weeks)</li>
-      <li>Long-term (2–6 months)</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Prioritized Rollout Plan (Practical, with Tasks)</strong>
+      <ul>
+        <li>Quick wins (days → 2 weeks)</li>
+        <li>Mid-term (2–8 weeks)</li>
+        <li>Long-term (2–6 months)</li>
+      </ul>
+    </li>
 
-  <li><strong>Operational Rules, KPIs & Runbook Snippet</strong>
-    <ul>
-      <li>Policies to codify</li>
-      <li>KPIs / SLOs</li>
-      <li>Runbook example — Suspicious S3 exfil detection</li>
-    </ul>
-  </li>
+    <li>
+      <strong style="color:#ffffff !important;">Operational Rules, KPIs &amp; Runbook Snippet</strong>
+      <ul>
+        <li>Policies to codify</li>
+        <li>KPIs / SLOs</li>
+        <li>Runbook example — Suspicious S3 exfil detection</li>
+      </ul>
+    </li>
 
-  <li><strong>Final Thoughts & Recommended Next Steps</strong>
-    <ul>
-      <li>Lessons learned</li>
-      <li>Operational and security takeaways</li>
-    </ul>
-  </li>
-</ol>
+    <li>
+      <strong style="color:#ffffff !important;">Final Thoughts &amp; Recommended Next Steps</strong>
+      <ul>
+        <li>Lessons learned</li>
+        <li>Operational and security takeaways</li>
+      </ul>
+    </li>
+  </ol>
 
 </div>
+
 
 ## 1 — Quick Summary
 E-commerce platforms handle vast amounts of sensitive data — including PII, payment flows, and inventory logic — making them extremely high-value targets. During global flash sales like Amazon Great Indian Festival, Flipkart Big Billion Days and Black Friday, these platforms face hundreds of millions of requests within hours, testing both performance and security at massive scale.
