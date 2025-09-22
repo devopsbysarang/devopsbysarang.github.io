@@ -30,7 +30,7 @@ featured-image: /assets/images/sd.png
     ## 11 — Final Thoughts               -> id="final-thoughts"
 -->
 
-<div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#0A192F; color:#CCD6F6 !important;">
+<div style="border:1px solid #ccc; padding:8px; border-radius:8px; background:#0A192F; color:#CCD6F6 !important;">
 
   <ol style="margin-left:1rem;">
     <li>
