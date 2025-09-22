@@ -75,6 +75,7 @@ The most technical, high-impact components that separate advanced designs from b
            └─ Kafka (sg_kafka)       --> Ingress: sg_app (9092) only
 
 ```
+---
 ## 3 — Security Overview of Small-Scale Platform: ShopNow
 #### **ShopNow** is a mid-stage e-commerce startup.  
 
@@ -157,7 +158,7 @@ With mTLS
 
 ---
 
-## 4.2 IRSA (IAM Roles for Service Accounts) — Deep Technical Notes
+### 4.2 IRSA (IAM Roles for Service Accounts) — Deep Technical Notes
 
 #### Problem IRSA Solves
 Without IRSA, pods inherit **node IAM roles**.  
@@ -205,7 +206,7 @@ Without IRSA, pods inherit **node IAM roles**.
 - Wrong OIDC URL or audience → Pods cannot assume role.
 - Trust too broad (wildcard sub) → Risk of impersonation.
 
-## 4.3 Security Groups (SG) — Advanced Patterns & Egress Control
+### 4.3 Security Groups (SG) — Advanced Patterns & Egress Control
 
 ### Principles
 - **SG-to-SG referencing** over CIDR → more dynamic, reduces hardcoding of IPs.  
@@ -239,7 +240,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-## 4.4 WAF (CloudFront Edge) — Advanced Tuning
+### 4.4 WAF (CloudFront Edge) — Advanced Tuning
 
 ### Why CloudFront + WAF
 - Stops malicious traffic **before** it reaches ALB/API Gateway  
@@ -264,7 +265,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-## 4.5 Shield Advanced — Justification & Playbook
+### 4.5 Shield Advanced — Justification & Playbook
 
 ### When to Use
 - High-value events (Black Friday, seasonal spikes)  
@@ -283,7 +284,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-## 4.6 Use SSM over SSH for Bastion Host
+### 4.6 Use SSM over SSH for Bastion Host
 
 ### SSH (Legacy)
 - Works via **key pair / password** on port 22  
