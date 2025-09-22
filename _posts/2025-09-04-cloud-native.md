@@ -8,6 +8,68 @@ featured-image: /assets/images/sd.png
 
 ---
 
+## 📌 Index
+
+<div style="border:1px solid #ccc; padding: 15px; border-radius: 8px; background-color:#f9f9f9;">
+
+1. **Quick Summary**  
+   - Defence-in-depth overview  
+   - Key technical components  
+
+2. **Before and After Security Layer**  
+   - Legacy architecture  
+   - Hardened architecture with SG chaining, mTLS, IRSA  
+
+3. **Security Overview of Small-Scale Platform: ShopNow**  
+   - Audit findings  
+   - Phased security program  
+   - Outcomes  
+
+4. **Deep Dives (Hard, Interview-Relevant Parts)**  
+   4.1 TLS vs mTLS — Why and How (Advanced)  
+   4.2 IRSA (IAM Roles for Service Accounts) — Deep Technical Notes  
+   4.3 Security Groups (SG) — Advanced Patterns & Egress Control  
+   4.4 WAF (CloudFront Edge) — Advanced Tuning  
+   4.5 Shield Advanced — Justification & Playbook  
+   4.6 Use SSM over SSH for Bastion Host  
+
+5. **Supply Chain, CI/CD & Runtime Controls**  
+   - CI/CD identity hardening (OIDC)  
+   - Image scanning & signing  
+   - SAST/SCA in CI gates  
+   - Admission controllers  
+   - Runtime detection & immutable infra  
+
+6. **Data Protection and PII / Payments**  
+   - Encryption at rest & in transit  
+   - S3 hardening  
+   - Payment and PII handling  
+
+7. **Threat Model (Top Threats + Mitigations)**  
+   - Account takeover / credential theft  
+   - Lateral movement from compromised pod  
+   - Data exfiltration  
+   - Supply chain compromise  
+   - DDoS / Flash sale disruption  
+   - Ransomware / snapshot deletion  
+
+8. **Compliance Checklist (PCI / GDPR / HIPAA Highlights)**  
+
+9. **Prioritized Rollout Plan (Practical, with Tasks)**  
+   - Quick wins (days → 2 weeks)  
+   - Mid-term (2–8 weeks)  
+   - Long-term (2–6 months)  
+
+10. **Operational Rules, KPIs & Runbook Snippet**  
+    - Policies to codify  
+    - KPIs / SLOs  
+    - Runbook example — Suspicious S3 exfil detection  
+
+11. **Final Thoughts & Recommended Next Steps**  
+    - Lessons learned  
+    - Operational and security takeaways  
+
+</div>
 ## 1 — Quick Summary
 E-commerce platforms hold PII, payment flows, and inventory logic — making them high-value targets.  
 
