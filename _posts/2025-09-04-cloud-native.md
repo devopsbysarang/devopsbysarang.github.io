@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: double
 title: "Black Friday Resilient E-Commerce Architecture on AWS"
 date: 2025-09-22 20:00:00 +0530
 category: cloud
@@ -96,9 +96,8 @@ The most technical, high-impact components that separate advanced designs from b
 
 **Outcome**:  
 - MTTD reduced from **days to <1 hour**  
-- Phishing/data exfil prevented  
-- Zero-trust posture established for production  
----
+- Phishing/data exfil prevented
+- Zero-trust posture established for production
 
 ## 4 — Deep Dives (the hard, interview-relevant parts)
 
