@@ -121,7 +121,7 @@ The most technical, high-impact components that separate advanced designs from b
 
 ---
 
-## 2 — Before and After Security Layer
+## 2 — Let's take a peak at before and after Security Layer (Overview)
 
 ### Before
 ```text
@@ -176,6 +176,9 @@ The most technical, high-impact components that separate advanced designs from b
 
 ```
 ---
+
+## Let's apply all this detail on real time application now: 
+
 ## 3 — Security Overview of Small-Scale Platform: ShopNow
 
 #### For example **ShopNow** is a mid-stage e-commerce startup.  
