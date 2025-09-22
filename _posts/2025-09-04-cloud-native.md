@@ -1,12 +1,11 @@
 ---
 layout: single
-title: "Black-Friday Resilient Architectures: Defence-in-Depth for E-Commerce on AWS"
+title: "Black Friday Resilient E-Commerce Architecture on AWS"
 date: 2025-09-04 20:00:00 +0530
 category: cloud
 author: Sarang Deshmukh
 featured-image: /assets/images/sd.png
 ---
-
 ## 1 — Quick Summary
 E-commerce platforms hold PII, payment flows, and inventory logic — making them high-value targets.  
 
@@ -78,15 +77,15 @@ The most technical, high-impact components that separate advanced designs from b
 ```
 
 ## 3 — Security Overview of Small-Scale Platform: ShopNow
-**ShopNow** is a mid-stage e-commerce startup.  
+#### **ShopNow** is a mid-stage e-commerce startup.  
 
-🔎 **Audit findings**:  
+**Audit findings**:  
 - Shared node IAM roles  
 - Plaintext east-west traffic  
 - SGs with wide CIDRs  
 - Minimally tuned WAF  
 
-🚀 **Phased security program executed**:
+**Phased security program executed**:
 1. **Edge first** — CloudFront + WAF tuned + Shield Advanced.  
    → Immediately reduced malicious bots and offered DDoS response.  
 2. **Network segmentation** — SG chaining + SSM (no SSH).  
@@ -95,7 +94,7 @@ The most technical, high-impact components that separate advanced designs from b
 4. **mTLS deployment** — App Mesh with Envoy for payments & orders first, certs via ACM PCA, then full mesh.  
 5. **Supply chain** — ECR scanning, image signing (cosign), OPA Gatekeeper admission control, CI OIDC federation.  
 
-📈 **Outcome**:  
+**Outcome**:  
 - MTTD reduced from **days to <1 hour**  
 - Phishing/data exfil prevented  
 - Zero-trust posture established for production  
@@ -124,7 +123,7 @@ The most technical, high-impact components that separate advanced designs from b
 
 ---
 
-#### 🔐 Flow: mTLS in App Mesh
+#### Flow: mTLS in App Mesh
 1. Pod spins up (e.g., `payments-service`).  
 2. Envoy sidecar requests a cert from **ACM PCA** (via App Mesh integration).  
 3. Cert is mounted into Envoy → Envoy advertises identity `spiffe://payments`.  
@@ -151,7 +150,7 @@ With mTLS
    Cert (orders)                        Cert (payments)
    issued by ACM PCA                   issued by ACM PCA
 ```
-### ⚠️ Operational Pitfalls & Mitigations (mTLS)
+### Operational Pitfalls & Mitigations (mTLS)
 - **Pitfall: Certificate expiry causing outages**  
   → **Mitigation**: Stagger rollouts, automated rotation, readiness checks.  
 
@@ -288,7 +287,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 # 4.6 Use SSM over SSH for Bastion Host
 
-## 🔑 SSH (Legacy)
+### SSH (Legacy)
 - Works via **key pair / password** on port 22  
 - Security surface:  
   - Requires **port 22 open** (brute-force + scanning risk)  
@@ -297,7 +296,7 @@ Without IRSA, pods inherit **node IAM roles**.
   - Weak audit — no native per-command logs  
   - Bastion compromise = high lateral movement risk  
 
-## 🔒 SSM (AWS Systems Manager Session Manager)
+### SSM (AWS Systems Manager Session Manager)
 - Works via **AWS API (HTTPS 443)**, no inbound ports  
 - Security surface:  
   - No **port 22 exposure** → closed SG  
