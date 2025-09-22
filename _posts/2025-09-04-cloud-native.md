@@ -7,8 +7,7 @@ author: Sarang Deshmukh
 featured-image: /assets/images/sd.png
 
 ---
-
-## Index
+### Index
 
 <!-- Boxed index with heading in pure white and subheadings in #CCD6F6 (uses !important to override theme CSS) -->
 <div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#0A192F; color:#CCD6F6 !important;">
