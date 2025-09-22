@@ -75,7 +75,6 @@ The most technical, high-impact components that separate advanced designs from b
            └─ Kafka (sg_kafka)       --> Ingress: sg_app (9092) only
 
 ```
-
 ## 3 — Security Overview of Small-Scale Platform: ShopNow
 #### **ShopNow** is a mid-stage e-commerce startup.  
 
@@ -98,7 +97,6 @@ The most technical, high-impact components that separate advanced designs from b
 - MTTD reduced from **days to <1 hour**  
 - Phishing/data exfil prevented  
 - Zero-trust posture established for production  
-
 ---
 
 ## 4 — Deep Dives (the hard, interview-relevant parts)
@@ -159,7 +157,7 @@ With mTLS
 
 ---
 
-### 4.2 IRSA (IAM Roles for Service Accounts) — Deep Technical Notes
+## 4.2 IRSA (IAM Roles for Service Accounts) — Deep Technical Notes
 
 #### Problem IRSA Solves
 Without IRSA, pods inherit **node IAM roles**.  
@@ -207,9 +205,9 @@ Without IRSA, pods inherit **node IAM roles**.
 - Wrong OIDC URL or audience → Pods cannot assume role.
 - Trust too broad (wildcard sub) → Risk of impersonation.
 
-# 4.3 Security Groups (SG) — Advanced Patterns & Egress Control
+## 4.3 Security Groups (SG) — Advanced Patterns & Egress Control
 
-## Principles
+### Principles
 - **SG-to-SG referencing** over CIDR → more dynamic, reduces hardcoding of IPs.  
 - **Principle of least privilege**: minimal ports, minimal sources.  
   - Example:  
@@ -220,7 +218,7 @@ Without IRSA, pods inherit **node IAM roles**.
     - VPC Endpoints for **S3, ECR, KMS**  
     - Blocks arbitrary internet exfiltration  
 
-## Example Topology
+### Example Topology
 - **sg_alb**  
   - Ingress: CloudFront IP space (or 0.0.0.0/0 if behind CF)  
   - Prefer **WAF header verification** over raw IP restrictions  
@@ -233,7 +231,7 @@ Without IRSA, pods inherit **node IAM roles**.
   - Egress: AWS SSM endpoints  
   - Admin access via **SSM Session Manager**, not open SSH  
 
-## Automation & Drift
+### Automation & Drift
 - **AWS Config rules** → detect overly permissive/public SGs  
 - **IaC GitOps** (Terraform, CDK) → source of truth  
 - **Policy guardrails** → OPA/Sentinel to prevent `0.0.0.0/0` drift  
@@ -241,13 +239,13 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-# 4.4 WAF (CloudFront Edge) — Advanced Tuning
+## 4.4 WAF (CloudFront Edge) — Advanced Tuning
 
-## Why CloudFront + WAF
+### Why CloudFront + WAF
 - Stops malicious traffic **before** it reaches ALB/API Gateway  
 - Protects **origin cost, performance, and blast radius**  
 
-## Advanced Controls
+### Advanced Controls
 - **Managed rulesets** (AWS / 3rd-party) → OWASP protection  
 - **Rate limiting**: fine-grained thresholds (e.g., `/checkout` stricter than `/home`)  
 - **Geo + bot filtering**:  
@@ -259,33 +257,33 @@ Without IRSA, pods inherit **node IAM roles**.
 - **Progressive challenges**:  
   - CAPTCHA or JavaScript challenge for signup / forgot password endpoints  
 
-## Rollout Strategy
+### Rollout Strategy
 - Use **COUNT mode** first to measure false positives  
 - Switch to **BLOCK** after validation in staging/prod  
 - **Canary rollout**: staged CloudFront distributions with updated WAF  
 
 ---
 
-# 4.5 Shield Advanced — Justification & Playbook
+## 4.5 Shield Advanced — Justification & Playbook
 
-## When to Use
+### When to Use
 - High-value events (Black Friday, seasonal spikes)  
 - When scaling costs from attacks could be **financially damaging**  
 - Need **AWS DDoS Response Team (DRT)** involvement  
 
-## Features
+### Features
 - **DDoS cost protection** (credits for scale-up during attack)  
 - **DRT integration** with custom WAF rulesets  
 - **Global dashboards** with real-time threat intelligence  
 
-## Integration
+### Integration
 - Combine Shield Advanced + **Route 53 health checks**  
 - Failover routing to backup region during multi-region attack  
 - Layer with WAF → block malicious sources early  
 
 ---
 
-# 4.6 Use SSM over SSH for Bastion Host
+## 4.6 Use SSM over SSH for Bastion Host
 
 ### SSH (Legacy)
 - Works via **key pair / password** on port 22  
@@ -306,16 +304,16 @@ Without IRSA, pods inherit **node IAM roles**.
   - **Just-in-time**: temporary session permissions (e.g., 1 hour)  
   - Reduced lateral movement → IAM boundaries + scoped access  
 
-# 5 — Supply Chain, CI/CD & Runtime Controls
+## 5 — Supply Chain, CI/CD & Runtime Controls
 
-## CI/CD Identity Hardening with OIDC
+### CI/CD Identity Hardening with OIDC
 - **Problem**: Long-lived IAM keys in CI/CD pipelines → high theft/exfiltration risk.  
 - **Solution**: Use **OIDC federation** for ephemeral credentials.  
   - GitHub Actions, GitLab CI, or AWS CodeBuild runners request OIDC tokens.  
   - IAM trust policies validate repo/branch and issue **short-lived STS creds**.  
   - No static AWS keys stored in pipeline secrets.
 
-## OIDC Flow for GitHub Actions → AWS
+### OIDC Flow for GitHub Actions → AWS
 
 ```text
 [GitHub Actions Runner]
@@ -343,7 +341,7 @@ Without IRSA, pods inherit **node IAM roles**.
 - **Runtime detection**: Falco / Sysdig for suspicious syscalls, detect container escapes, file changes.
 - **Immutable infra**: Replace AMIs via image pipelines; use managed node groups and node image rotation.
 
-# 6. Data Protection and PII / Payments
+## 6. Data Protection and PII / Payments
 
 - **Encryption at rest**: RDS/Aurora, EBS, S3, ElastiCache with CMK (customer-managed) and rotation policy.  
 - **Encryption in transit**: TLS everywhere, mTLS for services. Use KMS for envelope encryption.  
@@ -353,7 +351,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-# 7. Threat Model (Top Threats + Mitigations)
+## 7. Threat Model (Top Threats + Mitigations)
 
 ### 1. Account takeover / credential theft  
 **Mitigations**: Enforce MFA, strong password policy, monitoring for abnormal console/API access, short-lived tokens.  
@@ -375,7 +373,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-# 8. Compliance Checklist (PCI / GDPR / HIPAA Highlights)
+## 8. Compliance Checklist (PCI / GDPR / HIPAA Highlights)
 
 ### PCI DSS (if handling card data)  
 - Segregated network for payment stack.  
@@ -393,7 +391,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-# 9. Prioritized Rollout Plan (Practical, with Tasks)
+## 9. Prioritized Rollout Plan (Practical, with Tasks)
 
 ### Quick wins (days → 2 weeks)  
 - Enforce MFA + disable root/long-lived API keys.  
@@ -419,7 +417,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-# 10. Operational Rules, KPIs & Runbook Snippet
+## 10. Operational Rules, KPIs & Runbook Snippet
 
 ### Policies to Codify  
 - IAM least privilege, role review cadence.  
@@ -449,7 +447,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-# 11. Final Thoughts & Recommended Next Steps
+## 11. Final Thoughts & Recommended Next Steps
 
 This merged, advanced guide shifts the focus from *“add services”* to *how you use them correctly*:  
 
