@@ -1,11 +1,13 @@
 ---
 layout: single
 title: "Black Friday Resilient E-Commerce Architecture on AWS"
-date: 2025-09-22 20:00:00 +0530
+date: 2025-09-04 20:00:00 +0530
 category: cloud
 author: Sarang Deshmukh
 featured-image: /assets/images/sd.png
+
 ---
+
 ## 1 — Quick Summary
 E-commerce platforms hold PII, payment flows, and inventory logic — making them high-value targets.  
 
