@@ -144,6 +144,7 @@ Without mTLS (flat trust)
     (any pod in VPC can spoof calls)
 ```
 
+With mTLS 
 ```text
    [orders pod]--[Envoy] <==TLS+cert==> [Envoy]--[payments pod]
       |                                     |
