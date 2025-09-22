@@ -8,66 +8,99 @@ featured-image: /assets/images/sd.png
 
 ---
 
-## 📌 Index
+<!-- Option A: HTML boxed index (inline styles) -->
+<div style="border:1px solid #ccc; padding:15px; border-radius:8px; background:#f9f9f9;">
 
-<div style="border:1px solid #ccc; padding: 15px; border-radius: 8px; background-color:#f9f9f9;">
+<h3>📌 Index</h3>
 
-1. **Quick Summary**  
-   - Defence-in-depth overview  
-   - Key technical components  
+<ol>
+  <li><strong>Quick Summary</strong>
+    <ul>
+      <li>Defence-in-depth overview</li>
+      <li>Key technical components</li>
+    </ul>
+  </li>
 
-2. **Before and After Security Layer**  
-   - Legacy architecture  
-   - Hardened architecture with SG chaining, mTLS, IRSA  
+  <li><strong>Before and After Security Layer</strong>
+    <ul>
+      <li>Legacy architecture</li>
+      <li>Hardened architecture with SG chaining, mTLS, IRSA</li>
+    </ul>
+  </li>
 
-3. **Security Overview of Small-Scale Platform: ShopNow**  
-   - Audit findings  
-   - Phased security program  
-   - Outcomes  
+  <li><strong>Security Overview of Small-Scale Platform: ShopNow</strong>
+    <ul>
+      <li>Audit findings</li>
+      <li>Phased security program</li>
+      <li>Outcomes</li>
+    </ul>
+  </li>
 
-4. **Deep Dives (Hard, Interview-Relevant Parts)**  
-   4.1 TLS vs mTLS — Why and How (Advanced)  
-   4.2 IRSA (IAM Roles for Service Accounts) — Deep Technical Notes  
-   4.3 Security Groups (SG) — Advanced Patterns & Egress Control  
-   4.4 WAF (CloudFront Edge) — Advanced Tuning  
-   4.5 Shield Advanced — Justification & Playbook  
-   4.6 Use SSM over SSH for Bastion Host  
+  <li><strong>Deep Dives (Hard, Interview-Relevant Parts)</strong>
+    <ul>
+      <li>4.1 TLS vs mTLS — Why and How (Advanced)</li>
+      <li>4.2 IRSA — Deep Technical Notes</li>
+      <li>4.3 Security Groups — Advanced Patterns & Egress Control</li>
+      <li>4.4 WAF (CloudFront Edge) — Advanced Tuning</li>
+      <li>4.5 Shield Advanced — Justification & Playbook</li>
+      <li>4.6 Use SSM over SSH for Bastion Host</li>
+    </ul>
+  </li>
 
-5. **Supply Chain, CI/CD & Runtime Controls**  
-   - CI/CD identity hardening (OIDC)  
-   - Image scanning & signing  
-   - SAST/SCA in CI gates  
-   - Admission controllers  
-   - Runtime detection & immutable infra  
+  <li><strong>Supply Chain, CI/CD & Runtime Controls</strong>
+    <ul>
+      <li>CI/CD identity hardening (OIDC)</li>
+      <li>Image scanning & signing</li>
+      <li>SAST/SCA in CI gates</li>
+      <li>Admission controllers</li>
+      <li>Runtime detection & immutable infra</li>
+    </ul>
+  </li>
 
-6. **Data Protection and PII / Payments**  
-   - Encryption at rest & in transit  
-   - S3 hardening  
-   - Payment and PII handling  
+  <li><strong>Data Protection and PII / Payments</strong>
+    <ul>
+      <li>Encryption at rest & in transit</li>
+      <li>S3 hardening</li>
+      <li>Payment and PII handling</li>
+    </ul>
+  </li>
 
-7. **Threat Model (Top Threats + Mitigations)**  
-   - Account takeover / credential theft  
-   - Lateral movement from compromised pod  
-   - Data exfiltration  
-   - Supply chain compromise  
-   - DDoS / Flash sale disruption  
-   - Ransomware / snapshot deletion  
+  <li><strong>Threat Model (Top Threats + Mitigations)</strong>
+    <ul>
+      <li>Account takeover / credential theft</li>
+      <li>Lateral movement from compromised pod</li>
+      <li>Data exfiltration</li>
+      <li>Supply chain compromise</li>
+      <li>DDoS / Flash sale disruption</li>
+      <li>Ransomware / snapshot deletion</li>
+    </ul>
+  </li>
 
-8. **Compliance Checklist (PCI / GDPR / HIPAA Highlights)**  
+  <li><strong>Compliance Checklist (PCI / GDPR / HIPAA Highlights)</strong></li>
 
-9. **Prioritized Rollout Plan (Practical, with Tasks)**  
-   - Quick wins (days → 2 weeks)  
-   - Mid-term (2–8 weeks)  
-   - Long-term (2–6 months)  
+  <li><strong>Prioritized Rollout Plan (Practical, with Tasks)</strong>
+    <ul>
+      <li>Quick wins (days → 2 weeks)</li>
+      <li>Mid-term (2–8 weeks)</li>
+      <li>Long-term (2–6 months)</li>
+    </ul>
+  </li>
 
-10. **Operational Rules, KPIs & Runbook Snippet**  
-    - Policies to codify  
-    - KPIs / SLOs  
-    - Runbook example — Suspicious S3 exfil detection  
+  <li><strong>Operational Rules, KPIs & Runbook Snippet</strong>
+    <ul>
+      <li>Policies to codify</li>
+      <li>KPIs / SLOs</li>
+      <li>Runbook example — Suspicious S3 exfil detection</li>
+    </ul>
+  </li>
 
-11. **Final Thoughts & Recommended Next Steps**  
-    - Lessons learned  
-    - Operational and security takeaways  
+  <li><strong>Final Thoughts & Recommended Next Steps</strong>
+    <ul>
+      <li>Lessons learned</li>
+      <li>Operational and security takeaways</li>
+    </ul>
+  </li>
+</ol>
 
 </div>
 
