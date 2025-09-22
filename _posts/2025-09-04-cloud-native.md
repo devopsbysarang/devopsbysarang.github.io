@@ -70,8 +70,11 @@ featured-image: /assets/images/sd.png
     - Operational and security takeaways  
 
 </div>
+
 ## 1 — Quick Summary
-E-commerce platforms hold PII, payment flows, and inventory logic — making them high-value targets.  
+E-commerce platforms handle vast amounts of sensitive data — including PII, payment flows, and inventory logic — making them extremely high-value targets. During global flash sales like Amazon Great Indian Festival, Flipkart Big Billion Days and Black Friday, these platforms face hundreds of millions of requests within hours, testing both performance and security at massive scale.
+
+I was fascinated by how these large-scale platforms maintain resilience and security under such intense traffic, ensuring seamless shopping experiences while protecting customer data and financial transactions. The key lies in defence-in-depth — layering security and operational controls across edge, network, platform, application, and data layers, all while enforcing least privilege, zero-trust, and observability.
 
 **Defence-in-depth** means layering protections at the edge, network, platform, application, and data layers while designing for **least privilege, zero-trust, and operational observability**.  
 
