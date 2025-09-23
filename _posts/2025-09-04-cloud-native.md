@@ -162,6 +162,12 @@ I was fascinated by how these large-scale platforms maintain resilience and secu
 
 **Defence-in-depth** means layering protections at the edge, network, platform, application, and data layers while designing for **least privilege, zero-trust, and operational observability**.  
 
+
+<img src="https://github.com/user-attachments/assets/aa82b38a-a405-4ab2-8189-153c5039ecf8" 
+     alt="3-tier architecture" 
+     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
+
+
 The most technical, high-impact components that separate advanced designs from beginner ones are:  
 - **mTLS** for east-west trust between services (service identity)  
 - **Security Group chaining** for micro-segmentation  
