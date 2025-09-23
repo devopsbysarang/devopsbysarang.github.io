@@ -1,4 +1,4 @@
----
+<img width="653" height="781" alt="image" src="https://github.com/user-attachments/assets/b5d42313-c4b1-4275-bd17-8f646748d2f3" />---
 layout: single
 title: "Black Friday Resilient E-Commerce Architecture on AWS"
 date: 2025-09-04 20:00:00 +0530
@@ -162,8 +162,7 @@ I was fascinated by how these large-scale platforms maintain resilience and secu
 
 **Defence-in-depth** means layering protections at the edge, network, platform, application, and data layers while designing for **least privilege, zero-trust, and operational observability**.  
 
-
-<img src="https://github.com/user-attachments/assets/aa82b38a-a405-4ab2-8189-153c5039ecf8" 
+<img src="https://github.com/user-attachments/assets/1111028a-fe7b-4440-8830-f90176f2ea20" 
      alt="3-tier architecture" 
      style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
 
