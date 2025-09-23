@@ -601,7 +601,7 @@ Without IRSA, pods inherit **node IAM roles**.
 
 ---
 
-### 11. Final Thoughts & Recommended Next Steps
+### `11. Final Thoughts & Recommended Next Steps`
 This merged, advanced guide shifts the focus from *“add services”* to *how you use them correctly*:  
 
 - **mTLS** establishes service identity and prevents internal impersonation. Operationalize it with a mesh.  
