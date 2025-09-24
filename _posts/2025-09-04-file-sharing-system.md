@@ -7,8 +7,6 @@ author: Sarang Deshmukh
 featured-image: /assets/images/blog1.png
 ---
 
-**Final Project:** *Designing a Secure Global File Sharing System on Cloud* 
----
 
 ## 📅 Plan Overview
 - **Phase 1 (Days 1–5):** Networking Foundations  
