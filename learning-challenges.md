@@ -1,11 +1,11 @@
 ---
 layout: home
-permalink: /cloud-system-design/
+permalink: /learning-challenges/
 author_profile: true
 ---
 
 <p style="color:#fff; text-align:center; margin-bottom:1rem;">
-  Here you’ll find posts on <strong>Cloud-Native System Design</strong>.
+  Daily challenges, lasting skills.
 </p>
 
 <div class="blog-grid">
