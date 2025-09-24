@@ -7,8 +7,7 @@ author: Sarang Deshmukh
 featured-image: /assets/images/network.png
 ---
 
-
-## 📅 Plan Overview
+### 📅 Plan Overview
 - **Phase 1 (Days 1–5):** Networking Foundations  
 - **Phase 2 (Days 6–10):** Security Deep Dive  
 - **Phase 3 (Days 11–15):** Cloud Infra, DevOps, and Resilience  
