@@ -60,12 +60,23 @@ feature_row:
 </section>
 
 
-<!-- Heading above feature row -->
-<div style="text-align: center; margin-top: 5px !important; margin-bottom: 20px !important;">
-  <h2 style="font-size: 1.9rem; font-weight: 600; color: #64FFDA !important; margin-top: 0 !important; padding-top: 0 !important; margin-bottom: 10px !important">
+<div style="text-align: center !important; margin-top: 5px !important; margin-bottom: 20px !important;">
+  <h2 style="
+    font-size: 1.9rem !important; 
+    font-weight: 600 !important; 
+    color: #64FFDA !important; 
+    margin-top: 0 !important; 
+    padding-top: 0 !important; 
+    margin-bottom: 10px !important;
+    text-decoration: none !important; /* remove underline */
+    display: inline-block !important; /* shrink width */
+    border-bottom: 2px solid #64FFDA !important; /* thin underline */
+    padding-bottom: 4px !important; /* space between text and underline */
+  ">
     My Learnings...
   </h2>
 </div>
+
 
 {% include feature_row %}
 {% include newsletter.html %}
