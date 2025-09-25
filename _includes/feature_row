@@ -5,6 +5,7 @@
 {% endif %}
 
 <div class="feature__wrapper">
+
   {% for f in feature_row %}
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
       <div class="archive__item">
@@ -12,12 +13,15 @@
           <div class="archive__item-teaser">
             <img src="{{ f.image_path | relative_url }}"
                  alt="{% if f.alt %}{{ f.alt }}{% endif %}">
+            {% if f.image_caption %}
+              <span class="archive__item-caption">{{ f.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+            {% endif %}
           </div>
         {% endif %}
 
         <div class="archive__item-body">
           {% if f.title %}
-            <h3 class="archive__item-title">{{ f.title }}</h3>
+            <h2 class="archive__item-title">{{ f.title }}</h2>
           {% endif %}
 
           {% if f.excerpt %}
@@ -33,4 +37,5 @@
       </div>
     </div>
   {% endfor %}
+
 </div>
