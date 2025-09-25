@@ -470,3 +470,63 @@ button.greedy-nav__toggle:focus {
   flex-shrink: 0 !important;
   transition: transform 0.3s ease !important;
 }
+
+
+/* ---------- Responsive full-width wrapper fix (add-on) ---------- */
+body, html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+}
+
+.page__content, 
+.container, 
+.site-wrapper, 
+.site-header, 
+.site-footer, 
+.page__hero, 
+.page__footer {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.skills-container {
+  overflow-x: hidden !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Smaller padding on mobile for better fit */
+@media (max-width: 480px) {
+  .page__content, 
+  .container, 
+  .site-wrapper, 
+  .site-header, 
+  .site-footer, 
+  .page__hero, 
+  .page__footer {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Wider padding on large screens */
+@media (min-width: 1200px) {
+  .page__content, 
+  .container, 
+  .site-wrapper, 
+  .site-header, 
+  .site-footer, 
+  .page__hero, 
+  .page__footer {
+    max-width: 95vw !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
