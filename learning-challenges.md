@@ -23,7 +23,7 @@ author_profile: true
         <div class="blog-content">
           <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
           <p class="blog-meta">
-            <time datetime="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</time> • {{ post.author }}
+            {{ post.author }}
           </p>
         </div>
       </div>
