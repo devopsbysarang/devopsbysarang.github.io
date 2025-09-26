@@ -4,7 +4,7 @@ title: "15-Day Deep Dive Plan: Networking & Security Foundations"
 date: 2025-09-04 20:00:00 +0530
 category: cloud
 author: Sarang Deshmukh
-featured-image: /assets/images/network.png
+featured-image: /assets/images/k8gke.png
 ---
 
 ### 📅 Plan Overview
