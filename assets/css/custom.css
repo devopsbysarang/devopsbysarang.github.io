@@ -473,7 +473,7 @@ button.greedy-nav__toggle:focus {
 
 /* force rounded corners on the teaser image */
 .archive__item-teaser {
-  border-radius: 12px !important; /* change 12px to whatever you want */
+  border-radius: 10px !important; /* change 12px to whatever you want */
   overflow: hidden !important;    /* keep child image clipped to radius */
 }
 
