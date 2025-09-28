@@ -471,3 +471,19 @@ button.greedy-nav__toggle:focus {
   transition: transform 0.3s ease !important;
 }
 
+/* force rounded corners on the teaser image */
+.archive__item-teaser {
+  border-radius: 12px !important; /* change 12px to whatever you want */
+  overflow: hidden !important;    /* keep child image clipped to radius */
+}
+
+/* optionally ensure the img itself has no conflicting radius */
+.archive__item-teaser img {
+  border-radius: 0 !important;    /* keep the rounding applied by the container */
+  display: block;                 /* avoids inline-gap issues */
+  width: 100%;
+  height: auto;
+  object-fit: cover;              /* optional: preserves cover behavior */
+}
+
+
