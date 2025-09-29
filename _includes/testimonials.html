@@ -1,5 +1,5 @@
 <section class="testimonials-section" style="background-color: #0A192F; padding: 30px 0 0 0; color: #ffffff;">
-  <div class="container" style="max-width: 1000px; margin: auto;">
+  <div class="container" style="max-width: 1000px; margin: auto; position: relative;">
     <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
       What people say?
     </h2>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <!-- dots container (will be injected by JS if not present) -->
+    <!-- dots container will be injected here by JS if not present -->
     <!-- <div class="testimonials-dots"></div> -->
   </div>
 </section>
@@ -58,6 +58,7 @@
   max-width: 1000px !important;
   margin: 0 auto !important;
   padding: 0 20px !important;
+  position: relative !important; /* needed for absolutely positioned dots if used */
 }
 
 .testimonials-heading {
@@ -120,9 +121,13 @@
 
 /* ---------- MOBILE: centered snap + dots (force overrides) ---------- */
 @media (max-width: 768px) {
-  /* CSS variable defines card width; tweak as needed */
+  /* CSS variable defines card width; tweak if needed */
   .testimonials-wrapper {
-    --card-w: 80vw !important; /* change this value to control card width */
+    --card-w: 80vw !important; /* card width relative to viewport */
+    /* make wrapper full-bleed so padding calculations use viewport */
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important; /* center full-bleed wrapper */
     display: flex !important;
     flex-direction: row !important;
     gap: 15px !important;
@@ -130,14 +135,14 @@
     -webkit-overflow-scrolling: touch !important;
     scroll-snap-type: x mandatory !important;
     flex-wrap: nowrap !important;
-    /* center first/last by calculating padding from card width */
+    /* center first/last by calculating padding from viewport card width */
     padding-left: calc((100vw - var(--card-w)) / 2) !important;
     padding-right: calc((100vw - var(--card-w)) / 2) !important;
     position: relative !important;
     scroll-behavior: smooth !important;
   }
 
-  /* allow smaller phones to get slightly wider cards */
+  /* slightly larger card for very small phones */
   @media (max-width: 420px) {
     .testimonials-wrapper { --card-w: 90vw !important; }
   }
@@ -155,27 +160,29 @@
     box-shadow: none !important;
   }
 
-  /* show dots on mobile */
+  /* show dots on mobile and move them closer to cards */
   .testimonials-dots {
     display: flex !important;
     justify-content: center !important;
     gap: 10px !important;
-    margin-top: 12px !important;
-    margin-bottom: 18px !important;
-    z-index: 12 !important;
+    margin-top: -22px !important; /* pull dots up closer to the cards */
+    margin-bottom: 8px !important;
+    z-index: 20 !important;
     pointer-events: auto !important;
+    position: relative !important;
   }
 
+  /* larger dots for visibility */
   .testimonials-dots .dot {
-    width: 8px !important;
-    height: 8px !important;
+    width: 10px !important;
+    height: 10px !important;
     border-radius: 50% !important;
     background: rgba(255,255,255,0.18) !important;
     border: none !important;
     padding: 0 !important;
     cursor: pointer !important;
     transition: transform .18s ease, background .18s ease, opacity .18s ease !important;
-    opacity: 0.95 !important;
+    opacity: 0.98 !important;
   }
 
   .testimonials-dots .dot:focus {
@@ -185,7 +192,7 @@
 
   .testimonials-dots .dot.active {
     background: #64FFDA !important;
-    transform: scale(1.25) !important;
+    transform: scale(1.3) !important;
   }
 
   /* minimal thin scrollbar for webkit (optional, non-intrusive) */
@@ -195,7 +202,7 @@
     border-radius: 6px !important;
   }
 
-  /* spacing tweaks for heading on mobile */
+  /* heading spacing tweaks */
   .testimonials-section { padding-top: 10px !important; }
   .testimonials-heading {
     margin-top: 10px !important;
@@ -205,7 +212,7 @@
 }
 </style>
 
-<!-- Place this script before the closing </body> tag -->
+<!-- Place this script before the closing </body> -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const wrapper = document.querySelector('.testimonials-wrapper');
@@ -232,6 +239,8 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.addEventListener('click', () => {
       // smooth center this card
       card.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      // small delay to update active dot
+      setTimeout(() => updateActiveDot(), 260);
     });
     dotsContainer.appendChild(btn);
   });
@@ -256,8 +265,8 @@ document.addEventListener('DOMContentLoaded', function () {
     dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
   }
 
-  // Initial set after layout settle
-  setTimeout(updateActiveDot, 120);
+  // Initial set after layout settles
+  setTimeout(updateActiveDot, 140);
 
   // Throttled update on scroll
   let raf = null;
