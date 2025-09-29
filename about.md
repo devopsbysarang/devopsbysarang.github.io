@@ -77,7 +77,7 @@ permalink: /about/
   --card-bg: #EEE9D5;         /* requested card color */
   --card-text: #000000;       /* black text */
   --name-color: #102A43;     /* stronger dark blue for name */
-  --role-color: #0B6B58;     /* stronger deep teal for role */
+  --role-color: #00809D;     /* stronger deep teal for role */
   --container-max: 1100px;
 }
 
@@ -237,8 +237,8 @@ permalink: /about/
   max-width: 720px;
   margin: 12px auto 44px auto;
   border: none;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(7,20,38,1) 0%, rgba(7,20,38,0.85) 50%, rgba(7,20,38,1) 100%);
+  height: 3px;
+  background: #fff;
   border-radius: 2px;
 }
 
