@@ -23,7 +23,7 @@ permalink: /about/
   </div>
 </div>
 
-<section class="testimonials-section" style="background-color: #0A192F; padding: 30px 0 0 0; color: #ffffff;">
+<section class="testimonials-section" style="background-color: #154D71; padding: 30px 0 0 0; color: #ffffff;">
 <div class="container" style="max-width: 1000px; margin: auto;">
 <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
 What people say?
@@ -271,6 +271,7 @@ margin-bottom: 60px;
 .linkedin-section {
   text-align: center;
   margin: 2rem 0;
+  margin-top: 40px !important; /* pushed further down from testimonials */
 }
 .linkedin-section .linkedin-btn {
   color: #fff;
