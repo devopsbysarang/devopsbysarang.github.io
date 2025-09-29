@@ -267,7 +267,7 @@ permalink: /about/
   }
   .testimonial {
     max-width: 100%;
-    padding: 16px 14px; /* reduced inner padding on mobile */
+    padding: 12px 18px; /* reduced inner padding on mobile */
   }
   /* critical: reduce bottom padding of the light panel on mobile so it doesn't look too tall */
   .testimonials-bg {
