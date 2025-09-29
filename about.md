@@ -32,7 +32,7 @@ What people say?
 <div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
 <!-- Testimonial 1 -->
 <div class="testimonial" style="
-background-color: #FFF8DB; /* fresh inner box color */
+background-color: #0A1930; /* fresh inner box color */
 padding: 30px 25px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -50,7 +50,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 <!-- Testimonial 2 -->
 <div class="testimonial" style="
-background-color: #FFF8DB;
+background-color: #0A1930;
 padding: 30px 25px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
