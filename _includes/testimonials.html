@@ -155,44 +155,48 @@
   margin-bottom: 60px;
 }
 
-/* Responsive mobile scrolling */
+/* Desktop layout remains unchanged */
+.testimonials-wrapper {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+/* Mobile horizontal scroll */
 @media (max-width: 768px) {
   .testimonials-wrapper {
-    flex-direction: row;          /* horizontal scroll */
+    display: flex;
+    flex-direction: row;          /* horizontal layout */
     gap: 15px;
     overflow-x: auto;             /* enable horizontal scroll */
-    scroll-snap-type: x mandatory; /* snap cards */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-    flex-wrap: nowrap;             /* no wrap */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;             /* no wrapping */
     padding: 0 10px;
-    position: relative;            /* for gradient overlays */
+    position: relative;
   }
 
   .testimonial {
     flex: 0 0 80%;                /* width of each card */
+    min-width: 250px;
     max-width: 300px;
     scroll-snap-align: start;
     padding: 20px !important;
+    border: 2px solid rgba(100, 255, 218, 0.1); /* subtle border */
+    background-color: #0E4C5F;   /* card color */
+    border-radius: 12px;
   }
 
-  /* Optional: reduce section padding on mobile */
-  .testimonials-section {
-    padding-top: 10px !important;
-  }
-
-  .testimonials-heading {
-    margin-top: 10px !important;
-    margin-bottom: 25px !important;
-    text-align: center !important;
-  }
-
-  /* Gradient fade overlays */
+  /* Optional gradient fade on sides */
   .testimonials-wrapper::before,
   .testimonials-wrapper::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 40px;       /* width of fade */
+    width: 40px;
     height: 100%;
     pointer-events: none;
     z-index: 10;
