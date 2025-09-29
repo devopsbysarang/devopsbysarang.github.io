@@ -194,12 +194,6 @@ margin-bottom: 60px;
 </style>
 
 
-<!-- LinkedIn Button at the End -->
-<div class="linkedin-section">
-  <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">
-    Connect with me on LinkedIn
-  </a>
-</div>
 
 <style>
 
