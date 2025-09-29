@@ -25,7 +25,7 @@ permalink: /about/
 
 <section class="testimonials-section" style="background-color: #102A43; padding: 30px 0 1px 0 !important; color: #ffffff;">
 <div class="container" style="max-width: 1000px; margin: auto;">
-<h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
+<h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: left;">
 What people say?
 </h2>
 
