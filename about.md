@@ -32,7 +32,7 @@ What people say?
 <div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
 <!-- Testimonial 1 -->
 <div class="testimonial" style="
-background-color: #077A7D; /* fresh inner box color */
+background-color: #0E4C5F; /* fresh inner box color */
 padding: 30px 25px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -40,7 +40,7 @@ flex: 1 1 300px;
 max-width: 450px;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 ">
-<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #000000 !important;">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #fff !important;">
 "I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
 </p>
 <p class="testimonial-name">– Hariom Kashyap
@@ -50,7 +50,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 <!-- Testimonial 2 -->
 <div class="testimonial" style="
-background-color: #077A7D;
+background-color: #0E4C5F;
 padding: 30px 25px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -58,7 +58,7 @@ flex: 1 1 300px;
 max-width: 450px;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 ">
-<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #000000 !important;">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #fff !important;">
 "Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
 </p>
 <p class="testimonial-name">– Ankur Singh
@@ -84,7 +84,7 @@ box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 /* Name in cyan */
 .testimonial-name {
 font-weight: bold;
-color: #0A1930 !important;
+color: #64FFDA !important;
 margin: 10px 0 0 0;
 line-height: 1.4;
 }
@@ -93,7 +93,7 @@ line-height: 1.4;
 .testimonial-role {
 display: block; /* next line */
 font-weight: normal;
-color: #1E201E !important;
+color: #4DA1A9 !important;
 font-style: italic; /* ✅ makes role text italic */
 margin: 3px 0 0 0;
 line-height: 1.3;
