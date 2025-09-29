@@ -271,7 +271,7 @@ permalink: /about/
   }
   /* critical: reduce bottom padding of the light panel on mobile so it doesn't look too tall */
   .testimonials-bg {
-    padding: 16px 0 12px 0 !important; /* much smaller bottom padding on mobile */
+    padding: 16px 0 0px 0 !important; /* much smaller bottom padding on mobile */
   }
   .testimonials-heading {
     margin-bottom: 14px !important;
@@ -287,7 +287,7 @@ permalink: /about/
 
 @media (max-width: 700px) {
   .testimonial {
-    margin-bottom: 24px !important; /* increase vertical spacing on mobile */
+    margin-bottom: 44px !important; /* increase vertical spacing on mobile */
   }
 }
 
