@@ -23,55 +23,7 @@ permalink: /about/
   </div>
 </div>
 
-<!-- Skills Section -->
-<section class="skills-section">
-  <h2>I am skilled in:</h2>
-  <div class="skills-grid">
-
-    <div class="skill-card">
-      <h3>Operating System</h3>
-      <p>Unix/Linux, Windows</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>DevOps Technologies</h3>
-      <p>GIT, Jenkins, Kubernetes, Docker, Ansible, Nexus, Consul</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Cloud</h3>
-      <p>AWS &amp; GCP (Solution Architect), Azure (Fundamentals)</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>IaC</h3>
-      <p>Terraform, Ansible</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Monitoring Tools</h3>
-      <p>Prometheus, Grafana, Apache Airflow</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Languages</h3>
-      <p>Python, Shell Script</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Database</h3>
-      <p>PostgreSQL, Oracle</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Other Technologies</h3>
-      <p>Machine Learning, Deep Learning, Generative AI</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- Testimonials (placed immediately after skills as requested) -->
+<!-- Testimonials (immediately after bio since skills section removed) -->
 <section class="testimonials-section">
   <div class="container">
     <h2 class="testimonials-heading">What people say?</h2>
@@ -100,12 +52,15 @@ permalink: /about/
   </div>
 </section>
 
-<!-- LinkedIn Button at the End -->
+<!-- LinkedIn Button -->
 <div class="linkedin-section">
   <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">
     Connect with me on LinkedIn
   </a>
 </div>
+
+<!-- Horizontal line below LinkedIn button -->
+<hr class="after-linkline" />
 
 <style>
 /* Google Fonts */
@@ -118,7 +73,10 @@ permalink: /about/
   --accent: #64FFDA;
   --card: #104F62;
   --muted-text: #ccd6f6;
-  --fresh-inner: #0E4C5F;
+  --testimonial-bg: #EEE9D5; /* requested */
+  --testimonial-text: #000000; /* black text */
+  --name-color: #0B3D91; /* strong blue for name */
+  --role-color: #064E3B; /* deep teal for role */
 }
 
 /* Page layout */
@@ -166,61 +124,6 @@ permalink: /about/
   margin-bottom: 1.2rem;
   color: var(--muted-text);
 }
-.about-bio a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 400;
-  border-radius: 6px;
-  background-color: #0077B5;
-  padding: 0.6rem 1.2rem;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-.about-bio a:hover {
-  background-color: #004182;
-}
-
-/* Skills Section */
-.skills-section {
-  background: var(--panel);
-  padding: 3rem 2rem;
-  margin-top: 0;
-}
-.skills-section h2 {
-  text-align: center;
-  color: var(--accent);
-  font-family: 'Rubik', sans-serif;
-  margin-bottom: 2rem;
-  margin-top: 0;
-  font-size: 1.8rem;
-}
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-.skill-card {
-  background: var(--card);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.skill-card:hover {
-  transform: translateY(-5px);
-}
-.skill-card h3 {
-  margin: 0 0 0.8rem;
-  color: var(--accent);
-  font-size: 1.2rem;
-}
-.skill-card p {
-  margin: 0;
-  color: var(--muted-text);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
 
 /* Testimonials Section */
 .testimonials-section {
@@ -250,57 +153,47 @@ permalink: /about/
   margin-bottom: 20px;
 }
 .testimonial {
-  background-color: var(--fresh-inner);
+  background-color: var(--testimonial-bg);
   padding: 30px 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  /* softened shadow so it doesn't clash with light bg */
+  box-shadow: 0 6px 18px rgba(10, 25, 47, 0.15);
   flex: 1 1 300px;
   max-width: 450px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 2px solid rgba(100,255,218,0.08);
-}
-.testimonial::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, rgba(100,255,218,0.03), rgba(255,255,255,0.01));
-  opacity: 0.4;
-  pointer-events: none;
+  border: 1px solid rgba(10,25,47,0.06);
 }
 .testimonial:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 10px rgba(100,255,218,0.12);
+  box-shadow: 0 10px 30px rgba(10,25,47,0.18);
 }
 .testimonial-text {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: var(--testimonial-text); /* black */
 }
 .testimonial-name {
   font-weight: bold;
-  color: var(--accent);
+  color: var(--name-color); /* requested different color */
   margin: 10px 0 0 0;
   line-height: 1.4;
 }
 .testimonial-role {
   display: block;
   font-weight: normal;
-  color: #ffffff;
+  color: var(--role-color); /* role color */
   font-style: italic;
   margin: 3px 0 0 0;
   line-height: 1.3;
 }
 
-/* LinkedIn Section */
+/* LinkedIn Section - pulled slightly up */
 .linkedin-section {
   text-align: center;
-  margin: 2rem 0 4rem 0;
+  margin: -12px 0 26px 0; /* negative top margin to shift button up */
 }
 .linkedin-section .linkedin-btn {
   text-decoration: none;
@@ -315,6 +208,15 @@ permalink: /about/
 }
 .linkedin-section .linkedin-btn:hover {
   background-color: #27cfa7;
+}
+
+/* Horizontal line below LinkedIn button */
+.after-linkline {
+  max-width: 720px;
+  margin: 0 auto 40px auto;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.06));
 }
 
 /* Responsive */
@@ -335,5 +237,7 @@ permalink: /about/
   .testimonials-wrapper { flex-direction: column; gap: 20px; }
   .testimonial { max-width: 100%; padding: 20px; }
   .testimonials-heading { margin-bottom: 25px; font-size: 1.6rem; }
+  .linkedin-section { margin: -8px 0 20px 0; } /* slightly smaller negative on mobile */
+  .after-linkline { margin-bottom: 28px; }
 }
 </style>
