@@ -325,9 +325,9 @@ margin-bottom: 60px;
   }
 
   .testimonials-wrapper .testimonial p {
-    margin: 0 0 10px 0 !important;
-    line-height: 1.4 !important;
-    font-size: 0.95rem !important;
+    margin: 10px 10px 10px 10px !important;
+    line-height: 1.6 !important;
+    font-size: 1rem !important;
   }
 
   /* ensure container doesn't push content to one side */
