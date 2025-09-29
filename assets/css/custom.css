@@ -11,7 +11,7 @@ body,
 .sidebar,
 .site-header,
 .site-footer {
-  background-color: #0A192F !important;  /* Dark navy background */
+  background-color: #fff !important;  /* Dark navy background */
   color: #ccd6f6 !important;             /* Light slate text */
 }
 
