@@ -7,10 +7,9 @@
     <div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
       <!-- Testimonial 1 -->
       <div class="testimonial" style="
-        background-color: #0E4C5F;  /* fresh inner box color */
+        background-color: #0E4C5F;
         padding: 30px 25px;
         border-radius: 12px;
-        /* inline shadow present but will be overridden by CSS !important */
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         flex: 1 1 300px;
         max-width: 450px;
@@ -43,13 +42,13 @@
       </div>
     </div>
 
-    <!-- dots container will be injected here by JS if not present -->
+    <!-- dots container (will be injected by JS if not present) -->
     <!-- <div class="testimonials-dots"></div> -->
   </div>
 </section>
 
 <style>
-/* --- general / desktop (keep look) --- */
+/* ---------- General / Desktop ---------- */
 .testimonials-section {
   background-color: #0A192F !important;
   color: #ffffff !important;
@@ -61,7 +60,6 @@
   padding: 0 20px !important;
 }
 
-/* Heading in cyan */
 .testimonials-heading {
   color: #64FFDA !important;
   margin: 20px 0 50px !important;
@@ -69,7 +67,7 @@
   text-align: center !important;
 }
 
-/* Ensure desktop wrapper layout (override inline) */
+/* Ensure wrapper default layout (override inline) */
 .testimonials-wrapper {
   display: flex !important;
   gap: 25px !important;
@@ -77,7 +75,7 @@
   padding: 0 20px !important;
   justify-content: center !important;
   margin-bottom: 60px !important;
-  position: relative !important; /* used for fades/dots */
+  position: relative !important;
 }
 
 /* Card base - remove shadows (override inline box-shadow) */
@@ -88,19 +86,17 @@
   flex: 1 1 300px !important;
   max-width: 450px !important;
   transition: transform 0.28s ease !important;
-  box-shadow: none !important;      /* REMOVE all shadows */
+  box-shadow: none !important; /* remove inline shadow */
   overflow: hidden !important;
   border: 2px solid rgba(100,255,218,0.08) !important;
   color: #ffffff !important;
 }
 
-/* remove any hover shadow, but keep a small lift */
 .testimonial:hover {
-  transform: translateY(-5px) !important;
+  transform: translateY(-4px) !important;
   box-shadow: none !important;
 }
 
-/* Name in cyan */
 .testimonial-name {
   font-weight: bold !important;
   color: #64FFDA !important;
@@ -108,7 +104,6 @@
   line-height: 1.4 !important;
 }
 
-/* Role / designation */
 .testimonial-role {
   display: block !important;
   font-weight: normal !important;
@@ -118,14 +113,16 @@
   line-height: 1.3 !important;
 }
 
-/* --- Dots (hidden on desktop) --- */
+/* hide desktop dots by default */
 .testimonials-dots {
   display: none !important;
 }
 
-/* ---------- MOBILE: centered snap + dots (force with !important) ---------- */
+/* ---------- MOBILE: centered snap + dots (force overrides) ---------- */
 @media (max-width: 768px) {
+  /* CSS variable defines card width; tweak as needed */
   .testimonials-wrapper {
+    --card-w: 80vw !important; /* change this value to control card width */
     display: flex !important;
     flex-direction: row !important;
     gap: 15px !important;
@@ -133,21 +130,29 @@
     -webkit-overflow-scrolling: touch !important;
     scroll-snap-type: x mandatory !important;
     flex-wrap: nowrap !important;
-    /* center first/last card by padding = (100vw - cardWidth)/2 */
-    padding: 0 10vw !important;
+    /* center first/last by calculating padding from card width */
+    padding-left: calc((100vw - var(--card-w)) / 2) !important;
+    padding-right: calc((100vw - var(--card-w)) / 2) !important;
     position: relative !important;
+    scroll-behavior: smooth !important;
+  }
+
+  /* allow smaller phones to get slightly wider cards */
+  @media (max-width: 420px) {
+    .testimonials-wrapper { --card-w: 90vw !important; }
   }
 
   .testimonial {
-    flex: 0 0 80vw !important;           /* card width relative to viewport */
-    min-width: 260px !important;
-    max-width: 420px !important;
+    flex: 0 0 var(--card-w) !important;
+    width: var(--card-w) !important;
+    min-width: 240px !important;
+    max-width: 95vw !important;
     box-sizing: border-box !important;
     scroll-snap-align: center !important; /* center each card */
     padding: 20px !important;
     border-radius: 12px !important;
     background-color: #0E4C5F !important;
-    box-shadow: none !important;         /* ensure no shadow */
+    box-shadow: none !important;
   }
 
   /* show dots on mobile */
@@ -179,47 +184,19 @@
   }
 
   .testimonials-dots .dot.active {
-    background: #64FFDA !important; /* cyan active dot */
+    background: #64FFDA !important;
     transform: scale(1.25) !important;
   }
 
-  /* subtle side fades to hint scrollable content */
-  .testimonials-wrapper::before,
-  .testimonials-wrapper::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    width: 40px !important;
-    height: 100% !important;
-    pointer-events: none !important;
-    z-index: 10 !important;
-  }
-
-  .testimonials-wrapper::before {
-    left: 0 !important;
-    background: linear-gradient(to right, #0A192F, transparent) !important;
-  }
-
-  .testimonials-wrapper::after {
-    right: 0 !important;
-    background: linear-gradient(to left, #0A192F, transparent) !important;
-  }
-
-  /* Optional: nicer thin scrollbar for webkit (non-intrusive) */
-  .testimonials-wrapper::-webkit-scrollbar {
-    height: 6px !important;
-  }
+  /* minimal thin scrollbar for webkit (optional, non-intrusive) */
+  .testimonials-wrapper::-webkit-scrollbar { height: 6px !important; }
   .testimonials-wrapper::-webkit-scrollbar-thumb {
     background: rgba(255,255,255,0.06) !important;
     border-radius: 6px !important;
   }
-}
 
-/* slight spacing adjustments for mobile heading */
-@media (max-width: 768px) {
-  .testimonials-section {
-    padding-top: 10px !important;
-  }
+  /* spacing tweaks for heading on mobile */
+  .testimonials-section { padding-top: 10px !important; }
   .testimonials-heading {
     margin-top: 10px !important;
     margin-bottom: 25px !important;
@@ -228,7 +205,7 @@
 }
 </style>
 
-<!-- Add this script before the closing </body> -->
+<!-- Place this script before the closing </body> tag -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const wrapper = document.querySelector('.testimonials-wrapper');
@@ -237,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cards = Array.from(wrapper.querySelectorAll('.testimonial'));
   if (!cards.length) return;
 
-  // Create dots container and insert after wrapper if not present
+  // Create or reuse dots container and insert after wrapper
   let dotsContainer = document.querySelector('.testimonials-dots');
   if (!dotsContainer) {
     dotsContainer = document.createElement('div');
@@ -246,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Build dots
-  dotsContainer.innerHTML = ''; // clear
+  dotsContainer.innerHTML = '';
   cards.forEach((card, i) => {
     const btn = document.createElement('button');
     btn.className = 'dot';
