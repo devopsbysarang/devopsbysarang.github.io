@@ -338,6 +338,12 @@ margin-bottom: 60px;
   }
 }
 
+@media (max-width: 700px) {
+  /* Center About section text on mobile */
+  .about-bio {
+    text-align: center !important;
+  }
+}
 
 
 </style>
