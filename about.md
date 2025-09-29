@@ -73,11 +73,11 @@ permalink: /about/
   --page-bg: #0A192F;
   --accent-cyan: #64FFDA;
   --muted-text: #ccd6f6;
-  --panel-light: #f3f2ea;
+  --panel-light: #134686;
   --card-bg: #EEE9D5;         /* requested card color */
   --card-text: #000000;       /* black text */
-  --name-color: #0A2A66;     /* name color (dark blue) */
-  --role-color: #0D5A4A;     /* role color (deep teal) */
+  --name-color: #102A43;     /* stronger dark blue for name */
+  --role-color: #0B6B58;     /* stronger deep teal for role */
   --container-max: 1100px;
 }
 
@@ -133,40 +133,46 @@ permalink: /about/
   padding: 20px 0 40px 0; /* reduced space above heading */
 }
 
+/* outer light panel */
 .testimonials-bg {
   background: var(--panel-light);
-  padding: 40px 0;
+  padding: 40px 0 42px 0; /* default padding (bottom kept moderate) */
   box-shadow: 0 8px 30px rgba(5,10,20,0.12);
 }
 
+/* container */
 .testimonials-bg .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* heading: force color and spacing so theme cannot override */
 .testimonials-heading {
-  color: #071426 !important;
-  text-align: center;
-  margin: 0 0 24px 0 !important; /* tighter spacing */
-  font-size: 2.1rem !important;
+  color: #0A1930 !important; /* your requested heading color */
+  text-align: center !important;
+  margin: 0 0 18px 0 !important; /* tightened spacing */
+  font-size: 2.05rem !important;
   font-weight: 700 !important;
-  line-height: 1.2;
+  line-height: 1.15 !important;
+  padding: 0 !important;
 }
 
+/* cards wrapper */
 .testimonials-wrapper {
   display: flex;
-  gap: 26px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* individual card */
 .testimonial {
   background-color: var(--card-bg);
-  padding: 30px 26px;
+  padding: 28px 22px; /* slightly reduced padding for more compact feel */
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(10,20,30,0.08);
-  flex: 1 1 380px;
+  flex: 1 1 360px;
   max-width: 520px;
   transition: transform 0.28s ease, box-shadow 0.28s ease;
   border: 1px solid rgba(10,20,30,0.05);
@@ -177,25 +183,32 @@ permalink: /about/
   transform: translateY(-6px);
   box-shadow: 0 18px 36px rgba(10,20,30,0.12);
 }
+
+/* testimonial body text forced to black (important to override) */
 .testimonial-text {
   color: var(--card-text) !important;
   font-size: 1.02rem;
-  line-height: 1.65;
-  margin-bottom: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  opacity: 1 !important;
 }
+
+/* name and role: stronger contrasting colors and forced to override theme */
 .testimonial-name {
-  color: var(--name-color);
-  font-weight: 700;
-  margin-top: 8px;
+  color: var(--name-color) !important;
+  font-weight: 700 !important;
+  margin-top: 6px;
   display: block;
-  line-height: 1.25;
+  line-height: 1.18;
+  font-size: 1.02rem;
 }
 .testimonial-role {
   display: block;
-  color: var(--role-color);
+  color: var(--role-color) !important;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600 !important;
   margin-top: 4px;
+  font-size: 0.98rem;
 }
 
 /* LinkedIn button */
@@ -224,16 +237,18 @@ permalink: /about/
   max-width: 720px;
   margin: 12px auto 44px auto;
   border: none;
-  height: 4px;
-  background: #fff;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(7,20,38,1) 0%, rgba(7,20,38,0.85) 50%, rgba(7,20,38,1) 100%);
   border-radius: 2px;
 }
 
-/* Responsive tweaks */
+/* ===== Responsive tweaks ===== */
 @media (max-width: 900px) {
   .about-photo { flex: 0 0 180px; }
-  .testimonials-bg { padding: 28px 0; } /* less padding */
-  .testimonials-heading { font-size: 1.9rem !important; }
+  .testimonials-bg { padding: 28px 0 30px 0; } /* reduced overall padding */
+  .testimonials-heading { font-size: 1.95rem !important; }
+  .testimonials-wrapper { gap: 18px; }
+  .testimonial { padding: 24px 18px; }
 }
 @media (max-width: 700px) {
   .about-page {
@@ -248,18 +263,21 @@ permalink: /about/
   .about-bio { text-align: left; }
   .testimonials-wrapper {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
   .testimonial {
     max-width: 100%;
-    padding: 20px;
+    padding: 16px 14px; /* reduced inner padding on mobile */
   }
-  .testimonials-bg { padding: 20px 0 20px 0; } /* reduced bottom padding on mobile */
+  /* critical: reduce bottom padding of the light panel on mobile so it doesn't look too tall */
+  .testimonials-bg {
+    padding: 16px 0 12px 0 !important; /* much smaller bottom padding on mobile */
+  }
   .testimonials-heading {
-    margin-bottom: 20px !important;
+    margin-bottom: 14px !important;
     font-size: 1.6rem !important;
   }
   .linkedin-section { margin: -8px 0 20px 0; }
-  .after-linkline { margin-bottom: 28px; }
+  .after-linkline { margin-bottom: 20px; }
 }
 </style>
