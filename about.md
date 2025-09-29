@@ -242,62 +242,88 @@ permalink: /about/
   border-radius: 2px;
 }
 
-/* ===== Responsive tweaks ===== */
-@media (max-width: 900px) {
-  .about-photo { flex: 0 0 180px; }
-  .testimonials-bg { padding: 28px 0 30px 0; } /* reduced overall padding */
-  .testimonials-heading { font-size: 1.95rem !important; }
-  .testimonials-wrapper { gap: 18px; }
-  .testimonial { padding: 24px 18px; }
-}
+/* ---------- Mobile spacing: single override block ---------- */
 @media (max-width: 700px) {
+  /* page layout */
   .about-page {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5rem;
+    padding: 1rem;                /* slightly reduced overall padding */
   }
+
   .about-photo {
-    flex: 0 0 150px;
-    margin-bottom: 1rem;
+    flex: 0 0 140px;              /* smaller photo on very small screens */
+    margin-bottom: 0.75rem;
   }
+
   .about-bio { text-align: left; }
+
+  /* wrapper & heading */
   .testimonials-wrapper {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;                    /* compact gaps between cards */
   }
+
+  .testimonials-heading {
+    margin-bottom: 10px !important;
+    font-size: 1.55rem !important;
+  }
+
+  /* background container surrounding testimonials */
+  .testimonials-bg {
+    padding: 10px 0 6px 0 !important; /* small top + minimal bottom to avoid tall look */
+  }
+
+  /* individual testimonial card */
   .testimonial {
     max-width: 100%;
-    padding: 12px 18px; /* reduced inner padding on mobile */
+    padding: 14px 16px !important;   /* compact inner padding */
+    margin-bottom: 16px !important;   /* moderate spacing between cards */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;                          /* consistent small gaps inside card */
+    box-sizing: border-box;
   }
-  /* critical: reduce bottom padding of the light panel on mobile so it doesn't look too tall */
-  .testimonials-bg {
-    padding: 16px 0 0px 0 !important; /* much smaller bottom padding on mobile */
+
+  /* text inside the card */
+  .testimonial .testimonial-text,
+  .testimonial blockquote {
+    margin: 0;
+    padding: 0;
+    font-size: 0.98rem;
+    line-height: 1.35;                /* readable but tighter */
   }
-  .testimonials-heading {
-    margin-bottom: 14px !important;
-    font-size: 1.6rem !important;
+
+  /* author / role area - keep compact and aligned */
+  .testimonial-author {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
   }
-  .linkedin-section { margin: 10px 0 40px 0; }
-  .after-linkline { margin-bottom: 20px; }
-}
 
-.testimonial {
-  margin-bottom: 30px !important; /* add this to increase space below each card */
-}
-
-@media (max-width: 700px) {
-  .testimonial {
-    margin-bottom: 44px !important; /* increase vertical spacing on mobile */
-  }
-}
-
-
-@media (max-width: 700px) {
   .testimonial-role {
-    margin-top: 2px;   /* reduce space above role */
-    line-height: 1.2;  /* optional: tighter line height */
+    margin: 2px 0 0 0;               /* remove extra top spacing */
+    padding: 0;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.15;               /* tighter role line height */
+    font-size: 0.92rem;
   }
 
+  /* linkedin / linkline spacing */
+  .linkedin-section { margin: 8px 0 12px 0 !important; }
+  .after-linkline { margin-bottom: 12px !important; }
+
+  /* small utility tweaks if earlier rules added extra bottom spacing */
+  .testimonial + .testimonial { margin-top: 6px !important; }
+
+  /* if a global rule earlier used large margin-bottom, force a consistent smaller value */
+  .testimonial { margin-bottom: 16px !important; }
+
+  /* optional: prevent very tall cards if you use min-height elsewhere */
+  .testimonial { min-height: 0 !important; }
 }
-  
+
 </style>
