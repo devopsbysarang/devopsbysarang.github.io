@@ -127,48 +127,43 @@ permalink: /about/
   color: var(--muted-text);
 }
 
-/* ===== Testimonials: light panel + contrast improvements ===== */
-
-/* Section wrapper keeps background transparent; inner wrapper gives the light panel look */
+/* ===== Testimonials ===== */
 .testimonials-section {
   background: transparent;
-  padding: 30px 0 48px 0;
+  padding: 20px 0 40px 0; /* reduced space above heading */
 }
 
-/* The actual background panel spanning full width inside the dark page */
 .testimonials-bg {
-  background: var(--panel-light); /* warm light panel behind the cards */
-  padding: 48px 0;
+  background: var(--panel-light);
+  padding: 40px 0;
   box-shadow: 0 8px 30px rgba(5,10,20,0.12);
 }
 
-/* Container keeps same width but adds breathing space */
 .testimonials-bg .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 20px;
 }
 
-/* Heading should be dark and readable on the light panel */
 .testimonials-heading {
-  color: #071426 !important; /* deep navy/black */
+  color: #071426 !important;
   text-align: center;
-  padding: 0px !important;
-  font-size: 2.2rem;
-  margin-bottom: 34px;
-  font-weight: 700;
+  margin: 0 0 24px 0 !important; /* tighter spacing */
+  font-size: 2.1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
 }
 
-/* Cards (requested card color #EEE9D5) */
 .testimonials-wrapper {
   display: flex;
   gap: 26px;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .testimonial {
   background-color: var(--card-bg);
-  padding: 34px 28px;
+  padding: 30px 26px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(10,20,30,0.08);
   flex: 1 1 380px;
@@ -178,23 +173,16 @@ permalink: /about/
   position: relative;
   overflow: hidden;
 }
-
-/* hover lift */
 .testimonial:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 36px rgba(10,20,30,0.12);
 }
-
-/* body text should be pure black for maximum contrast */
 .testimonial-text {
   color: var(--card-text) !important;
   font-size: 1.02rem;
   line-height: 1.65;
   margin-bottom: 14px;
-  opacity: 1;
 }
-
-/* name & role styling */
 .testimonial-name {
   color: var(--name-color);
   font-weight: 700;
@@ -210,10 +198,10 @@ permalink: /about/
   margin-top: 4px;
 }
 
-/* LinkedIn button: pulled slightly up so it's closer to the testimonials */
+/* LinkedIn button */
 .linkedin-section {
   text-align: center;
-  margin: -14px 0 26px 0; /* negative top to pull it up */
+  margin: -14px 0 26px 0;
 }
 .linkedin-section .linkedin-btn {
   text-decoration: none;
@@ -231,21 +219,21 @@ permalink: /about/
   box-shadow: 0 12px 26px rgba(10,20,30,0.16);
 }
 
-/* Make the horizontal rule darker (stands out under the LinkedIn button) */
+/* Divider */
 .after-linkline {
   max-width: 720px;
   margin: 12px auto 44px auto;
   border: none;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(7,20,38,1) 0%, rgba(7,20,38,0.85) 50%, rgba(7,20,38,1) 100%);
+  height: 4px;
+  background: #fff;
   border-radius: 2px;
 }
 
-/* Responsive */
+/* Responsive tweaks */
 @media (max-width: 900px) {
   .about-photo { flex: 0 0 180px; }
-  .testimonials-bg { padding: 36px 0; }
-  .testimonials-heading { font-size: 1.9rem; }
+  .testimonials-bg { padding: 28px 0; } /* less padding */
+  .testimonials-heading { font-size: 1.9rem !important; }
 }
 @media (max-width: 700px) {
   .about-page {
@@ -266,9 +254,10 @@ permalink: /about/
     max-width: 100%;
     padding: 20px;
   }
+  .testimonials-bg { padding: 20px 0 20px 0; } /* reduced bottom padding on mobile */
   .testimonials-heading {
-    margin-bottom: 25px;
-    font-size: 1.6rem;
+    margin-bottom: 20px !important;
+    font-size: 1.6rem !important;
   }
   .linkedin-section { margin: -8px 0 20px 0; }
   .after-linkline { margin-bottom: 28px; }
