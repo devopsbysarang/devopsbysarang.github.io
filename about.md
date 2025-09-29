@@ -277,7 +277,7 @@ permalink: /about/
     margin-bottom: 14px !important;
     font-size: 1.6rem !important;
   }
-  .linkedin-section { margin: -8px 0 20px 0; }
+  .linkedin-section { margin: 10px 0 40px 0; }
   .after-linkline { margin-bottom: 20px; }
 }
 
@@ -291,4 +291,13 @@ permalink: /about/
   }
 }
 
+
+@media (max-width: 700px) {
+  .testimonial-role {
+    margin-top: 2px;   /* reduce space above role */
+    line-height: 1.2;  /* optional: tighter line height */
+  }
+
+}
+  
 </style>
