@@ -153,6 +153,7 @@ permalink: /about/
 .testimonials-heading {
   color: #071426; /* deep navy/black */
   text-align: center;
+  padding: 0px !important;
   font-size: 2.2rem;
   margin-bottom: 34px;
   font-weight: 700;
