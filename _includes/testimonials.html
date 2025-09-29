@@ -145,23 +145,67 @@
   }
 }
 
-/* Responsive adjustments for mobile */
+/* Desktop layout remains unchanged */
+.testimonials-wrapper {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+/* Responsive mobile scrolling */
 @media (max-width: 768px) {
   .testimonials-wrapper {
-    flex-direction: row;       /* horizontal scroll */
-    gap: 20px;
-    overflow-x: auto;          /* enable horizontal scroll */
-    scroll-snap-type: x mandatory; /* optional smooth snap */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    padding: 0 10px;           /* adjust padding for scroll */
-    flex-wrap: nowrap;          /* prevent wrapping */
+    flex-direction: row;          /* horizontal scroll */
+    gap: 15px;
+    overflow-x: auto;             /* enable horizontal scroll */
+    scroll-snap-type: x mandatory; /* snap cards */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    flex-wrap: nowrap;             /* no wrap */
+    padding: 0 10px;
+    position: relative;            /* for gradient overlays */
   }
 
   .testimonial {
-    flex: 0 0 80%;             /* width of each card (adjust as needed) */
-    max-width: 300px;          /* limit width */
-    scroll-snap-align: start;  /* optional: aligns cards nicely when scrolling */
-    padding: 20px !important;  /* maintain padding */
+    flex: 0 0 80%;                /* width of each card */
+    max-width: 300px;
+    scroll-snap-align: start;
+    padding: 20px !important;
+  }
+
+  /* Optional: reduce section padding on mobile */
+  .testimonials-section {
+    padding-top: 10px !important;
+  }
+
+  .testimonials-heading {
+    margin-top: 10px !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+  }
+
+  /* Gradient fade overlays */
+  .testimonials-wrapper::before,
+  .testimonials-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;       /* width of fade */
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .testimonials-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #0A192F, transparent);
+  }
+
+  .testimonials-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #0A192F, transparent);
   }
 }
 
