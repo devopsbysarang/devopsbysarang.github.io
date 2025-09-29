@@ -73,7 +73,7 @@ permalink: /about/
   --page-bg: #0A192F;
   --accent-cyan: #64FFDA;
   --muted-text: #ccd6f6;
-  --panel-light: #134686;
+  --panel-light: #154D71;
   --card-bg: #EEE9D5;         /* requested card color */
   --card-text: #000000;       /* black text */
   --name-color: #102A43;     /* stronger dark blue for name */
@@ -149,13 +149,13 @@ permalink: /about/
 
 /* heading: force color and spacing so theme cannot override */
 .testimonials-heading {
-  color: #0A1930 !important; /* your requested heading color */
+  color: #fff !important; /* your requested heading color */
   text-align: center !important;
-  margin: 0 0 18px 0 !important; /* tightened spacing */
+  margin: 20px 0 18px 0 !important; /* tightened spacing */
   font-size: 2.05rem !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
-  padding: 0 !important;
+  padding: 10px !important;
 }
 
 /* cards wrapper */
@@ -169,7 +169,7 @@ permalink: /about/
 /* individual card */
 .testimonial {
   background-color: var(--card-bg);
-  padding: 28px 22px; /* slightly reduced padding for more compact feel */
+  padding: 48px 22px; /* slightly reduced padding for more compact feel */
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(10,20,30,0.08);
   flex: 1 1 360px;
