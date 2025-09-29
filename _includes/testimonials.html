@@ -1,312 +1,192 @@
-<!-- Paste this whole block into your page (CSS in <style>, script before </body>) -->
+
 <section class="testimonials-section" style="background-color: #0A192F; padding: 30px 0 0 0; color: #ffffff;">
-  <div class="container" style="max-width: 1000px; margin: auto; position: relative;">
-    <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
-      What people say?
-    </h2>
+<div class="container" style="max-width: 1000px; margin: auto;">
+<h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
+What people say?
+</h2>
 
-    <div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
-      <!-- Testimonial 1 -->
-      <div class="testimonial" style="
-        background-color: #0E4C5F;
-        padding: 30px 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        flex: 1 1 300px;
-        max-width: 450px;
-        transition: transform 0.3s ease;
-      ">
-        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #ffffff !important;">
-          "I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
-        </p>
-        <p class="testimonial-name">– Hariom Kashyap
-          <span class="testimonial-role">Software Architect, Amdocs</span>
-        </p>
-      </div>
+<div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
+<!-- Testimonial 1 -->
+<div class="testimonial" style="
+background-color: #0E4C5F; /* fresh inner box color */
+padding: 30px 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+flex: 1 1 300px;
+max-width: 450px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #ffffff !important;">
+"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
+</p>
+<p class="testimonial-name">– Hariom Kashyap
+<span class="testimonial-role">Software Architect, Amdocs</span>
+</p>
+</div>
 
-      <!-- Testimonial 2 -->
-      <div class="testimonial" style="
-        background-color: #0E4C5F;
-        padding: 30px 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        flex: 1 1 300px;
-        max-width: 450px;
-        transition: transform 0.3s ease;
-      ">
-        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #ffffff !important;">
-          "Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
-        </p>
-        <p class="testimonial-name">– Ankur Singh
-          <span class="testimonial-role">AI Engineer, Intel</span>
-        </p>
-      </div>
-
-      <!-- Add more .testimonial blocks as needed -->
-    </div>
-
-    <!-- .testimonials-dots will be injected by JS if not present -->
-  </div>
+<!-- Testimonial 2 -->
+<div class="testimonial" style="
+background-color: #0E4C5F;
+padding: 30px 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+flex: 1 1 300px;
+max-width: 450px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #ffffff !important;">
+"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
+</p>
+<p class="testimonial-name">– Ankur Singh
+<span class="testimonial-role">AI Engineer, Intel</span>
+</p>
+</div>
+</div>
+</div>
 </section>
 
 <style>
-/* reset for consistent vw calculations */
-html, body {
-  height: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* ---------- General / Desktop ---------- */
-.testimonials-section {
-  background-color: #0A192F !important;
-  color: #ffffff !important;
-}
-
-.container {
-  max-width: 1000px !important;
-  margin: 0 auto !important;
-  padding: 0 20px !important;
-  position: relative !important;
-}
-
+/* Heading in cyan */
 .testimonials-heading {
-  color: #64FFDA !important;
-  margin: 20px 0 50px !important;
-  font-size: 2rem !important;
-  text-align: center !important;
+color: #64FFDA !important;
 }
 
-/* Ensure wrapper default layout (override inline) */
-.testimonials-wrapper {
-  display: flex !important;
-  gap: 25px !important;
-  flex-wrap: wrap !important;
-  padding: 0 20px !important;
-  justify-content: center !important;
-  margin-bottom: 60px !important;
-  position: relative !important;
-  box-sizing: border-box !important;
-}
-
-/* Card base - override inline shadows, keep look */
-.testimonial {
-  background-color: #0E4C5F !important;
-  padding: 30px 25px !important;
-  border-radius: 12px !important;
-  flex: 1 1 300px !important;
-  max-width: 450px !important;
-  transition: transform 0.28s ease !important;
-  box-shadow: none !important; /* remove inline shadow */
-  overflow: hidden !important;
-  border: 2px solid rgba(100,255,218,0.08) !important;
-  color: #ffffff !important;
-}
-
+/* Hover animation */
 .testimonial:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: none !important;
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Name in cyan */
+.testimonial-name {
+font-weight: bold;
+color: #64FFDA !important;
+margin: 10px 0 0 0;
+line-height: 1.4;
+}
+
+/* Role / designation */
+.testimonial-role {
+display: block; /* next line */
+font-weight: normal;
+color: #ffffff;
+font-style: italic; /* ✅ makes role text italic */
+margin: 3px 0 0 0;
+line-height: 1.3;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+.testimonials-wrapper {
+flex-direction: column;
+gap: 20px;
+}
+
+.testimonial {
+max-width: 90%;
+padding: 20px !important; /* ✅ fixed padding for mobile */
+}
+
+.testimonial p {
+font-size: 1rem; /* slightly smaller for mobile */
+line-height: 1.5;
+margin-bottom: 12px;
 }
 
 .testimonial-name {
-  font-weight: bold !important;
-  color: #64FFDA !important;
-  margin: 10px 0 0 0 !important;
-  line-height: 1.4 !important;
+margin-top: 8px;
+line-height: 1.3;
 }
 
 .testimonial-role {
-  display: block !important;
-  font-weight: normal !important;
-  color: #ffffff !important;
-  font-style: italic !important;
-  margin: 3px 0 0 0 !important;
-  line-height: 1.3 !important;
+margin-top: 2px;
+line-height: 1.25;
+}
 }
 
-/* hide desktop dots by default */
-.testimonials-dots {
-  display: none !important;
+/* Hover animation + subtle highlight */
+.testimonial {
+position: relative;
+overflow: hidden;
+border: 2px solid rgba(100, 255, 218, 0.1); /* subtle cyan border */
 }
 
-/* ---------- MOBILE: centered snap + dots (force overrides) ---------- */
+.testimonial::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(
+145deg,
+rgba(100, 255, 218, 0.05),
+rgba(255, 255, 255, 0.02)
+);
+opacity: 0.4;
+pointer-events: none;
+}
+
+/* Hover effect */
+.testimonial:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
+0 0 10px rgba(100, 255, 218, 0.15); /* soft cyan glow */
+}
+
 @media (max-width: 768px) {
-  /* default card width variable; tweak if needed */
-  .testimonials-wrapper {
-    --card-w: 80vw !important; /* card width relative to viewport */
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important; /* full-bleed alignment for consistent centering */
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 15px !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scroll-snap-type: x mandatory !important;
-    flex-wrap: nowrap !important;
-    /* center first/last card by padding calculated from card width */
-    padding-left: calc((100vw - var(--card-w)) / 2) !important;
-    padding-right: calc((100vw - var(--card-w)) / 2) !important;
-    position: relative !important;
-    scroll-behavior: smooth !important;
-    /* help JS centering be exact in DevTools */
-    scroll-padding-inline: calc((100vw - var(--card-w)) / 2) !important;
-    box-sizing: border-box !important;
-  }
-
-  /* slightly larger card for very small phones */
-  @media (max-width: 420px) {
-    .testimonials-wrapper { --card-w: 90vw !important; }
-  }
-
-  .testimonial {
-    flex: 0 0 var(--card-w) !important;
-    width: var(--card-w) !important;
-    min-width: 240px !important;
-    max-width: 95vw !important;
-    box-sizing: border-box !important;
-    scroll-snap-align: center !important; /* center each card */
-    padding: 20px !important;
-    border-radius: 12px !important;
-    background-color: #0E4C5F !important;
-    box-shadow: none !important;
-  }
-
-  /* show dots on mobile and move them up */
-  .testimonials-dots {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    margin-top: -26px !important; /* pull dots up closer to the cards */
-    margin-bottom: 10px !important;
-    z-index: 40 !important;
-    pointer-events: auto !important;
-    position: relative !important;
-  }
-
-  /* bigger dots for better visibility */
-  .testimonials-dots .dot {
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 50% !important;
-    background: rgba(255,255,255,0.18) !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-    transition: transform .18s ease, background .18s ease, opacity .18s ease !important;
-    opacity: 0.98 !important;
-  }
-
-  .testimonials-dots .dot:focus {
-    outline: 2px solid rgba(100,255,218,0.25) !important;
-    outline-offset: 3px !important;
-  }
-
-  .testimonials-dots .dot.active {
-    background: #64FFDA !important;
-    transform: scale(1.3) !important;
-  }
-
-  /* optional thin scrollbar for webkit */
-  .testimonials-wrapper::-webkit-scrollbar { height: 6px !important; }
-  .testimonials-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.06) !important;
-    border-radius: 6px !important;
-  }
-
-  /* heading spacing tweaks */
-  .testimonials-section { padding-top: 10px !important; }
-  .testimonials-heading {
-    margin-top: 10px !important;
-    margin-bottom: 25px !important;
-    text-align: center !important;
-  }
+.testimonials-section {
+padding-top: 10px !important; /* reduce top space */
 }
+
+.testimonials-heading {
+margin-top: 10px !important; /* reduce heading top margin */
+margin-bottom: 25px !important; /* tighten space below heading */
+text-align: center !important; /* center only on mobile */
+}
+}
+
+/* Desktop layout remains unchanged */
+.testimonials-wrapper {
+display: flex;
+gap: 25px;
+flex-wrap: wrap;
+padding: 0 20px;
+justify-content: center;
+margin-bottom: 60px;
+}
+
+/* Desktop layout remains unchanged */
+.testimonials-wrapper {
+display: flex;
+gap: 25px;
+flex-wrap: wrap;
+padding: 0 20px;
+justify-content: center;
+margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+.testimonials-wrapper {
+display: flex !important;
+flex-direction: row !important;
+flex-wrap: nowrap !important;
+overflow-x: auto !important;
+-webkit-overflow-scrolling: touch !important;
+scroll-snap-type: x mandatory !important;
+padding: 0 10px !important;
+position: relative !important;
+}
+
+.testimonial {
+flex: 0 0 80% !important;
+min-width: 250px !important;
+max-width: 320px !important;
+scroll-snap-align: start !important;
+padding: 20px !important;
+}
+}
+
+
+
 </style>
-
-<!-- Place this script just before the closing </body> -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const wrapper = document.querySelector('.testimonials-wrapper');
-  if (!wrapper) return;
-
-  const cards = Array.from(wrapper.querySelectorAll('.testimonial'));
-  if (!cards.length) return;
-
-  // Create or reuse dots container and insert after wrapper
-  let dotsContainer = document.querySelector('.testimonials-dots');
-  if (!dotsContainer) {
-    dotsContainer = document.createElement('div');
-    dotsContainer.className = 'testimonials-dots';
-    wrapper.parentNode.insertBefore(dotsContainer, wrapper.nextSibling);
-  }
-
-  // Build dots
-  dotsContainer.innerHTML = '';
-  cards.forEach((card, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'dot';
-    btn.setAttribute('aria-label', `Show testimonial ${i + 1}`);
-    btn.type = 'button';
-    btn.addEventListener('click', () => {
-      card.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-      setTimeout(updateActiveDot, 260);
-    });
-    dotsContainer.appendChild(btn);
-  });
-
-  const dots = Array.from(dotsContainer.children);
-
-  // Find card closest to wrapper center and return index
-  function getActiveIndex() {
-    const center = wrapper.scrollLeft + wrapper.clientWidth / 2;
-    let minDiff = Infinity;
-    let activeIndex = 0;
-    cards.forEach((card, idx) => {
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-      const diff = Math.abs(center - cardCenter);
-      if (diff < minDiff) { minDiff = diff; activeIndex = idx; }
-    });
-    return activeIndex;
-  }
-
-  // Update active dot
-  function updateActiveDot() {
-    const activeIndex = getActiveIndex();
-    dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
-  }
-
-  // Center the initial card (auto => instant, helps DevTools)
-  function centerInitialCard() {
-    const idx = getActiveIndex() || 0;
-    if (cards[idx]) {
-      cards[idx].scrollIntoView({ behavior: 'auto', inline: 'center' });
-    }
-    setTimeout(updateActiveDot, 80);
-  }
-
-  // Initial center after layout settles
-  setTimeout(centerInitialCard, 80);
-
-  // Throttled update on scroll
-  let raf = null;
-  wrapper.addEventListener('scroll', () => {
-    if (raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(updateActiveDot);
-  });
-
-  // Recenter on resize / orientation changes (helps DevTools and desktop emulation)
-  let resizeTimeout = null;
-  function handleResize() {
-    if (resizeTimeout) clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      const ai = getActiveIndex();
-      if (cards[ai]) cards[ai].scrollIntoView({ behavior: 'auto', inline: 'center' });
-      updateActiveDot();
-    }, 120);
-  }
-
-  window.addEventListener('resize', handleResize);
-  window.addEventListener('orientationchange', handleResize);
-});
-</script>
