@@ -297,4 +297,23 @@ margin-bottom: 60px;
     text-align: left;
   }
 }
+
+@media (max-width: 480px) {
+  /* Make the inner testimonial boxes smaller and more compact on small phones */
+  .testimonials-wrapper {
+    gap: 16px;
+    padding: 0 12px;
+  }
+  .testimonial {
+    flex: 1 1 100% !important;
+    max-width: 95% !important;
+    padding: 12px !important;
+    font-size: 0.95rem !important;
+  }
+  .testimonial p {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
 </style>
