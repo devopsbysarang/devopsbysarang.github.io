@@ -145,7 +145,7 @@ box-shadow: 0 0 16px #64FFDA;
 .testimonials-bg .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 /* heading: force color and spacing so theme cannot override */
