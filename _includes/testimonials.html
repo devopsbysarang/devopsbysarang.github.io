@@ -144,6 +144,27 @@
     text-align: center !important; /* center only on mobile */
   }
 }
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .testimonials-wrapper {
+    flex-direction: row;       /* horizontal scroll */
+    gap: 20px;
+    overflow-x: auto;          /* enable horizontal scroll */
+    scroll-snap-type: x mandatory; /* optional smooth snap */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    padding: 0 10px;           /* adjust padding for scroll */
+    flex-wrap: nowrap;          /* prevent wrapping */
+  }
+
+  .testimonial {
+    flex: 0 0 80%;             /* width of each card (adjust as needed) */
+    max-width: 300px;          /* limit width */
+    scroll-snap-align: start;  /* optional: aligns cards nicely when scrolling */
+    padding: 20px !important;  /* maintain padding */
+  }
+}
+
   
 </style>
 
