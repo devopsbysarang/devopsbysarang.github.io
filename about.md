@@ -72,7 +72,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 <style>
 /* Heading in cyan */
 .testimonials-heading {
-color: #fff !important;
+color: #64FFDA !important;
 }
 
 /* Hover animation */
