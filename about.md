@@ -136,7 +136,7 @@ permalink: /about/
 /* outer light panel */
 .testimonials-bg {
   background: var(--panel-light);
-  padding: 40px 0 42px 0; /* default padding (bottom kept moderate) */
+  padding: 20px 0 42px 0; /* default padding (bottom kept moderate) */
   box-shadow: 0 8px 30px rgba(5,10,20,0.12);
 }
 
@@ -222,7 +222,7 @@ permalink: /about/
   border-radius: 6px;
   background-color: var(--accent-cyan);
   color: var(--page-bg) !important;
-  padding: 3rem 1.6rem;
+  padding: 0.75rem 1.6rem;
   display: inline-block;
   box-shadow: 0 6px 18px rgba(10,20,30,0.12);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
@@ -280,4 +280,15 @@ permalink: /about/
   .linkedin-section { margin: -8px 0 20px 0; }
   .after-linkline { margin-bottom: 20px; }
 }
+
+.testimonial {
+  margin-bottom: 30px !important; /* add this to increase space below each card */
+}
+
+@media (max-width: 700px) {
+  .testimonial {
+    margin-bottom: 24px !important; /* increase vertical spacing on mobile */
+  }
+}
+
 </style>
