@@ -95,19 +95,20 @@ permalink: /about/
 
 /* Photo */
 .about-photo {
-  flex: 0 0 250px;
+flex: 0 0 250px;
 }
 .about-photo img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 8px var(--accent-cyan);
-  border: 3px solid var(--accent-cyan);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+width: 100%;
+border-radius: 12px;
+box-shadow: 0 0 8px #64FFDA;
+border: 3px solid #64FFDA;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .about-photo img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 16px var(--accent-cyan);
+transform: scale(1.05);
+box-shadow: 0 0 16px #64FFDA;
 }
+
 
 /* Bio */
 .about-bio {
