@@ -23,7 +23,7 @@ permalink: /about/
   </div>
 </div>
 
-<section class="testimonials-section" style="background-color: #333446; padding: 30px 0 1px 0 !important; color: #ffffff;">
+<section class="testimonials-section" style="background-color: #3E5879; padding: 30px 0 1px 0 !important; color: #ffffff;">
 <div class="container" style="max-width: 1000px; margin: auto;">
 <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
 What people say?
