@@ -315,7 +315,7 @@ margin-bottom: 60px;
   .testimonials-wrapper .testimonial {
     flex: 0 0 auto !important;               /* override inline flex */
     display: block !important;
-    width: calc(100% - 40px) !important;     /* keeps ~20px space on each side */
+    width: calc(100% - 20px) !important;     /* keeps ~20px space on each side */
     max-width: 360px !important;             /* control max width of the inner box */
     margin: 0 auto 16px auto !important;     /* center horizontally + bottom gap */
     padding: 12px 14px !important;
