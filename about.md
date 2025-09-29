@@ -299,21 +299,24 @@ margin-bottom: 60px;
 }
 
 @media (max-width: 480px) {
-  /* Make the inner testimonial boxes smaller and more compact on small phones */
+  /* ensure wrapper centers children */
   .testimonials-wrapper {
-    gap: 16px;
-    padding: 0 12px;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 12px !important;
+    box-sizing: border-box;
   }
+
+  /* center each testimonial and limit its width so it doesn't hug the left edge */
   .testimonial {
-    flex: 1 1 100% !important;
-    max-width: 95% !important;
+    flex: 0 0 auto !important;
+    width: 100%;
+    max-width: 360px;      /* adjust this to make inner box narrower/wider */
+    margin: 0 auto !important;
     padding: 12px !important;
-    font-size: 0.95rem !important;
-  }
-  .testimonial p {
-    font-size: 0.95rem !important;
-    line-height: 1.4 !important;
+    box-sizing: border-box;
   }
 }
+
 
 </style>
