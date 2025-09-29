@@ -214,7 +214,7 @@ permalink: /about/
 /* LinkedIn button */
 .linkedin-section {
   text-align: center;
-  margin: -14px 0 26px 0;
+  margin: 20px 0 40px 0;
 }
 .linkedin-section .linkedin-btn {
   text-decoration: none;
