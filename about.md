@@ -299,24 +299,45 @@ margin-bottom: 60px;
 }
 
 @media (max-width: 480px) {
-  /* ensure wrapper centers children */
+  /* center the wrapper and stack items */
   .testimonials-wrapper {
-    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    padding: 0 16px !important; /* added more left/right space */
-    box-sizing: border-box;
+    justify-content: center !important;
+    gap: 16px !important;
+    padding: 0 20px !important;       /* side space from screen edges */
+    box-sizing: border-box !important;
+    width: 100% !important;
   }
 
-  /* center each testimonial with side margins */
-  .testimonial {
-    flex: 0 0 auto !important;
-    width: 100%;
-    max-width: 360px;      /* adjust width if needed */
-    margin: 0 auto 16px auto !important; /* adds bottom + left/right centering */
-    padding: 12px !important;
-    box-sizing: border-box;
+  /* force each testimonial to a centered, narrower card */
+  .testimonials-wrapper .testimonial {
+    flex: 0 0 auto !important;               /* override inline flex */
+    display: block !important;
+    width: calc(100% - 40px) !important;     /* keeps ~20px space on each side */
+    max-width: 360px !important;             /* control max width of the inner box */
+    margin: 0 auto 16px auto !important;     /* center horizontally + bottom gap */
+    padding: 12px 14px !important;
+    box-sizing: border-box !important;
+    align-self: center !important;
+    text-align: left !important;
+  }
+
+  .testimonials-wrapper .testimonial p {
+    margin: 0 0 10px 0 !important;
+    line-height: 1.4 !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* ensure container doesn't push content to one side */
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
   }
 }
+
 
 
 </style>
