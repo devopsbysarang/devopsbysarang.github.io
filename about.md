@@ -23,7 +23,7 @@ permalink: /about/
   </div>
 </div>
 
-<section class="testimonials-section" style="background-color: #021526; padding: 30px 0 1px 0 !important; color: #ffffff;">
+<section class="testimonials-section" style="background-color: #FFECD6; padding: 30px 0 1px 0 !important; color: #ffffff;">
 <div class="container" style="max-width: 1000px; margin: auto;">
 <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
 What people say?
@@ -32,7 +32,7 @@ What people say?
 <div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
 <!-- Testimonial 1 -->
 <div class="testimonial" style="
-background-color: #0E4C5F; /* fresh inner box color */
+background-color: #ECE5C7; /* fresh inner box color */
 padding: 30px 25px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -50,7 +50,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 <!-- Testimonial 2 -->
 <div class="testimonial" style="
-background-color: #0E4C5F;
+background-color: #ECE5C7;
 padding: 30px 25px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
