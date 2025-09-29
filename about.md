@@ -23,92 +23,217 @@ permalink: /about/
   </div>
 </div>
 
-<!-- Testimonials (immediately after bio; skills removed) -->
-<section class="testimonials-section">
-  <div class="testimonials-bg"> <!-- full-width soft background wrapper -->
-    <div class="container">
-      <h2 class="testimonials-heading">What people say?</h2>
+<section class="testimonials-section" style="background-color: #0A192F; padding: 30px 0 0 0; color: #ffffff;">
+<div class="container" style="max-width: 1000px; margin: auto;">
+<h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
+What people say?
+</h2>
 
-      <div class="testimonials-wrapper">
-        <!-- Testimonial 1 -->
-        <div class="testimonial">
-          <p class="testimonial-text">
-            "I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
-          </p>
-          <p class="testimonial-name">– Hariom Kashyap
-            <span class="testimonial-role">Software Architect, Amdocs</span>
-          </p>
-        </div>
+<div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
+<!-- Testimonial 1 -->
+<div class="testimonial" style="
+background-color: #0E4C5F; /* fresh inner box color */
+padding: 30px 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+flex: 1 1 300px;
+max-width: 450px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #ffffff !important;">
+"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
+</p>
+<p class="testimonial-name">– Hariom Kashyap
+<span class="testimonial-role">Software Architect, Amdocs</span>
+</p>
+</div>
 
-        <!-- Testimonial 2 -->
-        <div class="testimonial">
-          <p class="testimonial-text">
-            "Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
-          </p>
-          <p class="testimonial-name">– Ankur Singh
-            <span class="testimonial-role">AI Engineer, Intel</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Testimonial 2 -->
+<div class="testimonial" style="
+background-color: #0E4C5F;
+padding: 30px 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+flex: 1 1 300px;
+max-width: 450px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #ffffff !important;">
+"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
+</p>
+<p class="testimonial-name">– Ankur Singh
+<span class="testimonial-role">AI Engineer, Intel</span>
+</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- LinkedIn Button (pulled slightly up) -->
+<style>
+/* Heading in cyan */
+.testimonials-heading {
+color: #64FFDA !important;
+}
+
+/* Hover animation */
+.testimonial:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Name in cyan */
+.testimonial-name {
+font-weight: bold;
+color: #64FFDA !important;
+margin: 10px 0 0 0;
+line-height: 1.4;
+}
+
+/* Role / designation */
+.testimonial-role {
+display: block; /* next line */
+font-weight: normal;
+color: #ffffff;
+font-style: italic; /* ✅ makes role text italic */
+margin: 3px 0 0 0;
+line-height: 1.3;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+.testimonials-wrapper {
+flex-direction: column;
+gap: 20px;
+}
+
+.testimonial {
+max-width: 90%;
+padding: 20px !important; /* ✅ fixed padding for mobile */
+}
+
+.testimonial p {
+font-size: 1rem; /* slightly smaller for mobile */
+line-height: 1.5;
+margin-bottom: 12px;
+}
+
+.testimonial-name {
+margin-top: 8px;
+line-height: 1.3;
+}
+
+.testimonial-role {
+margin-top: 2px;
+line-height: 1.25;
+}
+}
+
+/* Hover animation + subtle highlight */
+.testimonial {
+position: relative;
+overflow: hidden;
+border: 2px solid rgba(100, 255, 218, 0.1); /* subtle cyan border */
+}
+
+.testimonial::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(
+145deg,
+rgba(100, 255, 218, 0.05),
+rgba(255, 255, 255, 0.02)
+);
+opacity: 0.4;
+pointer-events: none;
+}
+
+/* Hover effect */
+.testimonial:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
+0 0 10px rgba(100, 255, 218, 0.15); /* soft cyan glow */
+}
+
+@media (max-width: 768px) {
+.testimonials-section {
+padding-top: 10px !important; /* reduce top space */
+}
+
+.testimonials-heading {
+margin-top: 10px !important; /* reduce heading top margin */
+margin-bottom: 25px !important; /* tighten space below heading */
+text-align: center !important; /* center only on mobile */
+}
+}
+
+/* Desktop layout remains unchanged */
+.testimonials-wrapper {
+display: flex;
+gap: 25px;
+flex-wrap: wrap;
+padding: 0 20px;
+justify-content: center;
+margin-bottom: 60px;
+}
+
+/* Desktop layout remains unchanged */
+.testimonials-wrapper {
+display: flex;
+gap: 25px;
+flex-wrap: wrap;
+padding: 0 20px;
+justify-content: center;
+margin-bottom: 60px;
+}
+
+
+</style>
+
+
+<!-- LinkedIn Button at the End -->
 <div class="linkedin-section">
   <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" target="_blank" rel="noopener" class="linkedin-btn">
     Connect with me on LinkedIn
   </a>
 </div>
 
-<!-- Dark horizontal line below LinkedIn button -->
-<hr class="after-linkline" />
-
 <style>
+
+
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
 
-/* Color variables */
-:root{
-  --page-bg: #0A192F;
-  --accent-cyan: #64FFDA;
-  --muted-text: #ccd6f6;
-  --panel-light: #154D71;
-  --card-bg: #EEE9D5;         /* requested card color */
-  --card-text: #000000;       /* black text */
-  --name-color: #102A43;     /* stronger dark blue for name */
-  --role-color: #00809D;     /* stronger deep teal for role */
-  --container-max: 1100px;
-}
-
-/* Page container (bio & photo) */
+/* Container */
 .about-page {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: var(--page-bg);
+  background: #0A192F;
   font-family: 'Roboto', sans-serif;
-  color: var(--muted-text);
+  color: #ccd6f6;
 }
 
 /* Photo */
 .about-photo {
-flex: 0 0 250px;
+  flex: 0 0 250px;
 }
 .about-photo img {
-width: 100%;
-border-radius: 12px;
-box-shadow: 0 0 8px #64FFDA;
-border: 3px solid #64FFDA;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #64FFDA;
+  border: 3px solid #64FFDA;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .about-photo img:hover {
-transform: scale(1.05);
-box-shadow: 0 0 16px #64FFDA;
+  transform: scale(1.05);
+  box-shadow: 0 0 16px #64FFDA;
 }
-
 
 /* Bio */
 .about-bio {
@@ -118,213 +243,63 @@ box-shadow: 0 0 16px #64FFDA;
 .about-bio h2 {
   font-family: 'Rubik', sans-serif;
   font-size: 2rem;
-  color: var(--accent-cyan);
+  color: #64FFDA;
   margin: 0 0 0.5rem;
   letter-spacing: 1px;
 }
 .about-bio p {
   line-height: 1.6;
   margin-bottom: 1.2rem;
-  color: var(--muted-text);
+  color: #ccd6f6;
+}
+.about-bio a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  border-radius: 6px;
+  background-color: #0077B5;
+  padding: 0.6rem 1.2rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.about-bio a:hover {
+  background-color: #004182;
 }
 
-/* ===== Testimonials ===== */
-.testimonials-section {
-  background: transparent;
-  padding: 20px 0 40px 0; /* reduced space above heading */
-}
-
-/* outer light panel */
-.testimonials-bg {
-  background: var(--panel-light);
-  padding: 20px 0 42px 0; /* default padding (bottom kept moderate) */
-  box-shadow: 0 8px 30px rgba(5,10,20,0.12);
-}
-
-/* container */
-.testimonials-bg .container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 10px 20px;
-}
-
-/* heading: force color and spacing so theme cannot override */
-.testimonials-heading {
-  color: #fff !important; /* your requested heading color */
-  text-align: center !important;
-  margin: 20px 0 18px 0 !important; /* tightened spacing */
-  font-size: 2.05rem !important;
-  font-weight: 700 !important;
-  line-height: 1.15 !important;
-  padding: 10px !important;
-}
-
-/* cards wrapper */
-.testimonials-wrapper {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* individual card */
-.testimonial {
-  background-color: var(--card-bg);
-  padding: 30px 22px; /* slightly reduced padding for more compact feel */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(10,20,30,0.08);
-  flex: 1 1 360px;
-  max-width: 520px;
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-  border: 1px solid rgba(10,20,30,0.05);
-  position: relative;
-  overflow: hidden;
-}
-.testimonial:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 36px rgba(10,20,30,0.12);
-}
-
-/* testimonial body text forced to black (important to override) */
-.testimonial-text {
-  color: var(--card-text) !important;
-  font-size: 1.02rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
-  opacity: 1 !important;
-}
-
-/* name and role: stronger contrasting colors and forced to override theme */
-.testimonial-name {
-  color: var(--name-color) !important;
-  font-weight: 700 !important;
-  margin-top: 6px;
-  display: block;
-  line-height: 1.18;
-  font-size: 1.02rem;
-}
-.testimonial-role {
-  display: block;
-  color: var(--role-color) !important;
-  font-style: italic;
-  font-weight: 600 !important;
-  margin-top: 4px;
-  font-size: 0.98rem;
-}
-
-/* LinkedIn button */
+/* LinkedIn Section at Bottom */
 .linkedin-section {
   text-align: center;
-  margin: 20px 0 40px 0;
+  margin: 2rem 0;
 }
 .linkedin-section .linkedin-btn {
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
-  background-color: var(--accent-cyan);
-  color: var(--page-bg) !important;
-  padding: 0.75rem 1.6rem;
+  background-color: #64FFDA;
+  color: #0A192F !important;
+  padding: 0.7rem 1.5rem;
   display: inline-block;
-  box-shadow: 0 6px 18px rgba(10,20,30,0.12);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 .linkedin-section .linkedin-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(10,20,30,0.16);
+  background-color: #27cfa7;
 }
 
-/* Divider */
-.after-linkline {
-  max-width: 720px;
-  margin: 12px auto 44px auto;
-  border: none;
-  height: 2px;
-  background: #fff;
-  border-radius: 2px;
-}
-
-/* ---------- Mobile spacing: single override block ---------- */
-/* ===== Final mobile fixes: collapse tall cards & adjust linkedin spacing ===== */
-@media (max-width:700px) {
-  /* outer container */
-  .testimonials-bg {
-    padding: 10px 0 4px 0 !important;
+/* Responsive */
+@media (max-width: 700px) {
+  .about-page {
+    flex-direction: column;
+    align-items: flex-start;
   }
-
-  .testimonials-wrapper {
-    gap: 12px !important;
+  .about-photo {
+    flex: 0 0 150px;
+    margin-bottom: 1.5rem;
   }
-
-  /* main card: force compact layout and prevent theme min-heights */
-  .testimonial {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    box-sizing: border-box !important;
-
-    /* inner spacing */
-    padding: 10px 14px !important;   /* keep compact */
-    margin: 0 0 10px 0 !important;   /* small gap between cards */
-
-    /* remove any forced tallness */
-    min-height: 0 !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  /* Remove default bottom margins inside the card which make it tall */
-  .testimonial :where(blockquote, p, h1, h2, h3, h4, .testimonial-text, .testimonial-content, .card-body) {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* blockquote often adds spacing — collapse it */
-  .testimonial blockquote {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* if your theme uses .card/.card-body, neutralize their spacing */
-  .testimonial .card,
-  .testimonial .card-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-height: 0 !important;
-  }
-
-  /* tighten text spacing inside card */
-  .testimonial .testimonial-text,
-  .testimonial blockquote {
-    font-size: 0.98rem !important;
-    line-height: 1.34 !important;
-  }
-
-  /* author & role spacing */
-  .testimonial-author {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .testimonial-role {
-    margin: 4px 0 0 0 !important;
-    line-height: 1.15 !important;
-    font-size: 0.92rem !important;
-  }
-
-  /* Prevent any invisible min-height on pseudo elements or children */
-  .testimonial * { min-height: 0 !important; }
-
-  /* final card bottom padding safety net */
-  .testimonial:last-child {
-    margin-bottom: 12px !important;
-    padding-bottom: 12px !important;
-  }
-
-  /* ===== LinkedIn button: increase space *below* it =====
-     adjust the bottom value (currently 34px) if you want more/less spacing */
-  .linkedin-section {
-    margin: 10px 0 34px 0 !important;
+  .about-bio {
+    text-align: left;
   }
 }
-
-
 </style>
