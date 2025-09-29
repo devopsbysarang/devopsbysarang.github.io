@@ -243,87 +243,87 @@ permalink: /about/
 }
 
 /* ---------- Mobile spacing: single override block ---------- */
-@media (max-width: 700px) {
-  /* page layout */
-  .about-page {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;                /* slightly reduced overall padding */
-  }
-
-  .about-photo {
-    flex: 0 0 140px;              /* smaller photo on very small screens */
-    margin-bottom: 0.75rem;
-  }
-
-  .about-bio { text-align: left; }
-
-  /* wrapper & heading */
-  .testimonials-wrapper {
-    flex-direction: column;
-    gap: 12px;                    /* compact gaps between cards */
-  }
-
-  .testimonials-heading {
-    margin-bottom: 10px !important;
-    font-size: 1.55rem !important;
-  }
-
-  /* background container surrounding testimonials */
+/* ===== Final mobile fixes: collapse tall cards & adjust linkedin spacing ===== */
+@media (max-width:700px) {
+  /* outer container */
   .testimonials-bg {
-    padding: 10px 0 6px 0 !important; /* small top + minimal bottom to avoid tall look */
+    padding: 10px 0 4px 0 !important;
   }
 
-  /* individual testimonial card */
+  .testimonials-wrapper {
+    gap: 12px !important;
+  }
+
+  /* main card: force compact layout and prevent theme min-heights */
   .testimonial {
-    max-width: 100%;
-    padding: 14px 16px !important;   /* compact inner padding */
-    margin-bottom: 16px !important;   /* moderate spacing between cards */
-    display: flex;
-    flex-direction: column;
-    gap: 8px;                          /* consistent small gaps inside card */
-    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+
+    /* inner spacing */
+    padding: 10px 14px !important;   /* keep compact */
+    margin: 0 0 10px 0 !important;   /* small gap between cards */
+
+    /* remove any forced tallness */
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
-  /* text inside the card */
+  /* Remove default bottom margins inside the card which make it tall */
+  .testimonial :where(blockquote, p, h1, h2, h3, h4, .testimonial-text, .testimonial-content, .card-body) {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* blockquote often adds spacing — collapse it */
+  .testimonial blockquote {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* if your theme uses .card/.card-body, neutralize their spacing */
+  .testimonial .card,
+  .testimonial .card-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  /* tighten text spacing inside card */
   .testimonial .testimonial-text,
   .testimonial blockquote {
-    margin: 0;
-    padding: 0;
-    font-size: 0.98rem;
-    line-height: 1.35;                /* readable but tighter */
+    font-size: 0.98rem !important;
+    line-height: 1.34 !important;
   }
 
-  /* author / role area - keep compact and aligned */
+  /* author & role spacing */
   .testimonial-author {
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.2;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-
   .testimonial-role {
-    margin: 2px 0 0 0;               /* remove extra top spacing */
-    padding: 0;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.15;               /* tighter role line height */
-    font-size: 0.92rem;
+    margin: 4px 0 0 0 !important;
+    line-height: 1.15 !important;
+    font-size: 0.92rem !important;
   }
 
-  /* linkedin / linkline spacing */
-  .linkedin-section { margin: 8px 0 12px 0 !important; }
-  .after-linkline { margin-bottom: 12px !important; }
+  /* Prevent any invisible min-height on pseudo elements or children */
+  .testimonial * { min-height: 0 !important; }
 
-  /* small utility tweaks if earlier rules added extra bottom spacing */
-  .testimonial + .testimonial { margin-top: 6px !important; }
+  /* final card bottom padding safety net */
+  .testimonial:last-child {
+    margin-bottom: 12px !important;
+    padding-bottom: 12px !important;
+  }
 
-  /* if a global rule earlier used large margin-bottom, force a consistent smaller value */
-  .testimonial { margin-bottom: 16px !important; }
-
-  /* optional: prevent very tall cards if you use min-height elsewhere */
-  .testimonial { min-height: 0 !important; }
+  /* ===== LinkedIn button: increase space *below* it =====
+     adjust the bottom value (currently 34px) if you want more/less spacing */
+  .linkedin-section {
+    margin: 10px 0 34px 0 !important;
+  }
 }
+
 
 </style>
