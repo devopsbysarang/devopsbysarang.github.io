@@ -303,16 +303,16 @@ margin-bottom: 60px;
   .testimonials-wrapper {
     justify-content: center !important;
     align-items: center !important;
-    padding: 0 12px !important;
+    padding: 0 16px !important; /* added more left/right space */
     box-sizing: border-box;
   }
 
-  /* center each testimonial and limit its width so it doesn't hug the left edge */
+  /* center each testimonial with side margins */
   .testimonial {
     flex: 0 0 auto !important;
     width: 100%;
-    max-width: 360px;      /* adjust this to make inner box narrower/wider */
-    margin: 0 auto !important;
+    max-width: 360px;      /* adjust width if needed */
+    margin: 0 auto 16px auto !important; /* adds bottom + left/right centering */
     padding: 12px !important;
     box-sizing: border-box;
   }
