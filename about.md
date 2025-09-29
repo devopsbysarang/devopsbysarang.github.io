@@ -93,7 +93,7 @@ line-height: 1.4;
 .testimonial-role {
 display: block; /* next line */
 font-weight: normal;
-color: #333446;
+color: #1E201E !important;
 font-style: italic; /* ✅ makes role text italic */
 margin: 3px 0 0 0;
 line-height: 1.3;
