@@ -169,7 +169,7 @@ permalink: /about/
 /* individual card */
 .testimonial {
   background-color: var(--card-bg);
-  padding: 48px 22px; /* slightly reduced padding for more compact feel */
+  padding: 30px 22px; /* slightly reduced padding for more compact feel */
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(10,20,30,0.08);
   flex: 1 1 360px;
