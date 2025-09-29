@@ -23,7 +23,7 @@ permalink: /about/
   </div>
 </div>
 
-<section class="testimonials-section" style="background-color: #154D71; padding: 30px 0 0 0; color: #ffffff;">
+<section class="testimonials-section" style="background-color: #1B3C53; padding: 30px 0 30px 0; color: #ffffff;">
 <div class="container" style="max-width: 1000px; margin: auto;">
 <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
 What people say?
@@ -72,7 +72,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 <style>
 /* Heading in cyan */
 .testimonials-heading {
-color: #64FFDA !important;
+color: #fff !important;
 }
 
 /* Hover animation */
