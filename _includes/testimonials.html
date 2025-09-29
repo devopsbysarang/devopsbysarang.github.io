@@ -1,3 +1,4 @@
+<!-- Paste this whole block into your page (CSS in <style>, script before </body>) -->
 <section class="testimonials-section" style="background-color: #0A192F; padding: 30px 0 0 0; color: #ffffff;">
   <div class="container" style="max-width: 1000px; margin: auto; position: relative;">
     <h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center;">
@@ -40,14 +41,22 @@
           <span class="testimonial-role">AI Engineer, Intel</span>
         </p>
       </div>
+
+      <!-- Add more .testimonial blocks as needed -->
     </div>
 
-    <!-- dots container will be injected here by JS if not present -->
-    <!-- <div class="testimonials-dots"></div> -->
+    <!-- .testimonials-dots will be injected by JS if not present -->
   </div>
 </section>
 
 <style>
+/* reset for consistent vw calculations */
+html, body {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* ---------- General / Desktop ---------- */
 .testimonials-section {
   background-color: #0A192F !important;
@@ -58,7 +67,7 @@
   max-width: 1000px !important;
   margin: 0 auto !important;
   padding: 0 20px !important;
-  position: relative !important; /* needed for absolutely positioned dots if used */
+  position: relative !important;
 }
 
 .testimonials-heading {
@@ -77,9 +86,10 @@
   justify-content: center !important;
   margin-bottom: 60px !important;
   position: relative !important;
+  box-sizing: border-box !important;
 }
 
-/* Card base - remove shadows (override inline box-shadow) */
+/* Card base - override inline shadows, keep look */
 .testimonial {
   background-color: #0E4C5F !important;
   padding: 30px 25px !important;
@@ -121,13 +131,12 @@
 
 /* ---------- MOBILE: centered snap + dots (force overrides) ---------- */
 @media (max-width: 768px) {
-  /* CSS variable defines card width; tweak if needed */
+  /* default card width variable; tweak if needed */
   .testimonials-wrapper {
     --card-w: 80vw !important; /* card width relative to viewport */
-    /* make wrapper full-bleed so padding calculations use viewport */
     width: 100vw !important;
     max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important; /* center full-bleed wrapper */
+    margin-left: calc(50% - 50vw) !important; /* full-bleed alignment for consistent centering */
     display: flex !important;
     flex-direction: row !important;
     gap: 15px !important;
@@ -135,11 +144,14 @@
     -webkit-overflow-scrolling: touch !important;
     scroll-snap-type: x mandatory !important;
     flex-wrap: nowrap !important;
-    /* center first/last by calculating padding from viewport card width */
+    /* center first/last card by padding calculated from card width */
     padding-left: calc((100vw - var(--card-w)) / 2) !important;
     padding-right: calc((100vw - var(--card-w)) / 2) !important;
     position: relative !important;
     scroll-behavior: smooth !important;
+    /* help JS centering be exact in DevTools */
+    scroll-padding-inline: calc((100vw - var(--card-w)) / 2) !important;
+    box-sizing: border-box !important;
   }
 
   /* slightly larger card for very small phones */
@@ -160,19 +172,19 @@
     box-shadow: none !important;
   }
 
-  /* show dots on mobile and move them closer to cards */
+  /* show dots on mobile and move them up */
   .testimonials-dots {
     display: flex !important;
     justify-content: center !important;
     gap: 10px !important;
-    margin-top: -22px !important; /* pull dots up closer to the cards */
-    margin-bottom: 8px !important;
-    z-index: 20 !important;
+    margin-top: -26px !important; /* pull dots up closer to the cards */
+    margin-bottom: 10px !important;
+    z-index: 40 !important;
     pointer-events: auto !important;
     position: relative !important;
   }
 
-  /* larger dots for visibility */
+  /* bigger dots for better visibility */
   .testimonials-dots .dot {
     width: 10px !important;
     height: 10px !important;
@@ -195,7 +207,7 @@
     transform: scale(1.3) !important;
   }
 
-  /* minimal thin scrollbar for webkit (optional, non-intrusive) */
+  /* optional thin scrollbar for webkit */
   .testimonials-wrapper::-webkit-scrollbar { height: 6px !important; }
   .testimonials-wrapper::-webkit-scrollbar-thumb {
     background: rgba(255,255,255,0.06) !important;
@@ -212,7 +224,7 @@
 }
 </style>
 
-<!-- Place this script before the closing </body> -->
+<!-- Place this script just before the closing </body> -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const wrapper = document.querySelector('.testimonials-wrapper');
@@ -237,36 +249,44 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.setAttribute('aria-label', `Show testimonial ${i + 1}`);
     btn.type = 'button';
     btn.addEventListener('click', () => {
-      // smooth center this card
       card.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-      // small delay to update active dot
-      setTimeout(() => updateActiveDot(), 260);
+      setTimeout(updateActiveDot, 260);
     });
     dotsContainer.appendChild(btn);
   });
 
   const dots = Array.from(dotsContainer.children);
 
-  // Update active dot by finding card closest to wrapper center
-  function updateActiveDot() {
+  // Find card closest to wrapper center and return index
+  function getActiveIndex() {
     const center = wrapper.scrollLeft + wrapper.clientWidth / 2;
     let minDiff = Infinity;
     let activeIndex = 0;
-
     cards.forEach((card, idx) => {
       const cardCenter = card.offsetLeft + card.offsetWidth / 2;
       const diff = Math.abs(center - cardCenter);
-      if (diff < minDiff) {
-        minDiff = diff;
-        activeIndex = idx;
-      }
+      if (diff < minDiff) { minDiff = diff; activeIndex = idx; }
     });
+    return activeIndex;
+  }
 
+  // Update active dot
+  function updateActiveDot() {
+    const activeIndex = getActiveIndex();
     dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
   }
 
-  // Initial set after layout settles
-  setTimeout(updateActiveDot, 140);
+  // Center the initial card (auto => instant, helps DevTools)
+  function centerInitialCard() {
+    const idx = getActiveIndex() || 0;
+    if (cards[idx]) {
+      cards[idx].scrollIntoView({ behavior: 'auto', inline: 'center' });
+    }
+    setTimeout(updateActiveDot, 80);
+  }
+
+  // Initial center after layout settles
+  setTimeout(centerInitialCard, 80);
 
   // Throttled update on scroll
   let raf = null;
@@ -275,7 +295,18 @@ document.addEventListener('DOMContentLoaded', function () {
     raf = requestAnimationFrame(updateActiveDot);
   });
 
-  window.addEventListener('resize', updateActiveDot);
-  window.addEventListener('orientationchange', () => setTimeout(updateActiveDot, 200));
+  // Recenter on resize / orientation changes (helps DevTools and desktop emulation)
+  let resizeTimeout = null;
+  function handleResize() {
+    if (resizeTimeout) clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      const ai = getActiveIndex();
+      if (cards[ai]) cards[ai].scrollIntoView({ behavior: 'auto', inline: 'center' });
+      updateActiveDot();
+    }, 120);
+  }
+
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('orientationchange', handleResize);
 });
 </script>
