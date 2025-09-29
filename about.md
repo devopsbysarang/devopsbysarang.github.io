@@ -40,7 +40,7 @@ flex: 1 1 300px;
 max-width: 450px;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 ">
-<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #0000 !important;">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #000000 !important;">
 "I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
 </p>
 <p class="testimonial-name">– Hariom Kashyap
@@ -58,7 +58,7 @@ flex: 1 1 300px;
 max-width: 450px;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 ">
-<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #0000 !important;">
+<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #000000 !important;">
 "Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
 </p>
 <p class="testimonial-name">– Ankur Singh
@@ -84,7 +84,7 @@ box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 /* Name in cyan */
 .testimonial-name {
 font-weight: bold;
-color: #4635B1 !important;
+color: #0A1930 !important;
 margin: 10px 0 0 0;
 line-height: 1.4;
 }
@@ -93,7 +93,7 @@ line-height: 1.4;
 .testimonial-role {
 display: block; /* next line */
 font-weight: normal;
-color: #27374D;
+color: #333446;
 font-style: italic; /* ✅ makes role text italic */
 margin: 3px 0 0 0;
 line-height: 1.3;
