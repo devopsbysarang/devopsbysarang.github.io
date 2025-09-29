@@ -132,7 +132,7 @@ permalink: /about/
 /* Section wrapper keeps background transparent; inner wrapper gives the light panel look */
 .testimonials-section {
   background: transparent;
-  padding: 40px 0 48px 0;
+  padding: 30px 0 48px 0;
 }
 
 /* The actual background panel spanning full width inside the dark page */
@@ -151,7 +151,7 @@ permalink: /about/
 
 /* Heading should be dark and readable on the light panel */
 .testimonials-heading {
-  color: #071426; /* deep navy/black */
+  color: #071426 !important; /* deep navy/black */
   text-align: center;
   padding: 0px !important;
   font-size: 2.2rem;
