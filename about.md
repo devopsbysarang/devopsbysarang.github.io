@@ -222,7 +222,7 @@ permalink: /about/
   border-radius: 6px;
   background-color: var(--accent-cyan);
   color: var(--page-bg) !important;
-  padding: 0.72rem 1.6rem;
+  padding: 3rem 1.6rem;
   display: inline-block;
   box-shadow: 0 6px 18px rgba(10,20,30,0.12);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
@@ -237,7 +237,7 @@ permalink: /about/
   max-width: 720px;
   margin: 12px auto 44px auto;
   border: none;
-  height: 3px;
+  height: 2px;
   background: #fff;
   border-radius: 2px;
 }
