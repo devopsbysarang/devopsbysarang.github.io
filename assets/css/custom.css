@@ -510,55 +510,54 @@ button.greedy-nav__toggle:focus {
   object-fit: cover !important;
 }
 
-/* ---------- Force-center splash content, catch extra wrapper classes ---------- */
-.layout--splash .page__splash,
-.layout--splash .page__hero,
-.layout--splash .splash__inner,
-.layout--splash .hero__content {
+/* ---------- Center splash content via #page-title and .page__lead ---------- */
+#page-title {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     padding-inline: 1rem !important;
+    width: 100%;
 }
 
-/* Limit max width for better readability */
-.layout--splash .page__splash .splash__title,
-.layout--splash .page__splash .splash__subtitle,
-.layout--splash .page__lead,
-.layout--splash .hero__content > * {
+/* Center the title & excerpt inside */
+#page-title .page__lead,
+#page-title .splash__title,
+#page-title .splash__subtitle {
     max-width: 900px !important;
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
 }
 
-/* Center buttons under text */
-.layout--splash .page__lead + p,
-.layout--splash .hero__content p.actions {
+/* Center the About / LinkedIn buttons under text */
+#page-title .page__lead + p,
+#page-title p.actions {
     display: flex !important;
     justify-content: center !important;
     gap: 0.6rem !important;
+    flex-wrap: wrap !important;
     margin-top: 0.6rem !important;
     margin-bottom: 1rem !important;
-    flex-wrap: wrap !important;
 }
 
-.layout--splash .page__lead + p > a,
-.layout--splash .hero__content p.actions > a {
+/* Make individual buttons not stretch weirdly */
+#page-title .page__lead + p > a,
+#page-title p.actions > a {
     flex: 0 0 auto !important;
     min-width: 120px !important;
 }
 
+/* Mobile adjustments */
 @media (max-width: 480px) {
-    .layout--splash .page__lead + p,
-    .layout--splash .hero__content p.actions {
+    #page-title .page__lead + p,
+    #page-title p.actions {
         justify-content: center !important;
         gap: 0.5rem !important;
     }
-    .layout--splash .page__lead + p > a,
-    .layout--splash .hero__content p.actions > a {
+    #page-title .page__lead + p > a,
+    #page-title p.actions > a {
         flex: 1 1 0 !important;
         min-width: 0 !important;
     }
