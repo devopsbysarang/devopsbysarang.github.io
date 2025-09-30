@@ -84,7 +84,7 @@ html, body {
 }
 
 .blog-card h3 a {
-  color: inherit;
+  color: #FF6B35 !important;
   text-decoration: none;
 }
 
