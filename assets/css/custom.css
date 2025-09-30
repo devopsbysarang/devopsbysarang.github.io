@@ -510,53 +510,47 @@ button.greedy-nav__toggle:focus {
   object-fit: cover !important;
 }
 
-/* ---------- Center splash / hero title, excerpt & actions ---------- */
-/* Keeps desktop spacing but forces content to align center */
+/* ---------- Force-center splash / hero title, excerpt & actions (strong override) ---------- */
 .layout--splash .page__splash,
 .layout--splash .page__hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-inline: 1rem;     /* small horizontal padding so it doesn't touch edges on mobile */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding-inline: 1rem !important;
 }
 
-/* Ensure title / excerpt don't run full width on very wide screens */
 .layout--splash .page__splash .splash__title,
 .layout--splash .page__splash .splash__subtitle,
 .layout--splash .page__lead {
-  max-width: 900px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 900px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* Center the action buttons row and keep spacing */
 .layout--splash .page__lead + p {
-  display: flex;
-  justify-content: center;   /* center buttons under the text */
-  gap: 0.6rem;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
   margin-top: 0.6rem !important;
   margin-bottom: 1rem !important;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
 }
 
-/* Make individual buttons keep their min-width but center nicely on small screens */
 .layout--splash .page__lead + p > a {
-  flex: 0 0 auto;
-  min-width: 120px;
+  flex: 0 0 auto !important;
+  min-width: 120px !important;
 }
 
-/* Mobile tweak — buttons expand evenly and remain centered */
 @media (max-width: 480px) {
   .layout--splash .page__lead + p {
-    justify-content: center;
-    gap: 0.5rem;
+    justify-content: center !important;
+    gap: 0.5rem !important;
   }
   .layout--splash .page__lead + p > a {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
   }
 }
-
