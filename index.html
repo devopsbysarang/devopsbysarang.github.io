@@ -1,17 +1,17 @@
 ---
-layout: custom_splash
+layout: splash
 permalink: /
 title: "Practical DevOps Insights."
 header:
   overlay_color: "#fff"
   actions:
-    - label: "About me" 
+    - label: "About me"
       url: "/about/"
       class: "btn--primary btn-custom"
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/sarang-deshmukh-125197182/"
       class: "btn--inverse btn-custom"
-  separator: true
+  separator: true     
 excerpt: "My portfolio of real-world projects and case studies on **System Design** and **Automation** 🚀"
 feature_row:
   - image_path: /assets/images/case.png
@@ -19,7 +19,7 @@ feature_row:
     title: "DevOps Case Studies"
     excerpt: "Real-World DevOps : Challenges and Solutions"
     url: "/devops-case-studies/"
-    btn_label: "Read More →"
+    btn_label: "Read More →" 
     btn_class: "btn--primary"
   - image_path: /assets/images/learning.png
     alt: "Cloud"
@@ -37,9 +37,53 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-<!-- Skills Section (this is page content and will be injected into layout via {{ content }}) -->
+<!-- Inline CSS: center splash title/subheading/buttons — keep all original spacing -->
+<style>
+/* ---- Center splash title & subheading, keep spacing unchanged ---- */
+#page-title,
+#page-title .splash__title,
+#page-title .splash__subtitle,
+#page-title .page__lead {
+  text-align: center !important;
+}
+
+/* Ensure the lead paragraph (which may contain buttons) centers its inline content */
+#page-title .page__lead p,
+#page-title p.actions {
+  display: block !important;
+  text-align: center !important;
+}
+
+/* Make theme buttons inline-block so they center but retain existing margin/padding */
+#page-title .btn.btn--light-outline.btn--large,
+#page-title .page__lead .btn,
+#page-title p.actions .btn,
+#page-title .btn--primary,
+#page-title .btn--inverse {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  /* keep existing margins/padding — do not override */
+}
+
+/* Optional mobile stacking: enable if you want full-width tappable buttons on small screens */
+/* Uncomment to enable */
+/*
+@media (max-width: 480px) {
+  #page-title .page__lead p a,
+  #page-title p.actions a,
+  #page-title .btn.btn--light-outline.btn--large {
+    display: block !important;
+    width: calc(100% - 40px) !important;
+    max-width: 360px !important;
+    margin: 0.5rem auto !important;
+  }
+}
+*/
+</style>
+
+<!-- ---------- Skills Section (unchanged) ---------- -->
 <section class="skills-section" aria-label="Tech Stack & Skills">
-  <div class="skills-container" style="max-width:1100px;margin:auto;text-align:center;padding:0 16px 25px;">
+  <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
     <div class="skills-scroll">
       <img src="/assets/images/aws.png" alt="AWS">
       <img src="/assets/images/gcp.png" alt="GCP">
@@ -49,11 +93,18 @@ feature_row:
       <img src="/assets/images/Jenkins.png" alt="Jenkins">
       <img src="/assets/images/python.png" alt="Python">
       <img src="/assets/images/gitlab.svg" alt="Git">
-      <img src="/assets/images/wireshark.png" alt="Wireshark">
+      <img src="/assets/images/wireshark.png" alt="wireshark">
       <img src="/assets/images/Trivy.png" alt="Trivy">
       <img src="/assets/images/linux.png" alt="Linux">
-      <img src="/assets/images/git.png" alt="Git">
+      <img src="/assets/images/git.png" alt="git">
       <img src="/assets/images/ansible.png" alt="Ansible">
     </div>
   </div>
 </section>
+
+<!-- Keep feature row and newsletter as-is -->
+{% include feature_row %}
+{% include newsletter.html %}
+
+<script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+<div class="custom-separator"></div>
