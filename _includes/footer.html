@@ -9,42 +9,42 @@
       <a href="https://instagram.com/saranghimself" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       <a href="mailto:sarangdeshmukh550@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </div>
-    <div class="footer-text">© 2025 All Rights Reserved • Developed with ❤️ by <strong>Sarang</strong></div>
+    <div class="footer-text">
+      © 2025 All Rights Reserved • Developed with ❤️ by <strong>Sarang</strong>
+    </div>
   </div>
 </footer>
 
 <style>
-  /* Reset footer spacing */
+  /* Footer wrapper */
   #footer.page__footer {
-    background: #124E61 !important; /* deep teal background */
-    padding: 1rem 0 !important;       
-    margin: 0 !important;        
-    text-align: center;
-  }
-
-  #footer.page__footer::before,
-  #footer.page__footer::after,
-  #footer .footer-inner::before,
-  #footer .footer-inner::after {
-    display: none !important;
-    content: none !important;
-  }
-
-  /* Inner wrapper reset */
-  #footer .footer-inner,
-  #footer .social-icons,
-  #footer .footer-text {
+    background-color: #124E61 !important; /* Deep teal */
+    padding: 1rem 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
+    text-align: center;
+    width: 100%;
+    border: none !important;
   }
 
-  /* ✅ FIX: Force footer-inner to span full width and match bg */
+  /* Inner wrapper — fix width and background */
   #footer .footer-inner {
     background-color: #124E61 !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     margin: 0 auto !important;
     padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Clean up any internal layout wrappers inside footer */
+  #footer .footer-inner > *,
+  #footer .social-icons,
+  #footer .footer-text {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
     box-shadow: none !important;
   }
 
@@ -53,17 +53,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;                      
+    gap: 18px;
     padding-bottom: 12px !important;
   }
 
-  /* Icon colors matching theme */
+  /* Icon colors */
   #footer .social-icons a:nth-child(1) i { color: #FF6B35 !important; }
   #footer .social-icons a:nth-child(2) i { color: #EDE9D5 !important; }
   #footer .social-icons a:nth-child(3) i { color: #FF6B35 !important; }
   #footer .social-icons a:nth-child(4) i { color: #EDE9D5 !important; }
 
-  /* Icon size */
+  /* Icon size and hover */
   #footer .social-icons a i {
     font-size: 35px;
     transition: color 0.3s ease, transform 0.2s ease;
@@ -80,14 +80,19 @@
   #footer .footer-text {
     font-size: 16px;
     color: #EDE9D5 !important;
-    margin: 0;
-    padding: 0;
   }
 
   /* Mobile adjustments */
   @media (max-width: 480px) {
-    #footer .social-icons { gap: 12px; padding-bottom: 10px !important; }
-    #footer .social-icons a i { font-size: 28px; }
-    #footer .footer-text { font-size: 14px; }
+    #footer .social-icons {
+      gap: 12px;
+      padding-bottom: 10px !important;
+    }
+    #footer .social-icons a i {
+      font-size: 28px;
+    }
+    #footer .footer-text {
+      font-size: 14px;
+    }
   }
 </style>
