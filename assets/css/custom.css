@@ -623,8 +623,8 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-header.masthead {
-  border-bottom: 2px solid #F1EDEB !important;
+html body header.masthead {
+  border-bottom: 3px solid red !important;
 }
 
 
