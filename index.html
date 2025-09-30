@@ -37,9 +37,9 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-<!-- Inline CSS: center splash title/subheading/buttons — keep all original spacing -->
+<!-- Inline CSS: Center hero title/subheading/buttons -->
 <style>
-/* ---- Center splash title & subheading, keep spacing unchanged ---- */
+/* Center splash title/subtitle/lead text */
 #page-title,
 #page-title .splash__title,
 #page-title .splash__subtitle,
@@ -47,41 +47,39 @@ feature_row:
   text-align: center !important;
 }
 
-/* Ensure the lead paragraph (which may contain buttons) centers its inline content */
-#page-title .page__lead p,
-#page-title p.actions {
-  display: block !important;
-  text-align: center !important;
-}
-
-/* Make theme buttons inline-block so they center but retain existing margin/padding */
-#page-title .btn.btn--light-outline.btn--large,
+/* Center buttons inside page__lead or hero__actions */
 #page-title .page__lead .btn,
-#page-title p.actions .btn,
+#page-title .hero__actions .btn,
+#page-title .actions .btn,
+#page-title .btn.btn--light-outline.btn--large,
 #page-title .btn--primary,
 #page-title .btn--inverse {
   display: inline-block !important;
+  margin: 0.5rem 0.25rem !important; /* spacing between buttons */
   vertical-align: middle !important;
-  /* keep existing margins/padding — do not override */
+  text-align: center !important;
 }
 
-/* Optional mobile stacking: enable if you want full-width tappable buttons on small screens */
-/* Uncomment to enable */
-/*
+/* Lead paragraph text centered */
+#page-title .page__lead p,
+#page-title p.actions {
+  text-align: center !important;
+}
+
+/* Optional: mobile stacking */
 @media (max-width: 480px) {
-  #page-title .page__lead p a,
-  #page-title p.actions a,
-  #page-title .btn.btn--light-outline.btn--large {
+  #page-title .page__lead .btn,
+  #page-title .hero__actions .btn,
+  #page-title .actions .btn {
     display: block !important;
     width: calc(100% - 40px) !important;
     max-width: 360px !important;
     margin: 0.5rem auto !important;
   }
 }
-*/
 </style>
 
-<!-- ---------- Skills Section (unchanged) ---------- -->
+<!-- Skills Section -->
 <section class="skills-section" aria-label="Tech Stack & Skills">
   <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
     <div class="skills-scroll">
@@ -102,9 +100,14 @@ feature_row:
   </div>
 </section>
 
-<!-- Keep feature row and newsletter as-is -->
+<!-- Feature Row -->
 {% include feature_row %}
+
+<!-- Newsletter -->
 {% include newsletter.html %}
 
+<!-- Custom JS -->
 <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+
+<!-- Separator -->
 <div class="custom-separator"></div>
