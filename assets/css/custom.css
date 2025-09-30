@@ -97,7 +97,7 @@ code, pre {
 .page__splash .splash__title * {
   color: #FF6B35 !important;       /* site title uses orange CTA */
   text-shadow: none !important;
-  -webkit-text-fill-color: #fff !important;
+  -webkit-text-fill-color: #0A2540 !important;
   background-image: none !important;
 }
 
