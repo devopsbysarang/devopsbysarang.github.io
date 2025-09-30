@@ -24,29 +24,50 @@ permalink: /about/
 </div>
 
 <!-- ================== Testimonials Section ================== -->
-<section class="testimonials-section">
+<section class="testimonials-section" style="background-color: #EDE9D5; padding: 30px 0 !important;">
   <div class="container">
-    <h2 class="testimonials-heading">What people say?</h2>
+    <h2 class="testimonials-heading" style="text-align:center; color:#0A192F; margin-bottom: 40px;">What people say?</h2>
 
-    <div class="testimonials-wrapper">
+    <div class="testimonials-wrapper" style="display:flex; gap:10px; flex-wrap: wrap; justify-content: center; padding: 0 10px;">
       <!-- Testimonial 1 -->
-      <div class="testimonial">
-        <p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
-        <p class="testimonial-name">– Hariom Kashyap
-          <span class="testimonial-role">Software Architect, Amdocs</span>
+      <div class="testimonial" style="
+        background-color: #FF6B35; 
+        color: #FFFFFF; 
+        border-radius: 12px; 
+        padding: 25px 20px; 
+        flex: 1 1 300px; 
+        max-width: 400px; 
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      ">
+        <p style="margin-bottom: 15px; color:#FFFFFF;">"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
+        <p class="testimonial-name" style="font-weight:bold; color:#F5F5DC; margin-top:10px;">
+          – Hariom Kashyap
+          <span class="testimonial-role" style="display:block; font-style:italic; color:#F5F5DC; margin-top:3px;">Software Architect, Amdocs</span>
         </p>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
-        <p class="testimonial-name">– Ankur Singh
-          <span class="testimonial-role">AI Engineer, Intel</span>
+      <div class="testimonial" style="
+        background-color: #FF6B35; 
+        color: #FFFFFF; 
+        border-radius: 12px; 
+        padding: 25px 20px; 
+        flex: 1 1 300px; 
+        max-width: 400px; 
+        box-sizing: border-box;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      ">
+        <p style="margin-bottom: 15px; color:#FFFFFF;">"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
+        <p class="testimonial-name" style="font-weight:bold; color:#F5F5DC; margin-top:10px;">
+          – Ankur Singh
+          <span class="testimonial-role" style="display:block; font-style:italic; color:#F5F5DC; margin-top:3px;">AI Engineer, Intel</span>
         </p>
       </div>
     </div>
   </div>
 </section>
+
 
 <style>
 /* ================== FORCE FULL PAGE BACKGROUND ================== */
