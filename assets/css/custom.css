@@ -555,50 +555,57 @@ button.greedy-nav__toggle:focus {
   margin-top: 1rem;
 }
 
-/* Universal spacing reset for splash section */
+/* === Splash Section Wrapper === */
+/* Controls the overall vertical spacing (top and bottom padding) around the splash hero section */
 .page__hero--overlay .wrapper {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;   /* Adds space above the splash content (mobile) */
+  padding-bottom: 2.5rem; /* Adds space below the splash content (mobile) */
 }
 
-/* Title spacing */
+/* === Title (H1) === */
+/* Controls the space between the title and the lead paragraph */
 .page__title {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Adds space below the title (mobile) */
 }
 
-/* Lead paragraph spacing */
+/* === Lead Paragraph === */
+/* Controls the space below the paragraph and improves readability */
 .page__lead {
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem; /* Optional: slightly larger for readability */
-  line-height: 1.6;
+  margin-bottom: 1.5rem; /* Adds space below the paragraph (mobile) */
+  font-size: 1.125rem;   /* Slightly larger text for better readability */
+  line-height: 1.6;      /* Comfortable line spacing */
 }
 
-/* Button spacing */
+/* === Button Row (About Me & LinkedIn) === */
+/* Aligns buttons horizontally and adds spacing between and below them */
 .page__lead + p {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  display: flex;              /* Enables flex layout for buttons */
+  justify-content: center;   /* Centers buttons horizontally */
+  flex-wrap: wrap;           /* Allows wrapping on small screens */
+  gap: 1rem;                 /* Adds space between buttons */
+  margin-bottom: 2rem;       /* Adds space below the button group (mobile) */
 }
 
-/* Responsive tweaks for desktop */
+/* === Responsive Adjustments for Desktop (≥768px) === */
 @media (min-width: 768px) {
+  /* Increases top and bottom padding for more breathing room on larger screens */
   .page__hero--overlay .wrapper {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2.5rem;     /* More top space for desktop */
+    padding-bottom: 2.2rem;  /* More bottom space for desktop */
   }
 
+  /* Slightly increases space between title and paragraph on desktop */
   .page__title {
     margin-bottom: 1.25rem;
   }
 
+  /* Increases space between paragraph and buttons */
   .page__lead {
     margin-bottom: 2rem;
   }
 
+  /* Adds a bit more space below the button group */
   .page__lead + p {
     margin-bottom: 2.5rem;
   }
 }
-
