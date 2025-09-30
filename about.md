@@ -23,8 +23,6 @@ permalink: /about/
   </div>
 </div>
 
-
-
 <!-- ================== Testimonials Section ================== -->
 <section class="testimonials-section">
   <div class="container">
@@ -89,7 +87,6 @@ html, body {
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-
 /* Bio */
 .about-bio {
   flex: 1 1 500px !important;
@@ -144,15 +141,15 @@ html, body {
 
 /* ================== TESTIMONIALS ================== */
 .testimonials-section {
-  background-color: #FFFFFF !important; /* white outer background */
-  padding: 30px 0 1px 0 !important;
+  background-color: #F5F1E9 !important; /* beige outer background */
+  padding: 40px 0 !important;
 }
 
 .testimonials-heading {
   color: #0A192F !important;
   font-size: 2rem !important;
   text-align: center !important;
-  margin: 20px 0 50px 0 !important;
+  margin: 0 0 40px 0 !important;
 }
 
 .testimonials-wrapper {
@@ -161,50 +158,41 @@ html, body {
   flex-wrap: wrap !important;
   justify-content: center !important;
   padding: 0 20px !important;
-  margin-bottom: 60px !important;
+  margin-bottom: 0 !important;
 }
 
 .testimonial {
-  background-color: #0E4C5F !important; /* teal inner box */
-  color: #EFF6FF !important;
+  background-color: #FF6B35 !important; /* orange inner box */
+  color: #FFFFFF !important; /* main text white */
   border-radius: 12px !important;
   padding: 30px 25px !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
   flex: 1 1 300px !important;
   max-width: 450px !important;
   margin: 0 auto !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  border: 2px solid rgba(100,255,218,0.1) !important;
+  border: none !important;
   position: relative !important;
   overflow: hidden !important;
-}
-.testimonial::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: linear-gradient(145deg, rgba(100,255,218,0.05), rgba(255,255,255,0.02)) !important;
-  opacity: 0.4 !important;
-  pointer-events: none !important;
-}
-
-.testimonial:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important, 0 0 10px rgba(100,255,218,0.15) !important;
 }
 
 .testimonial-name {
   font-weight: bold !important;
-  color: #64FFDA !important;
+  color: #FFFFFF !important; /* name white */
   margin-top: 10px !important;
 }
+
 .testimonial-role {
   display: block !important;
   font-style: italic !important;
-  color: #4DA1A9 !important;
+  color: #F5F1E9 !important; /* beige role text */
   margin-top: 3px !important;
+}
+
+/* Hover effect */
+.testimonial:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
 }
 
 /* ================== RESPONSIVE ================== */
