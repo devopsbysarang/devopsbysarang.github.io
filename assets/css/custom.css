@@ -704,89 +704,81 @@ body .site-header.masthead {
   }
 }
 
-/* Mobile: sticky header but NO extra top padding on page (no big gap).
-   Instead we reduce header height and make it translucent so hero content shows through. */
-/* ========================
-   GLOBAL: fixed masthead + safe-area variables
-   ======================== */
-:root {
-  --masthead-h-desktop: 72px; /* adjust desktop header visual height */
-  --masthead-h-mobile: 56px;  /* adjust mobile header visual height */
+/* ==== Reduce masthead height & padding (desktop + mobile) ==== */
+:root{
+  --masthead-h-desktop: 64px; /* smaller desktop height */
+  --masthead-h-mobile: 44px;  /* smaller mobile height */
 }
 
-/* ----- Force fixed masthead everywhere ----- */
+/* enforce smaller heights */
 body .masthead {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 99999 !important;
-  /* desktop default; mobile overridden below */
   height: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
   padding-top: env(safe-area-inset-top) !important;
-  background-color: #ffffff !important; /* opaque white */
-  /* remove translucency/blur: do NOT include rgba() or backdrop-filter */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
-  overflow: visible !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
 }
 
-/* keep inner wrap vertically centered and tappable */
+/* tighten inner wrap padding so header is compact */
 body .masthead__inner-wrap {
-  display: flex !important;
+  padding: 6px 12px !important;    /* smaller vertical padding */
   align-items: center !important;
-  height: 100% !important;
-  padding: 8px 16px !important;
-  box-sizing: border-box !important;
 }
 
-/* ----- Push page content down so nothing is overlapped ----- */
-/* Desktop: push by desktop masthead height + safe-area */
-body .layout--splash .initial-content .wrapper,
-body .layout--default .wrapper,
-body .site {
-  padding-top: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
+/* shrink logo / brand image so it fits in smaller header */
+body .masthead .site-logo img,
+body .masthead .brand img,
+body .masthead__inner-wrap img {
+  max-height: calc(var(--masthead-h-desktop) - 12px) !important;
+  height: auto !important;
+  width: auto !important;
 }
 
-/* ----- Mobile specific: smaller header + matching push ----- */
+/* reduce nav / link padding (makes header shorter) */
+body .masthead .site-nav a,
+body .masthead .masthead__nav a,
+body .masthead a {
+  padding: 6px 8px !important;
+  line-height: 1 !important;
+  font-size: 0.95rem !important;
+}
+
+/* ===== Mobile: even smaller, compact layout ===== */
 @media (max-width: 768px) {
   body .masthead {
     height: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
     padding-top: env(safe-area-inset-top) !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
   }
 
-  /* Push the hero/content down by the mobile masthead height */
-  body .layout--splash .initial-content .wrapper,
-  body .layout--default .wrapper,
-  body .site {
-    padding-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    margin-top: 0 !important;
+  /* inner wrap extremely compact on mobile */
+  body .masthead__inner-wrap {
+    padding: 4px 10px !important;
+    gap: 8px !important; /* reduce spacing between items */
   }
 
-  /* If you prefer only the H1 to move instead of whole wrapper, uncomment below and remove the wrapper padding above:
-  #page-title.page__title,
-  .page__title,
-  .initial-content .wrapper > h1 {
-    margin-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    padding-top: 0 !important;
+  /* logo must fit mobile height */
+  body .masthead .site-logo img,
+  body .masthead .brand img {
+    max-height: calc(var(--masthead-h-mobile) - 8px) !important;
   }
-  */
 
-  /* ensure header links/buttons are tappable and above hero */
-  body .masthead a,
-  body .masthead button {
-    z-index: 100000 !important;
+  /* very small nav padding on mobile */
+  body .masthead .site-nav a,
+  body .masthead a {
+    padding: 4px 6px !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* if there is an extra thin border line, reduce its size or remove */
+  body .masthead {
+    border-bottom-width: 1px !important;
   }
 }
 
-/* ----- Extra safeguard: ensure no ancestor transforms/overflow kill fixed behavior ----- */
+/* Extra safeguard so transforms/overflow don't bloat header */
 body .layout--splash,
 body .layout--default,
 body .site,
 body .masthead,
 body .masthead__inner-wrap {
   transform: none !important;
-  -webkit-transform: none !important;
   overflow: visible !important;
 }
