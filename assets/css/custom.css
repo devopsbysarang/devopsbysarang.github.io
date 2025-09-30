@@ -510,55 +510,30 @@ button.greedy-nav__toggle:focus {
   object-fit: cover !important;
 }
 
-/* ---------- Center splash content via #page-title and .page__lead ---------- */
-#page-title {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding-inline: 1rem !important;
-    width: 100%;
+/* custom_splash helpers */
+.custom-splash { text-align: center; }
+.custom-splash .splash__title { margin-bottom: .5rem; }
+.custom-splash .page__lead { margin: 0 auto; max-width: 900px; color: #0B2440; }
+.custom-splash .actions { margin-top: 1.25rem; }
+
+/* ensure buttons center but don't alter spacing */
+.custom-splash .actions a,
+.custom-splash .page__lead a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 .35rem;
 }
 
-/* Center the title & excerpt inside */
-#page-title .page__lead,
-#page-title .splash__title,
-#page-title .splash__subtitle {
-    max-width: 900px !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  .custom-splash { padding: 50px 16px; }
+  .custom-splash .page__lead { padding: 0 8px; }
+  .custom-splash .actions a { margin: 0 .25rem; }
 }
 
-/* Center the About / LinkedIn buttons under text */
-#page-title .page__lead + p,
-#page-title p.actions {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 0.6rem !important;
-    flex-wrap: wrap !important;
-    margin-top: 0.6rem !important;
-    margin-bottom: 1rem !important;
-}
-
-/* Make individual buttons not stretch weirdly */
-#page-title .page__lead + p > a,
-#page-title p.actions > a {
-    flex: 0 0 auto !important;
-    min-width: 120px !important;
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-    #page-title .page__lead + p,
-    #page-title p.actions {
-        justify-content: center !important;
-        gap: 0.5rem !important;
-    }
-    #page-title .page__lead + p > a,
-    #page-title p.actions > a {
-        flex: 1 1 0 !important;
-        min-width: 0 !important;
-    }
+/* keep existing theme colors — ensure variables exist or fallback */
+:root{
+  --primary: #FF6B35;
+  --accent: #124E61;
+  --text: #0B2440;
 }
