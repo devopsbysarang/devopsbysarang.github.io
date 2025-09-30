@@ -29,7 +29,7 @@ featured-image: /assets/images/blackfriday.png
 -->
 
 <div style="border:1px solid #ccc; padding:8px; border-radius:8px; background:#fff; color:#0A2540 !important;">
-<h3 style="color:#ffffff !important; margin-top:0;">📌 Index</h3>
+<h3 style="color:#0A2540 !important; margin-top:0;">📌 Index</h3>
 
   <ol style="margin-left:1rem;">
     <li>
