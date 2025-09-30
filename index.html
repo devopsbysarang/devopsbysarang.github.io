@@ -37,42 +37,48 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-<!-- Inline CSS: Center hero title/subheading/buttons -->
+<!-- Inline CSS: fully center hero content -->
 <style>
-/* Center splash title/subtitle/lead text */
-#page-title,
+/* Center the whole hero container */
+#page-title .splash__inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Center title, subtitle, and lead text */
 #page-title .splash__title,
 #page-title .splash__subtitle,
 #page-title .page__lead {
+  width: 100% !important;
   text-align: center !important;
 }
 
-/* Center buttons inside page__lead or hero__actions */
-#page-title .page__lead .btn,
-#page-title .hero__actions .btn,
-#page-title .actions .btn,
-#page-title .btn.btn--light-outline.btn--large,
+/* Center buttons inside hero actions / page__lead */
+#page-title .hero__actions,
+#page-title .page__lead .actions,
+#page-title .page__lead p {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Make buttons inline-block */
+#page-title .btn,
 #page-title .btn--primary,
-#page-title .btn--inverse {
+#page-title .btn--inverse,
+#page-title .btn.btn--light-outline.btn--large {
   display: inline-block !important;
-  margin: 0.5rem 0.25rem !important; /* spacing between buttons */
-  vertical-align: middle !important;
-  text-align: center !important;
-}
-
-/* Lead paragraph text centered */
-#page-title .page__lead p,
-#page-title p.actions {
-  text-align: center !important;
 }
 
 /* Optional: mobile stacking */
 @media (max-width: 480px) {
-  #page-title .page__lead .btn,
   #page-title .hero__actions .btn,
-  #page-title .actions .btn {
-    display: block !important;
-    width: calc(100% - 40px) !important;
+  #page-title .page__lead .actions .btn {
+    flex: 1 1 100% !important;
     max-width: 360px !important;
     margin: 0.5rem auto !important;
   }
