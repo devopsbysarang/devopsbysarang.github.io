@@ -14,17 +14,14 @@
 </footer>
 
 <style>
-  /* Reset any top spacing coming from theme */
+  /* Reset footer spacing */
   #footer.page__footer {
-    background: none;
-    padding: 0 !important;       
+    background: #124E61 !important; /* deep teal background */
+    padding: 1rem 0 !important;       
     margin: 0 !important;        
-    border-top: 1px solid transparent !important; 
-    overflow: hidden !important; 
     text-align: center;
   }
 
-  /* Kill pseudo-elements that some themes use as separators */
   #footer.page__footer::before,
   #footer.page__footer::after,
   #footer .footer-inner::before,
@@ -41,47 +38,45 @@
     padding: 0 !important;
   }
 
-  /* Social icons layout and spacing */
+  /* Social icons layout */
   #footer .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 18px;                      
-    padding-bottom: 14px !important;
+    padding-bottom: 12px !important;
   }
 
-  /* Icon visuals - different bright colors for each */
-  #footer .social-icons a:nth-child(1) i { color: #fff !important; }     /* GitHub - white */
-  #footer .social-icons a:nth-child(2) i { color: #0079FF !important; }    /* LinkedIn - bright blue */
-  #footer .social-icons a:nth-child(3) i { color: #F72C5B !important; }    /* Instagram - pink/red */
-  #footer .social-icons a:nth-child(4) i { color: #FCC737 !important; }    /* Email - yellow/orange */
+  /* Icon colors matching theme */
+  #footer .social-icons a:nth-child(1) i { color: #FF6B35 !important; }   /* GitHub - orange CTA */
+  #footer .social-icons a:nth-child(2) i { color: #EDE9D5 !important; }   /* LinkedIn - beige/light */
+  #footer .social-icons a:nth-child(3) i { color: #FF6B35 !important; }   /* Instagram - orange CTA */
+  #footer .social-icons a:nth-child(4) i { color: #EDE9D5 !important; }   /* Email - beige/light */
 
   /* Icon size */
   #footer .social-icons a i {
-    font-size: 35px; /* desktop size */
+    font-size: 35px;
     transition: color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     vertical-align: middle;
   }
 
-  /* Hover effect for all icons */
   #footer .social-icons a:hover i {
     transform: scale(1.2);
-    filter: brightness(1.4);
+    filter: brightness(1.3);
   }
 
   /* Footer text */
   #footer .footer-text {
     font-size: 16px;
-    color: #fff !important;
-    padding-top: 6px;  
+    color: #EDE9D5 !important; /* beige/light text */
     margin: 0;
   }
 
-  /* Small screen tweaks */
+  /* Mobile adjustments */
   @media (max-width: 480px) {
-    #footer .social-icons { gap: 12px; padding-bottom: 12px !important; }
-    #footer .social-icons a i { font-size: 28px; } /* mobile size */
-    #footer .footer-text { font-size: 14px; padding-top: 4px; }
+    #footer .social-icons { gap: 12px; padding-bottom: 10px !important; }
+    #footer .social-icons a i { font-size: 28px; }
+    #footer .footer-text { font-size: 14px; }
   }
 </style>
