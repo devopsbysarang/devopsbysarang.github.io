@@ -623,12 +623,6 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-/* Force footer background to deep teal */
-body footer.page__footer,
-body footer#footer,
-.page__footer#footer,
-#footer.page__footer {
-  background-color: #124E61 !important; /* deep teal */
-  color: #EDE9D5 !important;            /* text color beige */
+#footer .footer-inner {
+  background-color: #124E61 !important;
 }
-
