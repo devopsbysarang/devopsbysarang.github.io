@@ -1,91 +1,28 @@
 ---
-layout: splash
+layout: null
 permalink: /
 title: "Practical DevOps Insights."
-header:
-  overlay_color: "#fff"
-  actions:
-    - label: "About me"
-      url: "/about/"
-      class: "btn--primary btn-custom"
-    - label: "LinkedIn"
-      url: "https://www.linkedin.com/in/sarang-deshmukh-125197182/"
-      class: "btn--inverse btn-custom"
-  separator: true     
-excerpt: "My portfolio of real-world projects and case studies on **System Design** and **Automation** 🚀"
-feature_row:
-  - image_path: /assets/images/case.png
-    alt: "DevOps"
-    title: "DevOps Case Studies"
-    excerpt: "Real-World DevOps : Challenges and Solutions"
-    url: "/devops-case-studies/"
-    btn_label: "Read More →" 
-    btn_class: "btn--primary"
-  - image_path: /assets/images/learning.png
-    alt: "Cloud"
-    title: "Learning Challenges "
-    excerpt: "Documenting my DevOps journey through challenges"
-    url: "/learning-challenges/"
-    btn_label: "Read More →"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/auto.png
-    alt: "CI/CD"
-    title: "Automation in DevOps"
-    excerpt: "Jenkins, Terraform, Ansible and real-world projects"
-    url: "/automation-devops/"
-    btn_label: "Read More →"
-    btn_class: "btn--primary"
 ---
 
-<!-- Inline CSS: fully center hero content -->
-<style>
-/* Center the whole hero container */
-#page-title .splash__inner {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-}
+<!-- ================== Splash / Hero Section ================== -->
+<div class="custom-splash" style="padding: 60px 16px;">
 
-/* Center title, subtitle, and lead text */
-#page-title .splash__title,
-#page-title .splash__subtitle,
-#page-title .page__lead {
-  width: 100% !important;
-  text-align: center !important;
-}
+  <!-- Title -->
+  <h1 class="splash__title">Practical DevOps Insights.</h1>
 
-/* Center buttons inside hero actions / page__lead */
-#page-title .hero__actions,
-#page-title .page__lead .actions,
-#page-title .page__lead p {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 0.5rem !important;
-  margin-top: 0.5rem !important;
-}
+  <!-- Subheading -->
+  <p class="page__lead">
+    My portfolio of real-world projects and case studies on System Design and Automation 🚀
+  </p>
 
-/* Make buttons inline-block */
-#page-title .btn,
-#page-title .btn--primary,
-#page-title .btn--inverse,
-#page-title .btn.btn--light-outline.btn--large {
-  display: inline-block !important;
-}
+  <!-- Buttons -->
+  <p class="actions">
+    <a href="/about/" class="btn btn--primary btn--large">About me</a>
+    <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" class="btn btn--light-outline btn--large">LinkedIn</a>
+  </p>
+</div>
 
-/* Optional: mobile stacking */
-@media (max-width: 480px) {
-  #page-title .hero__actions .btn,
-  #page-title .page__lead .actions .btn {
-    flex: 1 1 100% !important;
-    max-width: 360px !important;
-    margin: 0.5rem auto !important;
-  }
-}
-</style>
-
-<!-- Skills Section -->
+<!-- ================== Skills Section ================== -->
 <section class="skills-section" aria-label="Tech Stack & Skills">
   <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
     <div class="skills-scroll">
@@ -106,14 +43,44 @@ feature_row:
   </div>
 </section>
 
-<!-- Feature Row -->
+<!-- ================== Feature Row ================== -->
 {% include feature_row %}
 
-<!-- Newsletter -->
+<!-- ================== Newsletter ================== -->
 {% include newsletter.html %}
 
-<!-- Custom JS -->
 <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
-
-<!-- Separator -->
 <div class="custom-separator"></div>
+
+<!-- ================== Optional Inline Styles to Ensure Centering ================== -->
+<style>
+  .custom-splash,
+  .custom-splash .actions,
+  .custom-splash .page__lead {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .custom-splash .actions a,
+  .custom-splash .page__lead a {
+    display: inline-block;
+    margin: 0 .35rem;
+  }
+
+  @media (max-width: 480px) {
+    .custom-splash .page__lead {
+      font-size: 1rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+    .custom-splash .actions {
+      gap: 0.5rem !important;
+    }
+    .custom-splash .actions a {
+      flex: 1 !important;
+      min-width: auto !important;
+    }
+  }
+</style>
