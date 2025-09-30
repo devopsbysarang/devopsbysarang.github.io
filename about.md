@@ -190,4 +190,20 @@ html, body {
   .testimonials-wrapper { width: 100% !important; padding: 0 12px !important; }
   .testimonial { width: calc(100% - 20px) !important; padding: 12px 14px !important; margin-bottom: 16px !important; text-align: left !important; }
 }
+
+@media (max-width: 480px) {
+  .testimonials-wrapper {
+    width: 100% !important;
+    padding: 0 12px !important;
+  }
+
+  .testimonial {
+    width: 90% !important;
+    max-width: 320px !important;
+    padding: 18px 20px !important;
+    margin: 0 auto 20px auto !important;
+    text-align: left !important;
+  }
+}
+
 </style>
