@@ -308,7 +308,7 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 .page__hero--overlay {
-  padding-top: 34px !important;   /* Was 48px */
+  padding-top: 3px !important;   /* Was 48px */
   padding-bottom: 24px !important;
   margin-bottom: 8px !important;  /* Was 32px */
 }
