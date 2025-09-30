@@ -208,7 +208,7 @@ html, body {
   }
 
   .testimonial {
-    width: 95%;
+    width: 95% !important;
     max-width: 300px;
     padding: 14px 16px;
     margin: 12px 0;
