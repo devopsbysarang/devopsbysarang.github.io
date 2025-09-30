@@ -629,5 +629,13 @@ body .site-header.masthead {
 }
 
 
+/* Sticky navbar override */
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  background-color: #fff !important; /* Change to your navbar color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; /* Optional */
+}
 
 
