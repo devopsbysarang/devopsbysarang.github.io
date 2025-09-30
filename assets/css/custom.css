@@ -629,13 +629,49 @@ body .site-header.masthead {
 }
 
 
-/* Sticky navbar override */
-.site-header {
-  position: sticky !important;
+/* ----- Force a fixed top navbar for Minimal Mistakes (masthead) ----- */
+.masthead {
+  position: fixed !important;
   top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   z-index: 9999 !important;
-  background-color: #fff !important; /* Change to your navbar color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; /* Optional */
+  background-color: #fff !important; /* change if you need */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
 }
+
+/* ensure inner wrapper doesn't collapse when fixed */
+.masthead__inner-wrap {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Push page content / hero down by header height so it is not covered.
+   Adjust 72px to match your actual masthead height (inspect in devtools). */
+.layout--splash .initial-content,
+.layout--default .wrapper,
+.site {
+  padding-top: 72px !important;
+}
+
+/* Mobile tweak — increase padding if masthead is taller on mobile */
+@media (max-width: 768px) {
+  .layout--splash .initial-content,
+  .layout--default .wrapper {
+    padding-top: 88px !important;
+  }
+}
+
+/* If you prefer sticky (not fixed), you can try this instead:
+.masthead { position: sticky !important; top: 0 !important; z-index: 9999 !important; }
+*/
+
+/* Debug helper (only while debugging): ensure no ancestor has overflow hiding sticky */
+.masthead, .masthead__inner-wrap, .layout--splash, .layout--default {
+  overflow: visible !important;
+}
+
 
 
