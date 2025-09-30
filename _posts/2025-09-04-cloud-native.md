@@ -164,7 +164,7 @@ I was fascinated by how these large-scale platforms maintain resilience and secu
 
 <img src="/assets/images/AWS-Security.svg" 
      alt="3-tier architecture" 
-     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
+     style="border: 3px solid #FF6B35; border-radius: 12px; max-width:100%; height:auto;" />
 
 
 The most technical, high-impact components that separate advanced designs from beginner ones are:  
