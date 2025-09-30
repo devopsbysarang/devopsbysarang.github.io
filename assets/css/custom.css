@@ -674,4 +674,18 @@ body .site-header.masthead {
 }
 
 
+@media (max-width: 768px) {
+  /* Make masthead behave normally on mobile so no extra top padding is needed */
+  .masthead {
+    position: static !important;
+    box-shadow: none !important;
+  }
+
+  /* remove the push used for fixed header */
+  .layout--splash .initial-content,
+  .layout--default .wrapper,
+  .site {
+    padding-top: 0 !important;
+  }
+}
 
