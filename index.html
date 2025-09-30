@@ -78,6 +78,22 @@ feature_row:
   }
 </style>
 
+<style>
+/* Center splash heading, paragraph, and buttons */
+.page__hero--overlay .wrapper {
+  text-align: center !important;  /* Most reliable override */
+}
+
+/* Optional: Center buttons and allow them to wrap nicely */
+.page__lead + p {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+</style>
+
 
 {% include feature_row %}
 {% include newsletter.html %}
