@@ -558,8 +558,8 @@ button.greedy-nav__toggle:focus {
 /* === Splash Section Wrapper === */
 /* Controls the overall vertical spacing (top and bottom padding) around the splash hero section */
 .page__hero--overlay .wrapper {
-  padding-top: 2.5rem;   /* Adds space above the splash content (mobile) */
-  padding-bottom: 2.5rem; /* Adds space below the splash content (mobile) */
+  padding-top: 2rem;   /* Adds space above the splash content (mobile) */
+  padding-bottom: 2rem; /* Adds space below the splash content (mobile) */
 }
 
 /* === Title (H1) === */
