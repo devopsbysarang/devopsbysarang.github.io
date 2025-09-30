@@ -622,3 +622,19 @@ button.greedy-nav__toggle:focus {
     line-height: 1.4; /* Slightly taller line spacing for better readability */
   }
 }
+
+/* Fixed Navigation Bar */
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 999 !important;
+  background: #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Push content down so it doesn't hide behind fixed header */
+body {
+  padding-top: 70px !important; /* Adjust if your header is taller/shorter */
+}
+
