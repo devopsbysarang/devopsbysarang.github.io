@@ -623,6 +623,6 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-header.masthead {
+body header.masthead {
   border-bottom: 2px solid #F1EDEB !important;
 }
