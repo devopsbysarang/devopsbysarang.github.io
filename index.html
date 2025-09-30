@@ -39,55 +39,80 @@ feature_row:
 
 <!-- ---------- Inline CSS for Centering & Spacing ---------- -->
 <style>
-/* Center splash title, excerpt, and buttons */
+/* ---------- Splash / Hero Section Centering ---------- */
 #page-title {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
-  padding: 60px 16px 40px 16px;
+  padding: 80px 16px 50px 16px;
 }
 
-#page-title .page__lead,
+/* Title, subtitle, and excerpt */
 #page-title .splash__title,
-#page-title .splash__subtitle {
+#page-title .splash__subtitle,
+#page-title .page__lead {
   max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#page-title .page__lead + p {
+/* Center the buttons inside the lead paragraph */
+#page-title .page__lead p {
   display: flex !important;
   justify-content: center !important;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.8rem !important;
+  flex-wrap: wrap !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 2.5rem !important;
 }
 
-#page-title .page__lead + p > a {
-  flex: 0 0 auto;
+/* Individual buttons don't stretch weirdly */
+#page-title .page__lead p a {
+  flex: 0 0 auto !important;
   min-width: 140px;
 }
 
-/* Mobile adjustments */
+/* ---------- Skills Section Spacing ---------- */
+.skills-section {
+  padding: 40px 0 60px 0;
+}
+
+/* ---------- Feature Row Section Spacing ---------- */
+.feature-row-wrapper {
+  padding: 50px 16px 70px 16px;
+}
+
+/* ---------- Newsletter Section Spacing ---------- */
+.newsletter-wrapper {
+  padding: 40px 16px 60px 16px;
+}
+
+/* ---------- Mobile Adjustments ---------- */
 @media (max-width: 768px) {
   #page-title {
-    padding: 50px 16px 30px 16px;
+    padding: 60px 16px 40px 16px !important;
   }
-  #page-title .page__lead + p {
-    gap: 0.5rem;
+  #page-title .page__lead p {
+    gap: 0.6rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
   }
-  #page-title .page__lead + p > a {
-    flex: 1 1 0;
-    min-width: 0;
+
+  .skills-section {
+    padding: 30px 0 40px 0;
   }
-  #page-title .page__lead {
-    line-height: 1.5;
+  .feature-row-wrapper {
+    padding: 40px 16px 50px 16px;
+  }
+  .newsletter-wrapper {
+    padding: 30px 16px 40px 16px;
   }
 }
 </style>
 
-<!-- ---------- Skills Section (Right below About Me / LinkedIn buttons) ---------- -->
+<!-- ---------- Skills Section ---------- -->
 <section class="skills-section" aria-label="Tech Stack & Skills">
   <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
     <div class="skills-scroll">
@@ -108,7 +133,7 @@ feature_row:
   </div>
 </section>
 
-<!-- Feature Row & Newsletter -->
+<!-- ---------- Feature Row & Newsletter ---------- -->
 {% include feature_row %}
 {% include newsletter.html %}
 
