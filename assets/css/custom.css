@@ -609,3 +609,10 @@ button.greedy-nav__toggle:focus {
     margin-bottom: 2.5rem;
   }
 }
+
+@media (max-width: 767px) {
+  .page__hero--overlay .wrapper {
+    padding-left: 1rem;   /* Adds 16px padding on the left */
+    padding-right: 1rem;  /* Adds 16px padding on the right */
+  }
+}
