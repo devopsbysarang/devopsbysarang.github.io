@@ -735,7 +735,7 @@ body .site-header.masthead {
   #page-title.page__title,
   .page__title,
   .initial-content .wrapper > h1 {
-    padding-top: 6px !important;
+    padding-top: 10px !important;
   }
 
   /* Ensure header links are on top and tappable */
