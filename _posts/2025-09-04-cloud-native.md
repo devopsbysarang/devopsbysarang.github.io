@@ -28,131 +28,131 @@ featured-image: /assets/images/blackfriday.png
     ## 11 — Final Thoughts               -> id="final-thoughts"
 -->
 
-<div style="border:1px solid #ccc; padding:8px; border-radius:8px; background:#fff; color:#0A2540 !important;">
-<h3 style="color:#0A2540 !important; margin-top:0;">📌 Index</h3>
+<div style="border:1px solid #ccc; padding:12px; border-radius:8px; background:#EDE9D5; color:#0A2540 !important;">
+  <h3 style="color:#FF6B35 !important; margin-top:0;">📌 Index</h3>
 
   <ol style="margin-left:1rem;">
     <li>
       <a href="#quick-summary" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Quick Summary</strong>
+        <strong style="color:#FF6B35 !important;">Quick Summary</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Defence-in-depth overview</li>
-        <li style="color:#CCD6F6 !important;">Key technical components</li>
+        <li style="color:#0A192F !important;">Defence-in-depth overview</li>
+        <li style="color:#0A192F !important;">Key technical components</li>
       </ul>
     </li>
 
     <li>
       <a href="#before-and-after-security-layer" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Before and After Security Layer</strong>
+        <strong style="color:#FF6B35 !important;">Before and After Security Layer</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Legacy architecture</li>
-        <li style="color:#CCD6F6 !important;">Hardened architecture with SG chaining, mTLS, IRSA</li>
+        <li style="color:#0A192F !important;">Legacy architecture</li>
+        <li style="color:#0A192F !important;">Hardened architecture with SG chaining, mTLS, IRSA</li>
       </ul>
     </li>
 
     <li>
       <a href="#shopnow-security-overview" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Security Overview of Small-Scale Platform: ShopNow</strong>
+        <strong style="color:#FF6B35 !important;">Security Overview: ShopNow</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Audit findings</li>
-        <li style="color:#CCD6F6 !important;">Phased security program</li>
-        <li style="color:#CCD6F6 !important;">Outcomes</li>
+        <li style="color:#0A192F !important;">Audit findings</li>
+        <li style="color:#0A192F !important;">Phased security program</li>
+        <li style="color:#0A192F !important;">Outcomes</li>
       </ul>
     </li>
 
     <li>
-      <strong style="color:#ffffff !important;">Deep Dives (Hard, Interview-Relevant Parts)</strong>
+      <strong style="color:#FF6B35 !important;">Deep Dives (Hard, Interview-Relevant Parts)</strong>
       <ul>
-        <li style="color:#CCD6F6 !important;"><a href="#tls-vs-mtls" style="color:#CCD6F6 !important; text-decoration:underline;">4.1 TLS vs mTLS — Why and How (Advanced)</a></li>
-        <li style="color:#CCD6F6 !important;"><a href="#irsa" style="color:#CCD6F6 !important; text-decoration:underline;">4.2 IRSA — Deep Technical Notes</a></li>
-        <li style="color:#CCD6F6 !important;"><a href="#security-groups" style="color:#CCD6F6 !important; text-decoration:underline;">4.3 Security Groups — Advanced Patterns &amp; Egress Control</a></li>
-        <li style="color:#CCD6F6 !important;"><a href="#waf-cloudfront-edge" style="color:#CCD6F6 !important; text-decoration:underline;">4.4 WAF (CloudFront Edge) — Advanced Tuning</a></li>
-        <li style="color:#CCD6F6 !important;"><a href="#shield-advanced" style="color:#CCD6F6 !important; text-decoration:underline;">4.5 Shield Advanced — Justification &amp; Playbook</a></li>
-        <li style="color:#CCD6F6 !important;"><a href="#ssm-over-ssh" style="color:#CCD6F6 !important; text-decoration:underline;">4.6 Use SSM over SSH for Bastion Host</a></li>
+        <li style="color:#0A192F !important;"><a href="#tls-vs-mtls" style="color:#0A192F !important; text-decoration:underline;">4.1 TLS vs mTLS — Why and How</a></li>
+        <li style="color:#0A192F !important;"><a href="#irsa" style="color:#0A192F !important; text-decoration:underline;">4.2 IRSA — Deep Technical Notes</a></li>
+        <li style="color:#0A192F !important;"><a href="#security-groups" style="color:#0A192F !important; text-decoration:underline;">4.3 Security Groups — Advanced Patterns &amp; Egress Control</a></li>
+        <li style="color:#0A192F !important;"><a href="#waf-cloudfront-edge" style="color:#0A192F !important; text-decoration:underline;">4.4 WAF (CloudFront Edge) — Advanced Tuning</a></li>
+        <li style="color:#0A192F !important;"><a href="#shield-advanced" style="color:#0A192F !important; text-decoration:underline;">4.5 Shield Advanced — Justification &amp; Playbook</a></li>
+        <li style="color:#0A192F !important;"><a href="#ssm-over-ssh" style="color:#0A192F !important; text-decoration:underline;">4.6 Use SSM over SSH for Bastion Host</a></li>
       </ul>
     </li>
 
     <li>
       <a href="#supply-chain-ci-cd" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Supply Chain, CI/CD &amp; Runtime Controls</strong>
+        <strong style="color:#FF6B35 !important;">Supply Chain, CI/CD &amp; Runtime Controls</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">CI/CD identity hardening (OIDC)</li>
-        <li style="color:#CCD6F6 !important;">Image scanning &amp; signing</li>
-        <li style="color:#CCD6F6 !important;">SAST/SCA in CI gates</li>
-        <li style="color:#CCD6F6 !important;">Admission controllers</li>
-        <li style="color:#CCD6F6 !important;">Runtime detection &amp; immutable infra</li>
+        <li style="color:#0A192F !important;">CI/CD identity hardening (OIDC)</li>
+        <li style="color:#0A192F !important;">Image scanning &amp; signing</li>
+        <li style="color:#0A192F !important;">SAST/SCA in CI gates</li>
+        <li style="color:#0A192F !important;">Admission controllers</li>
+        <li style="color:#0A192F !important;">Runtime detection &amp; immutable infra</li>
       </ul>
     </li>
 
     <li>
       <a href="#data-protection" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Data Protection and PII / Payments</strong>
+        <strong style="color:#FF6B35 !important;">Data Protection and PII / Payments</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Encryption at rest &amp; in transit</li>
-        <li style="color:#CCD6F6 !important;">S3 hardening</li>
-        <li style="color:#CCD6F6 !important;">Payment and PII handling</li>
+        <li style="color:#0A192F !important;">Encryption at rest &amp; in transit</li>
+        <li style="color:#0A192F !important;">S3 hardening</li>
+        <li style="color:#0A192F !important;">Payment and PII handling</li>
       </ul>
     </li>
 
     <li>
       <a href="#threat-model" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Threat Model (Top Threats + Mitigations)</strong>
+        <strong style="color:#FF6B35 !important;">Threat Model (Top Threats + Mitigations)</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Account takeover / credential theft</li>
-        <li style="color:#CCD6F6 !important;">Lateral movement from compromised pod</li>
-        <li style="color:#CCD6F6 !important;">Data exfiltration</li>
-        <li style="color:#CCD6F6 !important;">Supply chain compromise</li>
-        <li style="color:#CCD6F6 !important;">DDoS / Flash sale disruption</li>
-        <li style="color:#CCD6F6 !important;">Ransomware / snapshot deletion</li>
+        <li style="color:#0A192F !important;">Account takeover / credential theft</li>
+        <li style="color:#0A192F !important;">Lateral movement from compromised pod</li>
+        <li style="color:#0A192F !important;">Data exfiltration</li>
+        <li style="color:#0A192F !important;">Supply chain compromise</li>
+        <li style="color:#0A192F !important;">DDoS / Flash sale disruption</li>
+        <li style="color:#0A192F !important;">Ransomware / snapshot deletion</li>
       </ul>
     </li>
 
     <li>
       <a href="#compliance-checklist" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Compliance Checklist (PCI / GDPR / HIPAA Highlights)</strong>
+        <strong style="color:#FF6B35 !important;">Compliance Checklist (PCI / GDPR / HIPAA Highlights)</strong>
       </a>
     </li>
 
     <li>
       <a href="#prioritized-rollout" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Prioritized Rollout Plan (Practical, with Tasks)</strong>
+        <strong style="color:#FF6B35 !important;">Prioritized Rollout Plan (Practical, with Tasks)</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Quick wins (days → 2 weeks)</li>
-        <li style="color:#CCD6F6 !important;">Mid-term (2–8 weeks)</li>
-        <li style="color:#CCD6F6 !important;">Long-term (2–6 months)</li>
+        <li style="color:#0A192F !important;">Quick wins (days → 2 weeks)</li>
+        <li style="color:#0A192F !important;">Mid-term (2–8 weeks)</li>
+        <li style="color:#0A192F !important;">Long-term (2–6 months)</li>
       </ul>
     </li>
 
     <li>
       <a href="#operational-rules-kpis" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Operational Rules, KPIs &amp; Runbook Snippet</strong>
+        <strong style="color:#FF6B35 !important;">Operational Rules, KPIs &amp; Runbook Snippet</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Policies to codify</li>
-        <li style="color:#CCD6F6 !important;">KPIs / SLOs</li>
-        <li style="color:#CCD6F6 !important;">Runbook example — Suspicious S3 exfil detection</li>
+        <li style="color:#0A192F !important;">Policies to codify</li>
+        <li style="color:#0A192F !important;">KPIs / SLOs</li>
+        <li style="color:#0A192F !important;">Runbook example — Suspicious S3 exfil detection</li>
       </ul>
     </li>
 
     <li>
       <a href="#final-thoughts" style="text-decoration:none;">
-        <strong style="color:#ffffff !important;">Final Thoughts &amp; Recommended Next Steps</strong>
+        <strong style="color:#FF6B35 !important;">Final Thoughts &amp; Recommended Next Steps</strong>
       </a>
       <ul>
-        <li style="color:#CCD6F6 !important;">Lessons learned</li>
-        <li style="color:#CCD6F6 !important;">Operational and security takeaways</li>
+        <li style="color:#0A192F !important;">Lessons learned</li>
+        <li style="color:#0A192F !important;">Operational and security takeaways</li>
       </ul>
     </li>
   </ol>
-
 </div>
+
 
 
 ## 1 — Quick Summary
