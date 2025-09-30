@@ -48,11 +48,6 @@ permalink: /about/
   </div>
 </section>
 
-<!-- LinkedIn Button Section -->
-<div class="linkedin-section">
-  <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" class="linkedin-btn">Connect on LinkedIn</a>
-</div>
-
 <style>
 /* ================== FORCE FULL PAGE BACKGROUND ================== */
 html, body {
@@ -82,7 +77,6 @@ html, body {
 .about-photo img {
   width: 100% !important;
   border-radius: 12px !important;
-  box-shadow: 0 0 12px #FF6B35 !important;  /* orange glow */
   border: 3px solid #FF6B35 !important;     /* orange border */
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
@@ -154,7 +148,7 @@ html, body {
 
 .testimonials-wrapper {
   display: flex !important;
-  gap: 25px !important;
+  gap: 5px !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
   padding: 0 20px !important;
