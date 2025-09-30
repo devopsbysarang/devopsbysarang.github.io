@@ -623,9 +623,11 @@ button.greedy-nav__toggle:focus {
   }
 }
 
-html body header.masthead {
+body header.masthead,
+body .site-header.masthead {
   border-bottom: 3px solid red !important;
 }
+
 
 
 
