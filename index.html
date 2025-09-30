@@ -37,82 +37,51 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-<!-- ---------- Inline CSS for Centering & Spacing ---------- -->
+<!-- Inline CSS: center splash title/subheading/buttons — keep all original spacing -->
 <style>
-/* ---------- Splash / Hero Section Centering ---------- */
-#page-title {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  padding: 80px 16px 50px 16px;
-}
-
-/* Title, subtitle, and excerpt */
+/* ---- Center splash title & subheading, keep spacing unchanged ---- */
+#page-title,
 #page-title .splash__title,
 #page-title .splash__subtitle,
 #page-title .page__lead {
-  max-width: 900px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center !important;
 }
 
-/* Center the buttons inside the lead paragraph */
-#page-title .page__lead p {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 0.8rem !important;
-  flex-wrap: wrap !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: 2.5rem !important;
+/* Ensure the lead paragraph (which may contain buttons) centers its inline content */
+#page-title .page__lead p,
+#page-title p.actions {
+  display: block !important;
+  text-align: center !important;
 }
 
-/* Individual buttons don't stretch weirdly */
-#page-title .page__lead p a {
-  flex: 0 0 auto !important;
-  min-width: 140px;
+/* Make theme buttons inline-block so they center but retain existing margin/padding */
+#page-title .btn.btn--light-outline.btn--large,
+#page-title .page__lead .btn,
+#page-title p.actions .btn,
+#page-title .btn--primary,
+#page-title .btn--inverse {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  /* keep existing margins/padding — do not override */
 }
 
-/* ---------- Skills Section Spacing ---------- */
-.skills-section {
-  padding: 40px 0 60px 0;
-}
-
-/* ---------- Feature Row Section Spacing ---------- */
-.feature-row-wrapper {
-  padding: 50px 16px 70px 16px;
-}
-
-/* ---------- Newsletter Section Spacing ---------- */
-.newsletter-wrapper {
-  padding: 40px 16px 60px 16px;
-}
-
-/* ---------- Mobile Adjustments ---------- */
-@media (max-width: 768px) {
-  #page-title {
-    padding: 60px 16px 40px 16px !important;
-  }
-  #page-title .page__lead p {
-    gap: 0.6rem !important;
-    margin-top: 1rem !important;
-    margin-bottom: 2rem !important;
-  }
-
-  .skills-section {
-    padding: 30px 0 40px 0;
-  }
-  .feature-row-wrapper {
-    padding: 40px 16px 50px 16px;
-  }
-  .newsletter-wrapper {
-    padding: 30px 16px 40px 16px;
+/* Optional mobile stacking: enable if you want full-width tappable buttons on small screens */
+/* Uncomment to enable */
+/*
+@media (max-width: 480px) {
+  #page-title .page__lead p a,
+  #page-title p.actions a,
+  #page-title .btn.btn--light-outline.btn--large {
+    display: block !important;
+    width: calc(100% - 40px) !important;
+    max-width: 360px !important;
+    margin: 0.5rem auto !important;
   }
 }
+*/
 </style>
 
-<!-- ---------- Skills Section ---------- -->
+<!-- ---------- Skills Section (unchanged) ---------- -->
 <section class="skills-section" aria-label="Tech Stack & Skills">
   <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
     <div class="skills-scroll">
@@ -133,7 +102,7 @@ feature_row:
   </div>
 </section>
 
-<!-- ---------- Feature Row & Newsletter ---------- -->
+<!-- Keep feature row and newsletter as-is -->
 {% include feature_row %}
 {% include newsletter.html %}
 
