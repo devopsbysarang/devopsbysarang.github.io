@@ -4,7 +4,7 @@ permalink: /automation-devops/
 author_profile: true
 ---
 
-<p style="color:#fff; text-align:center; margin-bottom:1rem;">
+<p style="color:#0A192F; text-align:center; margin-bottom:1rem;">
   Here you’ll find posts on <strong>Automation in DevOps</strong>.
 </p>
 
@@ -31,34 +31,42 @@ author_profile: true
   {% endfor %}
 </div>
 
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+html, body {
+  background-color: #FFFFFF !important;  /* white page background */
+  color: #0A192F !important;            /* dark text */
+  font-family: 'Roboto', sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
 
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 10px; /* closer cards */
   padding: 2rem;
 }
 
 .blog-card {
-  background-color: #0A192F;
-  border: 2px solid #64FFDA; /* subtle neon accent */
+  background-color: #EDE9D5;  /* beige inner card */
+  border: 2px solid #FF6B35; /* orange accent */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3); /* subtle hover effect */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255,107,53,0.3); /* subtle orange glow */
 }
 
 .blog-image {
   width: 100%;
   height: 180px;
-  background-color: #0A192F; /* fallback color */
+  background-color: #FF6B35; /* fallback orange */
   background-size: cover;
   background-position: center;
 }
@@ -71,8 +79,7 @@ author_profile: true
   font-family: 'Rubik', sans-serif;
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
-  color: #64FFDA;
-  text-shadow: none;
+  color: #FF6B35; /* orange title */
 }
 
 .blog-card h3 a {
@@ -86,7 +93,7 @@ author_profile: true
 
 .blog-meta {
   font-size: 0.9rem;
-  color: #ccc;
+  color: #0A192F; /* dark text */
 }
 
 @media (max-width: 700px) {
@@ -104,4 +111,3 @@ author_profile: true
   }
 }
 </style>
-
