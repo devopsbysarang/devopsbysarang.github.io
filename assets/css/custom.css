@@ -510,47 +510,56 @@ button.greedy-nav__toggle:focus {
   object-fit: cover !important;
 }
 
-/* ---------- Force-center splash / hero title, excerpt & actions (strong override) ---------- */
+/* ---------- Force-center splash content, catch extra wrapper classes ---------- */
 .layout--splash .page__splash,
-.layout--splash .page__hero {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding-inline: 1rem !important;
+.layout--splash .page__hero,
+.layout--splash .splash__inner,
+.layout--splash .hero__content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-inline: 1rem !important;
 }
 
+/* Limit max width for better readability */
 .layout--splash .page__splash .splash__title,
 .layout--splash .page__splash .splash__subtitle,
-.layout--splash .page__lead {
-  max-width: 900px !important;
-  width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+.layout--splash .page__lead,
+.layout--splash .hero__content > * {
+    max-width: 900px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-.layout--splash .page__lead + p {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 0.6rem !important;
-  margin-top: 0.6rem !important;
-  margin-bottom: 1rem !important;
-  flex-wrap: wrap !important;
+/* Center buttons under text */
+.layout--splash .page__lead + p,
+.layout--splash .hero__content p.actions {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    margin-top: 0.6rem !important;
+    margin-bottom: 1rem !important;
+    flex-wrap: wrap !important;
 }
 
-.layout--splash .page__lead + p > a {
-  flex: 0 0 auto !important;
-  min-width: 120px !important;
+.layout--splash .page__lead + p > a,
+.layout--splash .hero__content p.actions > a {
+    flex: 0 0 auto !important;
+    min-width: 120px !important;
 }
 
 @media (max-width: 480px) {
-  .layout--splash .page__lead + p {
-    justify-content: center !important;
-    gap: 0.5rem !important;
-  }
-  .layout--splash .page__lead + p > a {
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-  }
+    .layout--splash .page__lead + p,
+    .layout--splash .hero__content p.actions {
+        justify-content: center !important;
+        gap: 0.5rem !important;
+    }
+    .layout--splash .page__lead + p > a,
+    .layout--splash .hero__content p.actions > a {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+    }
 }
