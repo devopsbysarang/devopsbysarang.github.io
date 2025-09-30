@@ -1,86 +1,36 @@
 ---
-layout: null
+layout: custom_home
 permalink: /
 title: "Practical DevOps Insights."
+header:
+  actions:
+    - label: "About me"
+      url: "/about/"
+      class: "btn btn--primary btn--large"
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/sarang-deshmukh-125197182/"
+      class: "btn btn--light-outline btn--large"
+excerpt: "My portfolio of real-world projects and case studies on System Design and Automation 🚀"
+feature_row:
+  - image_path: /assets/images/case.png
+    alt: "DevOps"
+    title: "DevOps Case Studies"
+    excerpt: "Real-World DevOps : Challenges and Solutions"
+    url: "/devops-case-studies/"
+    btn_label: "Read More →" 
+    btn_class: "btn--primary"
+  - image_path: /assets/images/learning.png
+    alt: "Cloud"
+    title: "Learning Challenges "
+    excerpt: "Documenting my DevOps journey through challenges"
+    url: "/learning-challenges/"
+    btn_label: "Read More →"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/auto.png
+    alt: "CI/CD"
+    title: "Automation in DevOps"
+    excerpt: "Jenkins, Terraform, Ansible and real-world projects"
+    url: "/automation-devops/"
+    btn_label: "Read More →"
+    btn_class: "btn--primary"
 ---
-
-<!-- ================== Splash / Hero Section ================== -->
-<div class="custom-splash" style="padding: 60px 16px;">
-
-  <!-- Title -->
-  <h1 class="splash__title">Practical DevOps Insights.</h1>
-
-  <!-- Subheading -->
-  <p class="page__lead">
-    My portfolio of real-world projects and case studies on System Design and Automation 🚀
-  </p>
-
-  <!-- Buttons -->
-  <p class="actions">
-    <a href="/about/" class="btn btn--primary btn--large">About me</a>
-    <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" class="btn btn--light-outline btn--large">LinkedIn</a>
-  </p>
-</div>
-
-<!-- ================== Skills Section ================== -->
-<section class="skills-section" aria-label="Tech Stack & Skills">
-  <div class="skills-container" style="max-width: 1100px; margin: auto; text-align: center; padding: 0 16px 25px 16px;">
-    <div class="skills-scroll">
-      <img src="/assets/images/aws.png" alt="AWS">
-      <img src="/assets/images/gcp.png" alt="GCP">
-      <img src="/assets/images/kubernetes.png" alt="Kubernetes">
-      <img src="/assets/images/dockerpng.png" alt="Docker">
-      <img src="/assets/images/terraform.png" alt="Terraform">
-      <img src="/assets/images/Jenkins.png" alt="Jenkins">
-      <img src="/assets/images/python.png" alt="Python">
-      <img src="/assets/images/gitlab.svg" alt="Git">
-      <img src="/assets/images/wireshark.png" alt="wireshark">
-      <img src="/assets/images/Trivy.png" alt="Trivy">
-      <img src="/assets/images/linux.png" alt="Linux">
-      <img src="/assets/images/git.png" alt="git">
-      <img src="/assets/images/ansible.png" alt="Ansible">
-    </div>
-  </div>
-</section>
-
-<!-- ================== Feature Row ================== -->
-{% include feature_row %}
-
-<!-- ================== Newsletter ================== -->
-{% include newsletter.html %}
-
-<script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
-<div class="custom-separator"></div>
-
-<!-- ================== Optional Inline Styles to Ensure Centering ================== -->
-<style>
-  .custom-splash,
-  .custom-splash .actions,
-  .custom-splash .page__lead {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .custom-splash .actions a,
-  .custom-splash .page__lead a {
-    display: inline-block;
-    margin: 0 .35rem;
-  }
-
-  @media (max-width: 480px) {
-    .custom-splash .page__lead {
-      font-size: 1rem !important;
-      margin-bottom: 1.5rem !important;
-    }
-    .custom-splash .actions {
-      gap: 0.5rem !important;
-    }
-    .custom-splash .actions a {
-      flex: 1 !important;
-      min-width: auto !important;
-    }
-  }
-</style>
