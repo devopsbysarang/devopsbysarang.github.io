@@ -1,44 +1,73 @@
----
-layout: default
----
+{%- comment -%}
+Custom splash layout: centered title, excerpt and actions.
+Keeps include feature_row and newsletter intact.
+Use front matter in index.md / index.html like:
+layout: custom_splash
+title: "Practical DevOps Insights."
+excerpt: "My portfolio..."
+header:
+  actions:
+    - label: "About me"
+      url: "/about/"
+      class: "btn--primary btn-custom"
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/..."
+      class: "btn--inverse btn-custom"
+feature_row: [...]
+{%- endcomment -%}
 
-{% assign header = page.header %}
-{% assign title = page.title | default: site.title %}
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  {% include head.html %}
 
-{% if header.overlay_color or header.overlay_image or header.overlay_video %}
-  <header class="page__header{% if header.overlay_image or header.overlay_color or header.overlay_video %} overlay{% endif %}"
-    {% if header.overlay_color %}style="background-color: {{ header.overlay_color }}"{% endif %}
-  >
+  <body class="{{ page.layout | default: 'custom_splash' }}">
+    {% include header.html %}
 
-    <div class="wrapper">
-      <!-- 👇👇 Custom greeting added here -->
-      <p style="color:#64ffda; font-family:monospace; font-size:1.25rem; margin-bottom:0;">
-        Hello, my name is
-      </p>
+    <main id="site-main" role="main">
 
-      {% if page.title %}
-        <h1 class="page__title">{{ page.title }}</h1>
-      {% endif %}
+      <!-- Splash / hero -->
+      <header id="page-title" class="custom-splash" role="banner" aria-label="Homepage hero">
+        <div class="container" style="width:100%;max-width:1100px;margin:0 auto;padding: 72px 16px;">
+          <!-- Title -->
+          {% if page.title %}
+            <h1 class="splash__title" style="margin:0 0 0.5rem; font-size: clamp(1.8rem, 3.6vw, 2.75rem); color: var(--primary, #FF6B35);">
+              {{ page.title }}
+            </h1>
+          {% endif %}
 
-      {% if page.excerpt %}
-        <p class="page__lead">{{ page.excerpt | markdownify }}</p>
-      {% endif %}
+          <!-- Excerpt / subheading -->
+          {% if page.excerpt %}
+            <p class="page__lead" style="margin:0 auto; max-width:900px; color: var(--text, #0B2440); font-size: clamp(1rem,2.2vw,1.15rem); line-height:1.5;">
+              {{ page.excerpt | markdownify }}
+            </p>
+          {% endif %}
 
-      {% if header.actions %}
-        <p>
-          {% for action in header.actions %}
-            <a href="{{ action.url }}" class="btn{% if action.btn_class %} {{ action.btn_class }}{% endif %}">
-              {{ action.label }}
-            </a>
-          {% endfor %}
-        </p>
-      {% endif %}
-    </div>
-  </header>
-{% endif %}
+          <!-- Actions (if provided in front-matter header.actions) -->
+          {% assign actions = page.header.actions | default: site.header.actions %}
+          {% if actions %}
+            <p class="actions" style="margin-top:1.25rem;">
+              {% for a in actions %}
+                <a href="{{ a.url }}" class="{{ a.class | default: 'btn btn--primary' }}" aria-label="{{ a.label }}" style="margin: 0 .35rem;">
+                  {{ a.label }}
+                </a>
+              {% endfor %}
+            </p>
+          {% endif %}
+        </div>
+      </header>
 
-<main id="main" class="page-content" aria-label="Content">
-  <div class="wrapper">
-    {{ content }}
-  </div>
-</main>
+      <!-- Small separator (optional) -->
+      <div class="custom-separator" role="separator" aria-hidden="true" style="margin: 24px 0 18px;"></div>
+
+      <!-- Skills block (keeps your original section) -->
+      {{ content }}
+
+      <!-- Feature row + newsletter includes -->
+      {% include feature_row %}
+      {% include newsletter.html %}
+
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>
