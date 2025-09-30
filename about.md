@@ -28,40 +28,22 @@ permalink: /about/
   <div class="container">
     <h2 class="testimonials-heading" style="text-align:center; color:#0A192F; margin-bottom: 40px;">What people say?</h2>
 
-    <div class="testimonials-wrapper" style="display:flex; gap:10px; flex-wrap: wrap; justify-content: center; padding: 0 10px;">
+    <div class="testimonials-wrapper">
       <!-- Testimonial 1 -->
-      <div class="testimonial" style="
-        background-color: #FF6B35; 
-        color: #FFFFFF; 
-        border-radius: 12px; 
-        padding: 25px 20px; 
-        flex: 1 1 300px; 
-        max-width: 400px; 
-        box-sizing: border-box;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      ">
-        <p style="margin-bottom: 15px; color:#FFFFFF;">"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
-        <p class="testimonial-name" style="font-weight:bold; color:#F5F5DC; margin-top:10px;">
+      <div class="testimonial">
+        <p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
+        <p class="testimonial-name">
           – Hariom Kashyap
-          <span class="testimonial-role" style="display:block; font-style:italic; color:#F5F5DC; margin-top:3px;">Software Architect, Amdocs</span>
+          <span class="testimonial-role">Software Architect, Amdocs</span>
         </p>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="testimonial" style="
-        background-color: #FF6B35; 
-        color: #FFFFFF; 
-        border-radius: 12px; 
-        padding: 25px 20px; 
-        flex: 1 1 300px; 
-        max-width: 400px; 
-        box-sizing: border-box;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      ">
-        <p style="margin-bottom: 15px; color:#FFFFFF;">"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
-        <p class="testimonial-name" style="font-weight:bold; color:#F5F5DC; margin-top:10px;">
+      <div class="testimonial">
+        <p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
+        <p class="testimonial-name">
           – Ankur Singh
-          <span class="testimonial-role" style="display:block; font-style:italic; color:#F5F5DC; margin-top:3px;">AI Engineer, Intel</span>
+          <span class="testimonial-role">AI Engineer, Intel</span>
         </p>
       </div>
     </div>
@@ -72,8 +54,8 @@ permalink: /about/
 <style>
 /* ================== FORCE FULL PAGE BACKGROUND ================== */
 html, body {
-  background-color: #FFFFFF !important;  /* white page background */
-  color: #0A192F !important;            /* dark text */
+  background-color: #FFFFFF !important;
+  color: #0A192F !important;
   margin: 0 !important;
   padding: 0 !important;
   font-family: 'Roboto', sans-serif !important;
@@ -98,7 +80,7 @@ html, body {
 .about-photo img {
   width: 100% !important;
   border-radius: 12px !important;
-  border: 3px solid #FF6B35 !important;     /* orange border */
+  border: 3px solid #FF6B35 !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
@@ -110,7 +92,7 @@ html, body {
 .about-bio h2 {
   font-family: 'Rubik', sans-serif !important;
   font-size: 2rem !important;
-  color: #FF6B35 !important; /* orange name */
+  color: #FF6B35 !important;
   margin: 0 0 0.5rem !important;
   letter-spacing: 1px !important;
 }
@@ -124,7 +106,7 @@ html, body {
   text-decoration: none !important;
   font-weight: 500 !important;
   border-radius: 6px !important;
-  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%) !important; /* subtle orange gradient */
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%) !important;
   padding: 0.6rem 1.2rem !important;
   display: inline-block !important;
   transition: background-color 0.3s ease !important;
@@ -134,29 +116,9 @@ html, body {
   background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%) !important;
 }
 
-/* LinkedIn Button */
-.linkedin-section {
-  text-align: center !important;
-  margin: 2rem 0 !important;
-}
-.linkedin-section .linkedin-btn {
-  color: #FFFFFF !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  border-radius: 6px !important;
-  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%) !important;
-  padding: 0.7rem 1.5rem !important;
-  display: inline-block !important;
-  transition: background-color 0.3s ease !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
-}
-.linkedin-section .linkedin-btn:hover {
-  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%) !important;
-}
-
 /* ================== TESTIMONIALS ================== */
 .testimonials-section {
-  background-color: #F5F1E9 !important; /* beige outer background */
+  background-color: #F5F1E9 !important;
   padding: 40px 0 !important;
 }
 
@@ -169,38 +131,43 @@ html, body {
 
 .testimonials-wrapper {
   display: flex !important;
-  gap: 5px !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
+  gap: 10px !important;
   padding: 0 20px !important;
   margin-bottom: 0 !important;
 }
 
 .testimonial {
-  background-color: #FF6B35 !important; /* orange inner box */
-  color: #FFFFFF !important; /* main text white */
+  background-color: #FF6B35 !important;
+  color: #FFFFFF !important;
   border-radius: 12px !important;
   padding: 30px 25px !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-  flex: 1 1 300px !important;
-  max-width: 450px !important;
-  margin: 0 auto !important;
+  flex: 0 1 360px !important;
+  max-width: 360px !important;
+  margin: 10px !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   border: none !important;
   position: relative !important;
   overflow: hidden !important;
 }
 
+.testimonial p {
+  margin-bottom: 15px !important;
+  color: #FFFFFF !important;
+}
+
 .testimonial-name {
   font-weight: bold !important;
-  color: #FFFFFF !important; /* name white */
+  color: #FFFFFF !important;
   margin-top: 10px !important;
 }
 
 .testimonial-role {
   display: block !important;
   font-style: italic !important;
-  color: #F5F1E9 !important; /* beige role text */
+  color: #F5F1E9 !important;
   margin-top: 3px !important;
 }
 
