@@ -23,10 +23,7 @@ permalink: /about/
   </div>
 </div>
 
-<!-- LinkedIn Button Section -->
-<div class="linkedin-section">
-  <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" class="linkedin-btn">Connect on LinkedIn</a>
-</div>
+
 
 <!-- ================== Testimonials Section ================== -->
 <section class="testimonials-section">
@@ -52,6 +49,11 @@ permalink: /about/
     </div>
   </div>
 </section>
+
+<!-- LinkedIn Button Section -->
+<div class="linkedin-section">
+  <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" class="linkedin-btn">Connect on LinkedIn</a>
+</div>
 
 <style>
 /* ================== FORCE FULL PAGE BACKGROUND ================== */
