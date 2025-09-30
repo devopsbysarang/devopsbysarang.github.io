@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sarang Custom CSS - Navy + Green 
+   Sarang Custom CSS - Orange CTA + Deep Teal Accent
    ========================================================================== */
 
 /* ---------- Site Background ---------- */
@@ -11,81 +11,80 @@ body,
 .sidebar,
 .site-header,
 .site-footer {
-  background-color: #fff !important;  /* Dark navy background */
-  color: #ccd6f6 !important;             /* Light slate text */
+  background-color: #fff !important;  /* Background (white) */
+  color: #0B2440 !important;          /* Main text (dark navy) */
 }
 
 /* ---------- Header / Navbar ---------- */
 header, .navbar, .site-header, .page__header, .site-nav {
-  background-color: #fff !important;  
-  color: #ccd6f6 !important;
+  background-color: #fff !important;
+  color: #0B2440 !important;
 }
 
 /* Navbar links: Gray tone like Yashita */
-
 .navbar a, header a, .site-header a, .site-nav a {
-  color: #8892b0 !important;    /* Gray tone */
+  color: #6D7B84 !important;    /* Muted gray/slate */
   text-decoration: none !important;
   font-weight: 500;
 }
 
 .navbar a:hover, header a:hover, .site-header a:hover, .site-nav a:hover {
-  color: #e6f1ff !important;    /* Light on hover */
+  color: #0B2440 !important;    /* Dark on hover */
   text-decoration: none !important;
 }
 
 /* ---------- Default / Body Text ---------- */
 body, p, span, div, li {
-  color: #ccd6f6 !important;    
+  color: #0B2440 !important;
 }
 
 /* Secondary / Metadata Text */
 small, .entry-meta, .post-meta, .footer-meta, .sidebar, .tagline {
-  color: #8892b0 !important;    
+  color: #6D7B84 !important;
 }
 
 /* ---------- Headings ---------- */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff !important;    
+  color: #0B2440 !important;
   text-shadow: none !important;
 }
 
 /* ---------- Links ---------- */
 a, a:link, a:visited {
-  color: #64ffda !important;    
+  color: #124E61 !important;    /* Accent (deep teal) */
   text-decoration: none !important;
 }
 
 a:hover, a:focus, a:active {
-  color: #a8ffea !important;    
+  color: #2b8a79 !important;    /* Slightly lighter accent on hover */
   text-decoration: none !important;
   outline: none !important;
 }
 
 /* ---------- Footer ---------- */
 footer, .site-footer {
-  color: #8892b0 !important;    
+  color: #6D7B84 !important;
   background-color: #fff !important;
 }
 
 footer a, .site-footer a {
-  color: #64ffda !important;
+  color: #124E61 !important;
 }
 
 footer a:hover, .site-footer a:hover {
-  color: #e6f1ff !important;
+  color: #0B2440 !important;
 }
 
 /* ---------- Blockquotes ---------- */
 blockquote {
-  color: #8892b0 !important;
-  border-left: 3px solid #64ffda !important;
+  color: #6D7B84 !important;
+  border-left: 3px solid #124E61 !important;
 }
 
 /* ---------- Inline / Code Blocks ---------- */
 code, pre {
-  color: #64ffda !important;    
-  background-color: #172a45 !important;  
+  color: #FF6B35 !important;          /* Orange for inline code highlights */
+  background-color: #F7F7F7 !important;  /* light code background */
   border-radius: 4px;
   padding: 0.2rem 0.4rem;
 }
@@ -95,7 +94,7 @@ code, pre {
 .site-title a,
 .page__splash .splash__title,
 .page__splash .splash__title * {
-  color: #64ffda !important;       
+  color: #124E61 !important;       /* Accent for site title */
   text-shadow: none !important;
   -webkit-text-fill-color: #fff !important;
   background-image: none !important;
@@ -112,11 +111,11 @@ a.btn,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-color: transparent !important;   
-  color: #64ffda !important;                 
-  border: 2px solid #64ffda !important;      
+  background-color: transparent !important;
+  color: #124E61 !important;                 /* accent border/text */
+  border: 2px solid #124E61 !important;      /* accent border */
   border-radius: 6px !important;
-  padding: 0.5rem 1.25rem !important;  /* Adjusted for Yashita */
+  padding: 0.5rem 1.25rem !important;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer !important;
@@ -135,10 +134,10 @@ a.btn:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background-color: #10293B !important;   
-  color: #64ffda !important;             
-  border-color: #64ffda !important;
-  box-shadow: 0 4px 12px rgba(100,255,218,0.3) !important; 
+  background-color: #0B2440 !important;      /* dark navy hover fill */
+  color: #FFFFFF !important;                 /* white text on hover */
+  border-color: #124E61 !important;
+  box-shadow: 0 4px 12px rgba(18,78,97,0.18) !important;
   transform: scale(1.05) !important;
 }
 
@@ -147,8 +146,8 @@ input[type="reset"]:hover {
 .page__splash .hero__actions .btn--primary,
 .page__splash .actions .btn--primary {
   background-color: transparent !important;
-  color: #64ffda !important;
-  border: 2px solid #64ffda !important;
+  color: #124E61 !important;
+  border: 2px solid #124E61 !important;
   border-radius: 6px !important;
   font-weight: 600;
   font-size: 1rem;
@@ -160,21 +159,21 @@ input[type="reset"]:hover {
 .page__splash .btn--primary:hover,
 .page__splash .hero__actions .btn--primary:hover,
 .page__splash .actions .btn--primary:hover {
-  background-color: #10293B !important;
-  color: #64ffda !important;
-  box-shadow: 0 4px 12px rgba(100,255,218,0.3) !important;
+  background-color: #0B2440 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(18,78,97,0.18) !important;
   transform: scale(1.05) !important;
 }
 
 /* ---------- Contact Page Box ---------- */
 .contact-box {
     background-color: #fff;
-    color: #ccd6f6;
+    color: #0B2440;
     padding: 2rem;
     max-width: 90%;
     margin: 3rem auto;
     border-radius: 12px;
-    box-shadow: 0 0 7px #64ffda;
+    box-shadow: 0 0 7px rgba(255,107,53,0.12); /* subtle orange glow */
     text-align: center;
     box-sizing: border-box;
 }
@@ -189,9 +188,9 @@ input[type="reset"]:hover {
 
 .contact-buttons a {
     padding: 0.65rem 1.4rem;
-    border: 2px solid #64ffda;
+    border: 2px solid #124E61;
     border-radius: 8px;
-    color: #64ffda;
+    color: #124E61;
     text-decoration: none;
     font-weight: bold;
     background-color: transparent;
@@ -200,17 +199,17 @@ input[type="reset"]:hover {
 }
 
 .contact-buttons a:hover {
-    background-color: #10293B !important;
-    color: #64ffda !important;
-    box-shadow: 0 0 12px rgba(100,255,218,0.3);
+    background-color: #0B2440 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 0 12px rgba(18,78,97,0.12);
     transform: scale(1.05);
 }
 
 /* ---------- Neon Lines ---------- */
 .neon-line, .neon-line-home {
     height: 2-3px;
-    background: #64ffda;
-    box-shadow: 0 0 10px #64ffda, 0 0 20px #64ffda, 0 0 40px #64ffda;
+    background: #124E61;
+    box-shadow: 0 0 10px #124E61, 0 0 20px #124E61, 0 0 40px #124E61;
     border-radius: 2px;
     margin: 2rem auto;
     width: 80%;
@@ -240,7 +239,7 @@ input[type="reset"]:hover {
 
 /* ---------- Accessibility / Focus ---------- */
 button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
-  outline: 3px solid rgba(57,255,20,0.18) !important;
+  outline: 3px solid rgba(255,107,53,0.18) !important; /* orange focus hint */
   outline-offset: 2px !important;
 }
 
@@ -333,19 +332,18 @@ button.greedy-nav__toggle:focus {
   font-size: 1rem;
 }
 
-/* About (solid cyan) */
-/* About (solid cyan) */
+/* About (solid accent) */
 .layout--splash .page__lead + p > a[href="/about/"] {
-  background-color: #64FFDA !important;
+  background-color: #124E61 !important;
   color: #fff !important;
   border: 2px solid transparent !important;
 }
 
-/* LinkedIn (outlined cyan) */
+/* LinkedIn (outlined accent) */
 .layout--splash .page__lead + p > a[href^="https://www.linkedin.com"] {
   background: transparent !important;
-  color: #64FFDA !important;
-  border: 2px solid #64FFDA !important;
+  color: #124E61 !important;
+  border: 2px solid #124E61 !important;
 }
 
 /* Hover effect */
@@ -375,10 +373,10 @@ button.greedy-nav__toggle:focus {
 /* Custom separator above testimonials */
 .custom-separator {
   display: block;
-  width: 100%;                      /* width of the line */
+  width: 100%;
   height: 1px;
-  background: #fff;             /* cyan line */
-  margin: 1rem auto;               /* spacing and center */
+  background: #fff;
+  margin: 1rem auto;
   border-radius: 1px;
 }
 
@@ -473,17 +471,15 @@ button.greedy-nav__toggle:focus {
 
 /* force rounded corners on the teaser image */
 .archive__item-teaser {
-  border-radius: 10px !important; /* change 12px to whatever you want */
-  overflow: hidden !important;    /* keep child image clipped to radius */
+  border-radius: 10px !important;
+  overflow: hidden !important;
 }
 
 /* optionally ensure the img itself has no conflicting radius */
 .archive__item-teaser img {
-  border-radius: 0 !important;    /* keep the rounding applied by the container */
-  display: block;                 /* avoids inline-gap issues */
+  border-radius: 0 !important;
+  display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;              /* optional: preserves cover behavior */
+  object-fit: cover;
 }
-
-
