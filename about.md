@@ -140,7 +140,7 @@ html, body {
   background-color: #FF6B35;
   color: #FFFFFF !important;
   border-radius: 12px;
-  padding: 30px 25px;
+  padding: 30px 30px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   flex: 0 1 360px;
   max-width: 360px;
@@ -153,6 +153,7 @@ html, body {
 
 .testimonial p {
   margin-bottom: 15px;
+  color: #FFFFFF !important;
 }
 
 .testimonial-name {
