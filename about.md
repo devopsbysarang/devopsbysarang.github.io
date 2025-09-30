@@ -165,7 +165,7 @@ html, body {
 .testimonial-role {
   display: block;
   font-style: italic;
-  color: #F5F1E9;
+  color: #EFF6FF;
   margin-top: 3px;
 }
 
