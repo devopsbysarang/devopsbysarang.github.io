@@ -711,7 +711,7 @@ body .site-header.masthead {
    ======================== */
 :root {
   --masthead-h-desktop: 72px; /* adjust desktop header visual height */
-  --masthead-h-mobile: 56px;  /* adjust mobile header visual height */
+  --masthead-h-mobile: 70px;  /* adjust mobile header visual height */
 }
 
 /* ----- Force fixed masthead everywhere ----- */
