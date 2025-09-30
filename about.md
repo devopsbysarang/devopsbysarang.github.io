@@ -209,7 +209,7 @@ html, body {
 
   .testimonial {
     width: 95% !important;
-    max-width: 300px;
+    max-width: 320px !important;
     padding: 14px 16px;
     margin: 12px 0;
     font-size: 1.3rem;
