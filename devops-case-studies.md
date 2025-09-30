@@ -80,7 +80,7 @@ html, body {
   font-family: 'Rubik', sans-serif;
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
-  color: #FF6B35; /* orange title */
+  color: #FF6B35 !important; /* orange title */
 }
 
 .blog-card h3 a {
