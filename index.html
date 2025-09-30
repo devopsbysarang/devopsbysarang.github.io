@@ -79,12 +79,22 @@ feature_row:
 </style>
 
 <style>
-/* Center splash heading, paragraph, and buttons */
+/* Force center alignment in splash hero across all screen sizes */
 .page__hero--overlay .wrapper {
-  text-align: center !important;  /* Most reliable override */
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Optional: Center buttons and allow them to wrap nicely */
+/* Ensure lead paragraph and title are centered */
+.page__title,
+.page__lead {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center the buttons under the paragraph */
 .page__lead + p {
   display: flex;
   justify-content: center;
@@ -92,6 +102,7 @@ feature_row:
   flex-wrap: wrap;
   margin-top: 1rem;
 }
+
 </style>
 
 
