@@ -554,3 +554,51 @@ button.greedy-nav__toggle:focus {
   flex-wrap: wrap;
   margin-top: 1rem;
 }
+
+/* Universal spacing reset for splash section */
+.page__hero--overlay .wrapper {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Title spacing */
+.page__title {
+  margin-bottom: 1rem;
+}
+
+/* Lead paragraph spacing */
+.page__lead {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem; /* Optional: slightly larger for readability */
+  line-height: 1.6;
+}
+
+/* Button spacing */
+.page__lead + p {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive tweaks for desktop */
+@media (min-width: 768px) {
+  .page__hero--overlay .wrapper {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .page__title {
+    margin-bottom: 1.25rem;
+  }
+
+  .page__lead {
+    margin-bottom: 2rem;
+  }
+
+  .page__lead + p {
+    margin-bottom: 2.5rem;
+  }
+}
+
