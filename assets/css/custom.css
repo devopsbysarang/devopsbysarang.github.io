@@ -510,30 +510,22 @@ button.greedy-nav__toggle:focus {
   object-fit: cover !important;
 }
 
-/* custom_splash helpers */
-.custom-splash { text-align: center; }
-.custom-splash .splash__title { margin-bottom: .5rem; }
-.custom-splash .page__lead { margin: 0 auto; max-width: 900px; color: #0B2440; }
-.custom-splash .actions { margin-top: 1.25rem; }
-
-/* ensure buttons center but don't alter spacing */
-.custom-splash .actions a,
-.custom-splash .page__lead a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 .35rem;
+/* Center content in splash layout */
+.page__title,
+.page__lead,
+.page__lead + p {
+  text-align: center !important;
 }
 
-/* small responsive tweaks */
-@media (max-width: 768px) {
-  .custom-splash { padding: 50px 16px; }
-  .custom-splash .page__lead { padding: 0 8px; }
-  .custom-splash .actions a { margin: 0 .25rem; }
+/* Center the buttons */
+.page__lead + p {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* space between buttons */
+  flex-wrap: wrap;
 }
 
-/* keep existing theme colors — ensure variables exist or fallback */
-:root{
-  --primary: #FF6B35;
-  --accent: #124E61;
-  --text: #0B2440;
+/* Optional: ensure full container is centered */
+.page__hero--overlay .wrapper {
+  text-align: center;
 }
