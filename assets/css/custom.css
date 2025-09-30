@@ -612,7 +612,7 @@ button.greedy-nav__toggle:focus {
 
 @media (max-width: 767px) {
   .page__hero--overlay .wrapper {
-    padding-left: 1rem;   /* Adds 16px padding on the left */
-    padding-right: 1rem;  /* Adds 16px padding on the right */
+    padding-left: 2rem !important;   /* Adds 16px padding on the left */
+    padding-right: 2rem !important;  /* Adds 16px padding on the right */
   }
 }
