@@ -1,27 +1,29 @@
 ---
-layout: custom_home
+layout: splash   # must inherit splash so nav/footer/feature row work
 permalink: /
 title: "Practical DevOps Insights."
 header:
+  overlay_color: "#fff"
   actions:
     - label: "About me"
       url: "/about/"
-      class: "btn btn--primary btn--large"
+      class: "btn--primary btn-custom"
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/sarang-deshmukh-125197182/"
-      class: "btn btn--light-outline btn--large"
-excerpt: "My portfolio of real-world projects and case studies on System Design and Automation 🚀"
+      class: "btn--inverse btn-custom"
+  separator: true
+excerpt: "My portfolio of real-world projects and case studies on **System Design** and **Automation** 🚀"
 feature_row:
   - image_path: /assets/images/case.png
     alt: "DevOps"
     title: "DevOps Case Studies"
     excerpt: "Real-World DevOps : Challenges and Solutions"
     url: "/devops-case-studies/"
-    btn_label: "Read More →" 
+    btn_label: "Read More →"
     btn_class: "btn--primary"
   - image_path: /assets/images/learning.png
     alt: "Cloud"
-    title: "Learning Challenges "
+    title: "Learning Challenges"
     excerpt: "Documenting my DevOps journey through challenges"
     url: "/learning-challenges/"
     btn_label: "Read More →"
@@ -34,3 +36,67 @@ feature_row:
     btn_label: "Read More →"
     btn_class: "btn--primary"
 ---
+
+<!-- ================== Hero / Splash Section ================== -->
+<div class="custom-splash" style="padding: 60px 16px;">
+  <h1 class="splash__title">{{ page.title }}</h1>
+  <p class="page__lead">{{ page.excerpt }}</p>
+  <p class="actions">
+    {% for action in page.header.actions %}
+      <a href="{{ action.url }}" class="{{ action.class }}">{{ action.label }}</a>
+    {% endfor %}
+  </p>
+</div>
+
+<!-- ================== Skills Section ================== -->
+<section class="skills-section" aria-label="Tech Stack & Skills">
+  <div class="skills-container">
+    <div class="skills-scroll">
+      <img src="/assets/images/aws.png" alt="AWS">
+      <img src="/assets/images/gcp.png" alt="GCP">
+      <img src="/assets/images/kubernetes.png" alt="Kubernetes">
+      <img src="/assets/images/dockerpng.png" alt="Docker">
+      <img src="/assets/images/terraform.png" alt="Terraform">
+      <img src="/assets/images/Jenkins.png" alt="Jenkins">
+      <img src="/assets/images/python.png" alt="Python">
+      <img src="/assets/images/gitlab.svg" alt="Git">
+      <img src="/assets/images/wireshark.png" alt="wireshark">
+      <img src="/assets/images/Trivy.png" alt="Trivy">
+      <img src="/assets/images/linux.png" alt="Linux">
+      <img src="/assets/images/git.png" alt="git">
+      <img src="/assets/images/ansible.png" alt="Ansible">
+    </div>
+  </div>
+</section>
+
+<!-- ================== Feature Row ================== -->
+{% include feature_row %}
+
+<!-- ================== Newsletter ================== -->
+{% include newsletter.html %}
+
+<!-- Optional Inline Styles to Center Hero Section Only -->
+<style>
+.custom-splash {
+  text-align: center;
+}
+.custom-splash .page__lead,
+.custom-splash .actions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-splash .actions a {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+@media (max-width: 480px) {
+  .custom-splash .actions a {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: 360px;
+    margin: 0.5rem auto;
+  }
+}
+</style>
