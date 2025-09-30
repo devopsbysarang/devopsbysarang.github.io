@@ -1,21 +1,25 @@
 /* ==========================================================================
-   Sarang Custom Skin (Navy + Green) 
+   Sarang Custom Skin (Orange CTA + Deep Teal Accent)
    ========================================================================== */
 
+/* Primary / Accent */
+$primary-color: #FF6B35 !default;      // CTA / primary (orange)
+$accent-color: #124E61 !default;       // Deep teal / navy-balance (used for links, accents)
+
 /* Page Background */
-$background-color: #fff !default;  // Dark navy
-$footer-background-color: #fff !default;
+$background-color: #FFFFFF !default;   // now pure white
+$footer-background-color: #FFFFFF !default;
 
 /* Main text */
-$text-color: #ccd6f6 !default;         // Light slate / main text
+$text-color: #0B2440 !default;         // dark navy (primary readable text)
 $body-text: $text-color !default;
 
 /* Secondary text (metadata, small captions) */
-$secondary-text-color: #8892b0 !default;
+$secondary-text-color: #6D7B84 !default; /* muted slate */
 
 /* Links */
-$link-color: #64ffda !default;          // Green accent
-$link-color-hover: #a8ffea !default;    // Slightly lighter green
+$link-color: $accent-color !default;         // deep teal for links (accent)
+$link-color-hover: #2b8a79 !default;         // slightly lighter teal for hover
 $link-color-visited: mix(#000, $link-color, 25%) !default;
 
 /* Header / Navbar links */
@@ -24,14 +28,14 @@ $site-header-link-color: $link-color !default;
 $site-header-link-color-hover: $link-color-hover !default;
 
 /* Headings */
-$headings: #e6f1ff !default;           // White-ish
+$headings: $text-color !default;          // headings use same dark navy for clarity
 
 /* Blockquotes */
-$blockquote-border-color: $link-color !default;
+$blockquote-border-color: $accent-color !default;
 $blockquote-text-color: $secondary-text-color !default;
 
 /* Code blocks */
-$code-color: $link-color !default;
+$code-color: $primary-color !default;                       // orange for code highlights / keywords
 $code-background-color: mix(#111, $background-color, 15%) !default;
 $code-background-color-dark: mix(#111, $background-color, 20%) !default;
 
@@ -39,20 +43,28 @@ $code-background-color-dark: mix(#111, $background-color, 20%) !default;
 $notice-background-mix: 70% !default;
 $code-notice-background-mix: 80% !default;
 
+/* Borders / Dividers */
+$border-color: #F1EDEB !default;          // subtle warm border
+
 /* Syntax highlighting (base16) */
 $base00: $background-color !default; 
-$base01: #172a45 !default;
-$base02: #303c55 !default;
+$base01: #f3f6f8 !default;                 // very light surface shade
+$base02: #e8eef2 !default;
 $base03: $secondary-text-color !default;
 $base04: #a8b2d1 !default;
-$base05: $text-color !default;
-$base06: #64ffda !default;
-$base07: #e6f1ff !default;
-$base08: #ff073a !default;
-$base09: #fd8900 !default;
-$base0a: #ffff00 !default;
-$base0b: #64ffda !default;
-$base0c: #1faaaa !default;
-$base0d: #3777e6 !default;
-$base0e: #ad00a1 !default;
-$base0f: #cc6633 !default;
+$base05: $text-color !default;             // main code text (dark navy)
+$base06: $text-color !default;
+$base07: #ffffff !default;
+$base08: #ff073a !default;                 // red (errors)
+$base09: $primary-color !default;          // orange (numbers / literals)
+$base0a: #ffff00 !default;                 // yellow
+$base0b: $accent-color !default;           // accent teal (strings / success)
+$base0c: #1faaaa !default;                 // cyan-ish
+$base0d: #3777e6 !default;                 // blue (functions)
+$base0e: #ad00a1 !default;                 // magenta
+$base0f: #cc6633 !default;                 // brownish
+
+/* Optional convenience aliases for components */
+$card-background: $background-color !default;
+$surface-color: #FFFFFF !default;
+$muted-color: $secondary-text-color !default;
