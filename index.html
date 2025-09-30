@@ -59,7 +59,24 @@ feature_row:
   </div>
 </section>
 
+<style>
+  .page__title,
+  .page__lead,
+  .page__lead + p {
+    text-align: center !important;
+  }
 
+  .page__lead + p {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .page__hero--overlay .wrapper {
+    text-align: center;
+  }
+</style>
 
 
 {% include feature_row %}
