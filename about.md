@@ -86,10 +86,7 @@ html, body {
   border: 3px solid #FF6B35 !important;     /* orange border */
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
-.about-photo img:hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 0 20px #FF6B35 !important;
-}
+
 
 /* Bio */
 .about-bio {
