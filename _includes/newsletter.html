@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="dn-image" aria-hidden="false">
-    <img src="/assets/images/illustration.png" alt="newsletter illustration" />
+      <img src="/assets/images/illustration.png" alt="newsletter illustration" />
     </div>
   </div>
 </section>
@@ -24,7 +24,7 @@
 /* Newsletter container */
 .dn-newsletter { 
   width: 100% !important;
-  background: transparent !important;
+  background: #FF6B35 !important;  /* full orange background */
   padding: 2rem 0 3rem 0 !important;
   margin: 0 auto !important;
   box-sizing: border-box !important;
@@ -41,13 +41,14 @@
   padding: 1rem 1rem 2rem 1rem !important;
   box-sizing: border-box !important;
   border-radius: 14px !important;
+  background: transparent !important;  /* keep inner container transparent */
 }
 
-/* add border only for desktop */
+/* add border/shadow only for desktop */
 @media (min-width: 881px) {
   .dn-inner {
-    border: 1px solid rgba(18,78,97,0.15) !important;  /* subtle deep teal line */
-    box-shadow: 0 6px 22px rgba(18,78,97,0.08) !important; /* soft teal shadow */
+    border: 1px solid rgba(255,255,255,0.2) !important;  /* subtle white border */
+    box-shadow: 0 6px 22px rgba(255,255,255,0.08) !important; /* soft shadow */
   }
 }
 
@@ -60,13 +61,13 @@
   padding: 0 0 1rem 0 !important;
   font-size: 2.25rem !important;
   line-height: 1.02 !important;
-  color: #0B2440 !important; /* dark navy heading */
+  color: #ffffff !important;  /* white title text */
   font-weight: 800 !important;
 }
 
 .dn-desc {
   margin: 0 0 1rem 0 !important;
-  color: #124E61 !important; /* deep teal description */
+  color: #ffffff !important; /* white description text */
   font-size: 1.05rem !important;
   line-height: 1.45 !important;
 }
@@ -76,7 +77,7 @@
   background: #EDE9D5 !important; /* light beige box */
   padding: 14px 14px 2.1px 14px !important;
   border-radius: 12px !important;
-  box-shadow: 0 6px 18px rgba(18,78,97,0.08) !important; /* soft teal shadow */
+  box-shadow: 0 6px 18px rgba(3,10,24,0.08) !important;
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
@@ -98,22 +99,22 @@
   border-radius: 10px !important;
   border: 0 !important;
   outline: 0 !important;
-  background: #0B2440 !important; /* dark navy input */
-  color: #EDE9D5 !important;      /* beige text inside input */
+  background: #0B2440 !important;
+  color: #EDE9D5 !important;
   box-shadow: inset 0 2px 6px rgba(2,6,23,0.3) !important;
   box-sizing: border-box !important;
 }
 
-.dn-input::placeholder { color: #6D7B84 !important; } /* muted gray placeholder */
+.dn-input::placeholder { color: #6b7688 !important; }
 
 .dn-btn {
   padding: 14px 28px !important;
   font-size: 1.05rem !important;
   border-radius: 10px !important;
-  border: 0.1px solid #FF6B35 !important;  /* CTA orange border */ 
+  border: 0.1px solid #fff !important;  
   cursor: pointer !important;
   font-weight: 700 !important;
-  background: linear-gradient(135deg, #FF6B35 0%, #E05E2B 50%, #FF6B35 100%) !important; /* orange gradient */
+  background: linear-gradient(135deg, #FF6B35 0%, #E05E2B 50%, #FF6B35 100%) !important;
   color: #fff !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -143,12 +144,16 @@
   .dn-inner { 
     flex-direction: column !important; 
     align-items: center !important; 
-    padding: 0rem 1rem 1.4rem 1rem !important;
+    padding: 0rem 1rem 1.4rem 1rem !important;  
     gap: 1rem !important; 
     border: none !important; 
     box-shadow: none !important; 
   }
-  .dn-inner.mobile-padding-bottom { padding-bottom: 2rem !important; }
+
+  /* extra bottom padding mobile only */
+  .dn-inner.mobile-padding-bottom {
+    padding-bottom: 2rem !important;
+  }
 
   .dn-image { order: -1 !important; width: 100% !important; }
   .dn-image img { max-width: 320px !important; margin: 0 auto !important; }
@@ -162,5 +167,3 @@
 /* Safety */
 .dn-newsletter, .dn-newsletter * { box-sizing: border-box !important; }
 </style>
-
-
