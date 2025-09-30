@@ -1,23 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const scroller = document.querySelector(".skills-scroll");
-  if (!scroller) return;
-
-  // Duplicate content once for infinite effect
-  scroller.innerHTML += scroller.innerHTML;
-
-  let scrollAmount = 0;
-  const scrollStep = 0.6; // pixels per frame
-  const fps = 60;
-
-  function autoScroll() {
-    scrollAmount += scrollStep;
-    scroller.scrollLeft = scrollAmount;
-
-    // Reset when we've scrolled through one full set
-    if (scrollAmount >= scroller.scrollWidth / 2) {
-      scrollAmount = 0;
-    }
-  }
-
-  setInterval(autoScroll, 1000 / fps);
+// IntersectionObserver to add .in-view when the badge scrolls into view
+(function(){
+if (!('IntersectionObserver' in window)){
+// fallback: just show it
+document.querySelectorAll('.portfolio-badge').forEach(el=>el.classList.add('in-view'));
+return;
+}
+const obs = new IntersectionObserver((entries, observer)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('in-view');
+observer.unobserve(entry.target);
+}
 });
+},{threshold:0.18});
+document.querySelectorAll('.portfolio-badge').forEach(el=>obs.observe(el));
+})();
