@@ -17,7 +17,7 @@ body,
 
 /* ---------- Header / Navbar ---------- */
 header, .navbar, .site-header, .page__header, .site-nav {
-  background-color: #0a192f !important;  
+  background-color: #fff !important;  
   color: #ccd6f6 !important;
 }
 
@@ -65,7 +65,7 @@ a:hover, a:focus, a:active {
 /* ---------- Footer ---------- */
 footer, .site-footer {
   color: #8892b0 !important;    
-  background-color: #0a192f !important;
+  background-color: #fff !important;
 }
 
 footer a, .site-footer a {
@@ -168,7 +168,7 @@ input[type="reset"]:hover {
 
 /* ---------- Contact Page Box ---------- */
 .contact-box {
-    background-color: #0a192f;
+    background-color: #fff;
     color: #ccd6f6;
     padding: 2rem;
     max-width: 90%;
@@ -337,7 +337,7 @@ button.greedy-nav__toggle:focus {
 /* About (solid cyan) */
 .layout--splash .page__lead + p > a[href="/about/"] {
   background-color: #64FFDA !important;
-  color: #0A192F !important;
+  color: #fff !important;
   border: 2px solid transparent !important;
 }
 
