@@ -616,3 +616,9 @@ button.greedy-nav__toggle:focus {
     padding-right: 2rem !important;  /* Adds 16px padding on the right */
   }
 }
+
+@media (max-width: 767px) {
+  .page__title {
+    line-height: 1.4; /* Slightly taller line spacing for better readability */
+  }
+}
