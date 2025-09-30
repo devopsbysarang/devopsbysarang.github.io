@@ -23,183 +23,202 @@ permalink: /about/
   </div>
 </div>
 
-<section class="testimonials-section" style="background-color: #0A192F; padding: 30px 0 1px 0 !important; color: #EFF6FF;">
-<div class="container" style="max-width: 1000px; margin: auto;">
-<h2 class="testimonials-heading" style="margin-bottom: 50px; margin-top: 20px; font-size: 2rem; text-align: center; color:#EFF6FF;">
-What people say?
-</h2>
-
-<div class="testimonials-wrapper" style="display: flex; gap: 25px; flex-wrap: wrap; padding: 0 20px; justify-content: center; margin-bottom: 60px;">
-<!-- Testimonial 1 -->
-<div class="testimonial" style="
-background-color: #0E4C5F;
-padding: 30px 25px;
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-flex: 1 1 300px;
-max-width: 450px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-">
-<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #EFF6FF !important;">
-"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"
-</p>
-<p class="testimonial-name">– Hariom Kashyap
-<span class="testimonial-role">Software Architect, Amdocs</span>
-</p>
-</div>
-
-<!-- Testimonial 2 -->
-<div class="testimonial" style="
-background-color: #0E4C5F;
-padding: 30px 25px;
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-flex: 1 1 300px;
-max-width: 450px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-">
-<p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #EFF6FF !important;">
-"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."
-</p>
-<p class="testimonial-name">– Ankur Singh
-<span class="testimonial-role">AI Engineer, Intel</span>
-</p>
-</div>
-</div>
-</div>
-</section>
-
+<!-- LinkedIn Button Section -->
 <div class="linkedin-section">
   <a href="https://www.linkedin.com/in/sarang-deshmukh-125197182/" class="linkedin-btn">Connect on LinkedIn</a>
 </div>
 
-<style>
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Roboto:wght@400;500&display=swap');
+<!-- ================== Testimonials Section ================== -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="testimonials-heading">What people say?</h2>
 
-/* Container */
+    <div class="testimonials-wrapper">
+      <!-- Testimonial 1 -->
+      <div class="testimonial">
+        <p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
+        <p class="testimonial-name">– Hariom Kashyap
+          <span class="testimonial-role">Software Architect, Amdocs</span>
+        </p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial">
+        <p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
+        <p class="testimonial-name">– Ankur Singh
+          <span class="testimonial-role">AI Engineer, Intel</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ================== FORCE FULL PAGE BACKGROUND ================== */
+html, body {
+  background-color: #FFFFFF !important;  /* white page background */
+  color: #0A192F !important;            /* dark text */
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Roboto', sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+/* ================== ABOUT PAGE ================== */
 .about-page {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background: #0A192F;
-  font-family: 'Roboto', sans-serif;
-  color: #ccd6f6;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  padding: 2rem !important;
+  background: #FFFFFF !important;
+  color: #0A192F !important;
 }
 
 /* Photo */
 .about-photo {
-  flex: 0 0 250px;
+  flex: 0 0 250px !important;
 }
 .about-photo img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 8px #64FFDA;
-  border: 3px solid #64FFDA;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100% !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 12px #FF6B35 !important;  /* orange glow */
+  border: 3px solid #FF6B35 !important;     /* orange border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 .about-photo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 16px #64FFDA;
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 20px #FF6B35 !important;
 }
 
 /* Bio */
 .about-bio {
-  flex: 1 1 500px;
-  font-size: 1.05rem;
+  flex: 1 1 500px !important;
+  font-size: 1.05rem !important;
 }
 .about-bio h2 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 2rem;
-  color: #64FFDA;
-  margin: 0 0 0.5rem;
-  letter-spacing: 1px;
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 2rem !important;
+  color: #FF6B35 !important; /* orange name */
+  margin: 0 0 0.5rem !important;
+  letter-spacing: 1px !important;
 }
 .about-bio p {
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-  color: #ccd6f6;
+  line-height: 1.6 !important;
+  margin-bottom: 1.2rem !important;
+  color: #0A192F !important;
 }
 .about-bio a {
-  color: #0A192F;
-  text-decoration: none;
-  font-weight: 400;
-  border-radius: 6px;
-  background-color: #64FFDA;
-  padding: 0.6rem 1.2rem;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%) !important; /* subtle orange gradient */
+  padding: 0.6rem 1.2rem !important;
+  display: inline-block !important;
+  transition: background-color 0.3s ease !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
 }
 .about-bio a:hover {
-  background-color: #27cfa7;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%) !important;
 }
 
-/* LinkedIn Section at Bottom */
+/* LinkedIn Button */
 .linkedin-section {
-  text-align: center;
-  margin: 2rem 0;
+  text-align: center !important;
+  margin: 2rem 0 !important;
 }
 .linkedin-section .linkedin-btn {
-  color: #0A192F !important;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  background-color: #64FFDA;
-  padding: 0.7rem 1.5rem;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%) !important;
+  padding: 0.7rem 1.5rem !important;
+  display: inline-block !important;
+  transition: background-color 0.3s ease !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
 }
 .linkedin-section .linkedin-btn:hover {
-  background-color: #27cfa7;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%) !important;
 }
 
-/* Testimonial Styles */
-.testimonials-heading { color: #EFF6FF !important; }
+/* ================== TESTIMONIALS ================== */
+.testimonials-section {
+  background-color: #FFFFFF !important; /* white outer background */
+  padding: 30px 0 1px 0 !important;
+}
+
+.testimonials-heading {
+  color: #0A192F !important;
+  font-size: 2rem !important;
+  text-align: center !important;
+  margin: 20px 0 50px 0 !important;
+}
+
+.testimonials-wrapper {
+  display: flex !important;
+  gap: 25px !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  padding: 0 20px !important;
+  margin-bottom: 60px !important;
+}
 
 .testimonial {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  border: 2px solid rgba(100, 255, 218, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0E4C5F !important; /* teal inner box */
+  color: #EFF6FF !important;
+  border-radius: 12px !important;
+  padding: 30px 25px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  flex: 1 1 300px !important;
+  max-width: 450px !important;
+  margin: 0 auto !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  border: 2px solid rgba(100,255,218,0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 .testimonial::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, rgba(100, 255, 218, 0.05), rgba(255,255,255,0.02));
-  opacity: 0.4;
-  pointer-events: none;
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(145deg, rgba(100,255,218,0.05), rgba(255,255,255,0.02)) !important;
+  opacity: 0.4 !important;
+  pointer-events: none !important;
 }
-.testimonial:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 10px rgba(100,255,218,0.15);
-}
-.testimonial p { color: #EFF6FF; font-size: 1rem; line-height: 1.6; margin-bottom: 15px; }
-.testimonial-name { font-weight: bold; color: #64FFDA; margin: 10px 0 0 0; line-height: 1.4; }
-.testimonial-role { display:block; font-weight: normal; color: #4DA1A9; font-style: italic; margin: 3px 0 0 0; line-height: 1.3; }
 
-/* Responsive adjustments */
+.testimonial:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important, 0 0 10px rgba(100,255,218,0.15) !important;
+}
+
+.testimonial-name {
+  font-weight: bold !important;
+  color: #64FFDA !important;
+  margin-top: 10px !important;
+}
+.testimonial-role {
+  display: block !important;
+  font-style: italic !important;
+  color: #4DA1A9 !important;
+  margin-top: 3px !important;
+}
+
+/* ================== RESPONSIVE ================== */
 @media (max-width: 768px) {
-  .about-page { flex-direction: column; align-items: flex-start; }
-  .about-photo { flex: 0 0 150px; margin-bottom: 1.5rem; }
-  .about-bio { text-align: left; }
-  .testimonials-wrapper { flex-direction: column; gap: 20px; }
-  .testimonial { max-width: 90%; padding: 20px; margin: 0 auto; }
-  .testimonial p { font-size: 1rem; line-height: 1.5; margin-bottom: 12px; }
-  .testimonial-name { margin-top: 8px; line-height: 1.3; }
-  .testimonial-role { margin-top: 2px; line-height: 1.25; }
+  .about-page { flex-direction: column !important; align-items: flex-start !important; }
+  .about-photo { flex: 0 0 150px !important; margin-bottom: 1.5rem !important; }
+  .about-bio { text-align: left !important; }
+  .testimonials-wrapper { flex-direction: column !important; gap: 20px !important; }
+  .testimonial { max-width: 90% !important; padding: 20px !important; margin: 0 auto !important; }
 }
 
 @media (max-width: 480px) {
-  .testimonials-wrapper { width: 100%; padding: 0 12px !important; }
+  .testimonials-wrapper { width: 100% !important; padding: 0 12px !important; }
   .testimonial { width: calc(100% - 20px) !important; padding: 12px 14px !important; margin-bottom: 16px !important; text-align: left !important; }
 }
 </style>
