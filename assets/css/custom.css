@@ -135,7 +135,7 @@ a.btn:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background-color: #0B2440 !important;      /* dark navy hover fill */
+  background-color: #FF6B35 !important;      /* dark navy hover fill */
   color: #FFFFFF !important;                 /* white text on hover */
   border-color: #FF6B35 !important;
   box-shadow: 0 4px 12px rgba(255,107,53,0.18) !important; /* orange glow on hover */
