@@ -1,55 +1,50 @@
 <!-- DevOps by Sarang — Newsletter Block -->
 <section class="dn-newsletter" aria-label="newsletter">
-  <div class="dn-inner mobile-padding-bottom">
-    <div class="dn-left">
-      <h2 class="dn-title">Subscribe to my Newsletter!</h2>
-      <p class="dn-desc">Get the latest updates on DevOps, Cloud, and Automation straight to your inbox.</p>
-      
-      <!-- white inner box with form -->
-      <div class="dn-form-box" role="region" aria-label="subscribe form">
-        <form class="dn-form" onsubmit="window.location.href='https://devopsbysarang.substack.com/'; return false;">
-          <input class="dn-input" type="email" name="email" placeholder="Your email" required aria-label="email" />
-          <button class="dn-btn" type="submit">Subscribe</button>
-        </form>
+  <div class="dn-inner-outer">
+    <div class="dn-inner-highlight mobile-padding-bottom">
+      <div class="dn-left">
+        <h2 class="dn-title">Subscribe to my Newsletter!</h2>
+        <p class="dn-desc">Get the latest updates on DevOps, Cloud, and Automation straight to your inbox.</p>
+        
+        <!-- beige inner form box -->
+        <div class="dn-form-box" role="region" aria-label="subscribe form">
+          <form class="dn-form" onsubmit="window.location.href='https://devopsbysarang.substack.com/'; return false;">
+            <input class="dn-input" type="email" name="email" placeholder="Your email" required aria-label="email" />
+            <button class="dn-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="dn-image" aria-hidden="false">
-      <img src="/assets/images/illustration.png" alt="newsletter illustration" />
+      <div class="dn-image" aria-hidden="false">
+        <img src="/assets/images/illustration.png" alt="newsletter illustration" />
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Styles -->
 <style>
-/* Newsletter container */
-.dn-newsletter { 
+/* Outer white container */
+.dn-inner-outer {
   width: 100% !important;
-  background: #FF6B35 !important;  /* full orange background */
+  background: #ffffff !important;
+  display: flex !important;
+  justify-content: center !important;
   padding: 2rem 0 3rem 0 !important;
-  margin: 0 auto !important;
   box-sizing: border-box !important;
 }
 
-/* inner container */
-.dn-inner {
+/* Middle orange highlight */
+.dn-inner-highlight {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 2rem !important;
   max-width: 1100px !important;
-  margin: 0 auto !important;
+  width: 100% !important;
+  background: #FF6B35 !important; /* orange highlight */
   padding: 1rem 1rem 2rem 1rem !important;
-  box-sizing: border-box !important;
   border-radius: 14px !important;
-  background: transparent !important;  /* keep inner container transparent */
-}
-
-/* add border/shadow only for desktop */
-@media (min-width: 881px) {
-  .dn-inner {
-    border: 1px solid rgba(255,255,255,0.2) !important;  /* subtle white border */
-    box-shadow: 0 6px 22px rgba(255,255,255,0.08) !important; /* soft shadow */
-  }
+  box-sizing: border-box !important;
 }
 
 /* left column */
@@ -61,7 +56,7 @@
   padding: 0 0 1rem 0 !important;
   font-size: 2.25rem !important;
   line-height: 1.02 !important;
-  color: #ffffff !important;  /* white title text */
+  color: #ffffff !important;  /* white text on orange */
   font-weight: 800 !important;
 }
 
@@ -72,9 +67,9 @@
   line-height: 1.45 !important;
 }
 
-/* white inner form box */
+/* inner beige form box */
 .dn-form-box {
-  background: #EDE9D5 !important; /* light beige box */
+  background: #EDE9D5 !important; /* beige */
   padding: 14px 14px 2.1px 14px !important;
   border-radius: 12px !important;
   box-shadow: 0 6px 18px rgba(3,10,24,0.08) !important;
@@ -86,7 +81,6 @@
 /* form layout */
 .dn-form {
   display: flex !important;
-  background: #EDE9D5 !important;
   gap: 0.25rem !important;
   align-items: center !important;
   width: 100% !important;
@@ -141,17 +135,14 @@
 
 /* Responsive mobile: image on top */
 @media (max-width: 880px) {
-  .dn-inner { 
+  .dn-inner-highlight { 
     flex-direction: column !important; 
     align-items: center !important; 
-    padding: 0rem 1rem 1.4rem 1rem !important;  
+    padding: 0.5rem 1rem 1.4rem 1rem !important;
     gap: 1rem !important; 
-    border: none !important; 
-    box-shadow: none !important; 
   }
 
-  /* extra bottom padding mobile only */
-  .dn-inner.mobile-padding-bottom {
+  .dn-inner-highlight.mobile-padding-bottom {
     padding-bottom: 2rem !important;
   }
 
