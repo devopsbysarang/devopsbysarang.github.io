@@ -308,7 +308,7 @@ button:focus, .btn:focus, .button:focus, a.button:focus, a.btn:focus {
 }
 
 .page__hero--overlay {
-  padding-top: 3px !important;   /* Was 48px */
+  padding-top: 36px !important;   /* Was 48px */
   padding-bottom: 24px !important;
   margin-bottom: 8px !important;  /* Was 32px */
 }
@@ -790,3 +790,21 @@ body .masthead__inner-wrap {
   -webkit-transform: none !important;
   overflow: visible !important;
 }
+
+/* ===== Adjust hero overlay spacing ===== */
+/* Desktop (default) */
+body .page__hero--overlay {
+  padding-top: 36px !important;    /* was 48px */
+  padding-bottom: 24px !important;
+  margin-bottom: 8px !important;   /* was 32px */
+}
+
+/* Mobile: smaller top padding */
+@media (max-width: 768px) {
+  body .page__hero--overlay {
+    padding-top: 3px !important;   /* mobile: 3px */
+    padding-bottom: 24px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
