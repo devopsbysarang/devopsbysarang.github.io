@@ -90,6 +90,7 @@ html, body {
 
 .blog-card h3 a:hover {
   text-decoration: underline;
+  color: #FF9013 !important;
 }
 
 .blog-meta {
