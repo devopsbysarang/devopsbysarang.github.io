@@ -38,6 +38,16 @@
     padding: 0 !important;
   }
 
+  /* ✅ FIX: Force footer-inner to span full width and match bg */
+  #footer .footer-inner {
+    background-color: #124E61 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
   /* Social icons layout */
   #footer .social-icons {
     display: flex;
@@ -48,10 +58,10 @@
   }
 
   /* Icon colors matching theme */
-  #footer .social-icons a:nth-child(1) i { color: #FF6B35 !important; }   /* GitHub - orange CTA */
-  #footer .social-icons a:nth-child(2) i { color: #EDE9D5 !important; }   /* LinkedIn - beige/light */
-  #footer .social-icons a:nth-child(3) i { color: #FF6B35 !important; }   /* Instagram - orange CTA */
-  #footer .social-icons a:nth-child(4) i { color: #EDE9D5 !important; }   /* Email - beige/light */
+  #footer .social-icons a:nth-child(1) i { color: #FF6B35 !important; }
+  #footer .social-icons a:nth-child(2) i { color: #EDE9D5 !important; }
+  #footer .social-icons a:nth-child(3) i { color: #FF6B35 !important; }
+  #footer .social-icons a:nth-child(4) i { color: #EDE9D5 !important; }
 
   /* Icon size */
   #footer .social-icons a i {
@@ -69,8 +79,9 @@
   /* Footer text */
   #footer .footer-text {
     font-size: 16px;
-    color: #EDE9D5 !important; /* beige/light text */
+    color: #EDE9D5 !important;
     margin: 0;
+    padding: 0;
   }
 
   /* Mobile adjustments */
@@ -79,8 +90,4 @@
     #footer .social-icons a i { font-size: 28px; }
     #footer .footer-text { font-size: 14px; }
   }
-
-#footer .footer-inner {
-  background-color: #124E61 !important;
-}
 </style>
