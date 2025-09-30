@@ -138,7 +138,7 @@ html, body {
 
 .testimonial {
   background-color: #FF6B35;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   border-radius: 12px;
   padding: 30px 25px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -157,7 +157,7 @@ html, body {
 
 .testimonial-name {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   margin-top: 10px;
 }
 
@@ -211,8 +211,8 @@ html, body {
     max-width: 300px;
     padding: 14px 16px;
     margin: 12px 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
+    font-size: 1.3rem;
+    line-height: 1.5;
     text-align: left;
   }
 
