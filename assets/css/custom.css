@@ -746,7 +746,6 @@ body .layout--splash .initial-content .wrapper,
 body .layout--default .wrapper,
 body .site {
   padding-top: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
-  margin-top: 10px
 }
 
 /* ----- Mobile specific: smaller header + matching push ----- */
@@ -762,7 +761,7 @@ body .site {
   body .layout--default .wrapper,
   body .site {
     padding-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    margin-top: -1px !important;
+    margin-top: 0 !important;
   }
 
   /* If you prefer only the H1 to move instead of whole wrapper, uncomment below and remove the wrapper padding above:
