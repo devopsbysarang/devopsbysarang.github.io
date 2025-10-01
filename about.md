@@ -67,7 +67,7 @@ html, body {
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 7rem 2rem 2rem 2rem;
   background: #FFFFFF;
   color: #0A192F;
 }
