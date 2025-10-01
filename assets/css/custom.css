@@ -791,26 +791,24 @@ body .masthead__inner-wrap {
   overflow: visible !important;
 }
 
-/* ===== Adjust only the page title (site-wide) ===== */
-html body #page-title.page__title,
-html body .page__title#page-title {
+/* ===== Adjust the page title but ONLY on the homepage (layout--splash) ===== */
+html body.layout--splash #page-title.page__title,
+html body.layout--splash .page__title#page-title {
   display: block !important;
-  margin-top: 0 !important;     /* reset any existing margin */
-  padding-top: 0 !important;    /* reset any existing padding */
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-/* Desktop */
+/* Desktop (homepage) */
 @media (min-width: 769px) {
-  html body #page-title.page__title {
-    margin-top: 36px !important;   /* desktop offset for title */
-    padding-top: 0 !important;
+  html body.layout--splash #page-title.page__title {
+    margin-top: 36px !important;  /* desktop */
   }
 }
 
-/* Mobile */
+/* Mobile (homepage) */
 @media (max-width: 768px) {
-  html body #page-title.page__title {
-    margin-top: 3px !important;    /* mobile offset for title */
-    padding-top: 0 !important;
+  html body.layout--splash #page-title.page__title {
+    margin-top: 3px !important;   /* mobile */
   }
 }
