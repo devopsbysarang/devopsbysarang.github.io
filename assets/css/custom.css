@@ -869,3 +869,8 @@ body .layout--splash {
   -webkit-transform: none !important;
   overflow: visible !important;
 }
+
+body:not(.layout--splash) .about-page {
+    padding-top: calc(var(--masthead-h-desktop, 72px) - 52px + env(safe-area-inset-top, 0px)) !important;
+    box-sizing: border-box !important;
+}
