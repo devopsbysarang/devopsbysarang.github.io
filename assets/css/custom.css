@@ -791,19 +791,26 @@ body .masthead__inner-wrap {
   overflow: visible !important;
 }
 
-/* ===== Adjust hero overlay spacing ONLY on the homepage (splash layout) ===== */
-html body.layout--splash .page__hero--overlay {
-  padding-top: 36px !important;    /* desktop: was 48px */
-  padding-bottom: 24px !important;
-  margin-bottom: 8px !important;   /* was 32px */
+/* ===== Adjust only the page title (site-wide) ===== */
+html body #page-title.page__title,
+html body .page__title#page-title {
+  display: block !important;
+  margin-top: 0 !important;     /* reset any existing margin */
+  padding-top: 0 !important;    /* reset any existing padding */
 }
 
-/* Mobile: smaller top padding on homepage only */
-@media (max-width: 768px) {
-  html body.layout--splash .page__hero--overlay {
-    padding-top: 3px !important;   /* mobile: 3px */
-    padding-bottom: 24px !important;
-    margin-bottom: 8px !important;
+/* Desktop */
+@media (min-width: 769px) {
+  html body #page-title.page__title {
+    margin-top: 36px !important;   /* desktop offset for title */
+    padding-top: 0 !important;
   }
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  html body #page-title.page__title {
+    margin-top: 3px !important;    /* mobile offset for title */
+    padding-top: 0 !important;
+  }
+}
