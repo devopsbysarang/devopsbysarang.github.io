@@ -17,8 +17,8 @@ This article demonstrates the deployment of a scalable, secure, and highly avail
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 600;
-  color: #64FFDA;
-  border: 2px solid #64FFDA;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -41,14 +41,14 @@ This setup ensures modularity, scalability, and fault tolerance.
 
 <img src="https://github.com/user-attachments/assets/fd941c2f-53ec-4f13-a930-b1702856a425" 
      alt="3-tier architecture" 
-     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
+     style="border: 3px solid #ff6b35; border-radius: 12px; max-width:100%; height:auto;" />
 
 
 ## Enviroment Diagram
 
 <img src="https://github.com/user-attachments/assets/90a332d6-2793-4b20-9462-e6aa2ff83aff" 
      alt="3-tier architecture" 
-     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
+     style="border: 3px solid #ff6b35; border-radius: 12px; max-width:100%; height:auto;" />
 
 
 ## Final product on web browser 
@@ -56,7 +56,7 @@ This setup ensures modularity, scalability, and fault tolerance.
 
 <img src="https://github.com/user-attachments/assets/c0fe548b-aced-452d-ae2e-6489a26b010d" 
      alt="3-tier architecture" 
-     style="border: 3px solid #64FFDA; border-radius: 12px; max-width:100%; height:auto;" />
+     style="border: 3px solid #ff6b35; border-radius: 12px; max-width:100%; height:auto;" />
 
 
 ## CI/CD Pipeline Architecture
