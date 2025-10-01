@@ -17,7 +17,7 @@ This article demonstrates the deployment of a scalable, secure, and highly avail
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 600;
-  color: #ff6b35;
+  color: #ff6b35 !important;
   border: 2px solid #ff6b35;
   border-radius: 8px;
   text-decoration: none;
