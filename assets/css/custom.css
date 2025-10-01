@@ -791,3 +791,35 @@ body .masthead__inner-wrap {
   overflow: visible !important;
 }
 
+/* ===== Fix: only push content on the homepage (layout--splash) ===== */
+
+/* Remove any previously applied global push (reset non-splash pages) */
+html body:not(.layout--splash) .initial-content .wrapper,
+html body:not(.layout--splash) .wrapper,
+html body:not(.layout--splash) .site {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Apply the correct push ONLY for splash (homepage) on desktop */
+html body.layout--splash .initial-content .wrapper,
+html body.layout--splash .site {
+  padding-top: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
+  margin-top: 0 !important;
+}
+
+/* Mobile: apply mobile push only for splash (homepage) */
+@media (max-width: 768px) {
+  html body:not(.layout--splash) .initial-content .wrapper,
+  html body:not(.layout--splash) .wrapper,
+  html body:not(.layout--splash) .site {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  html body.layout--splash .initial-content .wrapper,
+  html body.layout--splash .site {
+    padding-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
+    margin-top: 0 !important;
+  }
+}
