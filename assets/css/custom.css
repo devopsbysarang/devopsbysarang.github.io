@@ -791,35 +791,54 @@ body .masthead__inner-wrap {
   overflow: visible !important;
 }
 
-/* ===== Fix: only push content on the homepage (layout--splash) ===== */
 
-/* Remove any previously applied global push (reset non-splash pages) */
-html body:not(.layout--splash) .initial-content .wrapper,
-html body:not(.layout--splash) .wrapper,
-html body:not(.layout--splash) .site {
+/* ---------------------------
+   Non-home pages: push content down under the fixed masthead
+   Home (layout--splash) will NOT be affected by these rules
+   --------------------------- */
+
+/* Reset any stray global pushes first so we are explicit */
+html body .initial-content .wrapper,
+html body .wrapper,
+html body .site {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
-/* Apply the correct push ONLY for splash (homepage) on desktop */
-html body.layout--splash .initial-content .wrapper,
-html body.layout--splash .site {
+/* Apply the push only to pages that are NOT the splash (homepage) */
+html body:not(.layout--splash) .initial-content .wrapper,
+html body:not(.layout--splash) .wrapper,
+html body:not(.layout--splash) .site {
   padding-top: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
   margin-top: 0 !important;
 }
 
-/* Mobile: apply mobile push only for splash (homepage) */
+/* Also ensure the page title on non-splash pages sits below the header */
+html body:not(.layout--splash) #page-title.page__title,
+html body:not(.layout--splash) .page__title {
+  margin-top: 0 !important;
+  padding-top: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
+}
+
+/* Mobile: use the mobile masthead value for smaller screens */
 @media (max-width: 768px) {
   html body:not(.layout--splash) .initial-content .wrapper,
   html body:not(.layout--splash) .wrapper,
   html body:not(.layout--splash) .site {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
+    padding-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
   }
 
-  html body.layout--splash .initial-content .wrapper,
-  html body.layout--splash .site {
+  html body:not(.layout--splash) #page-title.page__title,
+  html body:not(.layout--splash) .page__title {
     padding-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    margin-top: 0 !important;
   }
+}
+
+/* Extra safeguard: ensure parent transforms/overflows don't interfere */
+html body:not(.layout--splash) .initial-content,
+html body:not(.layout--splash) .wrapper,
+html body:not(.layout--splash) .site {
+  transform: none !important;
+  -webkit-transform: none !important;
+  overflow: visible !important;
 }
