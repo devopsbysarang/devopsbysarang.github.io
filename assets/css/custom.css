@@ -791,17 +791,16 @@ body .masthead__inner-wrap {
   overflow: visible !important;
 }
 
-/* ===== Adjust hero overlay spacing ===== */
-/* Desktop (default) */
-body .page__hero--overlay {
-  padding-top: 36px !important;    /* was 48px */
+/* ===== Adjust hero overlay spacing ONLY on the homepage (splash layout) ===== */
+html body.layout--splash .page__hero--overlay {
+  padding-top: 36px !important;    /* desktop: was 48px */
   padding-bottom: 24px !important;
   margin-bottom: 8px !important;   /* was 32px */
 }
 
-/* Mobile: smaller top padding */
+/* Mobile: smaller top padding on homepage only */
 @media (max-width: 768px) {
-  body .page__hero--overlay {
+  html body.layout--splash .page__hero--overlay {
     padding-top: 3px !important;   /* mobile: 3px */
     padding-bottom: 24px !important;
     margin-bottom: 8px !important;
