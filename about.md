@@ -183,7 +183,7 @@ html, body {
   }
   .about-photo {
     flex: 0 0 150px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
   }
   .about-bio {
     text-align: left;
