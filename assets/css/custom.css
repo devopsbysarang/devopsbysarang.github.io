@@ -878,7 +878,7 @@ body:not(.layout--splash) .about-page {
 /* About page - mobile */
 @media (max-width: 768px) {
     body:not(.layout--splash) .about-page {
-        padding-top: calc(var(--masthead-h-mobile, 72px) - 50px + env(safe-area-inset-top, 0px)) !important;
+        padding-top: calc(var(--masthead-h-mobile, 72px) - 40px + env(safe-area-inset-top, 0px)) !important;
         /* Adjust -20px as needed to reduce top space on mobile */
     }
 }
