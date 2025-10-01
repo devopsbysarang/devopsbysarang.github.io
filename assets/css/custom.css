@@ -882,3 +882,9 @@ body:not(.layout--splash) .about-page {
         /* Adjust -20px as needed to reduce top space on mobile */
     }
 }
+
+
+.page__taxonomy, 
+.page__date {
+  background-color: #fff !important;
+}
