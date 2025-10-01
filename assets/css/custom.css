@@ -704,83 +704,86 @@ body .site-header.masthead {
   }
 }
 
-/* Mobile: sticky header but NO extra top padding on page (no big gap).
-   Instead we reduce header height and make it translucent so hero content shows through. */
-/* ========================
-   GLOBAL: fixed masthead + safe-area variables
-   ======================== */
-:root {
-  --masthead-h-desktop: 72px; /* adjust desktop header visual height */
-  --masthead-h-mobile: 70px;  /* adjust mobile header visual height */
+/* ===========================
+   Sticky / Fixed Masthead (layout--splash specific)
+   Paste at the end of your CSS
+   =========================== */
+
+:root{
+  --masthead-h-desktop: 72px; /* change to your actual header height */
+  --masthead-h-mobile: 70px;  /* change for mobile if needed */
 }
 
-/* ----- Force fixed masthead everywhere ----- */
-body .masthead {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 99999 !important;
-  /* desktop default; mobile overridden below */
-  height: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
-  padding-top: env(safe-area-inset-top) !important;
-  background-color: #ffffff !important; /* opaque white */
-  /* remove translucency/blur: do NOT include rgba() or backdrop-filter */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
-  overflow: visible !important;
+/* Authoritative fixed masthead */
+body .masthead,
+header.masthead,
+.site-header.masthead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99999;
+  height: calc(var(--masthead-h-desktop, 72px) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  overflow: visible;
 }
 
-/* keep inner wrap vertically centered and tappable */
+/* Center inner content of masthead */
 body .masthead__inner-wrap {
-  display: flex !important;
-  align-items: center !important;
-  height: 100% !important;
-  padding: 9px 20px !important;
-  box-sizing: border-box !important;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 20px;
+  box-sizing: border-box;
 }
 
-/* ----- Push page content down so nothing is overlapped ----- */
-/* Desktop: push by desktop masthead height + safe-area */
-body .layout--splash .initial-content .wrapper,
-body .layout--default .wrapper,
-body .site {
-  padding-top: calc(var(--masthead-h-desktop) + env(safe-area-inset-top)) !important;
+/* Remove stray debug borders */
+body header.masthead,
+body .site-header.masthead {
+  border-bottom: none !important;
 }
 
-/* ----- Mobile specific: smaller header + matching push ----- */
+/* PUSH: apply only on NON-splash pages (layout--splash present on body for home) */
+body:not(.layout--splash) .initial-content .wrapper,
+body:not(.layout--splash) .wrapper,
+body:not(.layout--splash) .site,
+body:not(.layout--splash) #page-title.page__title,
+body:not(.layout--splash) .page__title {
+  padding-top: calc(var(--masthead-h-desktop, 72px) + env(safe-area-inset-top, 0px));
+  margin-top: 0;
+}
+
+/* Mobile: smaller masthead + matching push */
 @media (max-width: 768px) {
-  body .masthead {
-    height: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    padding-top: env(safe-area-inset-top) !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  body .masthead,
+  header.masthead,
+  .site-header.masthead {
+    height: calc(var(--masthead-h-mobile, 70px) + env(safe-area-inset-top, 0px));
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
 
-  /* Push the hero/content down by the mobile masthead height */
-  body .layout--splash .initial-content .wrapper,
-  body .layout--default .wrapper,
-  body .site {
-    padding-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    margin-top: 0 !important;
+  body:not(.layout--splash) .initial-content .wrapper,
+  body:not(.layout--splash) .wrapper,
+  body:not(.layout--splash) .site,
+  body:not(.layout--splash) #page-title.page__title,
+  body:not(.layout--splash) .page__title {
+    padding-top: calc(var(--masthead-h-mobile, 70px) + env(safe-area-inset-top, 0px));
   }
 
-  /* If you prefer only the H1 to move instead of whole wrapper, uncomment below and remove the wrapper padding above:
-  #page-title.page__title,
-  .page__title,
-  .initial-content .wrapper > h1 {
-    margin-top: calc(var(--masthead-h-mobile) + env(safe-area-inset-top)) !important;
-    padding-top: 0 !important;
-  }
-  */
-
-  /* ensure header links/buttons are tappable and above hero */
+  /* ensure links/buttons in masthead remain tappable above hero */
   body .masthead a,
   body .masthead button {
-    z-index: 100000 !important;
+    z-index: 100000;
   }
 }
 
-/* ----- Extra safeguard: ensure no ancestor transforms/overflow kill fixed behavior ----- */
+/* Safeguard: remove transforms/overflow that can break fixed positioning */
 body .layout--splash,
 body .layout--default,
 body .site,
@@ -790,5 +793,3 @@ body .masthead__inner-wrap {
   -webkit-transform: none !important;
   overflow: visible !important;
 }
-
-
