@@ -793,3 +793,79 @@ body .masthead__inner-wrap {
   -webkit-transform: none !important;
   overflow: visible !important;
 }
+
+
+
+/* ---------------------------
+   Force push for ALL non-home pages
+   Paste at end of your CSS
+   --------------------------- */
+
+:root{
+  --masthead-h-desktop: 72px; /* set this to your desktop header height */
+  --masthead-h-mobile: 70px;  /* set this to your mobile header height */
+}
+
+/* Broad set of common containers — desktop / default */
+body:not(.layout--splash) .site,
+body:not(.layout--splash) .wrapper,
+body:not(.layout--splash) .initial-content,
+body:not(.layout--splash) main,
+body:not(.layout--splash) #main,
+body:not(.layout--splash) .container,
+body:not(.layout--splash) .page,
+body:not(.layout--splash) .page__hero,
+body:not(.layout--splash) .page__content,
+body:not(.layout--splash) .page__inner,
+body:not(.layout--splash) .page__title,
+body:not(.layout--splash) #page-title,
+body:not(.layout--splash) .entry,
+body:not(.layout--splash) .post,
+body:not(.layout--splash) .article,
+body:not(.layout--splash) .about-page,
+body:not(.layout--splash) .contact-box,
+body:not(.layout--splash) #content,
+body:not(.layout--splash) .content {
+  padding-top: calc(var(--masthead-h-desktop, 72px) + env(safe-area-inset-top, 0px)) !important;
+  box-sizing: border-box !important;
+}
+
+/* Mobile: use mobile masthead height */
+@media (max-width: 768px) {
+  body:not(.layout--splash) .site,
+  body:not(.layout--splash) .wrapper,
+  body:not(.layout--splash) .initial-content,
+  body:not(.layout--splash) main,
+  body:not(.layout--splash) #main,
+  body:not(.layout--splash) .container,
+  body:not(.layout--splash) .page,
+  body:not(.layout--splash) .page__hero,
+  body:not(.layout--splash) .page__content,
+  body:not(.layout--splash) .page__inner,
+  body:not(.layout--splash) .page__title,
+  body:not(.layout--splash) #page-title,
+  body:not(.layout--splash) .entry,
+  body:not(.layout--splash) .post,
+  body:not(.layout--splash) .article,
+  body:not(.layout--splash) .about-page,
+  body:not(.layout--splash) .contact-box,
+  body:not(.layout--splash) #content,
+  body:not(.layout--splash) .content {
+    padding-top: calc(var(--masthead-h-mobile, 70px) + env(safe-area-inset-top, 0px)) !important;
+  }
+}
+
+/* Ultimate fallback: if a template uses a unique/top-level wrapper, apply to first child of body */
+body:not(.layout--splash) > *:first-child {
+  padding-top: calc(var(--masthead-h-desktop, 72px) + env(safe-area-inset-top, 0px)) !important;
+}
+
+/* Safeguard: avoid fixed masthead being clipped by ancestor transforms */
+body .masthead,
+body .masthead__inner-wrap,
+body .layout--default,
+body .layout--splash {
+  transform: none !important;
+  -webkit-transform: none !important;
+  overflow: visible !important;
+}
