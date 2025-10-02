@@ -3,9 +3,7 @@ layout: splash
 permalink: /
 title: "Practical DevOps Insights."
 header:
-  overlay_image: /assets/images/banner.png   # path to your image
-  overlay_color: "#fff"                      # optional background overlay
-  overlay_filter: 0                        # dark/light filter on image (0.0–1.0)
+  overlay_color: "#fff"                     
   actions:
     - label: "About me"
       url: "/about/"
@@ -40,34 +38,6 @@ feature_row:
 ---
 
 
-<style>
-/* ================================
-   Hero overlay image size control
-   ================================ */
-.page__hero--overlay {
-  background-size: auto !important;       /* use natural image size */
-  background-repeat: no-repeat !important;
-  background-position: center center !important; /* center the image */
-  height: auto !important;                /* let content determine height */
-  min-height: 300px;                      /* optional: minimum hero height */
-  max-width: 100% !important;             /* ensure no horizontal overflow */
-}
-
-/* make it responsive on mobile */
-@media (max-width: 768px) {
-  .page__hero--overlay {
-    background-size: contain !important;   /* fit image inside container */
-    min-height: 200px;                     /* reduce height on tablet */
-  }
-}
-
-@media (max-width: 480px) {
-  .page__hero--overlay {
-    background-size: contain !important;
-    min-height: 150px;                     /* reduce height on mobile */
-  }
-}
-</style>
 
 
 
