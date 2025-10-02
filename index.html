@@ -37,6 +37,68 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
+<!-- Small logo placed inside splash hero (paste right after front matter) -->
+<p class="splash-top-image" aria-hidden="false">
+  <img src="/assets/images/logo.png" alt="Sarang logo" />
+</p>
+
+<style>
+  /* make hero a positioned parent so the logo can be absolutely placed inside it */
+  .page__hero--overlay {
+    position: relative !important;
+  }
+
+  /* small centered logo, absolutely positioned within the hero below the header */
+  .splash-top-image {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    /* place logo just below the header; uses theme CSS variables for masthead heights */
+    top: calc(var(--masthead-h-desktop, 72px) + 8px) !important;
+    z-index: 10050 !important; /* ensure above header and hero content */
+    margin: 0 !important;
+    width: auto !important;
+    max-width: 220px !important;
+    text-align: center !important;
+    pointer-events: none; /* prevents accidental clicks/hover on the decorative logo */
+  }
+
+  /* force the image to behave like a small logo */
+  .splash-top-image img {
+    height: 56px !important;    /* desktop logo height */
+    width: auto !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  /* mobile tweaks */
+  @media (max-width: 768px) {
+    .splash-top-image {
+      top: calc(var(--masthead-h-mobile, 56px) + 6px) !important;
+      max-width: 160px !important;
+    }
+    .splash-top-image img {
+      height: 44px !important;  /* tablet / small screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .splash-top-image {
+      top: calc(var(--masthead-h-mobile, 56px) + 4px) !important;
+      max-width: 140px !important;
+    }
+    .splash-top-image img {
+      height: 36px !important;  /* mobile logo height */
+    }
+  }
+</style>
+
+
+
+
+
+
+
 <style>
   .page__title,
   .page__lead,
