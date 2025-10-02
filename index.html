@@ -37,35 +37,69 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-<!-- Strongly-forced small logo placed inside splash hero (paste right after front matter) -->
+<!-- Move logo into the hero and absolutely position it so it does NOT push content -->
 <p class="splash-top-image" aria-hidden="false">
-  <!-- Inline style is a last-resort override to ensure height applies -->
-  <img src="/assets/images/header.png" alt="Sarang logo"
-       style="height:40px !important; width:auto !important; max-width:100% !important; display:block !important;" />
+  <img src="/assets/images/header.png" alt="Sarang logo" />
 </p>
 
+<script>
+/*
+  Move the .splash-top-image element into .page__hero--overlay so
+  absolute positioning will be relative to the hero and the logo
+  won't take up space in the normal flow.
+*/
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var logoEl = document.querySelector('p.splash-top-image');
+    var hero = document.querySelector('.page__hero--overlay');
+
+    if (logoEl && hero) {
+      // append logo as first child of the hero so it overlays the top area
+      hero.insertBefore(logoEl, hero.firstChild);
+      // add a class to mark that we've moved it (useful for debugging)
+      logoEl.classList.add('splash-top-in-hero');
+    } else {
+      // If hero not found, keep logo where it is — helpful fallback
+      console.warn('Hero container not found — logo left in place.');
+    }
+  } catch (e) {
+    console.error('Error moving logo into hero:', e);
+  }
+});
+</script>
+
 <style>
-  /* ensure hero is positioned parent */
+  /* ensure the hero is a positioned parent */
   .page__hero--overlay { position: relative !important; }
 
-  /* use more specific selector to override other styles */
-  .page__hero--overlay .splash-top-image {
+  /* the moved logo — absolutely positioned inside the hero
+     This element will no longer take up normal layout space. */
+  .page__hero--overlay .splash-top-image,
+  .splash-top-in-hero {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    top: calc(var(--masthead-h-desktop, 72px) + 6px) !important;
+    top: calc(var(--masthead-h-desktop, 72px) + 4px) !important; /* <-- change +4px to adjust gap from navbar */
     z-index: 99999 !important;
     margin: 0 !important;
     width: auto !important;
     max-width: 220px !important;
     text-align: center !important;
     pointer-events: none !important;
+    /* remove any default margins/padding so no extra space is reserved */
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
-  /* strongest rule for the img — high specificity + !important */
+  /* ensure the original <p> doesn't occupy space if the hero isn't found briefly */
+  p.splash-top-image { margin: 0; padding: 0; }
+
+  /* img sizing — strongest selectors + !important to override theme */
   .page__hero--overlay .splash-top-image img,
-  .page__hero--overlay p.splash-top-image img {
-    height: 40px !important;          /* <-- change this to your desired height */
+  .splash-top-in-hero img,
+  p.splash-top-image img {
+    height: 40px !important;       /* <-- desktop logo height — change to taste */
     max-height: 40px !important;
     width: auto !important;
     max-width: 100% !important;
@@ -74,27 +108,20 @@ feature_row:
     object-fit: contain !important;
   }
 
-  /* desktop / tablet / mobile responsive overrides */
+  /* GAP BETWEEN LOGO & TITLE: tweak the page title margin (title sits in normal flow) */
+  .custom-splash-title { margin-top: 0.5rem !important; } /* change to move title closer/farther */
+
+  /* responsive overrides */
   @media (max-width: 768px) {
-    .page__hero--overlay .splash-top-image img {
-      height: 34px !important;        /* tablet size */
-      max-height: 34px !important;
-    }
-    .page__hero--overlay .splash-top-image {
-      top: calc(var(--masthead-h-mobile, 56px) + 4px) !important;
-      max-width: 160px !important;
-    }
+    .page__hero--overlay .splash-top-image { top: calc(var(--masthead-h-mobile, 56px) + 4px) !important; max-width: 160px !important; }
+    .page__hero--overlay .splash-top-image img { height: 34px !important; max-height: 34px !important; }
+    .custom-splash-title { margin-top: 0.45rem !important; }
   }
 
   @media (max-width: 480px) {
-    .page__hero--overlay .splash-top-image img {
-      height: 28px !important;        /* mobile size */
-      max-height: 28px !important;
-    }
-    .page__hero--overlay .splash-top-image {
-      top: calc(var(--masthead-h-mobile, 56px) + 2px) !important;
-      max-width: 140px !important;
-    }
+    .page__hero--overlay .splash-top-image { top: calc(var(--masthead-h-mobile, 56px) + 2px) !important; max-width: 140px !important; }
+    .page__hero--overlay .splash-top-image img { height: 28px !important; max-height: 28px !important; }
+    .custom-splash-title { margin-top: 0.35rem !important; }
   }
 </style>
 
