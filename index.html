@@ -39,62 +39,58 @@ feature_row:
 
 
 
-<!-- Custom text banner inside splash hero -->
-<div class="splash-top-text" aria-hidden="true">
+
+<!-- Custom text banner above splash title -->
+<div class="splash-top-text">
   Welcome to My DevOps Journey
 </div>
 
 <style>
-  /* ======= SPLASH HERO TEXT BANNER ======= */
-  .page__hero--overlay {
-    position: relative !important; /* make hero a positioned parent */
-  }
-
-  .page__hero--overlay .splash-top-text {
-    position: absolute;           /* absolute inside hero */
-    top: calc(var(--masthead-h-desktop, 72px) + 8px); /* just below navbar */
-    left: 50%;
-    transform: translateX(-50%);
+  /* =========================
+     SPLASH TOP TEXT BANNER
+     ========================= */
+  .splash-top-text {
     display: inline-block;
     text-align: center;
-    padding: 0.25rem 0.75rem;
-    background-color: #FFE5B4;    /* light orange */
-    color: #FF6F00;               /* darker orange text */
+    margin: 0 auto 0.75rem; /* space below the text */
+    padding: 0.25rem 0.75rem; /* vertical/horizontal padding */
+    /* background-color: #FFE5B4; */ /* removed background */
+    color: #FF6F00; /* text color */
+    font-family: "Courier New", Courier, monospace; /* changed font */
     font-weight: 600;
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 9999;                /* above header & hero content */
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* responsive sizing */
+    border-radius: 6px; /* slightly rounded rectangle */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional subtle shadow */
+    letter-spacing: 0.5px;
+    line-height: 1.3;
     max-width: 90%;
-    white-space: nowrap;           /* prevent line wrapping */
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* Push splash title down so it doesn't overlap the banner */
+  /* Ensure the splash title doesn't overlap */
   .custom-splash-title {
-    margin-top: calc(2rem + var(--masthead-h-desktop, 72px)) !important;
-    text-align: center !important;
+    margin-top: 1.25rem !important; /* adjust this to move title down */
   }
 
-  /* ======= Responsive ======= */
+  /* Responsive tweaks */
   @media (max-width: 768px) {
-    .page__hero--overlay .splash-top-text {
-      top: calc(var(--masthead-h-mobile, 56px) + 6px);
+    .splash-top-text {
       font-size: clamp(0.8rem, 3vw, 1rem);
       padding: 0.2rem 0.6rem;
     }
     .custom-splash-title {
-      margin-top: calc(1.75rem + var(--masthead-h-mobile, 56px)) !important;
+      margin-top: 1rem !important;
     }
   }
 
   @media (max-width: 480px) {
-    .page__hero--overlay .splash-top-text {
-      top: calc(var(--masthead-h-mobile, 56px) + 4px);
+    .splash-top-text {
       font-size: clamp(0.7rem, 4vw, 0.9rem);
       padding: 0.15rem 0.5rem;
     }
     .custom-splash-title {
-      margin-top: calc(1.5rem + var(--masthead-h-mobile, 56px)) !important;
+      margin-top: 0.8rem !important;
     }
   }
 </style>
