@@ -37,95 +37,63 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-<!-- Small logo placed inside splash hero (paste right after front matter) -->
+<!-- Strongly-forced small logo placed inside splash hero (paste right after front matter) -->
 <p class="splash-top-image" aria-hidden="false">
-  <img src="/assets/images/top-banner.png" alt="Sarang logo" />
+  <!-- Inline style is a last-resort override to ensure height applies -->
+  <img src="/assets/images/header.png" alt="Sarang logo"
+       style="height:40px !important; width:auto !important; max-width:100% !important; display:block !important;" />
 </p>
 
 <style>
-  /* make hero a positioned parent so the logo can be absolutely placed inside it */
-  .page__hero--overlay {
-    position: relative !important;
-  }
+  /* ensure hero is positioned parent */
+  .page__hero--overlay { position: relative !important; }
 
-  /* ============================
-     MAIN LOGO POSITION / SIZE
-     ============================
-     Edit the values described below to control spacing and size:
-     - To change gap between NAVBAR and LOGO: edit the `+ Npx` in `top: calc(...)` lines.
-       (desktop: +6px, tablet: +6px, mobile: +4px below)
-     - To change LOGO SIZE: edit `height` in `.splash-top-image img`.
-     - To change GAP BELOW LOGO (between logo and title): edit `.custom-splash-title { margin-top: ... }`
-  */
-
-  /* small centered logo, absolutely positioned within the hero below the header */
-  .splash-top-image {
+  /* use more specific selector to override other styles */
+  .page__hero--overlay .splash-top-image {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-
-    /* <-- PLACE BETWEEN NAVBAR & LOGO (edit these +Npx numbers)
-       Increase the +Npx to move logo farther below the navbar.
-       Decrease to bring it closer to the navbar.
-       You can also change the fallback masthead value (--masthead-h-desktop) if your header height differs. */
     top: calc(var(--masthead-h-desktop, 72px) + 6px) !important;
-
-    z-index: 10050 !important; /* ensure above header and hero content; raise if still overlapped */
+    z-index: 99999 !important;
     margin: 0 !important;
     width: auto !important;
     max-width: 220px !important;
     text-align: center !important;
-    pointer-events: none; /* decorative only */
+    pointer-events: none !important;
   }
 
-  /* force the image to behave like a small logo
-     --> change height to make the logo larger/smaller */
-  .splash-top-image img {
-    height: 48px !important;    /* <-- change this to control desktop logo size (was 56px) */
+  /* strongest rule for the img — high specificity + !important */
+  .page__hero--overlay .splash-top-image img,
+  .page__hero--overlay p.splash-top-image img {
+    height: 40px !important;          /* <-- change this to your desired height */
+    max-height: 40px !important;
     width: auto !important;
+    max-width: 100% !important;
     display: inline-block !important;
     vertical-align: middle !important;
+    object-fit: contain !important;
   }
 
-  /* ============================
-     CONTROL GAP BETWEEN LOGO & TITLE
-     ============================
-     The logo is absolutely positioned, so spacing *below* it is controlled by the page title margin.
-     Edit the margin-top below to make the title sit closer or farther from the logo.
-  */
-  .custom-splash-title {
-    /* Default margin-top chosen to keep a small gap under the logo.
-       Lower this value to pull title up (closer to logo), increase to push it down. */
-    margin-top: 0.6rem !important; /* <-- adjust this for "bottom padding" under the logo */
-  }
-
-  /* ======= Responsive tweaks ======= */
-
+  /* desktop / tablet / mobile responsive overrides */
   @media (max-width: 768px) {
-    /* tablet / small screens: change gap between navbar and logo here */
-    .splash-top-image {
-      top: calc(var(--masthead-h-mobile, 56px) + 6px) !important; /* <-- edit +6px for tablet */
+    .page__hero--overlay .splash-top-image img {
+      height: 34px !important;        /* tablet size */
+      max-height: 34px !important;
+    }
+    .page__hero--overlay .splash-top-image {
+      top: calc(var(--masthead-h-mobile, 56px) + 4px) !important;
       max-width: 160px !important;
-    }
-    .splash-top-image img {
-      height: 40px !important;  /* tablet logo height */
-    }
-    .custom-splash-title {
-      margin-top: 0.5rem !important; /* slightly smaller under-logo gap on tablet */
     }
   }
 
   @media (max-width: 480px) {
-    /* mobile: change gap between navbar and logo here */
-    .splash-top-image {
-      top: calc(var(--masthead-h-mobile, 56px) + 4px) !important; /* <-- edit +4px for mobile */
+    .page__hero--overlay .splash-top-image img {
+      height: 28px !important;        /* mobile size */
+      max-height: 28px !important;
+    }
+    .page__hero--overlay .splash-top-image {
+      top: calc(var(--masthead-h-mobile, 56px) + 2px) !important;
       max-width: 140px !important;
-    }
-    .splash-top-image img {
-      height: 36px !important;  /* mobile logo height */
-    }
-    .custom-splash-title {
-      margin-top: 0.35rem !important; /* mobile: tighten the gap */
     }
   }
 </style>
