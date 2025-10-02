@@ -133,6 +133,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <style>
+  /* ---------- Adjust spacing so title doesn't sit under the logo ---------- */
+
+  /* Set the logo heights here (match these to the img heights you used above).
+     Change these values to the exact pixel heights you want for each viewport. */
+  :root {
+    --splash-logo-desktop: 40px;  /* <-- change this to your desktop logo height */
+    --splash-logo-tablet: 34px;   /* <-- change this to your tablet logo height */
+    --splash-logo-mobile: 28px;   /* <-- change this to your mobile logo height */
+    --splash-logo-gap: 0.6rem;    /* <-- vertical gap between logo bottom and title */
+  }
+
+  /* Use the logo height variable to compute a margin-top for the title.
+     This ensures the title is pushed down exactly below the absolutely-positioned logo. */
+  .custom-splash-title {
+    /* calc(logo height + extra gap). Use !important to beat theme rules. */
+    margin-top: calc(var(--splash-logo-desktop) + var(--splash-logo-gap)) !important;
+    /* keep usual styling but ensure it stays visually consistent */
+    display: block !important;
+  }
+
+  /* tablet */
+  @media (max-width: 768px) {
+    .custom-splash-title {
+      margin-top: calc(var(--splash-logo-tablet) + calc(var(--splash-logo-gap) * 0.9)) !important;
+    }
+  }
+
+  /* mobile */
+  @media (max-width: 480px) {
+    .custom-splash-title {
+      margin-top: calc(var(--splash-logo-mobile) + calc(var(--splash-logo-gap) * 0.9)) !important;
+    }
+  }
+
+  /* Optional: if the theme applies transforms/positioning to the original title container,
+     make sure that container has normal flow so margin-top takes effect.
+     The selector below is safe but if your theme uses a different wrapper you can remove it. */
+  .page__hero--overlay .wrapper,
+  .page__hero--overlay .page__hero__content {
+    position: relative !important;
+    z-index: 1 !important; /* keep title/content below the logo which has higher z-index */
+  }
+</style>
+
+
+
+
+
+
+
+
+
+<style>
   .page__title,
   .page__lead,
   .page__lead + p {
