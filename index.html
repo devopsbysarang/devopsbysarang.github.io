@@ -3,9 +3,7 @@ layout: splash
 permalink: /
 title: "Practical DevOps Insights."
 header:
-  overlay_image: /assets/images/logo.png    
   overlay_color: "#fff"
-  overlay_filter: 0.15                           
   actions:
     - label: "About me"
       url: "/about/"
@@ -39,6 +37,41 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
+<!-- Small centered logo above the splash title -->
+<p class="splash-top-image" aria-hidden="false">
+  <img src="/assets/images/top-banner.png" alt="Sarang logo" />
+</p>
+
+<style>
+  /* small logo centered above splash title */
+  .splash-top-image {
+    max-width: 200px;          /* container max (won't exceed this) */
+    margin: 0 auto 1rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* force the image to behave like a small logo */
+  .splash-top-image img {
+    width: auto;               /* keep natural aspect ratio */
+    height: 56px;              /* logo height on desktop */
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* slightly smaller on small screens (mobile) */
+  @media (max-width: 480px) {
+    .splash-top-image {
+      max-width: 140px;
+      margin-bottom: 0.75rem;
+    }
+    .splash-top-image img {
+      height: 40px;            /* smaller logo on mobile */
+    }
+  }
+
+  /* if you want an even smaller "tiny" logo, reduce heights above (e.g., 40px / 28px) */
+</style>
 
 
 <style>
