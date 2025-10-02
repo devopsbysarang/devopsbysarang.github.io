@@ -39,7 +39,7 @@ feature_row:
 
 <!-- Small logo placed inside splash hero (paste right after front matter) -->
 <p class="splash-top-image" aria-hidden="false">
-  <img src="/assets/images/logo.png" alt="Sarang logo" />
+  <img src="/assets/images/top-banner.png" alt="Sarang logo" />
 </p>
 
 <style>
@@ -48,50 +48,88 @@ feature_row:
     position: relative !important;
   }
 
+  /* ============================
+     MAIN LOGO POSITION / SIZE
+     ============================
+     Edit the values described below to control spacing and size:
+     - To change gap between NAVBAR and LOGO: edit the `+ Npx` in `top: calc(...)` lines.
+       (desktop: +6px, tablet: +6px, mobile: +4px below)
+     - To change LOGO SIZE: edit `height` in `.splash-top-image img`.
+     - To change GAP BELOW LOGO (between logo and title): edit `.custom-splash-title { margin-top: ... }`
+  */
+
   /* small centered logo, absolutely positioned within the hero below the header */
   .splash-top-image {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    /* place logo just below the header; uses theme CSS variables for masthead heights */
-    top: calc(var(--masthead-h-desktop, 72px) + 8px) !important;
-    z-index: 10050 !important; /* ensure above header and hero content */
+
+    /* <-- PLACE BETWEEN NAVBAR & LOGO (edit these +Npx numbers)
+       Increase the +Npx to move logo farther below the navbar.
+       Decrease to bring it closer to the navbar.
+       You can also change the fallback masthead value (--masthead-h-desktop) if your header height differs. */
+    top: calc(var(--masthead-h-desktop, 72px) + 6px) !important;
+
+    z-index: 10050 !important; /* ensure above header and hero content; raise if still overlapped */
     margin: 0 !important;
     width: auto !important;
     max-width: 220px !important;
     text-align: center !important;
-    pointer-events: none; /* prevents accidental clicks/hover on the decorative logo */
+    pointer-events: none; /* decorative only */
   }
 
-  /* force the image to behave like a small logo */
+  /* force the image to behave like a small logo
+     --> change height to make the logo larger/smaller */
   .splash-top-image img {
-    height: 56px !important;    /* desktop logo height */
+    height: 48px !important;    /* <-- change this to control desktop logo size (was 56px) */
     width: auto !important;
     display: inline-block !important;
     vertical-align: middle !important;
   }
 
-  /* mobile tweaks */
+  /* ============================
+     CONTROL GAP BETWEEN LOGO & TITLE
+     ============================
+     The logo is absolutely positioned, so spacing *below* it is controlled by the page title margin.
+     Edit the margin-top below to make the title sit closer or farther from the logo.
+  */
+  .custom-splash-title {
+    /* Default margin-top chosen to keep a small gap under the logo.
+       Lower this value to pull title up (closer to logo), increase to push it down. */
+    margin-top: 0.6rem !important; /* <-- adjust this for "bottom padding" under the logo */
+  }
+
+  /* ======= Responsive tweaks ======= */
+
   @media (max-width: 768px) {
+    /* tablet / small screens: change gap between navbar and logo here */
     .splash-top-image {
-      top: calc(var(--masthead-h-mobile, 56px) + 6px) !important;
+      top: calc(var(--masthead-h-mobile, 56px) + 6px) !important; /* <-- edit +6px for tablet */
       max-width: 160px !important;
     }
     .splash-top-image img {
-      height: 44px !important;  /* tablet / small screens */
+      height: 40px !important;  /* tablet logo height */
+    }
+    .custom-splash-title {
+      margin-top: 0.5rem !important; /* slightly smaller under-logo gap on tablet */
     }
   }
 
   @media (max-width: 480px) {
+    /* mobile: change gap between navbar and logo here */
     .splash-top-image {
-      top: calc(var(--masthead-h-mobile, 56px) + 4px) !important;
+      top: calc(var(--masthead-h-mobile, 56px) + 4px) !important; /* <-- edit +4px for mobile */
       max-width: 140px !important;
     }
     .splash-top-image img {
       height: 36px !important;  /* mobile logo height */
     }
+    .custom-splash-title {
+      margin-top: 0.35rem !important; /* mobile: tighten the gap */
+    }
   }
 </style>
+
 
 
 
