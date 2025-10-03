@@ -908,7 +908,11 @@ body.layout--splash .page__lead {
   margin-bottom: 1rem !important;  /* was 1.5rem */
 }
 
-/* Optional: reduce masthead height on home */
-body.layout--splash .masthead {
-  height: calc(var(--masthead-h-desktop, 72px) - 8px + env(safe-area-inset-top, 0px));
+/* Home page header/hero padding reduction on mobile */
+@media (max-width: 768px) {
+  body.layout--splash .page__hero--overlay .wrapper {
+    padding-top: 1rem !important;    /* reduced padding */
+    padding-bottom: 0.9rem !important; /* reduced padding */
+  }
 }
+
