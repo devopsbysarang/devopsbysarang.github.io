@@ -351,7 +351,7 @@ html, body {
 
 @media (max-width: 768px) {
   .doing-heading {
-    margin-bottom: 20px !important; /* reduce gap below heading on mobile */
+    margin-bottom: 25px !important; /* reduce gap below heading on mobile */
   }
 }
 
