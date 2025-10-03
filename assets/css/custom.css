@@ -894,3 +894,21 @@ body:not(.layout--splash) .about-page {
     margin-top: -10px !important;
   }
 }
+
+
+/* Home page header/hero padding reduction */
+body.layout--splash .page__hero--overlay .wrapper {
+  padding-top: 1rem !important;    /* was 2rem */
+  padding-bottom: 1rem !important; /* was 2rem */
+}
+
+/* Lead paragraph spacing on home */
+body.layout--splash .page__lead {
+  margin-top: 0.5rem !important;   /* was 0.8rem */
+  margin-bottom: 1rem !important;  /* was 1.5rem */
+}
+
+/* Optional: reduce masthead height on home */
+body.layout--splash .masthead {
+  height: calc(var(--masthead-h-desktop, 72px) - 8px + env(safe-area-inset-top, 0px));
+}
