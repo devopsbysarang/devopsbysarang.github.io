@@ -175,7 +175,7 @@ html, body {
 .doing-section {
   background-color: #EDE9D5; /* beige background */
   color: #0A192F;
-  padding: 20px 20px 60px 20px !important; /* reduced top padding */
+  padding: 25px 20px 60px 20px !important; /* reduced top padding */
   text-align: center;
   margin-top: 0 !important; /* ensure no extra margin from parent */
 }
@@ -197,7 +197,7 @@ html, body {
   background-color: #FFFFFF;
   border: 2px solid #FF6B35;
   border-radius: 12px;
-  padding: 30px 20px;
+  padding: 25px 20px;
   width: 260px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -216,7 +216,7 @@ html, body {
 
 .doing-card p {
   font-size: 0.85rem;
-  line-height: 1.3;
+  line-height: 1.4;
   color: #0A192F;
 }
 
