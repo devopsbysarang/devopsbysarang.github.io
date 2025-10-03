@@ -234,7 +234,7 @@ html, body {
   color: #0A192F;
   font-size: 2rem;
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 0 0 25px 0;
 }
 
 .testimonials-wrapper {
