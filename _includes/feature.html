@@ -155,6 +155,130 @@
       .devops-card .devops-btn { padding: 9px 12px; }
       .devops-card-desc { -webkit-line-clamp: 3; min-height: calc(1.45em * 3); }
     }
+
+    /* ===== Small visual tweaks: lift footer, stronger white-background highlight, force hover text white ===== */
+
+    /* nudge the footer (moves button up visually without losing pin-to-bottom behavior) */
+    .devops-card-footer {
+      /* pull footer up 8px so button sits slightly higher inside card */
+      transform: translateY(-8px);
+      transition: transform .18s ease;
+    }
+
+    /* stronger card highlight on white background */
+    .devops-card {
+      /* slightly brighter surface + subtle border so card reads on white */
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+      border: 1px solid rgba(11,36,64,0.04); /* faint line that shows on white */
+      box-shadow: 0 8px 20px rgba(11,36,64,0.05);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .18s ease;
+    }
+
+    /* hover/focus: lift more + soft accent glow */
+    .devops-card:hover,
+    .devops-card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(11,36,64,0.10);
+      border-color: rgba(11,36,64,0.08);
+      outline: none;
+    }
+
+    /* subtle accent ring when keyboard focusing elements inside card (accessibility) */
+    .devops-card:focus-within {
+      box-shadow: 0 20px 48px rgba(11,36,64,0.10), 0 0 0 6px rgba(11,36,64,0.04);
+    }
+
+    /* ensure the button sits slightly above the footer baseline (extra lift visual) */
+    .devops-card .devops-btn {
+      transform: translateY(-2px);
+      transition: transform .18s ease, background-color .18s ease, color .18s ease, box-shadow .18s ease;
+    }
+
+    /* hover: stronger button lift and force white text (covers visited/active/focus overrides) */
+    .devops-card .devops-btn:hover,
+    .devops-card .devops-btn:focus {
+      transform: translateY(-8px);
+      background-color: var(--brand-orange) !important;
+      color: #ffffff !important;           /* force white text */
+      border-color: transparent !important;
+      box-shadow: 0 8px 20px rgba(11,36,64,0.10);
+      text-decoration: none !important;
+      outline: none;
+    }
+
+    /* make sure visited/active states remain readable on hover */
+    .devops-card .devops-btn:visited,
+    .devops-card .devops-btn:active {
+      color: var(--brand-orange) !important;
+    }
+
+    /* larger clickable area on mobile + preserve the visual nudges */
+    @media (max-width: 560px) {
+      .devops-card-footer { transform: translateY(-6px); }
+      .devops-card .devops-btn { transform: translateY(-1px); }
+      .devops-card .devops-btn:hover,
+      .devops-card .devops-btn:focus { transform: translateY(-6px); }
+    }
+
+    /* ===== stronger card highlight (replace existing .devops-card hover/focus rules) ===== */
+
+.devops-card {
+  position: relative; /* enable pseudo-glow */
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+  border-radius: var(--radius);
+  border: 1px solid rgba(11,36,64,0.06);
+  box-shadow: 0 14px 30px rgba(11,36,64,0.08);  /* stronger base shadow */
+  transition: transform .22s cubic-bezier(.2,.9,.2,1), 
+              box-shadow .22s cubic-bezier(.2,.9,.2,1),
+              border-color .18s ease, 
+              opacity .18s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 320px;
+}
+
+/* subtle accent glow element (hidden by default) */
+.devops-card::after {
+  content: "";
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  top: 60%;
+  bottom: -22%;
+  pointer-events: none;
+  border-radius: 40%;
+  filter: blur(28px);
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  background: radial-gradient(closest-side, rgba(255,106,58,0.12), rgba(255,106,58,0.04) 40%, transparent 60%);
+  transition: opacity .22s ease, transform .22s ease;
+}
+
+/* hover/focus: stronger lift + accent glow + warm border tint */
+.devops-card:hover,
+.devops-card:focus-within {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(11,36,64,0.14);   /* heavy hover shadow */
+  border-color: rgba(255,106,58,0.12);          /* warm tint */
+  outline: none;
+}
+
+/* reveal the glow when hovering or focus-within */
+.devops-card:hover::after,
+.devops-card:focus-within::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* accessible focus ring for keyboard users */
+.devops-card:focus-within {
+  box-shadow: 0 30px 80px rgba(11,36,64,0.12), 0 0 0 8px rgba(255,106,58,0.06);
+}
+
   </style>
 
   <div class="devops-card-grid">
