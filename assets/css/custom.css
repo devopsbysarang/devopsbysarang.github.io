@@ -898,7 +898,7 @@ body:not(.layout--splash) .about-page {
 
 /* Home page header/hero padding reduction */
 body.layout--splash .page__hero--overlay .wrapper {
-  padding-top: 1.2rem !important;    /* was 2rem */
+  padding-top: 1.6rem !important;    /* was 2rem */
   padding-bottom: 1rem !important; /* was 2rem */
 }
 
