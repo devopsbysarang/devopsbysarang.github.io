@@ -302,6 +302,7 @@ html, body {
     flex-direction: column;
     align-items: center;
   }
+  
   .doing-card {
     width: 90%;
   }
@@ -347,4 +348,11 @@ html, body {
     font-size: 0.85rem;
   }
 }
+
+@media (max-width: 768px) {
+  .doing-heading {
+    margin-bottom: 20px !important; /* reduce gap below heading on mobile */
+  }
+}
+
 </style>
