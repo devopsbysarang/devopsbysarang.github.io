@@ -126,7 +126,7 @@
       letter-spacing: -0.01em;
     }
 
-    /* description */
+    /* Existing mobile/default style stays as is */
     .devops-card-desc {
       color: var(--muted);
       margin: 0;
@@ -140,6 +140,16 @@
       text-overflow: ellipsis;
       min-height: calc(1.45em * 3);
     }
+    
+    /* Desktop adjustments */
+    @media (min-width: 1024px) {
+      .devops-card-desc {
+        font-size: 0.75rem !important; /* smaller font on desktop */
+        color: #7a7a7a !important;     /* lighter shade on desktop */
+        min-height: calc(1.45em * 3);  /* keep same height for ellipsis */
+      }
+    }
+
 
     /* footer pinned bottom */
     .devops-card-footer {
