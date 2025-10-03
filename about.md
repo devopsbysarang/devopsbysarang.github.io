@@ -173,15 +173,16 @@ html, body {
 
 /* ================== WHAT I'M DOING ================== */
 .doing-section {
-  background-color: #EDE9D5; /* beige */
+  background-color: #EDE9D5; /* beige background */
   color: #0A192F;
-  padding: 60px 20px;
+  padding: 20px 20px 60px 20px !important; /* reduced top padding */
   text-align: center;
+  margin-top: 0 !important; /* ensure no extra margin from parent */
 }
 
 .doing-heading {
   font-size: 2rem;
-  margin-bottom: 40px;
+  margin: 0 0 40px 0 !important; /* remove top margin */
   color: #FF6B35;
 }
 
@@ -210,12 +211,12 @@ html, body {
 .doing-card h3 {
   margin: 15px 0 10px;
   color: #FF6B35;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .doing-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.3;
   color: #0A192F;
 }
 
