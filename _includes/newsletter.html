@@ -33,7 +33,7 @@
   box-sizing: border-box !important;
 }
 
-/* Middle orange highlight */
+/* Middle orange highlight with lifted card effect */
 .dn-inner-highlight {
   display: flex !important;
   align-items: center !important;
@@ -45,6 +45,10 @@
   padding: 1rem 1rem 2rem 1rem !important;
   border-radius: 14px !important;
   box-sizing: border-box !important;
+
+  /* Lift effect */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08) !important;
+  transform: translateY(-8px) !important;
 }
 
 /* left column */
@@ -56,20 +60,20 @@
   padding: 0 0 1rem 0 !important;
   font-size: 2.25rem !important;
   line-height: 1.02 !important;
-  color: #ffffff !important;  /* white text on orange */
+  color: #ffffff !important;
   font-weight: 800 !important;
 }
 
 .dn-desc {
   margin: 0 0 1rem 0 !important;
-  color: #ffffff !important; /* white description text */
+  color: #ffffff !important;
   font-size: 1.05rem !important;
   line-height: 1.45 !important;
 }
 
 /* inner beige form box */
 .dn-form-box {
-  background: #F9F5EE !important; /* beige */
+  background: #F9F5EE !important;
   padding: 14px 14px 2.1px 14px !important;
   border-radius: 12px !important;
   box-shadow: 0 6px 18px rgba(3,10,24,0.08) !important;
@@ -84,8 +88,7 @@
   gap: 0.25rem !important;
   align-items: center !important;
   width: 100% !important;
-  background: #F9F5EE !important; /* beige */
-
+  background: #F9F5EE !important;
 }
 
 .dn-input {
@@ -120,11 +123,6 @@
   transition: transform .14s ease, box-shadow .14s ease !important;
 }
 
-.dn-btn:hover {
-  box-shadow: 0 16px 36px rgba(255,107,53,0.2) !important;
-  transform: translateY(-4px) !important;
-}
-
 /* right image column */
 .dn-image { flex: 0 0 38% !important; display:flex !important; align-items:center !important; justify-content:center !important; }
 .dn-image img {
@@ -135,13 +133,17 @@
   object-fit: contain !important;
 }
 
-/* Responsive mobile: image on top */
+/* Responsive mobile: image on top + lifted adjustment */
 @media (max-width: 880px) {
   .dn-inner-highlight { 
     flex-direction: column !important; 
     align-items: center !important; 
     padding: 0.5rem 1rem 1.4rem 1rem !important;
-    gap: 1rem !important; 
+    gap: 1rem !important;
+
+    /* smaller lift on mobile */
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.10), 0 6px 12px rgba(0,0,0,0.06) !important;
   }
 
   .dn-inner-highlight.mobile-padding-bottom {
