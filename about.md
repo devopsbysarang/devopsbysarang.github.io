@@ -209,7 +209,7 @@ html, body {
 }
 
 .doing-card h3 {
-  margin: 15px 0 10px;
+  margin: 15px 0 8px 0;
   color: #FF6B35;
   font-size: 1.2rem;
 }
