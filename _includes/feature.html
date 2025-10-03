@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Card Section — DevOps (Image centered, Button left)</title>
+  <title>Cards Only — DevOps</title>
 
   <style>
     :root{
@@ -19,10 +19,8 @@
     * { box-sizing: border-box; }
     html,body{ height:100%; margin:0; font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background:var(--bg); color:#122121; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 
-    .wrap { max-width: var(--max-width); margin: 40px auto; padding: 0 20px; }
-
-    .section-title { color:var(--brand-blue); font-size:2rem; margin: 0 0 6px; font-weight:800; }
-    .section-sub { color:var(--muted); margin: 0 0 22px; }
+    /* container: tightened top spacing since no heading */
+    .wrap { max-width: var(--max-width); margin: 20px auto; padding: 0 20px; }
 
     /* grid */
     .card-grid {
@@ -31,7 +29,7 @@
       gap: 28px;
       align-items: start;
     }
-    @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 980px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .card-grid { grid-template-columns: 1fr; } }
 
     /* card */
@@ -45,10 +43,11 @@
       transition: transform .22s ease, box-shadow .22s ease;
       min-height: 380px;
       padding: 18px;
+      position: relative;
     }
     .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(11,36,64,0.10); }
 
-    /* media area: use flex to center image and prevent it drifting */
+    /* media area using background-image (no <img>) */
     .card-media {
       width: 100%;
       height: 170px;
@@ -56,23 +55,15 @@
       overflow: hidden;
       margin-bottom: 14px;
       flex-shrink: 0;
-      background: linear-gradient(180deg,#ececec,#ddd);
-      display: flex;
-      align-items: center;
-      justify-content: center;       /* centers image horizontally */
-      line-height: 0;                /* prevents inline whitespace */
-      padding: 0;
-    }
-    .card-media img {
-      display: block;               /* remove inline whitespace issues */
-      width: 100%;                  /* fill container width */
-      height: 100%;
-      object-fit: cover;            /* consistent crop */
-      object-position: center center; /* center the subject */
-      max-width: none;
+      display: block;
+      background-color: #e9e9e9;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      box-shadow: inset 0 -10px 20px rgba(0,0,0,0.02);
     }
 
-    /* body arranged vertically, footer pushed to bottom */
+    /* content area */
     .card-body {
       display: flex;
       flex-direction: column;
@@ -98,11 +89,11 @@
       display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis;
     }
 
-    /* footer pinned bottom-left now */
+    /* footer pinned bottom-left */
     .card-footer {
-      margin-top: auto;            /* pushes footer to bottom of the card-body */
+      margin-top: auto;
       display:flex;
-      justify-content:flex-start; /* <-- button aligned left */
+      justify-content:flex-start;
       align-items:center;
       gap:12px;
     }
@@ -120,10 +111,12 @@
       color:var(--brand-orange);
       background:transparent;
       transition: all .18s ease;
+      white-space:nowrap;
+      position: relative !important; /* override stray global rules */
+      float: none !important;
     }
     .btn-outline:hover{ background:var(--brand-orange); color:#fff; transform:translateY(-2px); box-shadow:0 6px 16px rgba(11,36,64,0.08); border-color:transparent; }
 
-    /* responsive tweaks */
     @media (max-width: 560px) {
       .card { min-height: auto; }
       .card-media { height: 150px; }
@@ -132,18 +125,14 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h2 class="section-title">Explore</h2>
-    <p class="section-sub">Real-world writeups, learning challenges and automation projects — neatly organized.</p>
 
+  <div class="wrap">
     <div class="card-grid">
 
       <!-- Card 1 -->
       <article class="card" aria-labelledby="c1-title">
-        <figure class="card-media" aria-hidden="true">
-          <!-- replace with your real image path -->
-          <img src="/assets/images/case.png" alt="DevOps Case Studies illustration">
-        </figure>
+        <div class="card-media" role="img" aria-label="DevOps Case Studies illustration"
+             style="background-image: url('/assets/images/banner.png');"></div>
 
         <div class="card-body">
           <h3 id="c1-title" class="card-title">DevOps Case Studies</h3>
@@ -157,9 +146,8 @@
 
       <!-- Card 2 -->
       <article class="card" aria-labelledby="c2-title">
-        <figure class="card-media" aria-hidden="true">
-          <img src="/assets/images/learning.png" alt="Learning Challenges illustration">
-        </figure>
+        <div class="card-media" role="img" aria-label="Learning Challenges illustration"
+             style="background-image: url('/assets/images/learning.png');"></div>
 
         <div class="card-body">
           <h3 id="c2-title" class="card-title">Learning Challenges</h3>
@@ -173,9 +161,8 @@
 
       <!-- Card 3 -->
       <article class="card" aria-labelledby="c3-title">
-        <figure class="card-media" aria-hidden="true">
-          <img src="/assets/images/auto.png" alt="Automation in DevOps illustration">
-        </figure>
+        <div class="card-media" role="img" aria-label="Automation in DevOps illustration"
+             style="background-image: url('/assets/images/automation.png');"></div>
 
         <div class="card-body">
           <h3 id="c3-title" class="card-title">Automation in DevOps</h3>
@@ -189,5 +176,6 @@
 
     </div>
   </div>
+
 </body>
 </html>
