@@ -1,38 +1,38 @@
-<!-- ===== DevOps Cards (namespaced, safe to drop into your page) ===== -->
+<!-- ===== DevOps Cards (no outer box, no top padding, fixed button colors) ===== -->
 <div class="devops-cards-wrap" aria-label="DevOps cards section">
   <style>
-    /* Scoped: only affects elements inside .devops-cards-wrap */
-    .devops-cards-wrap { 
+    /* load Inter */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* Scoped variables + base styles for this section only */
+    .devops-cards-wrap {
       --brand-blue: #0B2440;
       --brand-orange: #FF6A3A;
-      --bg: #F4F6F8;
+      --bg: transparent;           /* let page background show through */
       --card-bg: #ffffff;
       --muted: #55606a;
       --radius: 12px;
-      max-width: 1200px;
-      margin: 24px auto;               /* adjust as needed */
-      padding: 18px;
+      --max-width: 1200px;
+
+      max-width: var(--max-width);
+      margin: 0 auto;              /* removed top margin per request */
+      padding: 0 18px 18px;        /* padding-top removed (0) */
       box-sizing: border-box;
+      font-family: 'Inter', "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Outer box with subtle shadow (as requested) */
-    .devops-cards-outer {
-      background: var(--bg);
-      border-radius: calc(var(--radius) + 4px);
-      padding: 18px;
-      box-shadow: 0 12px 30px rgba(11,36,64,0.06); /* outer shadow */
-    }
-
-    /* grid container */
+    /* grid container: no surrounding outer card/shadow */
     .devops-card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       align-items: start;
       width: 100%;
+      box-sizing: border-box;
     }
 
-    /* responsive columns */
     @media (max-width: 980px) {
       .devops-card-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -44,18 +44,18 @@
     .devops-card {
       background: var(--card-bg);
       border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(11,36,64,0.06);
+      box-shadow: 0 6px 18px rgba(11,36,64,0.06); /* card shadow only */
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: transform .22s ease, box-shadow .22s ease;
-      min-height: 360px;   /* keeps consistent height to align buttons */
+      min-height: 360px;
       padding: 18px;
       box-sizing: border-box;
     }
     .devops-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(11,36,64,0.08); }
 
-    /* media block uses background-image to avoid broken-image layout shift */
+    /* media block (background-image) */
     .devops-card-media {
       height: 170px;
       border-radius: 10px;
@@ -77,17 +77,18 @@
     }
     .devops-card-title {
       color: var(--brand-blue);
-      font-weight: 800;
-      font-size: 1.25rem;
+      font-weight: 500;     /* softer heading */
+      font-size: 1.15rem;
       margin: 0;
-      line-height: 1.05;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
     }
     .devops-card-desc {
       color: var(--muted);
       margin: 0;
       font-size: 0.98rem;
       line-height: 1.45;
-      /* keep descriptions compact */
+      font-weight: 400;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -95,7 +96,7 @@
       text-overflow: ellipsis;
     }
 
-    /* footer pinned to bottom-left via margin-top:auto */
+    /* footer pinned to bottom-left */
     .devops-card-footer {
       margin-top: auto;
       display: flex;
@@ -104,7 +105,7 @@
       gap: 12px;
     }
 
-    /* button (scoped) - override common site fixes if needed */
+    /* BUTTON: force correct color and override site-wide rules that may make it non-orange / turn hover text green */
     .devops-card .devops-btn {
       display: inline-flex;
       align-items: center;
@@ -114,24 +115,33 @@
       font-weight: 700;
       text-decoration: none;
       font-size: 0.95rem;
-      border: 2px solid var(--brand-orange);
-      color: var(--brand-orange);
-      background: transparent;
+      border: 2px solid var(--brand-orange) !important;
+      background: transparent !important;
+      color: var(--brand-orange) !important;         /* force orange text */
       transition: all .18s ease;
-      position: relative !important; /* safe-guard vs global CSS */
+      position: relative !important;                 /* guard vs global CSS */
       float: none !important;
       white-space: nowrap;
     }
-    .devops-card .devops-btn:hover {
-      background: var(--brand-orange);
-      color: #fff;
+
+    /* Hover: orange background and white text (force overrides) */
+    .devops-card .devops-btn:hover,
+    .devops-card .devops-btn:focus {
+      background-color: var(--brand-orange) !important;
+      color: #ffffff !important;                     /* force white text on hover */
+      border-color: transparent !important;
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(11,36,64,0.08);
-      border-color: transparent;
+    }
+
+    /* Also guard visited/active/outline states so theme doesn't change text to green */
+    .devops-card .devops-btn:visited,
+    .devops-card .devops-btn:active {
+      color: var(--brand-orange) !important;
     }
 
     /* keep everything inside the wrap (prevent overflow) */
-    .devops-cards-wrap, .devops-cards-outer, .devops-card-grid, .devops-card { max-width: 100%; box-sizing: border-box; }
+    .devops-cards-wrap, .devops-card-grid, .devops-card { max-width: 100%; box-sizing: border-box; }
 
     /* small-screen tweaks */
     @media (max-width: 560px) {
@@ -141,53 +151,51 @@
     }
   </style>
 
-  <div class="devops-cards-outer">
-    <div class="devops-card-grid">
-      <!-- Card 1 -->
-      <article class="devops-card" aria-labelledby="card1-title">
-        <div class="devops-card-media" role="img" aria-label="DevOps Case Studies"
-             style="background-image: url('/assets/images/case.png');"></div>
+  <div class="devops-card-grid">
+    <!-- Card 1 -->
+    <article class="devops-card" aria-labelledby="card1-title">
+      <div class="devops-card-media" role="img" aria-label="DevOps Case Studies"
+           style="background-image: url('/assets/images/banner.png');"></div>
 
-        <div class="devops-card-body">
-          <h3 id="card1-title" class="devops-card-title">DevOps Case Studies</h3>
-          <p class="devops-card-desc">Real-World DevOps : Challenges and Solutions</p>
+      <div class="devops-card-body">
+        <h3 id="card1-title" class="devops-card-title">DevOps Case Studies</h3>
+        <p class="devops-card-desc">Real-World DevOps : Challenges and Solutions</p>
 
-          <div class="devops-card-footer">
-            <a class="devops-btn" href="/case-studies">Read More →</a>
-          </div>
+        <div class="devops-card-footer">
+          <a class="devops-btn" href="/case-studies">Read More →</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 2 -->
-      <article class="devops-card" aria-labelledby="card2-title">
-        <div class="devops-card-media" role="img" aria-label="Learning Challenges"
-             style="background-image: url('/assets/images/learning.png');"></div>
+    <!-- Card 2 -->
+    <article class="devops-card" aria-labelledby="card2-title">
+      <div class="devops-card-media" role="img" aria-label="Learning Challenges"
+           style="background-image: url('/assets/images/learning.png');"></div>
 
-        <div class="devops-card-body">
-          <h3 id="card2-title" class="devops-card-title">Learning Challenges</h3>
-          <p class="devops-card-desc">Documenting my DevOps journey through challenges</p>
+      <div class="devops-card-body">
+        <h3 id="card2-title" class="devops-card-title">Learning Challenges</h3>
+        <p class="devops-card-desc">Documenting my DevOps journey through challenges</p>
 
-          <div class="devops-card-footer">
-            <a class="devops-btn" href="/learning">Read More →</a>
-          </div>
+        <div class="devops-card-footer">
+          <a class="devops-btn" href="/learning">Read More →</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 3 -->
-      <article class="devops-card" aria-labelledby="card3-title">
-        <div class="devops-card-media" role="img" aria-label="Automation in DevOps"
-             style="background-image: url('/assets/images/auto.png');"></div>
+    <!-- Card 3 -->
+    <article class="devops-card" aria-labelledby="card3-title">
+      <div class="devops-card-media" role="img" aria-label="Automation in DevOps"
+           style="background-image: url('/assets/images/automation.png');"></div>
 
-        <div class="devops-card-body">
-          <h3 id="card3-title" class="devops-card-title">Automation in DevOps</h3>
-          <p class="devops-card-desc">Jenkins, Terraform, Ansible and real-world projects</p>
+      <div class="devops-card-body">
+        <h3 id="card3-title" class="devops-card-title">Automation in DevOps</h3>
+        <p class="devops-card-desc">Jenkins, Terraform, Ansible and real-world projects</p>
 
-          <div class="devops-card-footer">
-            <a class="devops-btn" href="/automation">Read More →</a>
-          </div>
+        <div class="devops-card-footer">
+          <a class="devops-btn" href="/automation">Read More →</a>
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
   </div>
 </div>
 <!-- ===== end devops cards ===== -->
