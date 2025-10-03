@@ -118,18 +118,19 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 12px 30px rgba(255,107,53,0.14) !important;  
+  box-shadow: 0 12px 30px rgba(255,107,53,0.14) !important;
 
-  /* Remove lift */
-  transform: none !important;  
+  /* Use margin to lift visually without overlapping */
+  margin-top: -3px !important;
+  transform: none !important;
   transition: box-shadow .14s ease !important;
 }
 
 .dn-btn:hover {
   box-shadow: 0 16px 36px rgba(255,107,53,0.2) !important;
-  /* remove transform to prevent overlap */
   transform: none !important;
 }
+
 
 
 /* right image column */
