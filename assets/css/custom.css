@@ -912,7 +912,7 @@ body.layout--splash .page__lead {
 @media (max-width: 768px) {
   body.layout--splash .page__hero--overlay .wrapper {
     padding-top: 1rem !important;    /* reduced padding */
-    padding-bottom: 0.9rem !important; /* reduced padding */
+    padding-bottom: 0.5rem !important; /* reduced padding */
   }
 }
 
