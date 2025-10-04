@@ -952,13 +952,5 @@ body.layout--splash .page__lead {
   }
 }
 
-/* Dark-hero override (uncomment if hero uses dark overlay)
-.page__hero--overlay .page__title {
-  color: #fff !important;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
-}
-.page__hero--overlay .page__lead {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-*/
+.page__hero--overlay .page__title span:last-child { color: #FF6B36 !important; }
 
