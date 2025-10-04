@@ -173,7 +173,7 @@ html, body {
 
 /* ================== WHAT I'M DOING ================== */
 .doing-section {
-  background-color: #EDE9D5; /* beige background */
+  background-color: #FAF7EB; /* beige background */
   color: #0A192F;
   padding: 25px 20px 60px 20px !important; /* reduced top padding */
   text-align: center;
@@ -226,7 +226,7 @@ html, body {
 
 /* ================== TESTIMONIALS ================== */
 .testimonials-section {
-  background-color: #F5F1E9;
+  background-color: #fff;
   padding: 40px 0;
 }
 
