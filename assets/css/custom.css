@@ -952,5 +952,16 @@ body.layout--splash .page__lead {
   }
 }
 
-.page__hero--overlay .page__title span:last-child { color: #FF6B36 !important; }
+
+.page__hero--overlay .page__title {
+  position: relative;
+}
+
+/* Remove original full stop if any */
+.page__hero--overlay .page__title::after {
+  content: "•"; /* You can use "." if you want the same dot */
+  color: #FF6B36 !important;
+  margin-left: 0.1em;
+}
+
 
