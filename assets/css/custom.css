@@ -947,7 +947,7 @@ body.layout--splash .page__lead {
   }
 
   .page__hero--overlay .page__lead {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
     line-height: 1.6 !important;
   }
 }
