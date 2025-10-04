@@ -957,15 +957,15 @@ body.layout--splash .page__lead {
   position: relative;
 }
 
-/* Add orange full stop aligned to text baseline */
 .page__hero--overlay .page__title::after {
-  content: ".";
-  color: #FF6B36 !important;
-  position: relative;
-  top: 0.1em; /* adjust this value to move dot down */
-  margin-left: 0.05em; /* small spacing from text */
-  font-weight: 700; /* match bold text */
+    content: ".";
+    color: #FF6B36 !important;   /* Orange dot */
+    position: relative;
+    top: 0.05em;                 /* Adjust vertical alignment */
+    margin-left: -0.45em;        /* Overlaps slightly for seamless look */
+    font-weight: 700;            /* Match heading boldness */
+    font-size: 1.3em;            /* Larger than heading text */
+    display: inline-block;
 }
-
 
 
