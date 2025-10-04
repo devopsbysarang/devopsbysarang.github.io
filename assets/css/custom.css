@@ -961,7 +961,7 @@ body.layout--splash .page__lead {
     content: ".";
     color: #FF6B36 !important;   /* Orange dot */
     position: relative;
-    top: 0.02em;                 /* Adjust vertical alignment */
+    top: -0.005em;                 /* Adjust vertical alignment */
     margin-left: -0.18em;        /* Overlaps slightly for seamless look */
     font-weight: 700;            /* Match heading boldness */
     font-size: 1.4em;            /* Larger than heading text */
