@@ -957,11 +957,15 @@ body.layout--splash .page__lead {
   position: relative;
 }
 
-/* Remove original full stop if any */
+/* Add orange full stop aligned to text baseline */
 .page__hero--overlay .page__title::after {
-  content: "•"; /* You can use "." if you want the same dot */
+  content: ".";
   color: #FF6B36 !important;
-  margin-left: 0.1em;
+  position: relative;
+  top: 0.1em; /* adjust this value to move dot down */
+  margin-left: 0.05em; /* small spacing from text */
+  font-weight: 700; /* match bold text */
 }
+
 
 
