@@ -962,3 +962,19 @@ body.layout--splash .page__lead {
 }
 */
 
+
+/* ===== Hero Title Font ===== */
+.page__hero--overlay .page__title {
+  font-family: 'Arp Display 150', sans-serif !important; /* Use your custom font */
+  font-weight: 700 !important; /* Bold */
+  font-size: 2.8rem !important; /* Adjust size as needed */
+  line-height: 1.2 !important;
+  color: #1e1e1e !important; /* Or any color you want */
+}
+
+/* Optional responsive adjustment */
+@media (max-width: 768px) {
+  .page__hero--overlay .page__title {
+    font-size: 2rem !important;
+  }
+}
