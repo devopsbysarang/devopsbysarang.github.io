@@ -11,6 +11,46 @@ permalink: /about/
     <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh">
   </div>
 
+<!-- Simple responsive YouTube embed -->
+<div class="video-wrap">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/tuc85lFMfTQ?rel=0&modestbranding=1"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy"></iframe>
+</div>
+
+<style>
+/* Keeps iframe responsive with 16:9 aspect ratio */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* change as you like */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.video-wrap::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 ratio (9/16 = 56.25%) */
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+
+
   <!-- Bio -->
   <div class="about-bio">
     <h2>Sarang Deshmukh</h2>
