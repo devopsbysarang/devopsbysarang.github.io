@@ -22,7 +22,9 @@ permalink: /about/
 */
 (function () {
   const container = document.getElementById('yt-player');
-  const vid = container.dataset.videoId;
+  if (!container) return; // guard if the container doesn't exist on this page
+  const vid = container.dataset && container.dataset.videoId;
+  if (!vid) return;
   const unmuteBtn = document.getElementById('unmute-btn');
 
   // Build iframe URL that autoplay & loop (loop needs playlist=VIDEO_ID)
@@ -59,13 +61,15 @@ permalink: /about/
   insertIframe({ mute: true });
 
   // Unmute button: user interaction required to enable sound.
-  unmuteBtn.addEventListener('click', function () {
-    // replace iframe with one that has mute=0; since this is a user gesture, autoplay with sound should start.
-    insertIframe({ mute: false });
+  if (unmuteBtn) {
+    unmuteBtn.addEventListener('click', function () {
+      // replace iframe with one that has mute=0; since this is a user gesture, autoplay with sound should start.
+      insertIframe({ mute: false });
 
-    // hide the button once unmuted
-    unmuteBtn.style.display = 'none';
-  }, { once: true });
+      // hide the button once unmuted
+      unmuteBtn.style.display = 'none';
+    }, { once: true });
+  }
 
   // Optional: hide unmute button on small screens if you don't want it visible
   // if (window.matchMedia && window.matchMedia('(max-width:420px)').matches) { unmuteBtn.style.display = 'none'; }
@@ -86,7 +90,7 @@ permalink: /about/
   </div>
 </div>
 
-<!-- ================== WHAT I'M DOING SECTION ================== -->
+<!-- ================== WHAT I'M DOING SECTION (MODERN) ================== -->
 <section class="doing-section">
   <div class="container">
     <h2 class="doing-heading">What I'm Doing</h2>
@@ -107,7 +111,6 @@ permalink: /about/
       <!-- Cloud Engineer -->
       <div class="doing-card">
         <div class="doing-icon">
-          <!-- SVG for Cloud -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
             <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25"/>
           </svg>
@@ -119,7 +122,6 @@ permalink: /about/
       <!-- SRE -->
       <div class="doing-card">
         <div class="doing-icon">
-          <!-- SVG for Monitoring -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
             <path d="M4 4v16h16V4H4zm4 12l2-3 2 2 4-6 2 3"/>
           </svg>
@@ -131,7 +133,6 @@ permalink: /about/
       <!-- Software Development -->
       <div class="doing-card">
         <div class="doing-icon">
-          <!-- SVG for Code -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
             <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
           </svg>
@@ -234,57 +235,97 @@ html, body {
   background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
 }
 
-/* ================== WHAT I'M DOING ================== */
+/* ================== MODERNIZED WHAT I'M DOING SECTION ================== */
 .doing-section {
-  background-color: #FAF7EB; /* beige background */
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FB 100%);
   color: #0A192F;
-  padding: 25px 20px 60px 20px !important; /* reduced top padding */
+  padding: 60px 20px;
   text-align: center;
-  margin-top: 0 !important; /* ensure no extra margin from parent */
+  margin-top: 0 !important;
 }
 
 .doing-heading {
-  font-size: 2rem;
-  margin: 0 0 40px 0 !important; /* remove top margin */
+  font-size: 2.2rem;
   color: #FF6B35;
+  font-weight: 600;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.doing-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #FF8C42, #FF6B35);
+  margin: 12px auto 0;
+  border-radius: 3px;
 }
 
 .doing-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .doing-card {
-  background-color: #FFFFFF;
-  border: 2px solid #FF6B35;
-  border-radius: 12px;
-  padding: 25px 20px;
-  width: 260px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  padding: 30px 24px;
+  width: 270px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.doing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 140, 66, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.doing-card:hover::before {
+  opacity: 1;
 }
 
 .doing-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.doing-card h3 {
-  margin: 15px 0 8px 0;
-  color: #FF6B35;
-  font-size: 1.2rem;
-}
-
-.doing-card p {
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: #0A192F;
+  box-shadow: 0 10px 28px rgba(255, 107, 53, 0.25);
+  border-color: rgba(255, 107, 53, 0.5);
 }
 
 .doing-icon {
-  margin-bottom: 10px;
+  background: rgba(255, 107, 53, 0.1);
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doing-card h3 {
+  margin: 12px 0 8px;
+  color: #FF6B35;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.doing-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #0A192F;
+  opacity: 0.9;
 }
 
 /* ================== TESTIMONIALS ================== */
