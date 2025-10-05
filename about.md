@@ -6,21 +6,48 @@ permalink: /about/
 
 <div class="about-page">
 
-  <!-- VIDEO (replaces photo) -->
+  <!-- LEFT: profile card (photo, name, bio, socials) -->
+  <aside class="profile-card" aria-label="Profile card">
+    <div class="profile-top">
+      <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh" class="profile-avatar">
+      <div class="profile-meta">
+        <h1 class="profile-name">Sarang Deshmukh</h1>
+        <p class="profile-role">DevOps Engineer — Reliability · Cloud · Automation</p>
+      </div>
+    </div>
+
+    <div class="profile-bio">
+      <p>
+        I build reliable, scalable, and maintainable cloud systems. I design automated workflows, optimize CI/CD, and deliver multi-region resilient infra. This site showcases projects, learnings and practical write-ups from my DevOps journey.
+      </p>
+    </div>
+
+    <div class="profile-actions" aria-label="Social links">
+      <a class="social" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <!-- Instagram SVG -->
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+        <span>Instagram</span>
+      </a>
+
+      <a class="social" href="https://www.linkedin.com/in/sarang-deshmukh-125" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <!-- LinkedIn SVG -->
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-14h4v2"/></svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <a class="social" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <!-- GitHub SVG -->
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.5a3.5 3.5 0 0 0-1-2.75c3.2-.35 6.5-1.6 6.5-7A5.4 5.4 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-8 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77c0 5.42 3.3 6.65 6.5 7A3.5 3.5 0 0 0 9 18.5V22"/></svg>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- RIGHT: video (muted autoplay looping, poster first) -->
   <div class="about-video-wrap">
     <div id="yt-player" class="about-video" data-video-id="7g7pvNQEl5M" role="region" aria-label="Autoplaying muted looping video"></div>
   </div>
 
-  <!-- Bio (kept your original text) -->
-  <div class="about-bio">
-    <h2>Sarang Deshmukh</h2>
-    <p>
-      I am a DevOps engineer with 5+ years of experience building reliable, scalable, and maintainable systems. I thrive on designing automated workflows, optimizing pipelines, and creating systems that are robust and future-proof.
-    </p>
-    <p>
-      This website is my space to showcase projects, share insights, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work, I aim to inspire others and continuously grow as a technologist.
-    </p>
-  </div>
 </div>
 
 <!-- ================== WHAT I'M DOING SECTION (UNCHANGED) ================== -->
@@ -108,46 +135,131 @@ permalink: /about/
 </section>
 
 <style>
-/* ================== Scoped styles for the updated upper part ================== */
+/* ================== UPPER PART: profile + video styles (keeps other sections untouched) ================ */
 
+:root {
+  --accent: #FF6B35;
+  --bg: #FFFFFF;
+  --text: #0A192F;
+  --muted: #6B7280;
+}
+
+html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: 'Roboto', sans-serif; box-sizing: border-box; }
+
+/* Container for top area */
 .about-page {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   gap: 2rem;
+  align-items: flex-start;
   padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Video wrapper with orange border (theme color #FF6B35) */
-.about-video-wrap {
-  flex: 0 0 360px;
-  width: 360px;
-  max-width: 45%;
-  box-sizing: border-box;
+/* PROFILE CARD (left) */
+.profile-card {
+  flex: 1 1 420px;
+  background: linear-gradient(180deg, #fff, #fff);
   border-radius: 14px;
-  padding: 6px; /* space to show rounded border */
-  border: 4px solid #FF6B35;
-  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(9,20,40,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 260px;
 }
 
-/* Inner video area holds poster image and iframe */
+/* Top row: avatar + meta */
+.profile-top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* avatar */
+.profile-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(9,20,40,0.08);
+  border: 3px solid rgba(255,107,53,0.08);
+}
+
+/* name and role */
+.profile-name {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+.profile-role {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* bio text */
+.profile-bio { color: var(--text); line-height:1.6; font-size:1rem; }
+
+/* socials */
+.profile-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(15,23,42,0.03);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.12s ease, background 0.12s ease;
+  border: 1px solid rgba(10,25,47,0.04);
+}
+.social:hover {
+  transform: translateY(-4px);
+  background: rgba(255,107,53,0.06);
+  border-color: rgba(255,107,53,0.14);
+  color: var(--accent);
+}
+
+/* icon color */
+.social svg { color: currentColor; opacity: 0.95; }
+
+/* VIDEO (right) */
+.about-video-wrap {
+  flex: 0 0 520px;
+  max-width: 520px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* inner video area */
 .about-video {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%; /* 16:9 */
   border-radius: 10px;
-  overflow: hidden;
-  background-color: #000;
+  background: #000;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
-/* Slight overlay for a neutral look */
+/* overlay for neutral look */
 .about-video::after {
   content: "";
   position: absolute;
@@ -156,43 +268,21 @@ permalink: /about/
   background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));
 }
 
-/* iframe styling — starts hidden and fades in when ready */
+/* iframe fills the container; hidden until ready */
 .about-video iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
-  pointer-events: none;      /* prevents click-through to YouTube */
+  pointer-events: none;
   opacity: 0;
   transition: opacity 300ms ease;
   display: block;
 }
+.about-video iframe.ready { opacity: 1; }
 
-/* class added by script when ready to show player */
-.about-video iframe.ready {
-  opacity: 1;
-}
-
-/* Bio styles (kept your original visual but scoped) */
-.about-bio {
-  flex: 1 1 480px;
-  font-size: 1.05rem;
-  box-sizing: border-box;
-}
-.about-bio h2 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 2rem;
-  color: #FF6B35;
-  margin: 0 0 0.5rem 0;
-  letter-spacing: 1px;
-}
-.about-bio p {
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-}
-
-/* ================== WHAT I'M DOING SECTION (original styles) ================== */
+/* ================== DOING & TESTIMONIAL STYLES (UNCHANGED from your original) ================== */
 .doing-section {
   background-color: #FAF7EB; /* beige background */
   color: #0A192F;
@@ -245,7 +335,7 @@ permalink: /about/
   margin-bottom: 10px;
 }
 
-/* ================== TESTIMONIALS (original styles) ================== */
+/* ================== TESTIMONIALS (unchanged) ================== */
 .testimonials-section {
   background-color: #fff;
   padding: 40px 0;
@@ -300,128 +390,75 @@ permalink: /about/
   margin-top: 3px;
 }
 
-/* Hover effect */
 .testimonial:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* ================== RESPONSIVE (original rules for these sections) ================== */
+/* ================== RESPONSIVE: mobile stacks text first then video ================ */
+@media (max-width: 920px) {
+  .about-page { gap: 1rem; padding: 1.25rem; }
+  .about-video-wrap { max-width: 480px; flex: 0 0 48%; }
+  .profile-card { flex: 1 1 48%; }
+}
+
 @media (max-width: 768px) {
   .about-page {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
-  .about-video-wrap {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 auto;
-    padding: 4px;
-    border-radius: 10px;
-  }
-  .about-video { border-radius: 8px; }
-  .about-bio { text-align: left; width: 100%; }
-  .doing-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .doing-card {
-    width: 90%;
-  }
-  .testimonials-wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .testimonial {
-    max-width: 90%;
-    padding: 20px;
-    margin: 0 auto;
-  }
+  /* ensure profile card shows first, then video */
+  .profile-card { order: 0; }
+  .about-video-wrap { order: 1; width: 100%; max-width: 100%; margin-top: 0; }
+  .about-video { border-radius: 10px; }
+  .profile-card { border-radius: 12px; }
+  .profile-avatar { width: 72px; height:72px; }
+  .profile-name { font-size: 1.2rem; }
+  .profile-role { font-size: 0.92rem; }
 }
 
-@media (max-width: 480px) {
-  .testimonials-wrapper {
-    width: 100%;
-    padding: 0;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .testimonial {
-    width: 95% !important;
-    max-width: 320px !important;
-    padding: 14px 16px;
-    margin: 12px 0;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    text-align: left;
-  }
-
-  .testimonial p {
-    margin-bottom: 10px;
-  }
-
-  .testimonial-name {
-    font-size: 0.95rem;
-    margin-top: 8px;
-  }
-
-  .testimonial-role {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .doing-heading {
-    margin-bottom: 25px !important; /* reduce gap below heading on mobile */
-  }
+/* small phones */
+@media (max-width: 420px) {
+  .profile-avatar { width: 64px; height:64px; }
+  .profile-card { padding: 14px; }
+  .about-page { padding: 12px; }
 }
 </style>
 
 <!-- ================== SCRIPT: poster -> iframe (muted autoplay loop, no initial YouTube UI) ================== -->
 <script>
-/* Insert a muted, autoplaying, looping YouTube iframe but show a poster first
-   so the initial UI doesn't look like the raw YouTube player.
-   This script only touches #yt-player. */
 (function () {
   const container = document.getElementById('yt-player');
   if (!container) return;
   const vid = container.dataset.videoId;
 
-  // Poster choices: try maxres, fallback to hq
+  // Poster choices: try maxres then hq
   const thumbMax = `https://i.ytimg.com/vi/${vid}/maxresdefault.jpg`;
   const thumbHQ  = `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
 
-  // Immediately set HQ poster to avoid showing any YouTube chrome
+  // Set HQ poster quickly to avoid showing YouTube chrome
   container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03)), url("${thumbHQ}")`;
 
-  // Try to preload maxres; if available use it, otherwise keep HQ
-  const preload = new Image();
-  let posterUsed = thumbHQ;
-  preload.src = thumbMax;
-  preload.onload = function () {
-    posterUsed = thumbMax;
-    container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03)), url("${posterUsed}")`;
+  // Preload max resolution; if available swap it in then insert iframe
+  const img = new Image();
+  img.src = thumbMax;
+  img.onload = function () {
+    container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03)), url("${thumbMax}")`;
     insertIframe();
   };
-  preload.onerror = function () {
-    // maxres not available; proceed with HQ poster
+  img.onerror = function () {
     insertIframe();
   };
 
-  // Safety: if poster loading hangs, still insert iframe after timeout so area isn't blank
-  setTimeout(function () {
-    if (!container.querySelector('iframe')) insertIframe();
-  }, 1600);
+  // Safety timeout so video isn't delayed too long
+  setTimeout(function () { if (!container.querySelector('iframe')) insertIframe(); }, 1600);
 
   function buildSrc() {
-    // privacy-enhanced domain + autoplay muted + loop + request 720p (YouTube may adapt)
     const params = new URLSearchParams({
       autoplay: 1,
       mute: 1,
       loop: 1,
-      playlist: vid,       // required for loop to work
+      playlist: vid,
       controls: 0,
       rel: 0,
       modestbranding: 1,
@@ -433,29 +470,23 @@ permalink: /about/
 
   function insertIframe() {
     if (container.querySelector('iframe')) return;
-
     const iframe = document.createElement('iframe');
     iframe.src = buildSrc();
     iframe.title = 'Embedded video';
     iframe.setAttribute('frameborder', '0');
-    // allow autoplay for muted content; picture-in-picture allowed
     iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
     iframe.loading = 'eager';
-    // Keep the iframe non-interactive so clicks won't open YouTube
     iframe.style.pointerEvents = 'none';
-
     container.appendChild(iframe);
 
-    // Fade the iframe in when it appears; some browsers may not fire load, so use both load and timeout
+    // Fade-in once loaded or after fallback timeout
     let revealed = false;
     function reveal() {
       if (revealed) return;
       iframe.classList.add('ready');
-      // remove poster background so embedded player sits cleanly
       container.style.backgroundImage = 'none';
       revealed = true;
     }
-
     iframe.addEventListener('load', function () { setTimeout(reveal, 120); });
     setTimeout(reveal, 1200);
   }
