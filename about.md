@@ -4,285 +4,460 @@ title: "About Me"
 permalink: /about/
 ---
 
-<!-- ================== ABOUT / HERO ================== -->
-<section class="page-hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <h1 class="hero-title">Sarang Deshmukh</h1>
-      <p class="hero-sub">
-        DevOps engineer — building reliable, scalable, and maintainable cloud systems. I design automated workflows, optimize CI/CD, and deliver multi-region resilient infra.
-      </p>
-      <p class="hero-cta">
-        <a href="#work" class="btn">See what I'm doing</a>
-      </p>
-    </div>
+<div class="about-page">
 
-    <!-- Video card (orange border) -->
-    <div class="hero-right">
-      <div class="video-card bordered">
-        <div id="yt-player" class="video-card__inner" data-video-id="7g7pvNQEl5M" role="region" aria-label="Autoplaying background video"></div>
+  <!-- VIDEO (replaces photo) -->
+  <div class="about-video-wrap">
+    <div id="yt-player" class="about-video" data-video-id="7g7pvNQEl5M" role="region" aria-label="Autoplaying muted looping video"></div>
+  </div>
+
+  <!-- Bio (kept your original text) -->
+  <div class="about-bio">
+    <h2>Sarang Deshmukh</h2>
+    <p>
+      I am a DevOps engineer with 5+ years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I thrive on designing automated workflows, optimizing pipelines, and creating systems that are robust and future-proof.
+    </p>
+    <p>
+      This website is my space to showcase projects, share insights, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work, I aim to inspire others and continuously grow as a technologist.
+    </p>
+  </div>
+</div>
+
+<!-- ================== WHAT I'M DOING SECTION (UNCHANGED) ================== -->
+<section class="doing-section">
+  <div class="container">
+    <h2 class="doing-heading">What I'm Doing</h2>
+
+    <div class="doing-wrapper">
+      <!-- DevOps -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for DevOps -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <h3>DevOps</h3>
+        <p>I enjoy improving the speed and quality of delivery, automating workflows, and achieving CI/CD.</p>
+      </div>
+
+      <!-- Cloud Engineer -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for Cloud -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25"/>
+          </svg>
+        </div>
+        <h3>Cloud Engineer</h3>
+        <p>I enjoy designing, securing, and maintaining cloud-based infrastructure and applications.</p>
+      </div>
+
+      <!-- SRE -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for Monitoring -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M4 4v16h16V4H4zm4 12l2-3 2 2 4-6 2 3"/>
+          </svg>
+        </div>
+        <h3>SRE</h3>
+        <p>I focus on processes and tools that ensure scalability, reliability, and availability of systems.</p>
+      </div>
+
+      <!-- Software Development -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for Code -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+          </svg>
+        </div>
+        <h3>Software Development</h3>
+        <p>I enjoy learning and practicing software development for personal and professional growth.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================== MAIN CONTENT (BIO + DETAILS) ================== -->
-<main class="main-content container">
-  <section class="bio-section">
-    <div class="bio-card">
-      <h2 class="section-title">About me</h2>
-      <p>
-        I am a DevOps engineer with 5+ years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I thrive on designing automated workflows, optimizing pipelines, and creating systems that are robust and future-proof.
-      </p>
-      <p>
-        This website is my space to showcase projects, share insights, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work, I aim to inspire others and continuously grow as a technologist.
-      </p>
-    </div>
-  </section>
+<!-- ================== Testimonials Section (UNCHANGED) ================== -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="testimonials-heading">What people say?</h2>
 
-  <!-- ================== WHAT I'M DOING ================== -->
-  <section id="work" class="doing-section">
-    <h2 class="section-title">What I'm Doing</h2>
-    <div class="doing-grid">
-      <article class="doing-card">
-        <div class="doing-icon">⚙️</div>
-        <h3>DevOps</h3>
-        <p>Improving delivery speed and quality through automation, CI/CD pipelines, and observability.</p>
-      </article>
-
-      <article class="doing-card">
-        <div class="doing-icon">☁️</div>
-        <h3>Cloud Engineer</h3>
-        <p>Designing secure, scalable cloud infrastructure and repeatable IaC patterns (Terraform / CloudFormation).</p>
-      </article>
-
-      <article class="doing-card">
-        <div class="doing-icon">📈</div>
-        <h3>SRE</h3>
-        <p>Implementing SLOs, monitoring, and reliability practices to keep services healthy and available.</p>
-      </article>
-
-      <article class="doing-card">
-        <div class="doing-icon">💻</div>
-        <h3>Software Development</h3>
-        <p>Building automation tooling & scripts to make teams more productive — Python, Bash, and infra code.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ================== TESTIMONIALS ================== -->
-  <section class="testimonials-section">
-    <h2 class="section-title">What people say</h2>
-    <div class="testimonials-grid">
-      <blockquote class="testimonial">
+    <div class="testimonials-wrapper">
+      <!-- Testimonial 1 -->
+      <div class="testimonial">
         <p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
-        <footer>— Hariom Kashyap, <span class="muted">Software Architect, Amdocs</span></footer>
-      </blockquote>
+        <p class="testimonial-name">
+          – Hariom Kashyap
+          <span class="testimonial-role">Software Architect, Amdocs</span>
+        </p>
+      </div>
 
-      <blockquote class="testimonial">
+      <!-- Testimonial 2 -->
+      <div class="testimonial">
         <p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
-        <footer>— Ankur Singh, <span class="muted">AI Engineer, Intel</span></footer>
-      </blockquote>
+        <p class="testimonial-name">
+          – Ankur Singh
+          <span class="testimonial-role">AI Engineer, Intel</span>
+        </p>
+      </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
-<!-- ================== STYLES ================== -->
 <style>
-/* Basic page & container */
-:root {
-  --accent: #FF6B35;
-  --bg: #FFFFFF;
-  --text: #0A192F;
-  --muted: #6B7280;
-  --card-radius: 12px;
-  --container-max: 1100px;
-  --mobile-gap: 1rem;
+/* ================== Scoped styles for the updated upper part ================== */
+
+.about-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-html,body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-
-/* small container helper */
-.container { max-width: var(--container-max); margin: 0 auto; padding: 2rem; box-sizing: border-box; }
-
-/* HERO */
-.page-hero { padding: 2.5rem 1rem; border-bottom: 1px solid rgba(10,25,47,0.04); }
-.hero-inner { display:flex; gap: 2.5rem; align-items:center; justify-content:space-between; max-width: var(--container-max); margin: 0 auto; padding: 0 1rem; box-sizing:border-box; }
-.hero-left { flex: 1 1 520px; min-width: 220px; }
-.hero-right { flex: 0 0 420px; display:flex; justify-content:flex-end; align-items:center; }
-
-/* hero typography */
-.hero-title { margin:0 0 0.6rem 0; font-family: 'Rubik', system-ui, sans-serif; font-size: 2.2rem; color:var(--accent); letter-spacing: 0.4px; line-height:1.05; }
-.hero-sub { margin:0 0 1rem 0; color:var(--muted); line-height:1.6; font-size:1.05rem; }
-
-/* CTA */
-.btn { display:inline-block; background:linear-gradient(135deg,var(--accent) 0%, #FF8C42 100%); color:#fff; padding:0.65rem 1rem; border-radius:10px; text-decoration:none; font-weight:600; box-shadow: 0 6px 18px rgba(255,107,53,0.14); }
-
-/* Video card */
-.video-card { width:100%; max-width:420px; box-sizing:border-box; }
-.video-card.bordered { border-radius: 16px; padding: 6px; border: 4px solid var(--accent); background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02)); box-shadow: 0 14px 40px rgba(9,20,40,0.06); overflow:hidden; }
-.video-card__inner { position:relative; width:100%; height:0; padding-bottom:56.25%; border-radius: 10px; overflow:hidden; background:#000; background-position:center; background-size:cover; }
-.video-card__inner::after { content:""; position:absolute; inset:0; pointer-events:none; background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.04)); }
-
-/* iframe styling & fade in */
-.video-card__inner iframe { position:absolute; inset:0; width:100%; height:100%; border:0; pointer-events:none; opacity:0; transition: opacity 300ms ease; display:block; }
-.video-card__inner iframe.ready { opacity:1; }
-
-/* MAIN / BIO */
-.main-content { padding-top: 1.25rem; padding-bottom: 2rem; }
-.bio-section { margin-bottom: 2rem; }
-.bio-card { background:#fff; border-radius: var(--card-radius); padding: 1.5rem; box-shadow: 0 6px 18px rgba(9,20,40,0.04); }
-.section-title { margin:0 0 1rem 0; font-family:'Rubik', sans-serif; font-size:1.5rem; color:var(--accent); }
-
-/* DOING GRID */
-.doing-section { margin-top: 2.5rem; padding: 1.25rem 0 0 0; }
-.doing-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top:1rem; }
-.doing-card { background:#fff; border:1px solid rgba(10,25,47,0.04); border-radius:12px; padding:1.15rem; box-shadow: 0 8px 24px rgba(9,20,40,0.04); text-align:center; transition: transform 220ms ease, box-shadow 220ms ease; }
-.doing-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(9,20,40,0.06); }
-.doing-icon { font-size:1.6rem; margin-bottom:0.6rem; }
-
-/* TESTIMONIALS */
-.testimonials-section { margin-top: 2.5rem; padding-bottom: 3rem; }
-.testimonials-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top:1rem; }
-.testimonial { background:var(--accent); color: #fff; border-radius: 12px; padding: 1.25rem; box-shadow: 0 10px 30px rgba(9,20,40,0.06); }
-.testimonial p { margin:0 0 0.6rem 0; }
-.testimonial footer { font-weight:600; color: rgba(255,255,255,0.95); }
-
-/* muted text helper */
-.muted { color: rgba(255,255,255,0.9); font-weight:500; font-style:italic; font-size:0.95rem; }
-
-/* ================== MOBILE / RESPONSIVE IMPROVEMENTS ================== */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero-inner { gap: 1.5rem; }
-  .hero-right { flex-basis: 360px; }
-  .hero-title { font-size: 1.9rem; }
-  .doing-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .video-card.bordered { max-width:360px; }
+/* Video wrapper with orange border (theme color #FF6B35) */
+.about-video-wrap {
+  flex: 0 0 360px;
+  width: 360px;
+  max-width: 45%;
+  box-sizing: border-box;
+  border-radius: 14px;
+  padding: 6px; /* space to show rounded border */
+  border: 4px solid #FF6B35;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
 }
 
-/* Mobile phones: stack and make everything touch-friendly */
+/* Inner video area holds poster image and iframe */
+.about-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Slight overlay for a neutral look */
+.about-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));
+}
+
+/* iframe styling — starts hidden and fades in when ready */
+.about-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;      /* prevents click-through to YouTube */
+  opacity: 0;
+  transition: opacity 300ms ease;
+  display: block;
+}
+
+/* class added by script when ready to show player */
+.about-video iframe.ready {
+  opacity: 1;
+}
+
+/* Bio styles (kept your original visual but scoped) */
+.about-bio {
+  flex: 1 1 480px;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+}
+.about-bio h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2rem;
+  color: #FF6B35;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+.about-bio p {
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* ================== WHAT I'M DOING SECTION (original styles) ================== */
+.doing-section {
+  background-color: #FAF7EB; /* beige background */
+  color: #0A192F;
+  padding: 25px 20px 60px 20px !important; /* reduced top padding */
+  text-align: center;
+  margin-top: 0 !important; /* ensure no extra margin from parent */
+}
+
+.doing-heading {
+  font-size: 2rem;
+  margin: 0 0 40px 0 !important; /* remove top margin */
+  color: #FF6B35;
+}
+
+.doing-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.doing-card {
+  background-color: #FFFFFF;
+  border: 2px solid #FF6B35;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.doing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.doing-card h3 {
+  margin: 15px 0 8px 0;
+  color: #FF6B35;
+  font-size: 1.2rem;
+}
+
+.doing-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #0A192F;
+}
+
+.doing-icon {
+  margin-bottom: 10px;
+}
+
+/* ================== TESTIMONIALS (original styles) ================== */
+.testimonials-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.testimonials-heading {
+  color: #0A192F;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+
+.testimonial {
+  background-color: #FF6B35;
+  color: #FFFFFF !important;
+  border-radius: 12px;
+  padding: 30px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  flex: 0 1 360px;
+  max-width: 360px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial p {
+  margin-bottom: 15px;
+  color: #FFFFFF !important;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  color: #FFFFFF !important;
+  margin-top: 10px;
+}
+
+.testimonial-role {
+  display: block;
+  font-style: italic;
+  color: #EFF6FF !important;
+  margin-top: 3px;
+}
+
+/* Hover effect */
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* ================== RESPONSIVE (original rules for these sections) ================== */
 @media (max-width: 768px) {
-  .container { padding: 1rem; }
-  .hero-inner { flex-direction: column-reverse; align-items:flex-start; gap: var(--mobile-gap); }
-  .hero-right { width:100%; display:block; margin-bottom:0; }
-  .hero-left { width:100%; }
-  .hero-title { font-size: 1.6rem; }
-  .hero-sub { font-size: 0.98rem; }
-  .btn { display:block; width:100%; text-align:center; padding:0.8rem 0; border-radius:12px; font-size:1rem; }
-  /* video becomes full-width card above bio (so small screens see video first) */
-  .video-card { width: 100%; max-width: 100%; }
-  .video-card.bordered { border-radius: 12px; padding: 4px; border-width: 4px; }
-  .video-card__inner { border-radius: 8px; }
-  /* bio becomes full width */
-  .bio-card { padding: 1rem; }
-  /* grids collapse */
-  .doing-grid { grid-template-columns: 1fr; gap: 0.8rem; }
-  .testimonials-grid { grid-template-columns: 1fr; gap: 0.9rem; }
-  .doing-card { padding: 0.95rem; }
-  .testimonial { padding: 1rem; }
+  .about-page {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-video-wrap {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  .about-video { border-radius: 8px; }
+  .about-bio { text-align: left; width: 100%; }
+  .doing-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .doing-card {
+    width: 90%;
+  }
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .testimonial {
+    max-width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+  }
 }
 
-/* Small phones: tighten spacing but keep accessibility */
-@media (max-width: 420px) {
-  .hero-title { font-size: 1.45rem; }
-  .hero-sub { font-size: 0.95rem; line-height:1.5; }
-  .btn { padding:0.7rem 0; font-size:0.98rem; border-radius: 10px; }
-  .container { padding: 0.75rem; }
-  .bio-card { padding: 0.9rem; }
-  .section-title { font-size: 1.2rem; }
-  .doing-icon { font-size:1.3rem; }
-  .doing-card { padding: 0.85rem; }
+@media (max-width: 480px) {
+  .testimonials-wrapper {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial {
+    width: 95% !important;
+    max-width: 320px !important;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .testimonial p {
+    margin-bottom: 10px;
+  }
+
+  .testimonial-name {
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+
+  .testimonial-role {
+    font-size: 0.85rem;
+  }
 }
 
-/* Very small: ensure readable testimonial text */
-@media (max-width: 360px) {
-  .hero-title { font-size: 1.35rem; }
-  .hero-sub { font-size: 0.92rem; }
-  .testimonial p { font-size: 0.95rem; }
+@media (max-width: 768px) {
+  .doing-heading {
+    margin-bottom: 25px !important; /* reduce gap below heading on mobile */
+  }
 }
 </style>
 
 <!-- ================== SCRIPT: poster -> iframe (muted autoplay loop, no initial YouTube UI) ================== -->
 <script>
+/* Insert a muted, autoplaying, looping YouTube iframe but show a poster first
+   so the initial UI doesn't look like the raw YouTube player.
+   This script only touches #yt-player. */
 (function () {
   const container = document.getElementById('yt-player');
   if (!container) return;
   const vid = container.dataset.videoId;
 
-  // Poster selection (maxrespreferred -> hq fallback)
+  // Poster choices: try maxres, fallback to hq
   const thumbMax = `https://i.ytimg.com/vi/${vid}/maxresdefault.jpg`;
   const thumbHQ  = `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
 
-  // Set a neutral poster background immediately
-  container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.04)), url("${thumbHQ}")`;
+  // Immediately set HQ poster to avoid showing any YouTube chrome
+  container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03)), url("${thumbHQ}")`;
 
-  // Preload maxres; if available, swap poster then insert iframe
-  const img = new Image();
+  // Try to preload maxres; if available use it, otherwise keep HQ
+  const preload = new Image();
   let posterUsed = thumbHQ;
-  img.src = thumbMax;
+  preload.src = thumbMax;
+  preload.onload = function () {
+    posterUsed = thumbMax;
+    container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03)), url("${posterUsed}")`;
+    insertIframe();
+  };
+  preload.onerror = function () {
+    // maxres not available; proceed with HQ poster
+    insertIframe();
+  };
 
-  // small helper to insert iframe - keeps it non-interactive and fades it in
-  function insertIframe() {
-    if (container.querySelector('iframe')) return;
+  // Safety: if poster loading hangs, still insert iframe after timeout so area isn't blank
+  setTimeout(function () {
+    if (!container.querySelector('iframe')) insertIframe();
+  }, 1600);
 
-    // Build iframe src (privacy mode + autoplay muted + loop + 720p request)
+  function buildSrc() {
+    // privacy-enhanced domain + autoplay muted + loop + request 720p (YouTube may adapt)
     const params = new URLSearchParams({
       autoplay: 1,
       mute: 1,
       loop: 1,
-      playlist: vid,
+      playlist: vid,       // required for loop to work
       controls: 0,
       rel: 0,
       modestbranding: 1,
       playsinline: 1,
       vq: 'hd720'
     });
-    const src = `https://www.youtube-nocookie.com/embed/${vid}?${params.toString()}`;
+    return `https://www.youtube-nocookie.com/embed/${vid}?${params.toString()}`;
+  }
+
+  function insertIframe() {
+    if (container.querySelector('iframe')) return;
 
     const iframe = document.createElement('iframe');
-    iframe.src = src;
+    iframe.src = buildSrc();
     iframe.title = 'Embedded video';
     iframe.setAttribute('frameborder', '0');
+    // allow autoplay for muted content; picture-in-picture allowed
     iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-    // keep iframe non-interactive and hidden until ready
+    iframe.loading = 'eager';
+    // Keep the iframe non-interactive so clicks won't open YouTube
     iframe.style.pointerEvents = 'none';
-    iframe.loading = 'eager'; // visible autoplay should start quickly on supporting browsers
+
     container.appendChild(iframe);
 
-    // Fade-in once loaded or after a short timeout as fallback
+    // Fade the iframe in when it appears; some browsers may not fire load, so use both load and timeout
     let revealed = false;
     function reveal() {
       if (revealed) return;
       iframe.classList.add('ready');
-      // remove poster to avoid double visuals
+      // remove poster background so embedded player sits cleanly
       container.style.backgroundImage = 'none';
       revealed = true;
     }
 
-    // Chrome/Safari may not always fire load; use both load and fallback timeout
-    iframe.addEventListener('load', function () { setTimeout(reveal, 150); });
+    iframe.addEventListener('load', function () { setTimeout(reveal, 120); });
     setTimeout(reveal, 1200);
   }
-
-  img.onload = function () {
-    posterUsed = thumbMax;
-    container.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.04)), url("${posterUsed}")`;
-    // Insert iframe AFTER poster is ready to avoid YouTube splash
-    insertIframe();
-  };
-
-  img.onerror = function () {
-    // fallback to HQ poster already set
-    insertIframe();
-  };
-
-  // Safety: if thumbnails are slow, still insert iframe after short timeout to avoid blank area
-  setTimeout(function () {
-    if (!container.querySelector('iframe')) insertIframe();
-  }, 1800);
-
 })();
 </script>
