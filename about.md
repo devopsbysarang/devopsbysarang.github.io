@@ -15,7 +15,7 @@ permalink: /about/
   <div class="about-bio">
     <h2>Sarang Deshmukh</h2>
     <p>
-      I am a DevOps engineer with 5+ years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I thrive on designing automated workflows, optimizing pipelines, and creating systems that are robust and future-proof.
+      I am a DevOps engineer with 5+ years of experience building reliable, scalable, and maintainable systems. I thrive on designing automated workflows, optimizing pipelines, and creating systems that are robust and future-proof.
     </p>
     <p>
       This website is my space to showcase projects, share insights, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work, I aim to inspire others and continuously grow as a technologist.
