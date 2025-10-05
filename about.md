@@ -11,59 +11,81 @@ permalink: /about/
     <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh">
   </div>
 
-<!-- Autoplaying, looping, responsive YouTube embed (muted for autoplay) -->
-<div class="autoplay-video-wrap">
-  <!-- Player container -->
-  <div class="autoplay-video" id="yt-player" data-video-id="tuc85lFMfTQ" aria-hidden="false"></div>
-
-  <!-- Optional: visible unmute button (requires user interaction to enable sound) -->
-  <button class="unmute-btn" id="unmute-btn" aria-label="Unmute video">Unmute</button>
+<!-- Responsive, muted autoplay, loop, non-interactive YouTube embed (requests 720p) -->
+<div class="site-video-wrap" aria-hidden="false">
+  <div class="site-video" id="yt-player" data-video-id="7g7pvNQEl5M" role="region" aria-label="Autoplaying background video"></div>
 </div>
 
 <style>
-/* container + 16:9 aspect ratio */
-.autoplay-video-wrap {
+/* Container: responsive 16:9, change max-width for layout needs */
+.site-video-wrap {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* remove or change for full-bleed */
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: #000;
 }
 
-/* 16:9 */
-.autoplay-video-wrap::before {
+/* 16:9 aspect ratio */
+.site-video-wrap::before {
   content: "";
   display: block;
   padding-top: 56.25%;
 }
 
-/* absolute player fills container */
-.autoplay-video {
+/* iframe container fills area */
+.site-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-/* unmute button style */
-.unmute-btn {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  z-index: 20;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
+/* Make iframe non-interactive so clicks won't open YouTube */
+.site-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none; /* disable clicks */
+  display: block;
 }
-.unmute-btn:focus { outline: 2px solid rgba(255,255,255,0.6); }
 </style>
+
+<script>
+(function () {
+  const container = document.getElementById('yt-player');
+  const vid = container.dataset.videoId;
+
+  // Request 720p (YouTube may still adapt based on connection)
+  const params = new URLSearchParams({
+    autoplay: 1,
+    mute: 1,
+    loop: 1,
+    playlist: vid,      // required for loop
+    controls: 0,
+    rel: 0,
+    modestbranding: 1,
+    playsinline: 1,
+    vq: 'hd720'         // request 720p to balance quality & data
+  });
+
+  const src = `https://www.youtube-nocookie.com/embed/${vid}?${params.toString()}`;
+
+  const iframe = document.createElement('iframe');
+  iframe.src = src;
+  iframe.title = 'Embedded video';
+  iframe.setAttribute('frameborder', '0');
+  // Allow autoplay for muted content
+  iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+  iframe.loading = 'eager'; // start loading immediately for autoplay
+  // append iframe
+  container.appendChild(iframe);
+})();
+</script>
+
 
 <script>
 /*
