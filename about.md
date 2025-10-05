@@ -182,7 +182,7 @@ html, body {
 
 /* ================== TESTIMONIALS ================== */
 .testimonials-section {
-  background-color: #fff;
+  background-color: #ECF6FF !important;
   padding: 40px 0;
 }
 
