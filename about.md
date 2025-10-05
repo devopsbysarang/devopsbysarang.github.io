@@ -4,118 +4,418 @@ title: "About Me"
 permalink: /about/
 ---
 
-<!-- NOTE: Removed full HTML wrapper (<!doctype html>, <html>, <head>, <body>) so the page will render inside your theme's `layout: default` correctly. -->
+<div class="about-page">
 
-<style>
-  :root{
-    --accent:#FF6B35; --accent-2:#FF8A57; --text:#0A192F; --muted:#6B7280; --max-width:1100px
-  }
-  /* Page container (will live inside your layout) */
-  .about-container{max-width:var(--max-width);margin:28px auto;padding:28px}
+  <!-- Photo -->
+  <div class="about-photo">
+    <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh">
+  </div>
 
-  /* HERO grid: keep text column readable and prevent overflow */
-  .hero-grid{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center}
-  .hero-left{min-width:0} /* allow flex-shrink inside grid */
-  .hero-title{margin:0 0 10px 0;font-weight:800;line-height:1; /* responsive size */font-size:clamp(1.6rem, 4vw, 2.2rem);color:var(--text)}
-  .hero-sub{margin:0;color:var(--muted);font-weight:600;font-size:0.98rem}
-  .hero-bio{margin-top:14px;color:var(--text);line-height:1.6;font-size:1rem;max-width:62ch; /* limit line length for readability */}
 
-  /* Socials */
-  .social-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-  .social-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid rgba(10,25,47,0.05);text-decoration:none;font-weight:600;color:var(--text)}
 
-  /* VIDEO: darker frame and inner safe area so the iframe never overlaps layout */
-  .hero-media{border-radius:16px;overflow:hidden;background:#000;padding:14px;box-shadow:0 20px 45px rgba(9,20,40,0.12);display:block}
-  .hero-media .poster{position:relative;width:100%;height:0;padding-bottom:56.25%;background-size:cover;background-position:center;border-radius:10px;display:block;filter:brightness(0.6)}
-  .hero-media iframe{position:absolute;border-radius:10px;width:calc(100% - 28px);height:calc((100% - 28px) * 0.5625);left:14px;top:14px;border:0;opacity:0;transition:opacity .3s ease;pointer-events:none}
-  .hero-media iframe.ready{opacity:1}
-
-  /* WHAT I'M DOING cards */
-  .doing-section{padding:40px 0;text-align:center}
-  .doing-heading{font-size:1.9rem;color:var(--accent);font-weight:800;margin-bottom:26px}
-  .doing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;justify-items:center}
-  .doing-card{width:100%;max-width:340px;background:#fff;border-radius:12px;padding:22px;border:1px solid rgba(10,25,47,0.04);box-shadow:0 8px 24px rgba(9,20,40,0.05)}
-
-  /* TESTIMONIALS kept visually similar */
-  .testimonials-section{padding:40px 0}
-
-  /* RESPONSIVE */
-  @media (max-width:1100px){.hero-grid{grid-template-columns:1fr 380px}.doing-grid{grid-template-columns:repeat(3,1fr)}}
-  @media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-title{text-align:center}.hero-sub{text-align:center}.hero-bio{text-align:center;margin-left:auto;margin-right:auto}.doing-grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:480px){.doing-grid{grid-template-columns:1fr}.about-container{padding:18px}.hero-media{padding:10px}.hero-media .poster{padding-bottom:56.25%}}
-
-  /* Ensure long words / pasted HTML won't overflow */
-  *{word-wrap:break-word}
-  .hero-left, .hero-media, .doing-card{box-sizing:border-box}
-</style>
-
-<div class="about-container">
-  <section class="hero" aria-label="About — hero">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <h1 class="hero-title">Sarang Deshmukh</h1>
-        <p class="hero-sub">DevOps Engineer — Reliability · Cloud · Automation</p>
-        <p class="hero-bio">I design and operate reliable, scalable cloud systems. I automate delivery pipelines, optimise observability, and build resilient infra that teams trust. This site contains projects, write-ups and hands-on notes from my DevOps journey.</p>
-
-        <div class="social-row" aria-label="social links">
-          <a class="social-btn" href="https://www.linkedin.com/in/sarang-deshmukh-125" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="social-btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="social-btn" href="mailto:sarangdeshmukh550@gmail.com">Email</a>
-        </div>
-      </div>
-
-      <div class="hero-media" id="yt-player" data-video-id="7g7pvNQEl5M" aria-label="demo video">
-        <div class="poster" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="doing-section" aria-label="What I'm Doing">
-    <h2 class="doing-heading">What I'm Doing</h2>
-    <div class="doing-grid" role="list">
-      <article class="doing-card" role="listitem"><h3>DevOps</h3><p>Improving speed and quality of delivery through CI/CD, automation and pragmatic pipelines.</p></article>
-      <article class="doing-card" role="listitem"><h3>Cloud Engineer</h3><p>Designing secure, cost-aware and resilient cloud infrastructure and platforms at scale.</p></article>
-      <article class="doing-card" role="listitem"><h3>SRE</h3><p>Focusing on observability, SLIs/SLOs and processes that keep systems healthy and predictable.</p></article>
-      <article class="doing-card" role="listitem"><h3>Software Development</h3><p>Building tools and scripts to automate toil, and learning pragmatic software practices.</p></article>
-    </div>
-  </section>
-
-  <section class="testimonials-section" aria-label="testimonials">
-    <h2 class="testimonials-heading">What people say?</h2>
-    <div class="testimonials-wrapper">
-      <div class="testimonial"><p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p><p class="testimonial-name">– Hariom Kashyap <span class="testimonial-role">Software Architect, Amdocs</span></p></div>
-      <div class="testimonial"><p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p><p class="testimonial-name">– Ankur Singh <span class="testimonial-role">AI Engineer, Intel</span></p></div>
-    </div>
-  </section>
-</div>
 
 <script>
+/*
+  Behavior:
+  - Inserts a privacy-enhanced YouTube iframe that autoplay=1, loop=1, muted=1, playsinline=1
+  - If user clicks Unmute, the iframe is replaced by a non-muted autoplaying iframe (browser may require user interaction)
+*/
 (function () {
   const container = document.getElementById('yt-player');
-  if (!container) return;
   const vid = container.dataset.videoId;
-  const posterEl = container.querySelector('.poster');
-  const thumbMax = `https://i.ytimg.com/vi/${vid}/maxresdefault.jpg`;
-  const thumbHQ  = `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
+  const unmuteBtn = document.getElementById('unmute-btn');
 
-  if (posterEl) posterEl.style.backgroundImage = `url("${thumbHQ}")`;
-  const img = new Image(); img.src = thumbMax;
-  img.onload = function () { if (posterEl) posterEl.style.backgroundImage = `url("${thumbMax}")`; insertIframe(); };
-  img.onerror = function () { insertIframe(); };
-  setTimeout(function () { if (!container.querySelector('iframe')) insertIframe(); }, 1400);
-
-  function buildSrc() {
-    const params = new URLSearchParams({ autoplay: 1, mute: 1, loop: 1, playlist: vid, controls: 0, rel: 0, modestbranding: 1, playsinline: 1, vq: 'hd720' });
+  // Build iframe URL that autoplay & loop (loop needs playlist=VIDEO_ID)
+  function buildSrc({ mute = true } = {}) {
+    const params = new URLSearchParams({
+      rel: 0,
+      modestbranding: 1,
+      autoplay: 1,
+      loop: 1,
+      playlist: vid,
+      playsinline: 1,
+    });
+    if (mute) params.set('mute', '1');
     return `https://www.youtube-nocookie.com/embed/${vid}?${params.toString()}`;
   }
-  function insertIframe() {
-    if (container.querySelector('iframe')) return;
+
+  // insert iframe
+  function insertIframe({ mute = true } = {}) {
     const iframe = document.createElement('iframe');
-    iframe.src = buildSrc(); iframe.title = 'Demo video'; iframe.setAttribute('frameborder','0'); iframe.setAttribute('allow','autoplay; encrypted-media; picture-in-picture'); iframe.loading = 'lazy'; iframe.style.pointerEvents = 'none';
+    iframe.src = buildSrc({ mute });
+    iframe.title = 'YouTube video player';
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen');
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    // clear container and append
+    container.innerHTML = '';
     container.appendChild(iframe);
-    function reveal(){ iframe.classList.add('ready'); }
-    iframe.addEventListener('load', function(){ setTimeout(reveal,120); });
-    setTimeout(reveal,1200);
   }
+
+  // initial muted autoplay insert
+  insertIframe({ mute: true });
+
+  // Unmute button: user interaction required to enable sound.
+  unmuteBtn.addEventListener('click', function () {
+    // replace iframe with one that has mute=0; since this is a user gesture, autoplay with sound should start.
+    insertIframe({ mute: false });
+
+    // hide the button once unmuted
+    unmuteBtn.style.display = 'none';
+  }, { once: true });
+
+  // Optional: hide unmute button on small screens if you don't want it visible
+  // if (window.matchMedia && window.matchMedia('(max-width:420px)').matches) { unmuteBtn.style.display = 'none'; }
 })();
 </script>
+
+
+
+  <!-- Bio -->
+  <div class="about-bio">
+    <h2>Sarang Deshmukh</h2>
+    <p>
+      I am a DevOps engineer with 5+ years of experience building reliable, scalable, and maintainable systems. I have successfully delivered multi-regional, active-active deployments for critical projects, ensuring seamless user experiences across geographies. I thrive on designing automated workflows, optimizing pipelines, and creating systems that are robust and future-proof.
+    </p>
+    <p>
+      This website is my space to showcase projects, share insights, and document my journey with cloud technologies, DevOps practices, and automation tools. By sharing my work, I aim to inspire others and continuously grow as a technologist.
+    </p>
+  </div>
+</div>
+
+<!-- ================== WHAT I'M DOING SECTION ================== -->
+<section class="doing-section">
+  <div class="container">
+    <h2 class="doing-heading">What I'm Doing</h2>
+
+    <div class="doing-wrapper">
+      <!-- DevOps -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for DevOps -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <h3>DevOps</h3>
+        <p>I enjoy improving the speed and quality of delivery, automating workflows, and achieving CI/CD.</p>
+      </div>
+
+      <!-- Cloud Engineer -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for Cloud -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25"/>
+          </svg>
+        </div>
+        <h3>Cloud Engineer</h3>
+        <p>I enjoy designing, securing, and maintaining cloud-based infrastructure and applications.</p>
+      </div>
+
+      <!-- SRE -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for Monitoring -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M4 4v16h16V4H4zm4 12l2-3 2 2 4-6 2 3"/>
+          </svg>
+        </div>
+        <h3>SRE</h3>
+        <p>I focus on processes and tools that ensure scalability, reliability, and availability of systems.</p>
+      </div>
+
+      <!-- Software Development -->
+      <div class="doing-card">
+        <div class="doing-icon">
+          <!-- SVG for Code -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+          </svg>
+        </div>
+        <h3>Software Development</h3>
+        <p>I enjoy learning and practicing software development for personal and professional growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== Testimonials Section ================== -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="testimonials-heading">What people say?</h2>
+
+    <div class="testimonials-wrapper">
+      <!-- Testimonial 1 -->
+      <div class="testimonial">
+        <p>"I highly recommend Sarang for any future endeavors, and I'm confident he will continue to shine in any role he's in and overcome any challenges he may face!"</p>
+        <p class="testimonial-name">
+          – Hariom Kashyap
+          <span class="testimonial-role">Software Architect, Amdocs</span>
+        </p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial">
+        <p>"Sarang has always been a curious person. He is willing to take risks, make mistakes, and learn from them. He comes up with new ideas, never afraid of trying, and puts in the effort every time."</p>
+        <p class="testimonial-name">
+          – Ankur Singh
+          <span class="testimonial-role">AI Engineer, Intel</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ================== FORCE FULL PAGE BACKGROUND ================== */
+html, body {
+  background-color: #FFFFFF;
+  color: #0A192F;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ================== ABOUT PAGE ================== */
+.about-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2rem 2rem 2rem;
+  background: #FFFFFF;
+  color: #0A192F;
+}
+
+/* Photo */
+.about-photo {
+  flex: 0 0 250px;
+}
+.about-photo img {
+  width: 100%;
+  border-radius: 12px;
+  border: 3px solid #FF6B35;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Bio */
+.about-bio {
+  flex: 1 1 500px;
+  font-size: 1.05rem;
+}
+.about-bio h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2rem;
+  color: #FF6B35;
+  margin: 0 0 0.5rem;
+  letter-spacing: 1px;
+}
+.about-bio p {
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.about-bio a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+  padding: 0.6rem 1.2rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.about-bio a:hover {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+}
+
+/* ================== WHAT I'M DOING ================== */
+.doing-section {
+  background-color: #FAF7EB; /* beige background */
+  color: #0A192F;
+  padding: 25px 20px 60px 20px !important; /* reduced top padding */
+  text-align: center;
+  margin-top: 0 !important; /* ensure no extra margin from parent */
+}
+
+.doing-heading {
+  font-size: 2rem;
+  margin: 0 0 40px 0 !important; /* remove top margin */
+  color: #FF6B35;
+}
+
+.doing-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.doing-card {
+  background-color: #FFFFFF;
+  border: 2px solid #FF6B35;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.doing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.doing-card h3 {
+  margin: 15px 0 8px 0;
+  color: #FF6B35;
+  font-size: 1.2rem;
+}
+
+.doing-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #0A192F;
+}
+
+.doing-icon {
+  margin-bottom: 10px;
+}
+
+/* ================== TESTIMONIALS ================== */
+.testimonials-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.testimonials-heading {
+  color: #0A192F;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+
+.testimonial {
+  background-color: #FF6B35;
+  color: #FFFFFF !important;
+  border-radius: 12px;
+  padding: 30px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  flex: 0 1 360px;
+  max-width: 360px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial p {
+  margin-bottom: 15px;
+  color: #FFFFFF !important;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  color: #FFFFFF !important;
+  margin-top: 10px;
+}
+
+.testimonial-role {
+  display: block;
+  font-style: italic;
+  color: #EFF6FF !important;
+  margin-top: 3px;
+}
+
+/* Hover effect */
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .about-page {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-photo {
+    flex: 0 0 150px;
+    margin-bottom: 0rem;
+  }
+  .about-bio {
+    text-align: left;
+  }
+  .doing-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .doing-card {
+    width: 90%;
+  }
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .testimonial {
+    max-width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-wrapper {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial {
+    width: 95% !important;
+    max-width: 320px !important;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .testimonial p {
+    margin-bottom: 10px;
+  }
+
+  .testimonial-name {
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+
+  .testimonial-role {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .doing-heading {
+    margin-bottom: 25px !important; /* reduce gap below heading on mobile */
+  }
+}
+
+</style>
