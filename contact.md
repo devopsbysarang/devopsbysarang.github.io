@@ -13,3 +13,18 @@
 
   <p>Looking forward to connecting with you and exploring how we can collaborate to build impactful solutions!</p>
 </div>
+
+
+<style>
+  /* Add space above the heading */
+  .contact-box h1 {
+    margin-top: 60px !important; /* adjust as needed (40–100px) */
+  }
+
+  /* Optional: fine-tune spacing for mobile */
+  @media (max-width: 768px) {
+    .contact-box h1 {
+      margin-top: 40px !important;
+    }
+  }
+</style>
