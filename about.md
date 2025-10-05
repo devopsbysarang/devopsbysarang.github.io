@@ -315,6 +315,46 @@ html,body { margin:0 !important; padding:0 !important; background:var(--bg) !imp
   .profile-video-card { padding:12px !important; margin:1rem !important; border-radius:12px !important; }
   .pv-name { font-size:1.05rem !important; }
 }
+
+<!-- ================== MOBILE ================== -->
+
+/* MOBILE: increase left/right padding on mobile for better spacing */
+@media (max-width: 768px) {
+  /* make the whole card have more horizontal padding on phones/tablets */
+  .profile-video-card {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* ensure internal sections keep comfortable padding */
+  .pv-left {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .pv-right {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  /* slightly increase container spacing for the card */
+  .profile-video-card { margin-left: 12px !important; margin-right: 12px !important; }
+}
+
+/* Very small phones — give even more left/right padding so content doesn't touch edges */
+@media (max-width: 420px) {
+  .profile-video-card {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .pv-left, .pv-right {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
 </style>
 
 <!-- ================== SCRIPT: poster -> iframe (muted autoplay, loop, non-interactive) ================== -->
