@@ -52,12 +52,15 @@ permalink: /about/
     .social-btn:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(9,20,40,0.08)}
     .social-btn svg{width:18px;height:18px}
 
-    /* hero media (video poster + iframe) */
-    .hero-media{border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#000,#0b0b0b);min-height:260px;position:relative;box-shadow:var(--shadow-1)}
-    .hero-media .poster{position:absolute;inset:0;background-size:cover;background-position:center;display:block}
-    .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.02));pointer-events:none}
-    .hero-media iframe{width:100%;height:100%;border:0;display:block;opacity:0;transition:opacity .3s ease;pointer-events:none}
+    /* hero media (video poster + iframe) - now with darker frame */
+    .hero-media{border-radius:18px;overflow:hidden;background:#000;min-height:260px;position:relative;box-shadow:0 18px 50px rgba(9,20,40,0.12);padding:12px;border:1px solid rgba(255,255,255,0.03)}
+    .hero-media .poster{position:absolute;inset:12px;border-radius:12px;background-size:cover;background-position:center;display:block;filter:brightness(0.7)}
+    .hero-media::after{content:'';position:absolute;inset:12px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.04));pointer-events:none}
+    .hero-media iframe{position:absolute;inset:12px;border-radius:12px;width:calc(100% - 24px);height:calc(100% - 24px);border:0;display:block;opacity:0;transition:opacity .3s ease;pointer-events:none}
     .hero-media iframe.ready{opacity:1}
+
+    /* add a subtle play-like shimmer when poster is visible */
+    .hero-media .poster::before{content:'';position:absolute;left:0;right:0;top:0;bottom:0;background:radial-gradient(ellipse at center, rgba(255,255,255,0.02), rgba(0,0,0,0.15));border-radius:12px}
 
     /* ---------- WHAT I'M DOING (modern cards, remove beige background) ---------- */
     .doing-section{background:transparent;padding:40px 12px 64px;text-align:center}
