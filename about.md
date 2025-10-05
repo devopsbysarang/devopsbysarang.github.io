@@ -86,62 +86,7 @@ permalink: /about/
   </div>
 </div>
 
-<!-- ================== WHAT I'M DOING SECTION ================== -->
-<section class="doing-section">
-  <div class="container">
-    <h2 class="doing-heading">What I'm Doing</h2>
 
-    <div class="doing-wrapper">
-      <!-- DevOps -->
-      <div class="doing-card">
-        <div class="doing-icon">
-          <!-- SVG for DevOps -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
-            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-          </svg>
-        </div>
-        <h3>DevOps</h3>
-        <p>I enjoy improving the speed and quality of delivery, automating workflows, and achieving CI/CD.</p>
-      </div>
-
-      <!-- Cloud Engineer -->
-      <div class="doing-card">
-        <div class="doing-icon">
-          <!-- SVG for Cloud -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
-            <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25"/>
-          </svg>
-        </div>
-        <h3>Cloud Engineer</h3>
-        <p>I enjoy designing, securing, and maintaining cloud-based infrastructure and applications.</p>
-      </div>
-
-      <!-- SRE -->
-      <div class="doing-card">
-        <div class="doing-icon">
-          <!-- SVG for Monitoring -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
-            <path d="M4 4v16h16V4H4zm4 12l2-3 2 2 4-6 2 3"/>
-          </svg>
-        </div>
-        <h3>SRE</h3>
-        <p>I focus on processes and tools that ensure scalability, reliability, and availability of systems.</p>
-      </div>
-
-      <!-- Software Development -->
-      <div class="doing-card">
-        <div class="doing-icon">
-          <!-- SVG for Code -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FF6B35" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
-            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
-          </svg>
-        </div>
-        <h3>Software Development</h3>
-        <p>I enjoy learning and practicing software development for personal and professional growth.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ================== Testimonials Section ================== -->
 <section class="testimonials-section">
@@ -171,17 +116,10 @@ permalink: /about/
 </section>
 
 <style>
-:root{
-  --accent: #FF6B35;
-  --bg: #FFFFFF;
-  --text: #0A192F;
-  --muted: #6B7280;
-}
-
 /* ================== FORCE FULL PAGE BACKGROUND ================== */
 html, body {
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: #FFFFFF;
+  color: #0A192F;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -193,11 +131,10 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: var(--bg);
-  color: var(--text);
-  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 2rem 2rem 2rem;
+  background: #FFFFFF;
+  color: #0A192F;
 }
 
 /* Photo */
@@ -206,13 +143,9 @@ html, body {
 }
 .about-photo img {
   width: 100%;
-  border-radius: 14px;
-  border: 3px solid var(--accent);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: 0 8px 30px rgba(10,25,47,0.06);
-}
-.about-photo img:hover {
-  transform: translateY(-6px);
+  border-radius: 12px;
+  border: 3px solid #FF6B35;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Bio */
@@ -223,7 +156,7 @@ html, body {
 .about-bio h2 {
   font-family: 'Rubik', sans-serif;
   font-size: 2rem;
-  color: var(--accent);
+  color: #FF6B35;
   margin: 0 0 0.5rem;
   letter-spacing: 1px;
 }
@@ -236,110 +169,16 @@ html, body {
   text-decoration: none;
   font-weight: 500;
   border-radius: 6px;
-  background: linear-gradient(135deg, #FF8C42 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
   padding: 0.6rem 1.2rem;
   display: inline-block;
   transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 .about-bio a:hover {
-  background: linear-gradient(135deg, var(--accent) 0%, #FF8C42 100%);
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
 }
 
-/* ================== WHAT I'M DOING ================== */
-/* Removed beige background - kept it clean and modern */
-.doing-section {
-  background: transparent;
-  color: var(--text);
-  padding: 28px 20px 48px 20px;
-  text-align: center;
-  margin-top: 0;
-}
-
-/* heading */
-.doing-heading {
-  font-size: 2rem;
-  margin: 0 0 24px 0;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* grid layout: 2 columns desktop, 1 on mobile */
-.doing-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 12px;
-}
-
-/* modern card style (glass / soft gradient) */
-.doing-card {
-  position: relative;
-  overflow: visible;
-  border-radius: 14px;
-  padding: 22px 18px;
-  min-height: 160px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.75));
-  border: 1px solid rgba(15,25,40,0.06);
-  box-shadow: 0 8px 30px rgba(10,25,47,0.06);
-  transition: transform 0.32s cubic-bezier(.2,.9,.3,1), box-shadow 0.32s ease;
-  backdrop-filter: blur(6px);
-}
-
-/* small accent bar on left */
-.doing-card::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
-  width: 6px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, var(--accent), #FF8C42);
-  box-shadow: 0 6px 18px rgba(255,107,53,0.12);
-}
-
-/* content spacing respects the left accent */
-.doing-card > * {
-  margin-left: 14px;
-}
-
-.doing-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 16px 40px rgba(10,25,47,0.12);
-}
-
-/* icon circle */
-.doing-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  display: inline-grid;
-  place-items: center;
-  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(245,245,245,0.7));
-  border: 1px solid rgba(15,25,40,0.04);
-  box-shadow: 0 6px 18px rgba(10,25,47,0.04), inset 0 1px 0 rgba(255,255,255,0.6);
-}
-
-/* heading & text */
-.doing-card h3 {
-  margin: 12px 0 6px 0;
-  color: var(--accent);
-  font-size: 1.08rem;
-  font-weight: 600;
-}
-.doing-card p {
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--text);
-  opacity: 0.9;
-  margin: 0;
-}
 
 /* ================== TESTIMONIALS ================== */
 .testimonials-section {
@@ -348,7 +187,7 @@ html, body {
 }
 
 .testimonials-heading {
-  color: var(--text);
+  color: #0A192F;
   font-size: 2rem;
   text-align: center;
   margin: 0 0 25px 0;
@@ -364,11 +203,11 @@ html, body {
 }
 
 .testimonial {
-  background-color: var(--accent);
+  background-color: #FF6B35;
   color: #FFFFFF !important;
   border-radius: 12px;
   padding: 30px 30px;
-  box-shadow: 0 8px 30px rgba(10,25,47,0.12);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   flex: 0 1 360px;
   max-width: 360px;
   margin: 10px;
@@ -399,19 +238,10 @@ html, body {
 /* Hover effect */
 .testimonial:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 40px rgba(10,25,47,0.18);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 /* ================== RESPONSIVE ================== */
-@media (max-width: 900px) {
-  .doing-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-  .about-photo {
-    flex: 0 0 170px;
-  }
-}
-
 @media (max-width: 768px) {
   .about-page {
     flex-direction: column;
@@ -425,11 +255,17 @@ html, body {
     text-align: left;
   }
   .doing-wrapper {
-    grid-template-columns: 1fr; /* single column on mobile */
-    gap: 16px;
-    padding: 0 12px;
+    flex-direction: column;
+    align-items: center;
   }
-
+  
+  .doing-card {
+    width: 90%;
+  }
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
   .testimonial {
     max-width: 90%;
     padding: 20px;
@@ -468,4 +304,11 @@ html, body {
     font-size: 0.85rem;
   }
 }
+
+@media (max-width: 768px) {
+  .doing-heading {
+    margin-bottom: 25px !important; /* reduce gap below heading on mobile */
+  }
+}
+
 </style>
