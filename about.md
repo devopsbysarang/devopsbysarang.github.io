@@ -177,24 +177,55 @@ html,body { margin:0 !important; padding:0 !important; background:var(--bg) !imp
 /* bio text */
 .pv-bio p { margin:0 0 12px 0 !important; line-height:1.6 !important; color:var(--text) !important; }
 
-/* socials inline */
-.pv-socials { display:flex !important; gap:8px !important; flex-wrap:wrap !important; }
+/* SOCIALS: single-row with smooth horizontal scroll; icon-only on very small screens */
+.pv-socials {
+  display: flex !important;
+  flex-wrap: nowrap !important;                /* prevent wrapping */
+  gap: 8px !important;
+  overflow-x: auto !important;                 /* allow horizontal scroll if too many items */
+  -webkit-overflow-scrolling: touch !important;/* smooth scrolling on iOS */
+  padding-bottom: 4px !important;
+  margin-top: 6px !important;
+  align-items: center !important;
+  /* hide scrollbar visuals while keeping scroll ability */
+  scrollbar-width: none !important;
+}
+.pv-socials::-webkit-scrollbar { display: none !important; }
+
+/* Each social pill stays on one line and won't shrink to force wrap */
 .social {
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:8px !important;
-  padding:8px 10px !important;
-  border-radius:10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 10px !important;
+  border-radius: 10px !important;
   background: rgba(15,23,42,0.03) !important;
-  text-decoration:none !important;
-  color:var(--text) !important;
-  font-weight:600 !important;
-  font-size:0.92rem !important;
+  text-decoration: none !important;
+  color: var(--text) !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
   border: 1px solid rgba(10,25,47,0.04) !important;
+  white-space: nowrap !important;              /* prevent inner wrapping */
+  flex: 0 0 auto !important;                   /* don't allow shrinking that causes wrap */
   transition: transform .12s ease !important, background .12s ease !important;
 }
-.social svg { color: currentColor !important; opacity:0.95 !important; }
-.social:hover { transform: translateY(-3px) !important; background: rgba(255,107,53,0.06) !important; color:var(--accent) !important; border-color: rgba(255,107,53,0.14) !important; }
+
+/* Make the icon slightly more compact */
+.social svg { width: 18px !important; height: 18px !important; display: inline-block !important; }
+
+/* On very small screens show icon-only pills to avoid overflow and wrapping */
+@media (max-width: 480px) {
+  .pv-socials { gap: 6px !important; }
+  .social {
+    padding: 8px !important;
+    min-width: 44px !important;    /* ensure tappable size */
+    justify-content: center !important;
+  }
+  .social span { 
+    display: none !important;      /* hide text label on small phones */
+  }
+}
+
 
 /* Right area: video */
 .pv-right { flex: 0 0 520px !important; max-width: 520px !important; width:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; box-sizing:border-box !important; }
