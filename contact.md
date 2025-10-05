@@ -18,13 +18,13 @@
 <style>
   /* Add space above the heading */
   .contact-box h1 {
-    margin-top: 60px !important; /* adjust as needed (40–100px) */
+    margin-top: 50px !important; /* adjust as needed (40–100px) */
   }
 
   /* Optional: fine-tune spacing for mobile */
   @media (max-width: 768px) {
     .contact-box h1 {
-      margin-top: 40px !important;
+      margin-top: 30px !important;
     }
   }
 </style>
