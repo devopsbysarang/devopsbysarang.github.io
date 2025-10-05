@@ -11,44 +11,118 @@ permalink: /about/
     <img src="{{ '/assets/images/photo.png' | relative_url }}" alt="Sarang Deshmukh">
   </div>
 
-<!-- Simple responsive YouTube embed -->
-<div class="video-wrap">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/tuc85lFMfTQ?rel=0&modestbranding=1"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    loading="lazy"></iframe>
+<!-- Autoplaying, looping, responsive YouTube embed (muted for autoplay) -->
+<div class="autoplay-video-wrap">
+  <!-- Player container -->
+  <div class="autoplay-video" id="yt-player" data-video-id="tuc85lFMfTQ" aria-hidden="false"></div>
+
+  <!-- Optional: visible unmute button (requires user interaction to enable sound) -->
+  <button class="unmute-btn" id="unmute-btn" aria-label="Unmute video">Unmute</button>
 </div>
 
 <style>
-/* Keeps iframe responsive with 16:9 aspect ratio */
-.video-wrap {
+/* container + 16:9 aspect ratio */
+.autoplay-video-wrap {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* change as you like */
+  max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-.video-wrap::before {
+/* 16:9 */
+.autoplay-video-wrap::before {
   content: "";
   display: block;
-  padding-top: 56.25%; /* 16:9 ratio (9/16 = 56.25%) */
+  padding-top: 56.25%;
 }
 
-.video-wrap iframe {
+/* absolute player fills container */
+.autoplay-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border: 0;
 }
+
+/* unmute button style */
+.unmute-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 20;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+.unmute-btn:focus { outline: 2px solid rgba(255,255,255,0.6); }
 </style>
+
+<script>
+/*
+  Behavior:
+  - Inserts a privacy-enhanced YouTube iframe that autoplay=1, loop=1, muted=1, playsinline=1
+  - If user clicks Unmute, the iframe is replaced by a non-muted autoplaying iframe (browser may require user interaction)
+*/
+(function () {
+  const container = document.getElementById('yt-player');
+  const vid = container.dataset.videoId;
+  const unmuteBtn = document.getElementById('unmute-btn');
+
+  // Build iframe URL that autoplay & loop (loop needs playlist=VIDEO_ID)
+  function buildSrc({ mute = true } = {}) {
+    const params = new URLSearchParams({
+      rel: 0,
+      modestbranding: 1,
+      autoplay: 1,
+      loop: 1,
+      playlist: vid,
+      playsinline: 1,
+    });
+    if (mute) params.set('mute', '1');
+    return `https://www.youtube-nocookie.com/embed/${vid}?${params.toString()}`;
+  }
+
+  // insert iframe
+  function insertIframe({ mute = true } = {}) {
+    const iframe = document.createElement('iframe');
+    iframe.src = buildSrc({ mute });
+    iframe.title = 'YouTube video player';
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen');
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    // clear container and append
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  }
+
+  // initial muted autoplay insert
+  insertIframe({ mute: true });
+
+  // Unmute button: user interaction required to enable sound.
+  unmuteBtn.addEventListener('click', function () {
+    // replace iframe with one that has mute=0; since this is a user gesture, autoplay with sound should start.
+    insertIframe({ mute: false });
+
+    // hide the button once unmuted
+    unmuteBtn.style.display = 'none';
+  }, { once: true });
+
+  // Optional: hide unmute button on small screens if you don't want it visible
+  // if (window.matchMedia && window.matchMedia('(max-width:420px)').matches) { unmuteBtn.style.display = 'none'; }
+})();
+</script>
+
 
 
   <!-- Bio -->
