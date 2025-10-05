@@ -171,7 +171,7 @@ html,body { margin:0 !important; padding:0 !important; background:var(--bg) !imp
 
 /* meta */
 .pv-meta { flex:1 !important; }
-.pv-name { margin:0 0 6px 0 !important; font-size:1.35rem !important; color:var(--text) !important; }
+.pv-name { margin:0 0 6px 0 !important; font-size:1.95rem !important; color:var(--text) !important; }
 .pv-role { margin:0 0 12px 0 !important; color:var(--muted) !important; font-size:0.95rem !important; }
 
 /* bio text */
@@ -306,10 +306,48 @@ html,body { margin:0 !important; padding:0 !important; background:var(--bg) !imp
   .pv-right { order: 1 !important; width:100% !important; max-width:100% !important; }
 
   .pv-left { padding-bottom: 6px !important; }
-  .pv-name { font-size:1.15rem !important; }
-  .pv-role { font-size:0.92rem !important; }
+  .pv-name { font-size:1.95rem !important; text-align:center !important; }
+  .pv-role { font-size:0.92rem !important; text-align:center !important; }
   .pv-meta { margin-top:0 !important; }
 }
+
+/* CENTER BIO TEXT AND SOCIAL ICONS ON MOBILE */
+@media (max-width: 768px) {
+  .pv-left {
+    text-align: center !important;       /* center bio text */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .pv-left p {
+    margin-left: 0 !important;           /* remove left indent */
+    margin-right: 0 !important;          /* remove right indent */
+  }
+
+  .pv-socials {
+    justify-content: center !important;   /* center the social row */
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-wrap: wrap !important;           /* allow wrapping if needed */
+    gap: 10px !important;
+  }
+
+  .social {
+    flex: 0 0 auto !important;            /* keep each pill from shrinking */
+    display: inline-flex !important;
+    justify-content: center !important;   /* center icon + text */
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .social span {
+    display: inline !important;           /* ensure text shows properly */
+  }
+}
+
+
 
 @media (max-width: 420px) {
   .profile-video-card { padding:12px !important; margin:1rem !important; border-radius:12px !important; }
