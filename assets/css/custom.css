@@ -245,6 +245,7 @@ button.read-more:focus {
 @media (max-width: 600px) {
     .contact-box {
         padding: 1.5rem !important;
+        max-width: 90% !important;
     }
 
     .contact-buttons a {
