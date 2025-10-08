@@ -28,7 +28,7 @@ featured-image: /assets/images/blackfriday.png
     ## 11 — Final Thoughts               -> id="final-thoughts"
 -->
 
-<div style="border:1px solid #ccc; padding:12px; border-radius:8px; background:#EDE9D5; color:#0A2540 !important;">
+<div style="border:1px solid #ccc; padding:12px; border-radius:8px; background:#FBF7E1; color:#0A2540 !important;">
   <h3 style="color:#FF6B35 !important; margin-top:0;">📌 Index</h3>
 
   <ol style="margin-left:1rem;">
