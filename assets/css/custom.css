@@ -196,7 +196,7 @@ button.read-more:focus {
     background-color: #fff !important;
     color: #124E61 !important;
     padding: 2rem !important;
-    max-width: 80% !important;
+    max-width: 70% !important;
     margin: 3rem auto !important;
     border-radius: 12px !important;
     box-shadow: 0 0 7px rgba(18,78,97,0.12) !important; /* subtle deep-teal glow */
