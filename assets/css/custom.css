@@ -216,10 +216,10 @@ button.read-more:focus {
     padding: 0.65rem 1.4rem !important;
     border: 2px solid #FF6B35 !important;   /* CTA orange border */
     border-radius: 8px !important;
-    color: #FF6B35 !important;              /* CTA orange text */
+    color: #fff !important;              /* CTA orange text */
     text-decoration: none !important;
     font-weight: bold !important;
-    background-color: transparent !important;
+    background-color: #FF6B35 !important;
     font-size: 0.95rem !important;
     transition: all 0.3s ease !important;
 }
