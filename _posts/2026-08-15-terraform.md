@@ -8,7 +8,7 @@ featured-image: /assets/images/terraform-certification.png
 permalink: /automation/terraform-associate-certification/
 ---
 
-> **A note before you start.** I've run Terraform in production for years, multi-account AWS and GCP estates, shared state backends, postmortems where the root cause was a single misunderstood flag. The exam tests a narrow slice of that experience, but it tests the *right* slice: the conceptual boundaries that, when fuzzy, cause real incidents. This guide is long on purpose. I'm not handing you a cheat sheet — I'm walking you through the same mental model I'd build in a senior engineer joining my team, with the production context that makes each rule stick instead of just being another fact to forget in three weeks. Read it in order the first time. Use the reference tables at the end for revision.
+> **A note before you start.** I've run Terraform in production for years, multi-account AWS and GCP estates, shared state backends, postmortems where the root cause was a single misunderstood flag. The exam tests a narrow slice of that experience, but it tests the *right* slice: the conceptual boundaries that, when fuzzy, cause real incidents. This guide is long on purpose. I'm not handing you a cheat sheet, I'm walking you through the same mental model I'd build in a senior engineer joining my team, with the production context that makes each rule stick instead of just being another fact to forget in three weeks. Read it in order the first time. Use the reference tables at the end for revision.
 
 ---
 
