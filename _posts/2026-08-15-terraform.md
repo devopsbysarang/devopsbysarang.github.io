@@ -31,7 +31,7 @@ Terraform's entire job, every single command, is reconciling these three things:
              │
           Terraform
              │
-           State  ←──────→  Real Infrastructure
+           State  ------  Real Infrastructure
 ```
 
 - `terraform plan` diffs configuration against state, and (by default) refreshes against the real world first, so the diff you see reflects current reality.
@@ -40,7 +40,7 @@ Terraform's entire job, every single command, is reconciling these three things:
 - `terraform import` wires an already-existing real-world object into state.
 - `terraform state rm` removes Terraform's *record* of an object from state, without touching the real world at all.
 
-Almost every exam question — and almost every production incident I've been paged for — traces back to one of these three getting out of sync with the others, and someone reaching for the wrong tool to fix it. If you take away nothing else from this entire guide, take away this triangle. I'd bet a third of the exam is, underneath the specific wording, testing whether you know which corner of this triangle a given command touches.
+Almost every exam question and almost every production incident I've been paged for, traces back to one of these three getting out of sync with the others, and someone reaching for the wrong tool to fix it. If you take away nothing else from this entire guide, take away this triangle. I'd bet a third of the exam is, underneath the specific wording, testing whether you know which corner of this triangle a given command touches.
 
 **Why this matters beyond the exam:** the day someone on your team runs `terraform apply` from a stale branch against production state, this is the model that lets you reason calmly about what actually happened and how to recover, instead of panicking and running more commands that make it worse.
 
@@ -67,7 +67,7 @@ Contrast that with an imperative runbook:
 5. Launch EC2 instance
 ```
 
-Terraform doesn't want the steps; it wants the shape. It figures out the steps itself by building a dependency graph from the references in your configuration — which is exactly why `terraform graph` exists, and why correct ordering "just works" in the vast majority of configurations without you ever specifying it manually.
+Terraform doesn't want the steps; it wants the shape. It figures out the steps itself by building a dependency graph from the references in your configuration, which is exactly why `terraform graph` exists, and why correct ordering "just works" in the vast majority of configurations without you ever specifying it manually.
 
 **Architect's note:** this is the single biggest mindset shift for engineers coming from shell scripts, Ansible playbooks, or hand-run AWS CLI commands. Fighting the declarative model — trying to force step-by-step ordering, trying to make Terraform "do a thing" rather than "reach a state," writing configuration that only makes sense if applied in a specific sequence by a specific person — is where most early Terraform pain in a new team comes from. The people who struggle longest with Terraform are usually the strongest imperative scripters, because they keep instinctively reaching for "and then do X" instead of "and X should exist."
 
