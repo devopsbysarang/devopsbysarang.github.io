@@ -10,7 +10,7 @@ author_profile: true
 
 <div class="blog-grid">
   {% for post in site.posts %}
-    {% if post.category == "cloud" or post.category == "terraform" %}
+    {% if post.category == "cloud" %}
       <div class="blog-card">
         <div class="blog-image" style="
           background-image: url('{{ post.featured-image | default: '/assets/images/default-blog.jpg' }}');
