@@ -2,7 +2,9 @@
 layout: single
 title: "Terraform Associate Certification — Complete Exam Preparation Guide"
 date: 2026-08-15 20:00:00 +0530
-category: terraform
+categories:
+  - cloud
+  - terraform
 author: Sarang Deshmukh
 featured-image: /assets/images/terraform-certification.png
 permalink: /automation/terraform-associate-certification/
