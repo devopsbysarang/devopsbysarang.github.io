@@ -19,9 +19,9 @@ permalink: /automation/terraform-associate-certification/
 Everything in Terraform reduces to three things being compared against each other, continuously:
 
 ```text
-Configuration  →  what you WANT       (your .tf files)
-State          →  what Terraform THINKS exists   (terraform.tfstate)
-Real world     →  what ACTUALLY exists   (the provider/API — AWS, Azure, GCP…)
+- Configuration  →  what you WANT       (your .tf files)
+- State          →  what Terraform THINKS exists   (terraform.tfstate)
+- Real world     →  what ACTUALLY exists   (the provider/API — AWS, Azure, GCP…)
 ```
 
 Terraform's entire job, every single command, is reconciling these three things:
