@@ -7,6 +7,7 @@ author: Sarang Deshmukh
 featured-image: /assets/images/terraform-certification.png
 permalink: /automation/terraform-associate-certification/
 ---
+
 This article is a complete Terraform Associate certification preparation guide based on my own preparation journey, personal notes, hands-on practice, and **multiple practice tests**.
 
 I cleared the HashiCorp Terraform Associate certification after consistently performing well on practice exams and focusing heavily on understanding the concepts behind each question.
