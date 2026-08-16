@@ -42,7 +42,7 @@ Terraform's entire job, every single command, is reconciling these three things:
 - `terraform import` wires an already-existing real-world object into state.
 - `terraform state rm` removes Terraform's *record* of an object from state, without touching the real world at all.
 
-Almost every exam question, and almost every production incident I've been paged for, traces back to one of these three getting out of sync with the others, and someone reaching for the wrong tool to fix it. If you take away nothing else from this entire guide, take away this triangle. I'd bet a third of the exam is, underneath the specific wording, testing whether you know which corner of this triangle a given command touches.
+Almost every production incident I have seen so far, traces back to one of these three getting out of sync with the others, and someone reaching for the wrong tool to fix it. If you take away nothing else from this entire guide, take away this triangle. I'd bet a third of the exam is, underneath the specific wording, testing whether you know which corner of this triangle a given command touches.
 
 **Why this matters beyond the exam:** the day someone on your team runs `terraform apply` from a stale branch against production state, this is the model that lets you reason calmly about what actually happened and how to recover, instead of panicking and running more commands that make it worse.
 
