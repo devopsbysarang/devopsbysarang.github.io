@@ -2142,37 +2142,37 @@ Question about destruction      → Think destroy / plan -destroy / lifecycle.
 ┌───────────────────────────────────────────────────────────┐
 │                   TERRAFORM CHEAT SHEET                   │
 ├───────────────────────────────────────────────────────────┤
-│ Terraform → Declarative IaC                                │
-│ Provider  → Talks to API                                   │
-│ Backend   → Stores state                                   │
-│ State     → Terraform's recorded infrastructure            │
-│ Resource  → Manages infrastructure                         │
-│ Data      → Reads existing information                     │
-│ Variable  → Input                                           │
-│ Local     → Internal value                                  │
-│ Output    → Exposes value                                   │
-│ Module    → Reusable configuration                          │
+│ Terraform → Declarative IaC                               │
+│ Provider  → Talks to API                                  │
+│ Backend   → Stores state                                  │
+│ State     → Terraform's recorded infrastructure           │
+│ Resource  → Manages infrastructure                        │
+│ Data      → Reads existing information                    │
+│ Variable  → Input                                         │
+│ Local     → Internal value                                │
+│ Output    → Exposes value                                 │
+│ Module    → Reusable configuration                        │
 ├───────────────────────────────────────────────────────────┤
-│ Parent → Child = Variables                                  │
-│ Child → Parent = Outputs                                    │
+│ Parent → Child = Variables                                │
+│ Child → Parent = Outputs                                  │
 ├───────────────────────────────────────────────────────────┤
-│ count     → Numeric indexes                                 │
-│ for_each  → Keys                                             │
-│ depends_on → Explicit dependency                             │
+│ count     → Numeric indexes                               │
+│ for_each  → Keys                                          │
+│ depends_on → Explicit dependency                          │
 ├───────────────────────────────────────────────────────────┤
-│ required_version    → Terraform version                     │
-│ required_providers  → Provider requirements                 │
-│ .terraform.lock.hcl → Provider selections/checksums          │
-│ terraform.tfstate   → Infrastructure state                   │
+│ required_version    → Terraform version                   │
+│ required_providers  → Provider requirements               │
+│ .terraform.lock.hcl → Provider selections/checksums       │
+│ terraform.tfstate   → Infrastructure state                │
 ├───────────────────────────────────────────────────────────┤
-│ plan            → Preview                                    │
-│ apply           → Execute                                    │
-│ plan -destroy   → Preview destruction                        │
-│ destroy         → Destroy                                    │
-│ state rm        → Remove from state (not the real resource)  │
-│ import          → Existing infrastructure → state            │
-│ refresh-only    → Update state from remote                   │
-│ -replace        → Force replacement                          │
+│ plan            → Preview                                 │
+│ apply           → Execute                                 │
+│ plan -destroy   → Preview destruction                     │
+│ destroy         → Destroy                                 │
+│ state rm        → Remove from state                       │
+│ import          → Existing infrastructure → state         │
+│ refresh-only    → Update state from remote                │
+│ -replace        → Force replacement                       │
 └───────────────────────────────────────────────────────────┘
 
 ```
