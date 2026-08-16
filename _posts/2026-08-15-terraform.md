@@ -62,11 +62,13 @@ resource "aws_instance" "web" {
 Contrast that with an imperative runbook:
 
 ```text
+
 1. Create VPC
 2. Create subnet
 3. Create route table
 4. Attach route table to subnet
 5. Launch EC2 instance
+
 ```
 
 Terraform doesn't want the steps; it wants the shape. It figures out the steps itself by building a dependency graph from the references in your configuration, which is exactly why `terraform graph` exists, and why correct ordering "just works" in the vast majority of configurations without you ever specifying it manually.
