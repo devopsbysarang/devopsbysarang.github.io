@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Terraform Associate Certification — Complete Exam Preparation Guide"
+title: "Terraform Associate Certification - Complete Exam Preparation Guide"
 date: 2025-08-15 20:00:00 +0530
 category: cloud
 author: Sarang Deshmukh
