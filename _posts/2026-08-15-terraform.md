@@ -1949,51 +1949,7 @@ init, plan, apply, destroy, import, state, workspace, refresh-only, replace
 workspaces, remote state, runs, variables, collaboration
 ```
 
-## 98. One-Page Mental Model of Terraform
-
-Before the exam, visualize the whole system like this:
-
-```text
-
-                    TERRAFORM
-                        |
-          +-------------+-------------+
-          |             |             |
-       Providers      Modules       Backend
-          |             |             |
-       APIs         Reusable        State
-          |          config           |
-          |             |             |
-          +-------------+-------------+
-                        |
-                     State
-                        |
-                Dependency Graph
-                        |
-                   Plan / Apply
-                        |
-                Real Infrastructure
-
-```
-
-And the surrounding conceptual vocabulary:
-
-```text
-
-Variables    → Inputs
-Locals       → Internal values
-Outputs      → Results
-Resources    → Managed infrastructure
-Data Sources → Read existing information
-State        → Terraform's recorded knowledge
-Backend      → State storage
-Provider     → API communication
-Module       → Reusable configuration
-Workspace    → Separate execution/state context
-
-```
-
-## 99. Final 30 Things I Would Memorize, Verbatim
+## 98. Final 30 Things I Would Memorize, Verbatim
 
 ```text
 
@@ -2030,7 +1986,7 @@ Workspace    → Separate execution/state context
 
 ```
 
-## 100. Last-Day Preparation Strategy
+## 99. Last-Day Preparation Strategy
 
 If your exam is tomorrow, do not try to learn Terraform from scratch. Follow this order.
 
@@ -2078,31 +2034,8 @@ Part XIX §99, Final 30 Things I Would Memorize
 
 Then solve one final practice test, review only what you missed, and stop. Cramming further than that produces diminishing returns and adds noise right before the exam.
 
-## 101. How to Know You Are Ready
 
-Don't judge readiness by a single practice-test score. A far better signal is whether you can explain concepts cold, without looking at the answer key. Try these out loud:
-
-**Q: What does `terraform state rm` do?**
-A: It removes the resource from Terraform state. It does not destroy the real infrastructure.
-
-**Q: How does a parent module pass information to a child?**
-A: Through the child module's input variables.
-
-**Q: How does a child module expose information to its parent?**
-A: Through outputs.
-
-**Q: What's the difference between `required_version` and `required_providers`?**
-A: `required_version` constrains Terraform CLI versions. `required_providers` defines provider dependencies and their versions.
-
-**Q: What prevents concurrent Terraform operations from modifying shared state?**
-A: State locking.
-
-**Q: Does `sensitive = true` protect a value inside the state file itself?**
-A: No, it only suppresses display in CLI output; the state backend needs its own protection.
-
-If you can answer all six without hesitating, in your own words, you're ready.
-
-## 102. Final Exam Mindset
+## 100. Final Exam Mindset
 
 The Terraform Associate exam is not simply a test of whether you've memorized commands. It tests whether you understand **how Terraform actually works** underneath those commands.
 
