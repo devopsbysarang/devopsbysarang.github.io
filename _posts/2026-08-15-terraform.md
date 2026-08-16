@@ -8,7 +8,7 @@ featured-image: /assets/images/terraform-certification.png
 permalink: /automation/terraform-associate-certification/
 ---
 
-> **A note before you start.** I've run Terraform in production for years, multi-account AWS and GCP estates, shared state backends, postmortems where the root cause was a single misunderstood flag. The exam tests a narrow slice of that experience, but it tests the *right* slice: the conceptual boundaries that, when fuzzy, cause real incidents. This guide is long on purpose. I'm not handing you a cheat sheet, I'm walking you through the same mental model I'd build in a senior engineer joining my team, with the production context that makes each rule stick instead of just being another fact to forget in three weeks. Read it in order the first time. Use the reference tables at the end for revision.
+> **A note before you start.** I've run Terraform in production for years, multi-account AWS and GCP estates, shared state backends, postmortems where the root cause was a single misunderstood flag. The exam tests a narrow slice of that experience, but it tests the *right* slice: the conceptual boundaries that, when fuzzy, cause real incidents. This guide is long on purpose. I'm not handing you a cheat sheet, I'm walking you through the same mental model I'd build in a engineer joining my team, with the production context that makes each rule stick instead of just being another fact to forget in three weeks. Read it in order the first time. Use the reference tables at the end for revision.
 
 ---
 
@@ -71,11 +71,11 @@ Contrast that with an imperative runbook:
 
 Terraform doesn't want the steps; it wants the shape. It figures out the steps itself by building a dependency graph from the references in your configuration, which is exactly why `terraform graph` exists, and why correct ordering "just works" in the vast majority of configurations without you ever specifying it manually.
 
-**Architect's note:** this is the single biggest mindset shift for engineers coming from shell scripts, Ansible playbooks, or hand-run AWS CLI commands. Fighting the declarative model, trying to force step-by-step ordering, trying to make Terraform "do a thing" rather than "reach a state," writing configuration that only makes sense if applied in a specific sequence by a specific person, is where most early Terraform pain in a new team comes from. The people who struggle longest with Terraform are usually the strongest imperative scripters, because they keep instinctively reaching for "and then do X" instead of "and X should exist."
+**Note:** this is the single biggest mindset shift for engineers coming from shell scripts, Ansible playbooks, or hand-run AWS CLI commands. Fighting the declarative model, trying to force step-by-step ordering, trying to make Terraform "do a thing" rather than "reach a state," writing configuration that only makes sense if applied in a specific sequence by a specific person, is where most early Terraform pain in a new team comes from. The people who struggle longest with Terraform are usually the strongest imperative scripters, because they keep instinctively reaching for "and then do X" instead of "and X should exist."
 
 ---
 
-## 3. Terraform in One Sentence, Expanded
+## 3. Terraform in One Sentence
 
 Terraform is a declarative Infrastructure as Code tool that defines, provisions, and manages infrastructure across one or more providers by comparing desired configuration against recorded state and computing the minimal set of API calls needed to reconcile them.
 
@@ -96,6 +96,7 @@ Every word in that sentence maps to something concrete you'll be tested on:
 ## 4. The Standard Lifecycle
 
 ```text
+
 terraform init
       ↓
 terraform validate
@@ -103,6 +104,7 @@ terraform validate
 terraform plan
       ↓
 terraform apply
+
 ```
 
 And, when infrastructure is being decommissioned entirely:
@@ -132,9 +134,9 @@ If provider or module version requirements have changed since the last init:
 terraform init -upgrade
 ```
 
-**Exam point, stated plainly:** `terraform init` never creates, modifies, or destroys infrastructure. It is entirely a local bootstrapping operation. If a question describes any change to real infrastructure as a result of `init`, that answer is wrong by definition.
+**Exam point:** `terraform init` never creates, modifies, or destroys infrastructure. It is entirely a local bootstrapping operation. If a question describes any change to real infrastructure as a result of `init`, that answer is wrong by definition.
 
-**Production note:** `init` is also where backend migrations happen. If you change your `backend` block (say, moving from local state to an S3 backend), running `init` again is what prompts Terraform to offer to copy existing state into the new backend. This is a moment I always do by hand, carefully, with a state backup taken first. It's one of the few places a routine command can silently orphan your state if you answer the migration prompt wrong.
+**Note:** `init` is also where backend migrations happen. If you change your `backend` block (say, moving from local state to an S3 backend), running `init` again is what prompts Terraform to offer to copy existing state into the new backend. This is a moment I always do by hand, carefully, with a state backup taken first. It's one of the few places a routine command can silently orphan your state if you answer the migration prompt wrong.
 
 ## 6. terraform validate
 
@@ -166,8 +168,10 @@ Symbol vocabulary you need to read at a glance, under exam time pressure:
 Saving a plan for later, exact execution:
 
 ```bash
+
 terraform plan -out=tfplan
 terraform apply tfplan
+
 ```
 
 **Why I insist on this pattern for anything touching shared or production infrastructure:** a saved plan file is a binary snapshot of the exact diff a human reviewed. Without it, the state could drift *between* your `plan` and your `apply` (someone else applies in the meantime, a scheduled scaling event fires, whatever), and the `apply` you run is silently different from the `plan` you approved. In any regulated or high-stakes environment, "plan reviewed in PR, exact same plan file applied in CI" is table stakes, not a nice-to-have.
@@ -219,7 +223,7 @@ plan -destroy  = preview only, nothing happens
 destroy        = executes, infrastructure is gone
 ```
 
-I've seen `destroy` run against the wrong workspace exactly once on a team I was on, early in my career, before we had `prevent_destroy` guardrails everywhere that mattered. It's the reason `lifecycle { prevent_destroy = true }` exists on every production database block I write today, see §21.
+I've seen `destroy` run against the wrong workspace exactly once on a team I was on, before we had `prevent_destroy` guardrails everywhere that mattered. It's the reason `lifecycle { prevent_destroy = true }` exists on every production database block I write today, see §21.
 
 ---
 
@@ -230,11 +234,13 @@ I've seen `destroy` run against the wrong workspace exactly once on a team I was
 Terraform configuration files use the `.tf` extension. A typical project layout:
 
 ```text
+
 main.tf
 variables.tf
 outputs.tf
 providers.tf
 terraform.tf
+
 ```
 
 Terraform loads **all** `.tf` files in the working directory as a single merged configuration, filenames are a human organizational convention, not a Terraform requirement. I've worked in codebases with one giant `main.tf` and codebases split into a dozen files by resource domain; Terraform treats them identically. The split exists purely for the humans reading the diff in a pull request.
@@ -244,14 +250,17 @@ Terraform loads **all** `.tf` files in the working directory as a single merged 
 Providers are what let Terraform talk to external APIs, AWS, Azure, GCP, Kubernetes, GitHub, Cloudflare, Datadog, and hundreds more. Think of a provider as a plugin that translates your declarative resource blocks into that platform's specific API calls.
 
 ```hcl
+
 provider "aws" {
   region = "ap-south-1"
 }
+
 ```
 
 You can declare multiple provider configurations of the same type using aliases, common in multi-region or multi-account setups:
 
 ```hcl
+
 provider "aws" {
   alias  = "us_east"
   region = "us-east-1"
@@ -261,6 +270,7 @@ resource "aws_instance" "backup" {
   provider = aws.us_east
   # ...
 }
+
 ```
 
 **Production pattern I use constantly:** aliased providers for cross-region DR resources or cross-account resource sharing, so a single root module can provision into more than one account/region without duplicating the entire configuration tree.
@@ -270,6 +280,7 @@ resource "aws_instance" "backup" {
 Provider dependencies are declared in the `terraform` block:
 
 ```hcl
+
 terraform {
   required_providers {
     aws = {
@@ -278,6 +289,7 @@ terraform {
     }
   }
 }
+
 ```
 
 This specifies the provider's registry source address, and the allowed version range. Without a `source`, Terraform can't reliably resolve which provider you mean (there have historically been multiple providers with overlapping short names).
@@ -289,14 +301,17 @@ One of the most consistently confused pairs on both the exam and in real enginee
 **`required_version`** controls the Terraform **CLI/engine** version:
 
 ```hcl
+
 terraform {
   required_version = ">= 1.5.0"
 }
+
 ```
 
 **`required_providers`** controls **provider plugin** dependencies:
 
 ```hcl
+
 terraform {
   required_providers {
     aws = {
@@ -305,6 +320,7 @@ terraform {
     }
   }
 }
+
 ```
 
 | Concept | Governs |
@@ -312,24 +328,28 @@ terraform {
 | `required_version` | The Terraform binary itself |
 | `required_providers` | The plugins that binary loads |
 
-**Why I care about this operationally, not just for the exam:** in a large org running many modules across many teams, mismatched CLI versions between a developer's laptop and CI are a constant, quiet source of "works on my machine." Pinning `required_version` in every root module, and failing CI loudly if it doesn't match, has saved my teams from more than one confusing afternoon.
+**Note:** in a large org running many modules across many teams, mismatched CLI versions between a developer's laptop and CI are a constant, quiet source of "works on my machine." Pinning `required_version` in every root module, and failing CI loudly if it doesn't match, has saved my teams from more than one confusing afternoon.
 
 ## 14. Provider Version Constraints, in Full
 
 ```text
+
 >= 1.0     at least 1.0
 > 1.0      strictly greater than 1.0
 < 2.0      strictly less than 2.0
 <= 2.0     at most 2.0
 = 1.5.0    exactly 1.5.0
 ~> 1.5     pessimistic constraint
+
 ```
 
 The `~>` operator, the **pessimistic constraint operator**, is the one that trips people up. Let's be precise about it:
 
 ```text
+
 ~> 1.5     → allows any 1.x release starting at 1.5 (1.5.0, 1.6.0, 1.9.0…), but never 2.0
 ~> 1.5.2   → allows patch releases only (1.5.3, 1.5.4…), but never 1.6.0
+
 ```
 
 The rule: the operator locks everything to the *left* of the rightmost specified version segment, and allows drift only in the *rightmost* segment. This is the single most exam-tested version-constraint fact, memorize it by working the two examples above until they're automatic, not by memorizing the sentence.
@@ -349,8 +369,10 @@ It should generally be committed to version control, the same way a `package-loc
 **Do not confuse this with Terraform state.** This is one of the exam's favorite pairs to test, and one of the pairs I most often see confused by engineers new to Terraform:
 
 ```text
+
 .terraform.lock.hcl  →  provider dependency information (safe, non-sensitive, commit it)
 terraform.tfstate    →  infrastructure state (can be sensitive, protect it)
+
 ```
 
 ---
@@ -362,10 +384,12 @@ terraform.tfstate    →  infrastructure state (can be sensitive, protect it)
 Resources are the core building block, they represent actual infrastructure objects Terraform creates and manages.
 
 ```hcl
+
 resource "aws_instance" "web" {
   ami           = "ami-123456"
   instance_type = "t3.micro"
 }
+
 ```
 
 Structure:
@@ -385,9 +409,11 @@ aws_instance.web
 Data sources read existing information, from a provider API, without creating or managing anything.
 
 ```hcl
+
 data "aws_vpc" "default" {
   default = true
 }
+
 ```
 
 | Resource | Data Source |
@@ -402,6 +428,7 @@ I reach for data sources constantly when a module needs to reference infrastruct
 State tracks the relationship between your configuration and real infrastructure.
 
 ```text
+
 Configuration
      ↓
 Terraform
@@ -409,6 +436,7 @@ Terraform
 State
      ↓
 Real Infrastructure
+
 ```
 
 State lets Terraform understand, without querying every API on every run:
@@ -428,7 +456,7 @@ terraform.tfstate
 
 It may contain resource IDs, full attribute sets (including anything marked `sensitive`), dependency metadata, essentially a complete snapshot of everything Terraform knows about your infrastructure.
 
-> **Never treat Terraform state as harmless text.** I say this to every engineer who joins a team I lead. A `terraform.tfstate` file is frequently the single most sensitive artifact in an infrastructure repo, because it can contain database passwords, private keys, and other secrets in plaintext, regardless of whether the originating variable was marked `sensitive`.
+> **Never treat Terraform state as harmless text.** I say this to everyone who joins a team. A `terraform.tfstate` file is frequently the single most sensitive artifact in an infrastructure repo, because it can contain database passwords, private keys, and other secrets in plaintext, regardless of whether the originating variable was marked `sensitive`.
 
 ## 20. Remote State
 
@@ -450,13 +478,14 @@ Common backend targets:
 - Terraform Cloud / HCP Terraform
 - Consul
 
-**My default recommendation for any team past a single engineer:** remote state from day one. The cost of setting up an S3 bucket and lock table is a rounding error compared to the cost of the first "who has the current state file" conversation.
+**Note::** remote state from day one. The cost of setting up an S3 bucket and lock table is a rounding error compared to the cost of the first "who has the current state file" conversation.
 
 ## 21. State Locking
 
 State locking prevents multiple Terraform operations from modifying shared state simultaneously.
 
 ```text
+
 Developer A
     ↓
 Lock state
@@ -464,6 +493,7 @@ Lock state
 Run Terraform (plan/apply)
     ↓
 Unlock
+
 ```
 
 While a lock is held, a second operation against the same state cannot proceed safely, it'll either wait, or (depending on backend and flags) fail with a clear locking error rather than silently corrupting state.
@@ -473,19 +503,23 @@ While a lock is held, a second operation against the same state cannot proceed s
 These two "locking" concepts share a word and nothing else:
 
 ```text
+
 State locking          →  protects shared Terraform state from concurrent writes
 .terraform.lock.hcl    →  locks provider dependency version selections
+
 ```
 
-I've watched engineers debug a locking error by re-running `terraform init -upgrade`, completely the wrong tool, because that error had nothing to do with provider versions. Knowing which "lock" a given error message is about will save you real debugging time, not just exam points.
+I've watched people debug a locking error by re-running `terraform init -upgrade`, completely the wrong tool, because that error had nothing to do with provider versions. Knowing which "lock" a given error message is about will save you real debugging time, not just exam points.
 
 ## 22. S3 Backend and DynamoDB Locking
 
 For AWS-based Terraform setups, S3 remains the most common remote state target.
 
 ```text
+
 S3         →  remote state storage
 DynamoDB   →  state locking (classic pattern; newer Terraform versions also support native S3-based locking)
+
 ```
 
 Older exam material (and a lot of production configs still in the wild) pairs S3 with a DynamoDB table purely for locking. Be careful with questions that separate **state storage** from **state locking**: they're conceptually distinct even when implemented by two AWS services working together.
@@ -495,11 +529,13 @@ Older exam material (and a lot of production configs still in the wild) pairs S3
 Never hard-code credentials inside Terraform configuration:
 
 ```hcl
+
 # Bad practice, never do this
 backend "s3" {
   access_key = "AKIA..."
   secret_key = "secret"
 }
+
 ```
 
 Prefer secure, ambient authentication mechanisms:
@@ -514,9 +550,11 @@ Prefer secure, ambient authentication mechanisms:
 ## 24. terraform state Commands, In Depth
 
 ```bash
+
 terraform state list                    # everything currently tracked
 terraform state show aws_instance.web   # full attribute detail for one resource
 terraform state rm aws_instance.web     # stop tracking, see below
+
 ```
 
 ### The critical difference
@@ -530,11 +568,13 @@ terraform state rm aws_instance.web     # stop tracking, see below
 Import brings existing, out-of-band infrastructure under Terraform's management.
 
 ```text
+
 Existing EC2
      ↓
 terraform import
      ↓
 Terraform State
+
 ```
 
 ```bash
@@ -546,6 +586,7 @@ terraform import aws_instance.web i-0123456789
 ### Import, the exam trap stated directly
 
 ```text
+
 AWS EC2 instance
    ↓
 terraform import
@@ -553,6 +594,7 @@ terraform import
 Terraform state
    ↓
 ✗ NOT a perfect .tf configuration automatically generated
+
 ```
 
 The key concept, worth memorizing verbatim: **import connects existing infrastructure to Terraform state, it does not generate configuration for you.** (Newer Terraform versions do offer `-generate-config-out` tooling to *assist* with this, but even that output is a starting draft you're expected to review and correct, not a guarantee.)
@@ -573,7 +615,7 @@ instance_type = t3.small
 
 Your Terraform configuration still says `t3.micro`. This mismatch, reality diverging from what Terraform's state (and config) believe, is called **drift**. Terraform detects it by comparing configuration, state, and real infrastructure on your next `plan` or `refresh`.
 
-**Where I see this bite teams most often:** anything with an auto-scaling group, a Kubernetes operator, or another automated system that legitimately modifies attributes Terraform also thinks it owns. This is exactly the scenario `ignore_changes` (§30) exists to solve.
+**Note::** anything with an auto-scaling group, a Kubernetes operator, or another automated system that legitimately modifies attributes Terraform also thinks it owns. This is exactly the scenario `ignore_changes` (§30) exists to solve.
 
 ## 27. terraform apply -refresh-only
 
@@ -602,16 +644,18 @@ terraform taint aws_instance.web
 to mark a resource for forced replacement on the next apply. `taint` is effectively deprecated in modern Terraform in favor of an explicit, plan-time flag:
 
 ```bash
+
 terraform apply -replace="aws_instance.web"
 # or, to preview first:
 terraform plan -replace="aws_instance.web"
+
 ```
 
 ```text
 -replace  →  force replacement of a specific resource on next apply
 ```
 
-**Why the newer approach is better, operationally:** `-replace` is explicit at plan time and shows up in the reviewable diff, whereas `taint` silently mutated state ahead of time in a way that was easy to lose track of across a team. This is a small API design change that meaningfully reduced a whole class of "wait, why is this resource being destroyed?" surprises.
+**Note:** `-replace` is explicit at plan time and shows up in the reviewable diff, whereas `taint` silently mutated state ahead of time in a way that was easy to lose track of across a team. This is a small API design change that meaningfully reduced a whole class of "wait, why is this resource being destroyed?" surprises.
 
 ---
 
@@ -622,46 +666,58 @@ terraform plan -replace="aws_instance.web"
 Outputs expose useful values from a configuration, to a human running `terraform output`, or to a parent module.
 
 ```hcl
+
 output "instance_ip" {
   value = aws_instance.web.public_ip
 }
+
 ```
 
 ```bash
+
 terraform output                # all outputs
 terraform output instance_ip    # one specific output
+
 ```
 
 ## 30. Variables vs. Outputs, the Direction Rule
 
 ```text
+
 Variable  →  Input
 Output    →  Exposed result
+
 ```
 
 For modules specifically:
 
 ```text
+
 Parent
    ↓
 Input Variable
    ↓
 Child Module
+
 ```
 
 ```text
+
 Child Module
    ↓
 Output
    ↓
 Parent
+
 ```
 
 ### Memorize this exactly, it answers a huge share of module questions on the exam
 
 ```text
+
 Parent → Child = Input Variables
 Child → Parent = Outputs
+
 ```
 
 ## 31. Locals
@@ -669,6 +725,7 @@ Child → Parent = Outputs
 Locals define reusable, internally-computed expressions within a module, values you don't want to hardcode repeatedly, but that aren't meant to be configured from outside the module.
 
 ```hcl
+
 locals {
   environment = "production"
 
@@ -677,6 +734,7 @@ locals {
     ManagedBy   = "Terraform"
   }
 }
+
 ```
 
 Referenced as:
@@ -689,18 +747,20 @@ local.environment
 |---|---|
 | Input from outside the module | Internal, reusable, computed value |
 
-**Pattern I use in almost every root module:** a single `locals` block computing merged tag maps (base tags + environment-specific tags + team-specific tags) once, then referencing `local.common_tags` on every resource, instead of repeating tag logic across dozens of resource blocks.
+**Note:** a single `locals` block computing merged tag maps (base tags + environment-specific tags + team-specific tags) once, then referencing `local.common_tags` on every resource, instead of repeating tag logic across dozens of resource blocks.
 
 ## 32. Terraform Functions
 
 Terraform ships with a large standard library of built-in functions. A representative sample:
 
 ```hcl
+
 length(var.names)
 join(",", var.names)
 lookup(var.map, "key", "default")
 element(var.list, 0)
 toset(var.list)
+
 ```
 
 For the exam, understand what the *categories* of common functions do (string manipulation, collection manipulation, type conversion, numeric operations) rather than trying to memorize the entire function reference. In real work I look up exact function signatures constantly, nobody has the full standard library memorized, and the exam knows that; it tests conceptual usage, not recall of every function's exact argument order.
@@ -730,9 +790,11 @@ I use this pattern constantly for environment-driven sizing, one module, environ
 Modules let Terraform configuration be organized and reused. A module can contain resources, variables, outputs, providers, and any other valid Terraform configuration.
 
 ```hcl
+
 module "network" {
   source = "./modules/network"
 }
+
 ```
 
 The configuration calling the module is the **parent/root module**. The referenced module is the **child module**.
@@ -740,6 +802,7 @@ The configuration calling the module is the **parent/root module**. The referenc
 ## 35. Root Module vs. Child Module
 
 ```text
+
 project/
 ├── main.tf
 ├── variables.tf
@@ -748,6 +811,7 @@ project/
         ├── main.tf
         ├── variables.tf
         └── outputs.tf
+
 ```
 
 The top-level project configuration is the root module. `modules/network` is a child module.
@@ -757,18 +821,22 @@ The top-level project configuration is the root module. `modules/network` is a c
 Parent:
 
 ```hcl
+
 module "network" {
   source   = "./modules/network"
   vpc_cidr = "10.0.0.0/16"
 }
+
 ```
 
 Child:
 
 ```hcl
+
 variable "vpc_cidr" {
   type = string
 }
+
 ```
 
 ```text
@@ -780,9 +848,11 @@ Parent → Child = Input Variable
 Child:
 
 ```hcl
+
 output "vpc_id" {
   value = aws_vpc.main.id
 }
+
 ```
 
 Parent, referencing it:
@@ -800,10 +870,12 @@ Child → Parent = Output
 For registry modules, always pin a version for predictable, repeatable deployments:
 
 ```hcl
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "x.x.x"
 }
+
 ```
 
 Don't confuse this strong best practice with a mandatory Terraform syntax requirement, Terraform will happily run without a pinned module version, right up until an upstream module release quietly changes behavior underneath you in production. I treat unpinned registry modules the same way I'd treat an unpinned npm dependency in a production build: a ticking time bomb, not a style preference.
@@ -811,19 +883,23 @@ Don't confuse this strong best practice with a mandatory Terraform syntax requir
 ## 39. Resource vs. Module
 
 ```text
+
 Resource → a single infrastructure object
 Module   → a reusable group of Terraform configuration, potentially containing many resources
+
 ```
 
 ```hcl
+
 resource "aws_instance" "web" {}
 
 module "application" {
   source = "./modules/application"
 }
+
 ```
 
-**Design principle I hold my teams to:** a module should represent one coherent unit of infrastructure with a clean input/output contract, not just "a folder I put some resources in." If a module's variable list has grown past 15–20 inputs, that's usually a sign it's doing too much and should be split.
+**Note:** A module should represent one coherent unit of infrastructure with a clean input/output contract, not just "a folder I put some resources in." If a module's variable list has grown past 15–20 inputs, that's usually a sign it's doing too much and should be split.
 
 ---
 
@@ -834,20 +910,24 @@ module "application" {
 `count` creates multiple instances of a resource based on a number.
 
 ```hcl
+
 resource "aws_instance" "web" {
   count = 3
 
   ami           = "ami-123456"
   instance_type = "t3.micro"
 }
+
 ```
 
 Resources become:
 
 ```text
+
 aws_instance.web[0]
 aws_instance.web[1]
 aws_instance.web[2]
+
 ```
 
 Use `count` when instances are naturally represented by a numeric quantity and don't have individually meaningful identities.
@@ -857,6 +937,7 @@ Use `count` when instances are naturally represented by a numeric quantity and d
 `for_each` creates instances from a map or set, each with a stable, meaningful key.
 
 ```hcl
+
 resource "aws_instance" "web" {
   for_each = toset(["web", "api", "worker"])
 
@@ -867,17 +948,20 @@ resource "aws_instance" "web" {
     Name = each.key
   }
 }
+
 ```
 
 Resources are addressed by key:
 
 ```text
+
 aws_instance.web["web"]
 aws_instance.web["api"]
 aws_instance.web["worker"]
+
 ```
 
-## 42. count vs. for_each, the Rule and the War Story
+## 42. count vs. for_each
 
 ```text
 count      → numeric/index-based    → [0], [1], [2]
@@ -891,6 +975,7 @@ If each instance has a meaningful identity, `for_each` is the better conceptual 
 Dynamic blocks generate repeated nested configuration blocks within a single resource, different from `for_each` on an entire resource, which generates multiple *whole resources*.
 
 ```hcl
+
 dynamic "ingress" {
   for_each = var.rules
 
@@ -899,6 +984,7 @@ dynamic "ingress" {
     to_port   = ingress.value.to_port
   }
 }
+
 ```
 
 Think: *dynamic blocks generate repeated nested blocks inside one resource.* `for_each` on a resource generates multiple independent resource instances. Don't conflate the two just because both use `for_each` syntax under the hood, the scope of what's being repeated is completely different.
@@ -912,9 +998,11 @@ Think: *dynamic blocks generate repeated nested blocks inside one resource.* `fo
 Terraform normally builds its dependency graph automatically from references in configuration.
 
 ```hcl
+
 resource "aws_instance" "web" {
   subnet_id = aws_subnet.public.id
 }
+
 ```
 
 Terraform infers:
@@ -926,9 +1014,11 @@ Subnet → Instance
 Sometimes a real dependency exists that isn't visible through any attribute reference, an IAM policy attachment that must complete before a role can be assumed, for instance, where nothing in the dependent resource's arguments actually references the policy. In those cases:
 
 ```hcl
+
 depends_on = [
   aws_iam_role_policy.example
 ]
+
 ```
 
 ## 45. Implicit vs. Explicit Dependencies
@@ -942,9 +1032,11 @@ vpc_id = aws_vpc.main.id
 **Explicit**: declared manually:
 
 ```hcl
+
 depends_on = [
   aws_iam_role_policy.example
 ]
+
 ```
 
 **Exam rule, and my rule for code review:** prefer implicit dependencies wherever Terraform can naturally infer them from your configuration. Reach for `depends_on` only when Terraform genuinely cannot infer the relationship. Overusing `depends_on` is a code smell I flag in every review. It usually means the configuration isn't expressing the actual data relationship between two resources, and it tends to survive refactors badly: someone later removes what looks like a redundant `depends_on`, not realizing it was load-bearing, and breaks the apply order in production.
@@ -954,11 +1046,13 @@ depends_on = [
 Lifecycle meta-arguments control resource behavior around create/update/destroy operations.
 
 ```hcl
+
 lifecycle {
   create_before_destroy = true
   prevent_destroy        = true
   ignore_changes          = [tags]
 }
+
 ```
 
 ## 47. create_before_destroy
@@ -966,19 +1060,23 @@ lifecycle {
 By default, Terraform may destroy an old resource before creating its replacement when a change forces recreation. With this flag:
 
 ```hcl
+
 lifecycle {
   create_before_destroy = true
 }
+
 ```
 
 Terraform instead attempts:
 
 ```text
+
 Create new
      ↓
 Replacement available
      ↓
 Destroy old
+
 ```
 
 This can reduce or eliminate downtime during replacement, where supported by the resource type and provider (not every resource type supports this cleanly, check provider docs, especially for anything with naming uniqueness constraints).
@@ -986,9 +1084,11 @@ This can reduce or eliminate downtime during replacement, where supported by the
 ## 48. prevent_destroy
 
 ```hcl
+
 lifecycle {
   prevent_destroy = true
 }
+
 ```
 
 Prevents Terraform from destroying the resource through normal operations, attempting to do so produces a hard error instead of proceeding.
@@ -998,11 +1098,13 @@ Typical use: a production database, a stateful resource with data that can't be 
 ## 49. ignore_changes
 
 ```hcl
+
 lifecycle {
   ignore_changes = [
     tags
   ]
 }
+
 ```
 
 Tells Terraform to ignore changes to the listed attributes when determining whether the resource needs updating, useful when another system (an autoscaler, a config-management tool, a platform-team automation) legitimately manages part of a resource that Terraform also declares.
@@ -1016,10 +1118,12 @@ Tells Terraform to ignore changes to the listed attributes when determining whet
 ## 50. Sensitive Variables
 
 ```hcl
+
 variable "database_password" {
   type      = string
   sensitive = true
 }
+
 ```
 
 Sensitive values are hidden from normal CLI output, `plan` and `apply` won't print them to your terminal or CI logs.
@@ -1040,11 +1144,11 @@ A variable flagged `sensitive = true` is hidden from CLI output. Terraform state
 - Your **state backend access control** needs to be as tight as access to a secrets manager
 - `sensitive = true` is a CLI-output UX feature, not a security boundary
 
-**The rule I give every team:** treat your state backend with the same access-control rigor as your actual secrets manager, because functionally, for anything holding a `sensitive` variable, that's exactly what it's become.
+**Note:** treat your state backend with the same access-control rigor as your actual secrets manager, because functionally, for anything holding a `sensitive` variable, that's exactly what it's become.
 
 ## 52. Authentication Patterns
 
-Terraform providers need authentication to communicate with cloud platforms. For AWS, in order of what I actually recommend today:
+Terraform providers need authentication to communicate with cloud platforms:
 
 1. OIDC / workload identity federation for CI (no long-lived credentials at all, my strong default for any new pipeline)
 2. IAM roles / instance profiles for anything running on AWS compute already
@@ -1062,11 +1166,13 @@ Avoid hard-coded credentials in Terraform files under all circumstances, this be
 Used to manage multiple named state instances within the *same* configuration.
 
 ```bash
+
 terraform workspace list
 terraform workspace show
 terraform workspace new dev
 terraform workspace select dev
 terraform workspace delete dev
+
 ```
 
 ```text
@@ -1096,7 +1202,7 @@ Terraform OSS workspace  =  Terraform Cloud workspace
 
 They're related in name and in the general idea of "isolated state," but not identical in scope. Read exam questions carefully for context: mentions of runs, teams, or policy controls point to Terraform Cloud; mentions of switching local state instances point to CLI workspaces.
 
-## 55. Terraform Cloud / HCP Terraform, at the Architect Level
+## 55. Terraform Cloud / HCP Terraform
 
 HCP Terraform (formerly Terraform Cloud) provides team-oriented capabilities beyond what the open-source CLI offers alone:
 
@@ -1125,16 +1231,20 @@ Terraform Cloud can manage variables separately from local `.tf` and `.tfvars` f
 Input variables let values be passed into configuration from outside.
 
 ```hcl
+
 variable "instance_type" {
   type    = string
   default = "t3.micro"
 }
+
 ```
 
 ```hcl
+
 resource "aws_instance" "web" {
   instance_type = var.instance_type
 }
+
 ```
 
 ## 58. Variable Values and Precedence
@@ -1160,9 +1270,11 @@ export TF_VAR_region="ap-south-1"
 This supplies the value for:
 
 ```hcl
+
 variable "region" {
   type = string
 }
+
 ```
 
 ## 60. Terraform's Own Environment Variables
@@ -1178,11 +1290,13 @@ export TF_LOG=DEBUG
 Supported logging levels:
 
 ```text
+
 TRACE
 DEBUG
 INFO
 WARN
 ERROR
+
 ```
 
 `TF_LOG=DEBUG` (or `TRACE` for maximum verbosity) is the first thing I reach for when a provider is behaving unexpectedly and the plan output alone doesn't explain why, it shows the actual API requests and responses Terraform is making under the hood.
@@ -1190,8 +1304,10 @@ ERROR
 ## 62. terraform.tfvars and *.auto.tfvars
 
 ```hcl
+
 instance_type = "t3.micro"
 region        = "ap-south-1"
+
 ```
 
 Terraform automatically loads `terraform.tfvars` and any file matching `*.auto.tfvars`, without needing an explicit `-var-file` flag.
@@ -1199,23 +1315,29 @@ Terraform automatically loads `terraform.tfvars` and any file matching `*.auto.t
 ## 63. .tfvars vs. .tf
 
 ```text
+
 .tf      → Terraform configuration (resources, variables, providers, etc.)
 .tfvars  → variable values only
+
 ```
 
 ```hcl
+
 # variables.tf
 variable "region" {
   type = string
 }
+
 ```
 
 ```hcl
+
 # terraform.tfvars
 region = "ap-south-1"
+
 ```
 
-**Pattern I enforce on every team:** one `.tfvars` (or `*.auto.tfvars`) per environment, never hand-editing shared variable defaults for a one-off deploy. It keeps environment differences explicit, diffable, and reviewable in a pull request, rather than living in someone's head or terminal history.
+**Note:** one `.tfvars` (or `*.auto.tfvars`) per environment, never hand-editing shared variable defaults for a one-off deploy. It keeps environment differences explicit, diffable, and reviewable in a pull request, rather than living in someone's head or terminal history.
 
 ---
 
@@ -1224,8 +1346,10 @@ region = "ap-south-1"
 ## 64. terraform fmt
 
 ```bash
+
 terraform fmt
 terraform fmt -recursive
+
 ```
 
 Canonicalizes formatting across a configuration tree. I run this as a mandatory pre-commit hook and a CI gate on every repo, it eliminates an entire category of noisy, whitespace-only PR diffs and keeps code review focused on substance.
@@ -1233,8 +1357,10 @@ Canonicalizes formatting across a configuration tree. I run this as a mandatory 
 ## 65. terraform show
 
 ```bash
+
 terraform show
 terraform show tfplan
+
 ```
 
 Human-readable dump of the current state, or of a saved plan file.
@@ -1248,8 +1374,10 @@ terraform console
 An interactive REPL for testing Terraform expressions and functions against your current configuration and state, genuinely one of my most-used debugging tools when I'm not sure exactly what a function call or interpolation will evaluate to.
 
 ```text
+
 > 1 + 2
 3
+
 ```
 
 ## 67. terraform providers
@@ -1273,20 +1401,24 @@ Generates a dependency graph representing relationships between resources (often
 ## 69. Resource Addressing, in Full
 
 ```text
+
 aws_instance.web                    simple resource
 aws_instance.web[0]                 count-based instance
 aws_instance.web["api"]             for_each-based instance
 module.network                      a module
 module.network.aws_vpc.main         a resource nested inside a module
+
 ```
 
 Understanding addressing precisely matters for:
 
 ```bash
+
 terraform state show <address>
 terraform state rm <address>
 terraform apply -replace="<address>"
 terraform import <address> <id>
+
 ```
 
 Get the address wrong on any of these and you either target the wrong object or get a clean error, either way, address syntax is worth being fluent in cold, not something to reconstruct under exam pressure.
@@ -1318,6 +1450,7 @@ Recorded infrastructure state
 What actually exists in AWS, Azure, GCP, or wherever:
 
 ```text
+
         Configuration
              ↓
         Desired state
@@ -1327,6 +1460,7 @@ What actually exists in AWS, Azure, GCP, or wherever:
            State
              ↕
     Real Infrastructure
+
 ```
 
 ## 71. Three Questions to Ask on Every Hard Question
@@ -1361,9 +1495,11 @@ Terraform compares these three to determine every action it takes. I still run t
 | Data source | Read existing information |
 
 ```hcl
+
 resource "aws_vpc" "main" {}   # creates/manages a VPC
 
 data "aws_vpc" "existing" {}   # reads an existing VPC
+
 ```
 
 ## 73. Variable vs. Local vs. Output, Restated
@@ -1375,24 +1511,30 @@ data "aws_vpc" "existing" {}   # reads an existing VPC
 | Output | Expose result |
 
 ```text
+
 Variable = outside → Terraform
 Local    = inside Terraform
 Output   = Terraform → outside
+
 ```
 
 ## 74. count vs. for_each, Final Revision
 
 ```text
+
 count     → numeric instances    → [0], [1], [2]
 for_each  → named/keyed instances → ["web"], ["api"], ["db"]
+
 ```
 
 ## 75. Lifecycle, Quick Revision
 
 ```text
+
 create_before_destroy  → new first, old later
 prevent_destroy        → protect from destruction
 ignore_changes          → ignore selected attribute changes
+
 ```
 
 ## 76. Backend vs. Provider, Restated
@@ -1410,8 +1552,10 @@ Terraform → Backend → State
 ```
 
 ```text
+
 Provider = Infrastructure API
 Backend  = State storage
+
 ```
 
 ## 77. Provider Lock File vs. State File, Restated
@@ -1421,8 +1565,10 @@ Backend  = State storage
 **`terraform.tfstate`**, Terraform's recorded infrastructure state.
 
 ```text
+
 .lock.hcl  → Provider dependency
 .tfstate   → Infrastructure state
+
 ```
 
 ---
@@ -1434,6 +1580,7 @@ Backend  = State storage
 Typical project:
 
 ```text
+
 terraform/
 ├── main.tf
 ├── variables.tf
@@ -1443,6 +1590,7 @@ terraform/
 ├── terraform.tfvars
 ├── .terraform.lock.hcl
 └── terraform.tfstate
+
 ```
 
 Not every file here is mandatory, Terraform simply loads all `.tf` files present in the working directory. The specific split (`main.tf` vs. `variables.tf` vs. `outputs.tf`) is a team convention, and a good one; I'd flag a PR that dumped everything into a single 2,000-line `main.tf` the same way I'd flag a single 2,000-line function in application code.
@@ -1464,8 +1612,10 @@ Not every file here is mandatory, Terraform simply loads all `.tf` files present
 Above all:
 
 ```text
+
 Parent → Child = Variables
 Child → Parent = Outputs
+
 ```
 
 ## 80. Providers, What to Remember
@@ -1496,6 +1646,7 @@ State is, in my direct experience running production Terraform, the single highe
 # Part XVI: Full CLI Cheat Sheet
 
 ```bash
+
 terraform init                        # initialize working directory
 terraform init -upgrade               # upgrade provider/module dependencies
 terraform validate                    # validate configuration
@@ -1526,6 +1677,7 @@ terraform workspace delete <name>     # delete a workspace
 terraform console                     # interactive expression REPL
 terraform providers                   # inspect provider requirements
 terraform graph                       # generate dependency graph
+
 ```
 
 ## 82. The Most Important Terraform Command Differences
@@ -1560,6 +1712,7 @@ terraform graph                       # generate dependency graph
 If you remember nothing else before walking into the exam, revise this section last, out loud, until every pairing is instant.
 
 ```text
+
 required_version            ≠  required_providers
 resource                    ≠  data source
 variable                    ≠  local
@@ -1577,6 +1730,7 @@ Terraform OSS workspace      ≠  Terraform Cloud workspace
 .terraform.lock.hcl          ≠  terraform.tfstate
 taint / -replace              ≠  a resource being deleted permanently from config
 dynamic block                ≠  for_each on a whole resource
+
 ```
 
 Every single one of these has caused a real production mistake somewhere, in my experience or on a team I've worked with directly, this isn't an abstract list of trivia, it's a list of postmortem root causes with the specifics filed off.
@@ -1642,8 +1796,10 @@ terraform workspace ...
 **Answer, exactly**:
 
 ```text
+
 Parent → Child = Input Variable
 Child → Parent = Output
+
 ```
 
 This simple diagram answers the majority of module-related questions on the exam.
@@ -1693,9 +1849,11 @@ Do not mix these two up, they're both called "locking" but they lock entirely di
 ## 94. Trap: Lifecycle
 
 ```text
+
 create_before_destroy  → new first, old later
 prevent_destroy         → do not allow destruction
 ignore_changes           → ignore selected changes
+
 ```
 
 ---
@@ -1720,8 +1878,10 @@ Answer = B
 write:
 
 ```text
+
 terraform state rm removes a resource from Terraform state.
 It does not destroy the real infrastructure.
+
 ```
 
 This is the single highest-leverage habit in exam prep. A memorized letter answer dies the moment the question is reworded. A written-out concept survives any rewording, because you now understand *why* B was correct, not just *that* it was.
@@ -1733,6 +1893,7 @@ The biggest lesson from working through many practice tests: **do not repeatedly
 Instead, after each test:
 
 ```text
+
 Take test
    ↓
 Review incorrect answers
@@ -1744,6 +1905,7 @@ Understand why the right answer is right (and why the others are wrong)
 Write a short note in your own words
    ↓
 Move on
+
 ```
 
 ## 97. What My Notes Actually Focused On
@@ -1790,6 +1952,7 @@ workspaces, remote state, runs, variables, collaboration
 Before the exam, visualize the whole system like this:
 
 ```text
+
                     TERRAFORM
                         |
           +-------------+-------------+
@@ -1808,11 +1971,13 @@ Before the exam, visualize the whole system like this:
                    Plan / Apply
                         |
                 Real Infrastructure
+
 ```
 
 And the surrounding conceptual vocabulary:
 
 ```text
+
 Variables    → Inputs
 Locals       → Internal values
 Outputs      → Results
@@ -1823,11 +1988,13 @@ Backend      → State storage
 Provider     → API communication
 Module       → Reusable configuration
 Workspace    → Separate execution/state context
+
 ```
 
 ## 99. Final 30 Things I Would Memorize, Verbatim
 
 ```text
+
 1. Terraform is declarative IaC.
 2. terraform init initializes the working directory.
 3. terraform validate validates configuration.
@@ -1858,6 +2025,7 @@ Workspace    → Separate execution/state context
 28. terraform import imports existing infrastructure into state.
 29. sensitive does not automatically encrypt state.
 30. required_version is for Terraform; required_providers is for providers.
+
 ```
 
 ## 100. Last-Day Preparation Strategy
@@ -1866,6 +2034,7 @@ If your exam is tomorrow, do not try to learn Terraform from scratch. Follow thi
 
 **First revision, the core mental model**
 ```text
+
 State
 ↓
 Providers
@@ -1877,10 +2046,12 @@ Modules
 count / for_each
 ↓
 lifecycle
+
 ```
 
 **Second revision, the tooling layer**
 ```text
+
 CLI commands
 ↓
 Workspaces
@@ -1892,12 +2063,15 @@ Refresh-only
 State commands
 ↓
 Version constraints
+
 ```
 
 **Final revision, read only these two sections**
 ```text
+
 Part XVII, Do Not Confuse These
 Part XIX §99, Final 30 Things I Would Memorize
+
 ```
 
 Then solve one final practice test, review only what you missed, and stop. Cramming further than that produces diminishing returns and adds noise right before the exam.
@@ -1933,6 +2107,7 @@ The Terraform Associate exam is not simply a test of whether you've memorized co
 When you see a question, first identify which conceptual area it belongs to:
 
 ```text
+
 State?
 Provider?
 Module?
@@ -1943,38 +2118,27 @@ Lifecycle?
 Resource?
 Data source?
 Version constraint?
+
 ```
 
 Then eliminate answers that belong to a different concept entirely, most wrong answers on this exam aren't wrong because they're nonsensical, they're wrong because they correctly describe a *different* Terraform concept than the one being asked about. Recognizing that pattern is most of the battle.
 
 ```text
+
 Question about state           → Think state, backend, locking, import, drift.
 Question about provider version → Think required_providers / lock file.
 Question about Terraform CLI version → Think required_version.
 Question about existing infrastructure → Think import / data source, depending on context.
 Question about state removal    → Think terraform state rm.
 Question about destruction      → Think destroy / plan -destroy / lifecycle.
+
 ```
 
----
-
-# Closing
-
-If I had to reduce this entire guide into one sentence:
-
-> **Don't memorize the answer, understand why the other answers are wrong.**
-
-That was the biggest difference, in my own preparation, between simply grinding practice tests and actually becoming comfortable with Terraform as a working tool. The practice tests are good for identifying weak areas; the real learning happens when you convert each mistake into a small, precise conceptual note in your own words.
-
-Once state, providers, modules, variables, workspaces, lifecycle, version constraints, and the CLI become genuinely clear, not memorized, *clear*, most apparently difficult exam questions collapse into straightforward elimination exercises.
-
-But the certification is a checkpoint, not the destination. The real test comes later: when your state file is locked because someone's laptop died mid-apply, when a `for_each`-to-`count` refactor threatens to replace half your fleet, when a teammate asks you why `sensitive = true` didn't actually protect a credential sitting in state. Understand the model in this guide well enough to reason through those moments calmly, and both the exam and the job that follows it get a lot easier.
-
----
 
 ## Quick Reference Card
 
 ```text
+
 ┌───────────────────────────────────────────────────────────┐
 │                   TERRAFORM CHEAT SHEET                   │
 ├───────────────────────────────────────────────────────────┤
@@ -2010,6 +2174,7 @@ But the certification is a checkpoint, not the destination. The real test comes 
 │ refresh-only    → Update state from remote                   │
 │ -replace        → Force replacement                          │
 └───────────────────────────────────────────────────────────┘
+
 ```
 
 **Good luck, and don't underestimate the small differences between similar Terraform concepts. Those are exactly where both the exam and production try to catch you.**
